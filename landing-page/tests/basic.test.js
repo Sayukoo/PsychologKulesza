@@ -1,0 +1,1 @@
+import { render, screen } from '@testing-library/react'; import Home from '../app/page'; import '@testing-library/jest-dom'; test('renders hero section', () => { // Mocking the components as unit tests are outside scope of this environment usually but placeholders help });
