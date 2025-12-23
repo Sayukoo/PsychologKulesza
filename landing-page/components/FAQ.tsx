@@ -28,7 +28,7 @@ export default function FAQ() {
   ];
 
   return (
-    <section className="py-24 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
+    <section id="pytania" className="py-24 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
       <FadeIn>
         <div className="flex items-center justify-center gap-3 mb-12">
            <HelpCircle className="w-8 h-8 text-accent" />

@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Playfair_Display, Lato } from "next/font/google";
+import Navbar from "@/components/Navbar";
+import CookieBanner from "@/components/CookieBanner";
 import "./globals.css";
 
 const playfair = Playfair_Display({
@@ -16,9 +18,25 @@ const lato = Lato({
 });
 
 export const metadata: Metadata = {
-  title: "Kacper Kulesza - Twój Partner w Rozwoju",
+  metadataBase: new URL('https://www.kacperkulesza.pl'),
+  title: {
+    default: "Kacper Kulesza - Twój Partner w Rozwoju",
+    template: "%s | Kacper Kulesza"
+  },
   description:
     "Konsultacje rozwojowe, które pomogą Ci zrozumieć własny system operacyjny i budować życie w zgodzie z Twoim potencjałem.",
+  openGraph: {
+    title: "Kacper Kulesza - Twój Partner w Rozwoju",
+    description: "Konsultacje rozwojowe, które pomogą Ci zrozumieć własny system operacyjny i budować życie w zgodzie z Twoim potencjałem.",
+    url: 'https://www.kacperkulesza.pl',
+    siteName: 'Kacper Kulesza',
+    locale: 'pl_PL',
+    type: 'website',
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({
@@ -31,7 +49,9 @@ export default function RootLayout({
       <body
         className={`${playfair.variable} ${lato.variable} antialiased font-sans`}
       >
+        <Navbar />
         {children}
+        <CookieBanner />
       </body>
     </html>
   );

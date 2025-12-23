@@ -4,7 +4,7 @@ import { FadeIn, StaggerContainer, StaggerItem } from './FadeIn';
 
 export default function Hero() {
   return (
-    <section className="relative w-full min-h-[90vh] flex items-center justify-center bg-primary overflow-hidden">
+    <section id="start" className="relative w-full min-h-[90vh] flex items-center justify-center bg-primary overflow-hidden">
       {/* Abstract Background Accents */}
       <div className="absolute top-0 right-0 w-1/2 h-full bg-linear-to-bl from-accent/10 to-transparent opacity-50" />
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-accent/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />

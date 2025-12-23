@@ -3,7 +3,7 @@ import { FadeIn, StaggerContainer, StaggerItem } from './FadeIn';
 
 export default function Audience() {
   return (
-    <section className="py-24 px-4 sm:px-6 lg:px-8 bg-slate-900 text-white relative overflow-hidden">
+    <section id="dla-kogo" className="py-24 px-4 sm:px-6 lg:px-8 bg-slate-900 text-white relative overflow-hidden">
        {/* Ambient bg */}
        <div className="absolute inset-0 bg-primary/20 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary/30 via-slate-900 to-slate-900 opacity-60 pointer-events-none" />
 
