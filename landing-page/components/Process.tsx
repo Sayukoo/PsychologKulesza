@@ -9,7 +9,7 @@ export default function Process() {
         <div className="flex flex-col items-center text-center p-6 border border-gray-200 hover:border-black transition-colors">
           <Brain className="h-16 w-16 mb-6 text-black stroke-1" />
           <h3 className="text-xl font-bold mb-4">1. Identyfikacja</h3>
-          <p className="text-gray-700">
+          <p className="text-black">
             Analizujemy Twoje schematy myślenia. Nie pytam "jak się z tym czujesz?", pytam "dlaczego tak pomyślałeś?" i "jakie dane potwierdzają to przekonanie?".
           </p>
         </div>
@@ -17,7 +17,7 @@ export default function Process() {
         <div className="flex flex-col items-center text-center p-6 border border-gray-200 hover:border-black transition-colors">
           <Cpu className="h-16 w-16 mb-6 text-black stroke-1" />
           <h3 className="text-xl font-bold mb-4">2. Debugowanie</h3>
-          <p className="text-gray-700">
+          <p className="text-black">
             Szukamy błędów w Twoim "oprogramowaniu". Zniekształcenia poznawcze, błędne założenia, automatyzmy, które sabotują Twoje działania.
           </p>
         </div>
@@ -25,7 +25,7 @@ export default function Process() {
         <div className="flex flex-col items-center text-center p-6 border border-gray-200 hover:border-black transition-colors">
           <Target className="h-16 w-16 mb-6 text-black stroke-1" />
           <h3 className="text-xl font-bold mb-4">3. Rekonfiguracja</h3>
-          <p className="text-gray-700">
+          <p className="text-black">
             Wdrażasz nowe strategie. Nie "afirmacje", ale konkretne protokoły działania w sytuacjach stresowych i decyzyjnych. Testujesz je w rzeczywistości.
           </p>
         </div>

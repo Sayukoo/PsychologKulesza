@@ -11,8 +11,8 @@ export default function Comparison() {
             <thead>
               <tr className="border-b-2 border-black">
                 <th className="py-4 px-6 text-xl font-bold uppercase w-1/3">To, co robię</th>
-                <th className="py-4 px-6 text-xl font-bold uppercase w-1/3 text-gray-400">Psychoterapia</th>
-                <th className="py-4 px-6 text-xl font-bold uppercase w-1/3 text-gray-400">Coaching</th>
+                <th className="py-4 px-6 text-xl font-bold uppercase w-1/3 text-gray-500">Psychoterapia</th>
+                <th className="py-4 px-6 text-xl font-bold uppercase w-1/3 text-gray-500">Coaching</th>
               </tr>
             </thead>
             <tbody className="text-lg">
@@ -21,10 +21,10 @@ export default function Comparison() {
                   <Check className="h-6 w-6 text-black flex-shrink-0" />
                   Koncentracja na mechanizmach tu i teraz
                 </td>
-                <td className="py-6 px-6 text-gray-500">
+                <td className="py-6 px-6 text-gray-600">
                    Leczenie zaburzeń, analiza przeszłości
                 </td>
-                <td className="py-6 px-6 text-gray-500">
+                <td className="py-6 px-6 text-gray-600">
                    Motywowanie, wizualizacja celu
                 </td>
               </tr>
@@ -33,10 +33,10 @@ export default function Comparison() {
                   <Check className="h-6 w-6 text-black flex-shrink-0" />
                   Analityczne podejście, twarde dane
                 </td>
-                <td className="py-6 px-6 text-gray-500">
+                <td className="py-6 px-6 text-gray-600">
                    Relacja terapeutyczna, leczenie traum
                 </td>
-                <td className="py-6 px-6 text-gray-500">
+                <td className="py-6 px-6 text-gray-600">
                    "Możesz wszystko", wysoka energia
                 </td>
               </tr>
@@ -45,10 +45,10 @@ export default function Comparison() {
                   <Check className="h-6 w-6 text-black flex-shrink-0" />
                   Brak relacji "lekarz-pacjent"
                 </td>
-                <td className="py-6 px-6 text-gray-500">
+                <td className="py-6 px-6 text-gray-600">
                    Pacjent w procesie leczenia
                 </td>
-                <td className="py-6 px-6 text-gray-500">
+                <td className="py-6 px-6 text-gray-600">
                    Klient i jego cheerleader
                 </td>
               </tr>
@@ -57,10 +57,10 @@ export default function Comparison() {
                   <Check className="h-6 w-6 text-black flex-shrink-0" />
                   Konfrontacja z błędami
                 </td>
-                <td className="py-6 px-6 text-gray-500">
+                <td className="py-6 px-6 text-gray-600">
                    Akceptacja, wsparcie emocjonalne
                 </td>
-                <td className="py-6 px-6 text-gray-500">
+                <td className="py-6 px-6 text-gray-600">
                    Budowanie pewności siebie
                 </td>
               </tr>

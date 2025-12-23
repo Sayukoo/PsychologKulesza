@@ -11,10 +11,10 @@ export default function Disclaimer() {
           <h2 className="text-2xl font-bold text-black mb-2 uppercase tracking-wide">
             OŚWIADCZENIE: To NIE jest terapia
           </h2>
-          <p className="text-lg text-gray-900 font-medium leading-relaxed">
-            Nie prowadzę psychoterapii, nie stawiam diagnoz klinicznych, nie leczę zaburzeń psychicznych.
-            Jeśli szukasz leczenia lub Twoje funkcjonowanie jest znacząco zaburzone – <span className="underline">opuść tę stronę</span> i skontaktuj się z psychoterapeutą lub psychiatrą.
-            Tu pracujemy nad Twoją efektywnością, samoświadomością i mechanizmami decyzyjnymi metodami psychologicznymi.
+          <p className="text-lg text-black font-medium leading-relaxed">
+            Moje konsultacje psychologiczne nie są psychoterapią ani leczeniem zaburzeń psychicznych.
+            Pracujemy w oparciu o wiedzę psychologiczną, skupiając się na rozwoju, edukacji i rozwiązywaniu bieżących trudności.
+            Dzięki temu proces jest przejrzysty i skoncentrowany na konkretnych celach, zapewniając Ci poczucie bezpieczeństwa i jasne zasady współpracy.
           </p>
         </div>
       </div>

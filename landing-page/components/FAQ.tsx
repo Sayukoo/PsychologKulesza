@@ -6,7 +6,7 @@ export default function FAQ() {
       <div className="space-y-8">
         <div>
           <h3 className="text-xl font-bold mb-3 text-black">Dlaczego to nie jest terapia?</h3>
-          <p className="text-gray-700 leading-relaxed">
+          <p className="text-black leading-relaxed">
             Terapia zakłada proces leczenia, diagnozę kliniczną i często pracę z głębokimi zaburzeniami osobowości lub nastroju.
             Ja pracuję na zasobach poznawczych osoby zdrowej, która chce funkcjonować lepiej, sprawniej i bardziej świadomie.
             Nie zajmuję się przeszłością w celach leczniczych.
@@ -15,7 +15,7 @@ export default function FAQ() {
 
         <div>
           <h3 className="text-xl font-bold mb-3 text-black">Czy to jest coaching?</h3>
-          <p className="text-gray-700 leading-relaxed">
+          <p className="text-black leading-relaxed">
             Nie. Coaching często opiera się na założeniu, że "masz wszystkie odpowiedzi w sobie".
             Moje podejście zakłada, że często Twoje odpowiedzi są błędne, oparte na zniekształceniach poznawczych.
             Wnoszę wiedzę psychologiczną, by skorygować te błędy, a nie tylko Cię motywować.
@@ -24,7 +24,7 @@ export default function FAQ() {
 
         <div>
           <h3 className="text-xl font-bold mb-3 text-black">Ile trwa współpraca?</h3>
-          <p className="text-gray-700 leading-relaxed">
+          <p className="text-black leading-relaxed">
             To zależy od celu. Konsultacja może być jednorazowa (analiza konkretnego problemu decyzyjnego) lub cykliczna.
             Nie "chodzisz" do mnie latami. Celem jest samodzielność, a nie uzależnienie od spotkań.
           </p>
@@ -32,7 +32,7 @@ export default function FAQ() {
 
         <div>
           <h3 className="text-xl font-bold mb-3 text-black">Jak się umówić?</h3>
-          <p className="text-gray-700 leading-relaxed">
+          <p className="text-black leading-relaxed">
             Wyłącznie przez ZnanyLekarz. Link znajdziesz poniżej.
           </p>
         </div>

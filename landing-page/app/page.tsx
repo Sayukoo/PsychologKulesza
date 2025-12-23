@@ -5,6 +5,7 @@ import Audience from '@/components/Audience';
 import Process from '@/components/Process';
 import Comparison from '@/components/Comparison';
 import FAQ from '@/components/FAQ';
+import Booking from '@/components/Booking';
 import Footer from '@/components/Footer';
 
 export default function Home() {
@@ -17,6 +18,7 @@ export default function Home() {
       <Process />
       <Comparison />
       <FAQ />
+      <Booking />
       <Footer />
     </main>
   );

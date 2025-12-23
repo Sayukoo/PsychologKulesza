@@ -3,7 +3,7 @@ export default function About() {
     <section id="o-mnie" className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         <div>
-          <div className="bg-gray-200 h-96 w-full flex items-center justify-center text-gray-500 font-mono text-sm border border-gray-300">
+          <div className="bg-gray-200 h-96 w-full flex items-center justify-center text-black font-mono text-sm border border-black">
             [ZDJĘCIE PROFILOWE]
           </div>
         </div>
@@ -21,8 +21,8 @@ export default function About() {
               Pracuję analitycznie. Zajmuję się psychologią poznawczą i behawioralną w kontekście efektywności osobistej.
               Pomagam ludziom zrozumieć ich własny "system operacyjny" – schematy myślenia, automatyczne reakcje emocjonalne i błędy poznawcze.
             </p>
-            <ul className="list-disc pl-5 space-y-2 mt-6 font-medium">
-              <li>Magister psychologii (Uniwersytet ...)</li>
+            <ul className="list-disc pl-5 space-y-2 mt-6 font-medium text-black">
+              <li>Magister psychologii (SWPS - Szkoła Wyższa Psychologii Społecznej)</li>
               <li>Praktyk pracy z regulacją emocji</li>
               <li>Specjalista od analizy schematów decyzyjnych</li>
             </ul>
