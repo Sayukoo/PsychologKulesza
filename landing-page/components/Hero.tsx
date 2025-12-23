@@ -1,34 +1,74 @@
-import Link from 'next/link';
-import { ArrowRight } from 'lucide-react';
+'use client';
+
+import { motion } from 'framer-motion';
+import { ArrowRight, Brain, Zap } from 'lucide-react';
 
 export default function Hero() {
-  return (
-    <section className="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto flex flex-col items-start justify-center min-h-[80vh]">
-      <div className="max-w-3xl">
-        <h1 className="text-4xl sm:text-6xl font-bold tracking-tight text-gray-900 mb-6 uppercase">
-          Kacper Kulesza.<br />
-          Magister Psychologii.
-        </h1>
-        <p className="text-xl sm:text-2xl text-black mb-8 leading-relaxed font-medium">
-          Profesjonalne konsultacje psychologiczne. Praca z myśleniem, regulacją emocji i schematami decyzyjnymi.
-          <span className="block mt-2 font-bold">Analiza. Bezpieczeństwo. Konkret.</span>
-        </p>
+  const scrollToBooking = () => {
+    document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' });
+  };
 
-        <div className="flex flex-col sm:flex-row gap-4 mt-8">
-          <a
-            href="#booking"
-            className="inline-flex items-center justify-center px-8 py-4 border border-transparent text-base font-medium text-white bg-black hover:bg-gray-800 transition-colors duration-200"
-          >
-            Umów konsultację
-            <ArrowRight className="ml-2 h-5 w-5" />
-          </a>
-          <a
-            href="#jak-pracuje"
-            className="inline-flex items-center justify-center px-8 py-4 border border-black text-base font-medium text-black bg-transparent hover:bg-gray-100 transition-colors duration-200"
-          >
-            Jak pracuję?
-          </a>
-        </div>
+  return (
+    <section className="relative min-h-[90vh] flex items-center justify-center bg-brand-navy overflow-hidden">
+      {/* Background Abstract Shapes */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 0.1 }}
+          transition={{ duration: 1.5 }}
+          className="absolute -top-1/2 -left-1/4 w-[1000px] h-[1000px] rounded-full bg-brand-indigo blur-3xl"
+        />
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 0.1 }}
+          transition={{ duration: 1.5, delay: 0.5 }}
+          className="absolute -bottom-1/2 -right-1/4 w-[800px] h-[800px] rounded-full bg-brand-gold blur-3xl"
+        />
+      </div>
+
+      <div className="container mx-auto px-6 relative z-10 text-center max-w-4xl">
+        <motion.div
+          initial={{ y: 50, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 text-brand-gold font-medium text-sm mb-6 border border-brand-gold/20 backdrop-blur-sm">
+            <Zap size={16} />
+            <span>Nowoczesna Psychologia Decyzyjna</span>
+          </div>
+
+          <h1 className="text-5xl md:text-7xl font-bold text-white leading-tight tracking-tight mb-6">
+            Zrozum Swoje <br/>
+            <span className="text-brand-gold">Mechanizmy.</span>
+          </h1>
+
+          <p className="text-xl md:text-2xl text-slate-300 mb-10 max-w-2xl mx-auto leading-relaxed">
+            Kacper Kulesza. Magister psychologii.
+            <br />
+            Konsultacje dla osób, które chcą odzyskać kontrolę, zrozumieć swoje schematy i podejmować lepsze decyzje. Bez lania wody.
+          </p>
+
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={scrollToBooking}
+              className="px-8 py-4 bg-brand-gold hover:bg-brand-gold-light text-white rounded-xl font-bold text-lg flex items-center gap-2 transition-colors shadow-lg shadow-brand-gold/20"
+            >
+              Umów Konsultację
+              <ArrowRight size={20} />
+            </motion.button>
+
+            <motion.button
+              whileHover={{ scale: 1.05, backgroundColor: "rgba(255,255,255,0.1)" }}
+              whileTap={{ scale: 0.95 }}
+              onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
+              className="px-8 py-4 bg-transparent border border-white/20 text-white rounded-xl font-medium text-lg hover:border-white/40 transition-colors"
+            >
+              Jak pracuję?
+            </motion.button>
+          </div>
+        </motion.div>
       </div>
     </section>
   );
