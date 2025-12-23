@@ -1,63 +1,80 @@
-import { CheckCircle2, XCircle } from 'lucide-react';
+import { CheckCircle2, User, UserX } from 'lucide-react';
+import { FadeIn, StaggerContainer, StaggerItem } from './FadeIn';
 
 export default function Audience() {
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-black text-white">
-      <div className="max-w-7xl mx-auto">
-        <h2 className="text-3xl font-bold mb-12 uppercase text-center">Filtr wejściowy</h2>
+    <section className="py-24 px-4 sm:px-6 lg:px-8 bg-slate-900 text-white relative overflow-hidden">
+       {/* Ambient bg */}
+       <div className="absolute inset-0 bg-primary/20 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary/30 via-slate-900 to-slate-900 opacity-60 pointer-events-none" />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          {/* Dla kogo to jest */}
-          <div className="border border-white/20 p-8">
-            <h3 className="text-xl font-bold mb-6 flex items-center text-green-400">
-              <CheckCircle2 className="mr-3 h-6 w-6" />
-              DLA KOGO TO JEST?
-            </h3>
-            <ul className="space-y-4">
-              <li className="flex items-start">
-                <span className="mr-3 text-green-400 font-mono">01.</span>
-                <span>Dla osób refleksyjnych, które czują, że utknęły w martwym punkcie.</span>
-              </li>
-              <li className="flex items-start">
-                <span className="mr-3 text-green-400 font-mono">02.</span>
-                <span>Dla przeciążonych decyzyjnie i emocjonalnie, szukających konkretnych narzędzi.</span>
-              </li>
-              <li className="flex items-start">
-                <span className="mr-3 text-green-400 font-mono">03.</span>
-                <span>Dla tych, którzy chcą wziąć brutalną odpowiedzialność za swoje życie.</span>
-              </li>
-              <li className="flex items-start">
-                <span className="mr-3 text-green-400 font-mono">04.</span>
-                <span>Dla osób ceniących logikę, analizę i brak "duchowego bełkotu".</span>
-              </li>
-            </ul>
-          </div>
+      <div className="max-w-7xl mx-auto relative z-10">
+        <FadeIn>
+           <h2 className="text-3xl md:text-4xl font-bold mb-16 text-center">
+            Twój Profil.<br />
+            <span className="text-slate-400 text-2xl font-normal block mt-2">Dla kogo jest ten proces?</span>
+          </h2>
+        </FadeIn>
 
-          {/* Dla kogo to NIE jest */}
-          <div className="border border-white/20 p-8 bg-white/5">
-            <h3 className="text-xl font-bold mb-6 flex items-center text-red-500">
-              <XCircle className="mr-3 h-6 w-6" />
-              DLA KOGO TO NIE JEST?
-            </h3>
-            <ul className="space-y-4 text-gray-300">
-              <li className="flex items-start">
-                <span className="mr-3 text-red-500 font-mono">01.</span>
-                <span>Dla osób szukających diagnozy klinicznej lub leczenia zaburzeń (depresja, ChAD, lęki).</span>
-              </li>
-              <li className="flex items-start">
-                <span className="mr-3 text-red-500 font-mono">02.</span>
-                <span>Dla tych, którzy chcą się tylko "wygadać" i poczuć ulgę bez zmian.</span>
-              </li>
-              <li className="flex items-start">
-                <span className="mr-3 text-red-500 font-mono">03.</span>
-                <span>Dla oczekujących gotowych recept typu "5 kroków do szczęścia".</span>
-              </li>
-              <li className="flex items-start">
-                <span className="mr-3 text-red-500 font-mono">04.</span>
-                <span>Dla osób w kryzysie suicydalnym lub ostrym stanie psychotycznym.</span>
-              </li>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-16">
+          {/* Ideal Client */}
+          <StaggerContainer delay={0.2} className="bg-white/5 backdrop-blur-sm border border-white/10 p-8 rounded-2xl hover:bg-white/10 transition-colors duration-500">
+            <StaggerItem>
+              <div className="flex items-center space-x-4 mb-8">
+                <div className="p-3 bg-emerald-500/20 rounded-lg">
+                   <User className="w-8 h-8 text-emerald-400" />
+                </div>
+                <h3 className="text-2xl font-bold text-emerald-100">
+                  Idealny Kandydat
+                </h3>
+              </div>
+            </StaggerItem>
+
+            <ul className="space-y-6">
+              {[
+                "Osoby nastawione na rozwój, szukające strategicznego partnera, a nie 'pocieszyciela'.",
+                "Liderzy i specjaliści przeciążeni decyzyjnie, szukający jasności myślenia.",
+                "Ci, którzy chcą wziąć pełną odpowiedzialność za swoje wyniki.",
+                "Osoby ceniące logikę, wiedzę naukową i konkretne narzędzia."
+              ].map((text, idx) => (
+                <StaggerItem key={idx}>
+                  <li className="flex items-start group">
+                    <CheckCircle2 className="mr-4 h-6 w-6 text-emerald-500 mt-0.5 group-hover:text-emerald-400 transition-colors" />
+                    <span className="text-slate-300 group-hover:text-white transition-colors">{text}</span>
+                  </li>
+                </StaggerItem>
+              ))}
             </ul>
-          </div>
+          </StaggerContainer>
+
+          {/* Not for you */}
+          <StaggerContainer delay={0.4} className="bg-transparent border border-white/5 p-8 rounded-2xl opacity-80 hover:opacity-100 transition-opacity">
+            <StaggerItem>
+               <div className="flex items-center space-x-4 mb-8">
+                <div className="p-3 bg-rose-500/10 rounded-lg">
+                   <UserX className="w-8 h-8 text-rose-400" />
+                </div>
+                <h3 className="text-2xl font-bold text-rose-100">
+                  To nie jest oferta dla...
+                </h3>
+              </div>
+            </StaggerItem>
+
+            <ul className="space-y-6">
+              {[
+                "Osób wymagających diagnozy klinicznej lub leczenia zaburzeń (depresja, stany lękowe).",
+                "Tych, którzy szukają jedynie emocjonalnego 'wygadania się' bez chęci wprowadzania zmian.",
+                "Poszukiwaczy magicznych pigułek i szybkich rozwiązań bez pracy własnej.",
+                "Osób w ostrym kryzysie, wymagających natychmiastowej interwencji medycznej."
+              ].map((text, idx) => (
+                <StaggerItem key={idx}>
+                  <li className="flex items-start">
+                    <span className="mr-4 h-6 w-6 flex items-center justify-center text-rose-500 font-mono text-sm border border-rose-500/50 rounded-full mt-0.5">✕</span>
+                    <span className="text-slate-400">{text}</span>
+                  </li>
+                </StaggerItem>
+              ))}
+            </ul>
+          </StaggerContainer>
         </div>
       </div>
     </section>
