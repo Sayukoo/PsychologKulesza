@@ -6,6 +6,7 @@ import Process from '@/components/Process';
 import Comparison from '@/components/Comparison';
 import FAQ from '@/components/FAQ';
 import Booking from '@/components/Booking';
+import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 import { FadeIn, StaggerContainer, StaggerItem } from '@/components/FadeIn';
 
@@ -41,6 +42,10 @@ export default function Home() {
 
       <FadeIn direction="up">
         <Booking />
+      </FadeIn>
+
+      <FadeIn direction="up">
+        <Contact />
       </FadeIn>
 
       <Footer />

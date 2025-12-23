@@ -30,15 +30,16 @@ export default function About() {
           <StaggerItem>
              <div className="space-y-6 text-lg text-slate-700 leading-relaxed">
               <p>
-                Nazywam się <strong>Kacper Kulesza</strong>. Jestem magistrem psychologii.
-                Moją pasją jest tłumaczenie złożonych mechanizmów psychologicznych na język konkretnych strategii życiowych.
+                Jestem psychologiem (mgr) i prowadzę poradnictwo psychologiczne w formie konsultacji online dla osób w różnym wieku, które doświadczają kryzysów, przeciążenia emocjonalnego, trudności w relacjach lub poczucia zagubienia.
               </p>
               <p>
-                Wierzę, że kluczem do sukcesu – zawodowego i osobistego – nie jest &quot;myślenie życzeniowe&quot;, ale głębokie zrozumienie własnego &quot;systemu operacyjnego&quot;.
-                Pracujemy nad tym, jak przetwarzasz informacje, jak regulujesz emocje i jakie schematy decyzyjne kierują Twoim życiem.
+                Podczas spotkań skupiam się na analizie sytuacji, porządkowaniu myśli i zrozumieniu mechanizmów, które wpływają na codzienne funkcjonowanie. Pracuję w sposób analityczny, partnerski i wspierający, bez oceniania i narzucania gotowych rozwiązań.
               </p>
               <p className="border-l-4 border-accent pl-4 italic text-slate-600">
-                Moim celem jest wyposażenie Cię w narzędzia, które pozwolą Ci odzyskać sprawczość i budować życie w zgodzie z Twoim potencjałem.
+                Moim celem jest uzyskanie większej jasności, lepsze zrozumienie własnej sytuacji oraz wypracowanie możliwych kierunków dalszego działania — adekwatnych do aktualnych potrzeb i możliwości.
+              </p>
+              <p>
+                Moje doświadczenie w pracy edukacyjnej i mentoringowej, a także w środowisku technologicznym i startupowym, pomaga mi pracować z osobami stojącymi przed trudnymi decyzjami, zmianami zawodowymi i życiowymi.
               </p>
             </div>
           </StaggerItem>
@@ -46,9 +47,10 @@ export default function About() {
           <StaggerItem>
             <ul className="grid grid-cols-1 gap-4 mt-8">
               {[
-                "Magister psychologii (Uniwersytet SWPS)",
-                "Ekspert w zakresie psychologii poznawczej i efektywności",
-                "Doświadczenie w pracy z liderami i przedsiębiorcami"
+                "Magister psychologii",
+                "Doświadczenie w pracy edukacyjnej i mentoringowej",
+                "Znajomość środowiska technologicznego i startupowego",
+                "Wyłącznie konsultacje online"
               ].map((item, idx) => (
                 <li key={idx} className="flex items-center text-primary font-medium">
                   <span className="w-2 h-2 bg-accent rounded-full mr-3" />

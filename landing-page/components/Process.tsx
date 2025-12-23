@@ -1,4 +1,4 @@
-import { Brain, Cpu, Target } from 'lucide-react';
+import { Brain, Handshake, Target } from 'lucide-react';
 import { FadeIn, StaggerContainer, StaggerItem } from './FadeIn';
 
 export default function Process() {
@@ -6,8 +6,8 @@ export default function Process() {
     <section id="process" className="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-white relative">
       <FadeIn>
         <h2 className="text-3xl md:text-4xl font-bold text-primary mb-16 text-center">
-          Proces współpracy.<br />
-          <span className="text-accent text-2xl font-normal block mt-2">Od chaosu do strategii.</span>
+          Jak pracuję?<br />
+          <span className="text-accent text-2xl font-normal block mt-2">Podejście, które daje efekty.</span>
         </h2>
       </FadeIn>
 
@@ -15,24 +15,24 @@ export default function Process() {
         {[
           {
             icon: Brain,
-            title: "1. Diagnoza Systemu",
-            desc: "Analizujemy Twoje schematy myślenia. Nie pytam 'jak się z tym czujesz?', ale 'jakie dane doprowadziły Cię do tego wniosku?'. Mapujemy terytorium Twojego umysłu.",
+            title: "Analiza i Zrozumienie",
+            desc: "Skupiam się na analizie sytuacji, porządkowaniu myśli i zrozumieniu mechanizmów, które wpływają na Twoje codzienne funkcjonowanie.",
             color: "text-blue-600"
           },
           {
-            icon: Cpu,
-            title: "2. Optymalizacja",
-            desc: "Identyfikujemy błędy poznawcze i automatyzmy, które sabotują Twoje wyniki. Wdrażamy nowe protokoły reagowania na stres i niepewność.",
+            icon: Handshake,
+            title: "Partnerstwo i Wsparcie",
+            desc: "Pracuję w sposób analityczny, partnerski i wspierający. Bez oceniania i narzucania gotowych rozwiązań, ale z pełnym zaangażowaniem w Twój proces.",
             color: "text-accent"
           },
           {
             icon: Target,
-            title: "3. Wdrożenie",
-            desc: "Teoria staje się praktyką. Testujesz nowe strategie w realnym środowisku biznesowym, a my na bieżąco korygujemy kurs, aż do osiągnięcia pełnej skuteczności.",
+            title: "Jasność i Cel",
+            desc: "Celem konsultacji jest uzyskanie większej jasności oraz wypracowanie możliwych kierunków działania — adekwatnych do Twoich aktualnych potrzeb i możliwości.",
             color: "text-emerald-600"
           }
         ].map((step, idx) => (
-          <StaggerItem key={idx} className="group flex flex-col items-center text-center p-8 border border-slate-100 rounded-2xl bg-slate-50 hover:bg-white hover:shadow-xl hover:shadow-primary/5 hover:-translate-y-2 transition-all duration-300 relative overflow-hidden">
+          <StaggerItem key={idx} className="group flex flex-col items-center text-center p-8 border border-slate-100 rounded-2xl bg-slate-50 hover:bg-white hover:shadow-xl hover:shadow-primary/5 hover:-translate-y-2 transition-all duration-300 relative overflow-hidden h-full">
             <div className={`absolute top-0 w-full h-1 ${idx === 1 ? 'bg-accent' : idx === 2 ? 'bg-emerald-500' : 'bg-blue-600'}`} />
 
             <div className={`p-4 rounded-full mb-6 ${idx === 1 ? 'bg-accent/10' : idx === 2 ? 'bg-emerald-500/10' : 'bg-blue-600/10'} group-hover:scale-110 transition-transform duration-300`}>

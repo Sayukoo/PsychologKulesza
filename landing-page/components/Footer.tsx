@@ -24,12 +24,12 @@ export default function Footer() {
             <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
           </a>
 
-          <div className="text-sm text-slate-400 border-t border-white/10 pt-8 w-full">
+          <div className="text-sm text-slate-300 border-t border-white/10 pt-8 w-full">
              <div className="flex flex-col md:flex-row justify-between items-center gap-4">
                 <p>&copy; {new Date().getFullYear()} Kacper Kulesza. Wszelkie prawa zastrzeżone.</p>
                 <div className="flex gap-6">
-                  <a href="#" className="hover:text-white transition-colors">Polityka Prywatności</a>
-                  <a href="#" className="hover:text-white transition-colors">Regulamin</a>
+                  <Link href="/polityka-prywatnosci" className="hover:text-white transition-colors">Polityka Prywatności</Link>
+                  <Link href="/regulamin" className="hover:text-white transition-colors">Regulamin</Link>
                 </div>
              </div>
              <p className="mt-4 text-xs opacity-60 max-w-2xl mx-auto">

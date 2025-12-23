@@ -1,7 +1,32 @@
-import { CheckCircle2, User, UserX } from 'lucide-react';
+import { CheckCircle2 } from 'lucide-react';
 import { FadeIn, StaggerContainer, StaggerItem } from './FadeIn';
 
 export default function Audience() {
+  const mainAreas = [
+    "Kryzys życiowy i emocjonalny",
+    "Niskie poczucie własnej wartości",
+    "Wypalenie zawodowe",
+    "Zaburzenia w relacjach międzyludzkich",
+    "Brak sensu życia",
+    "Kryzys w związku",
+    "Kryzys zawodowy"
+  ];
+
+  const secondaryAreas = [
+    "Bezsenność",
+    "Ból emocjonalny",
+    "DDA - Dorosłe Dzieci Alkoholików",
+    "DDD - Dorosłe Dzieci z Rodzin Dysfunkcyjnych",
+    "Lęki i niepokój",
+    "Nerwica",
+    "Zaburzenia emocjonalne",
+    "Zaburzenia koncentracji i pamięci",
+    "Zmęczenie i wyczerpanie",
+    "Zaburzenia psychosomatyczne",
+    "Zaburzenia nastroju",
+    "Doradztwo zawodowe"
+  ];
+
   return (
     <section id="dla-kogo" className="py-24 px-4 sm:px-6 lg:px-8 bg-slate-900 text-white relative overflow-hidden">
        {/* Ambient bg */}
@@ -10,72 +35,50 @@ export default function Audience() {
       <div className="max-w-7xl mx-auto relative z-10">
         <FadeIn>
            <h2 className="text-3xl md:text-4xl font-bold mb-16 text-center">
-            Twój Profil.<br />
-            <span className="text-slate-400 text-2xl font-normal block mt-2">Dla kogo jest ten proces?</span>
+            W czym pomagam?<br />
+            <span className="text-slate-400 text-2xl font-normal block mt-2">Obszary wsparcia i konsultacji.</span>
           </h2>
         </FadeIn>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-16">
-          {/* Ideal Client */}
-          <StaggerContainer delay={0.2} className="bg-white/5 backdrop-blur-sm border border-white/10 p-8 rounded-2xl hover:bg-white/10 transition-colors duration-500">
+        <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-16">
+          {/* Main Areas */}
+          <div className="bg-white/5 backdrop-blur-sm border border-white/10 p-8 rounded-2xl hover:bg-white/10 transition-colors duration-500">
             <StaggerItem>
-              <div className="flex items-center space-x-4 mb-8">
-                <div className="p-3 bg-emerald-500/20 rounded-lg">
-                   <User className="w-8 h-8 text-emerald-400" />
-                </div>
-                <h3 className="text-2xl font-bold text-emerald-100">
-                  Idealny Kandydat
-                </h3>
-              </div>
+              <h3 className="text-2xl font-bold text-emerald-100 mb-8 pb-4 border-b border-white/10">
+                Główne obszary
+              </h3>
             </StaggerItem>
-
-            <ul className="space-y-6">
-              {[
-                "Osoby nastawione na rozwój, szukające strategicznego partnera, a nie 'pocieszyciela'.",
-                "Liderzy i specjaliści przeciążeni decyzyjnie, szukający jasności myślenia.",
-                "Ci, którzy chcą wziąć pełną odpowiedzialność za swoje wyniki.",
-                "Osoby ceniące logikę, wiedzę naukową i konkretne narzędzia."
-              ].map((text, idx) => (
+            <ul className="space-y-4">
+              {mainAreas.map((text, idx) => (
                 <StaggerItem key={idx}>
                   <li className="flex items-start group">
-                    <CheckCircle2 className="mr-4 h-6 w-6 text-emerald-500 mt-0.5 group-hover:text-emerald-400 transition-colors" />
-                    <span className="text-slate-300 group-hover:text-white transition-colors">{text}</span>
+                    <CheckCircle2 className="mr-4 h-6 w-6 text-emerald-500 mt-0.5 group-hover:text-emerald-400 transition-colors shrink-0" />
+                    <span className="text-slate-200 group-hover:text-white transition-colors text-lg">{text}</span>
                   </li>
                 </StaggerItem>
               ))}
             </ul>
-          </StaggerContainer>
+          </div>
 
-          {/* Not for you */}
-          <StaggerContainer delay={0.4} className="bg-transparent border border-white/5 p-8 rounded-2xl opacity-80 hover:opacity-100 transition-opacity">
+          {/* Secondary Areas */}
+          <div className="bg-white/5 backdrop-blur-sm border border-white/10 p-8 rounded-2xl">
             <StaggerItem>
-               <div className="flex items-center space-x-4 mb-8">
-                <div className="p-3 bg-rose-500/10 rounded-lg">
-                   <UserX className="w-8 h-8 text-rose-400" />
-                </div>
-                <h3 className="text-2xl font-bold text-rose-100">
-                  To nie jest oferta dla...
-                </h3>
-              </div>
+               <h3 className="text-2xl font-bold text-accent mb-8 pb-4 border-b border-white/10">
+                 Pozostałe konsultacje
+               </h3>
             </StaggerItem>
-
-            <ul className="space-y-6">
-              {[
-                "Osób wymagających diagnozy klinicznej lub leczenia zaburzeń (depresja, stany lękowe).",
-                "Tych, którzy szukają jedynie emocjonalnego 'wygadania się' bez chęci wprowadzania zmian.",
-                "Poszukiwaczy magicznych pigułek i szybkich rozwiązań bez pracy własnej.",
-                "Osób w ostrym kryzysie, wymagających natychmiastowej interwencji medycznej."
-              ].map((text, idx) => (
+            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {secondaryAreas.map((text, idx) => (
                 <StaggerItem key={idx}>
                   <li className="flex items-start">
-                    <span className="mr-4 h-6 w-6 flex items-center justify-center text-rose-500 font-mono text-sm border border-rose-500/50 rounded-full mt-0.5">✕</span>
-                    <span className="text-slate-400">{text}</span>
+                    <span className="mr-3 h-2 w-2 bg-accent rounded-full mt-2.5 shrink-0" />
+                    <span className="text-slate-200">{text}</span>
                   </li>
                 </StaggerItem>
               ))}
             </ul>
-          </StaggerContainer>
-        </div>
+          </div>
+        </StaggerContainer>
       </div>
     </section>
   );
