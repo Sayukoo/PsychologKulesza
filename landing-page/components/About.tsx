@@ -1,4 +1,5 @@
 import { FadeIn, StaggerContainer, StaggerItem } from './FadeIn';
+import Image from 'next/image';
 
 export default function About() {
   return (
@@ -7,9 +8,14 @@ export default function About() {
         <FadeIn direction="right" className="order-2 md:order-1 relative group">
           <div className="absolute inset-0 bg-accent/20 translate-x-4 translate-y-4 rounded-lg transition-transform group-hover:translate-x-2 group-hover:translate-y-2 duration-500 ease-out" />
           <div className="relative bg-slate-100 h-[500px] w-full flex items-center justify-center text-slate-400 font-mono text-sm border border-slate-200 rounded-lg shadow-xl overflow-hidden">
-             {/* Placeholder for real image */}
-             <span className="z-10 bg-white/80 px-4 py-2 rounded-md backdrop-blur-sm">[ZDJĘCIE PROFILOWE]</span>
-             <div className="absolute inset-0 bg-linear-to-tr from-primary/10 to-transparent" />
+             <Image
+                src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=1000&auto=format&fit=crop"
+                alt="Kacper Kulesza - Profil"
+                fill
+                className="object-cover object-top grayscale hover:grayscale-0 transition-all duration-700"
+                sizes="(max-width: 768px) 100vw, 50vw"
+             />
+             <div className="absolute inset-0 bg-linear-to-tr from-primary/10 to-transparent pointer-events-none" />
           </div>
         </FadeIn>
 
@@ -28,7 +34,7 @@ export default function About() {
                 Moją pasją jest tłumaczenie złożonych mechanizmów psychologicznych na język konkretnych strategii życiowych.
               </p>
               <p>
-                Wierzę, że kluczem do sukcesu – zawodowego i osobistego – nie jest "myślenie życzeniowe", ale głębokie zrozumienie własnego "systemu operacyjnego".
+                Wierzę, że kluczem do sukcesu – zawodowego i osobistego – nie jest &quot;myślenie życzeniowe&quot;, ale głębokie zrozumienie własnego &quot;systemu operacyjnego&quot;.
                 Pracujemy nad tym, jak przetwarzasz informacje, jak regulujesz emocje i jakie schematy decyzyjne kierują Twoim życiem.
               </p>
               <p className="border-l-4 border-accent pl-4 italic text-slate-600">
