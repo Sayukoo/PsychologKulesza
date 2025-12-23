@@ -1,20 +1,24 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Playfair_Display, Lato } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const playfair = Playfair_Display({
+  variable: "--font-serif",
   subsets: ["latin"],
+  display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const lato = Lato({
+  variable: "--font-sans",
   subsets: ["latin"],
+  weight: ["300", "400", "700", "900"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Konsultacje psychologiczne",
-  description: "Profesjonalne wsparcie w rozwoju osobistym - Kacper Kulesza",
+  title: "Kacper Kulesza - Twój Partner w Rozwoju",
+  description:
+    "Konsultacje rozwojowe, które pomogą Ci zrozumieć własny system operacyjny i budować życie w zgodzie z Twoim potencjałem.",
 };
 
 export default function RootLayout({
@@ -23,9 +27,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="pl">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${playfair.variable} ${lato.variable} antialiased font-sans`}
       >
         {children}
       </body>
