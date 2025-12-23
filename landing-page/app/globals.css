@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-sans);
+  --font-serif: var(--font-serif);
 
   --color-primary: #0f4c5c;
   --color-primary-foreground: #ffffff;
@@ -18,4 +18,18 @@
 
   --color-card: #ffffff;
   --color-card-foreground: #0f172a;
+
+  --color-background: #f8fafc;
+  --color-foreground: #334155;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-serif);
+  }
 }
