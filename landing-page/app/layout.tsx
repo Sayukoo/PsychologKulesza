@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
 import { Playfair_Display, Lato } from "next/font/google";
+import { ThemeProvider } from "next-themes";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import Navbar from "@/components/Navbar";
 import CookieBanner from "@/components/CookieBanner";
 import ScrollToTop from "@/components/ScrollToTop";
+import NeuralBackground from "@/components/NeuralBackground";
 import "./globals.css";
 
 const playfair = Playfair_Display({
@@ -46,14 +49,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pl">
+    <html lang="pl" suppressHydrationWarning>
       <body
         className={`${playfair.variable} ${lato.variable} antialiased font-sans`}
       >
-        <Navbar />
-        {children}
-        <ScrollToTop />
-        <CookieBanner />
+        <ThemeProvider attribute="data-theme" defaultTheme="system" enableSystem>
+          <NeuralBackground />
+          <Navbar />
+          {children}
+          <ScrollToTop />
+          <CookieBanner />
+        </ThemeProvider>
+        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID || "G-PLACEHOLDER"} />
       </body>
     </html>
   );
