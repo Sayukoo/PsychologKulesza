@@ -6,6 +6,7 @@ import { Menu, X } from 'lucide-react';
 import { usePathname } from 'next/navigation';
 import { clsx } from 'clsx';
 import { motion, AnimatePresence } from 'framer-motion';
+import ThemeToggle from './ThemeToggle';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -64,16 +65,20 @@ export default function Navbar() {
                 {link.name}
               </Link>
             ))}
+            <ThemeToggle />
           </div>
 
           {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden text-white z-50 relative focus:outline-none"
-            aria-label="Toggle menu"
-          >
-            {isOpen ? <X className="w-8 h-8" /> : <Menu className="w-8 h-8" />}
-          </button>
+          <div className="md:hidden flex items-center gap-4 z-50 relative">
+             <ThemeToggle />
+             <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="text-white focus:outline-none"
+              aria-label="Toggle menu"
+            >
+              {isOpen ? <X className="w-8 h-8" /> : <Menu className="w-8 h-8" />}
+            </button>
+          </div>
         </div>
       </div>
 
