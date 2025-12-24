@@ -69,11 +69,11 @@ export default function Navbar() {
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="md:hidden flex items-center gap-4 z-50 relative">
+          <div className="md:hidden flex items-center gap-4 z-[201] relative">
              <ThemeToggle />
              <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-white focus:outline-none"
+              className={clsx("focus:outline-none transition-colors", isOpen ? "text-foreground" : "text-white")}
               aria-label="Toggle menu"
             >
               {isOpen ? <X className="w-8 h-8" /> : <Menu className="w-8 h-8" />}
@@ -86,10 +86,10 @@ export default function Navbar() {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            className="fixed inset-0 bg-slate-900/98 z-40 flex flex-col items-center justify-center space-y-8 md:hidden"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed top-0 left-0 w-[100vw] h-[100vh] bg-[#f8fafc] dark:bg-[#0f172a] z-[200] flex flex-col items-center justify-center space-y-8 md:hidden"
           >
             {navLinks.map((link) => (
               <Link
@@ -98,7 +98,7 @@ export default function Navbar() {
                 onClick={handleLinkClick}
                 className={clsx(
                   'text-2xl font-serif font-medium transition-colors',
-                  link.cta ? 'text-accent' : 'text-white hover:text-accent'
+                  link.cta ? 'text-accent' : 'text-slate-800 dark:text-slate-100 hover:text-accent'
                 )}
               >
                 {link.name}

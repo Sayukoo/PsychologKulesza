@@ -14,22 +14,21 @@ export default function Hero() {
           <StaggerItem>
             <div className="inline-flex items-center space-x-2 bg-accent/10 text-accent px-4 py-1.5 rounded-full text-sm font-semibold mb-6 border border-accent/20">
               <Sparkles className="w-4 h-4" />
-              <span>Developmental Consulting for High Performers</span>
+              <span>Konsultacje Psychologiczne & Mentoring</span>
             </div>
           </StaggerItem>
 
           <StaggerItem>
             <h1 className="text-5xl sm:text-7xl font-bold tracking-tight text-white mb-6 leading-[1.1]">
-              Odzyskaj kontrolę.<br />
-              <span className="text-accent">Zbuduj strategię.</span>
+              Psycholog.<br />
+              <span className="text-accent">Wsparcie. Konkret.</span>
             </h1>
           </StaggerItem>
 
           <StaggerItem>
             <p className="text-xl sm:text-2xl text-slate-200 mb-10 leading-relaxed max-w-2xl">
-              Kacper Kulesza. Psychologia w służbie Twoich celów.
-              Trening mentalny i doradztwo rozwojowe dla liderów, którzy oczekują
-              <span className="text-white font-semibold"> konkretnych wyników</span>, a nie tylko rozmowy.
+              Nazywam się Kacper Kulesza. Jestem <span className="text-white font-semibold">magistrem psychologii</span> z doświadczeniem biznesowym.
+              Pomagam zrozumieć mechanizmy stresu i presji, bo sam w nich działam. Konkretne wsparcie, bez zbędnego owijania w bawełnę.
             </p>
           </StaggerItem>
 

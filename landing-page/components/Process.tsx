@@ -6,8 +6,8 @@ export default function Process() {
     <section id="process" className="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-white relative">
       <FadeIn>
         <h2 className="text-3xl md:text-4xl font-bold text-primary mb-16 text-center">
-          Jak pracuję?<br />
-          <span className="text-accent text-2xl font-normal block mt-2">Podejście, które daje efekty.</span>
+          Konsultacja Psychologiczna<br />
+          <span className="text-accent text-2xl font-normal block mt-2">Bezpiecznie. Konkretnie. Online.</span>
         </h2>
       </FadeIn>
 
@@ -15,20 +15,20 @@ export default function Process() {
         {[
           {
             icon: Brain,
-            title: "Analiza i Zrozumienie",
-            desc: "Skupiam się na analizie sytuacji, porządkowaniu myśli i zrozumieniu mechanizmów, które wpływają na Twoje codzienne funkcjonowanie.",
+            title: "1. Nazywamy problem",
+            desc: "Masz dość chaosu w głowie? Podczas konsultacji wspólnie analizujemy Twoją sytuację. Rozkładamy stres i problemy na czynniki pierwsze.",
             color: "text-blue-600"
           },
           {
             icon: Handshake,
-            title: "Partnerstwo i Wsparcie",
-            desc: "Pracuję w sposób analityczny, partnerski i wspierający. Bez oceniania i narzucania gotowych rozwiązań, ale z pełnym zaangażowaniem w Twój proces.",
+            title: "2. Szukamy rozwiązań",
+            desc: "Jestem tu dla Ciebie. Bez oceniania, ale z pełnym zaangażowaniem. Jako psycholog pomagam Ci znaleźć mechanizmy, które Cię blokują.",
             color: "text-accent"
           },
           {
             icon: Target,
-            title: "Jasność i Cel",
-            desc: "Celem konsultacji jest uzyskanie większej jasności oraz wypracowanie możliwych kierunków działania — adekwatnych do Twoich aktualnych potrzeb i możliwości.",
+            title: "3. Planujemy działanie",
+            desc: "Nie kończymy na gadaniu. Wychodzisz z większą jasnością i planem. Celem jest Twoja sprawczość i konkretne kroki do zmiany.",
             color: "text-emerald-600"
           }
         ].map((step, idx) => (

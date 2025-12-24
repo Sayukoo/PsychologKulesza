@@ -35,8 +35,8 @@ export default function Audience() {
       <div className="max-w-7xl mx-auto relative z-10">
         <FadeIn>
            <h2 className="text-3xl md:text-4xl font-bold mb-16 text-center">
-            W czym pomagam?<br />
-            <span className="text-slate-400 text-2xl font-normal block mt-2">Obszary wsparcia i konsultacji.</span>
+            Kiedy warto skorzystać?<br />
+            <span className="text-slate-400 text-2xl font-normal block mt-2">Konsultacje psychologiczne dla Ciebie.</span>
           </h2>
         </FadeIn>
 
@@ -45,7 +45,7 @@ export default function Audience() {
           <div className="bg-white/5 backdrop-blur-sm border border-white/10 p-8 rounded-2xl hover:bg-white/10 transition-colors duration-500">
             <StaggerItem>
               <h3 className="text-2xl font-bold text-emerald-100 mb-8 pb-4 border-b border-white/10">
-                Główne obszary
+                Wsparcie w kryzysie
               </h3>
             </StaggerItem>
             <ul className="space-y-4">
@@ -64,7 +64,7 @@ export default function Audience() {
           <div className="bg-white/5 backdrop-blur-sm border border-white/10 p-8 rounded-2xl">
             <StaggerItem>
                <h3 className="text-2xl font-bold text-accent mb-8 pb-4 border-b border-white/10">
-                 Pozostałe konsultacje
+                 Trudności codzienne
                </h3>
             </StaggerItem>
             <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
