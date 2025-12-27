@@ -1,5 +1,7 @@
 import { MetadataRoute } from 'next';
 
+export const revalidate = 86400; // regenerate once a day for export compatibility
+
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {

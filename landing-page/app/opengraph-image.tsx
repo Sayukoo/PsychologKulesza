@@ -1,6 +1,7 @@
 import { ImageResponse } from 'next/og';
 
 export const runtime = 'edge';
+export const revalidate = 86400; // regenerate once a day for export compatibility
 
 // Image metadata
 export const alt = 'Kacper Kulesza - Twój Partner w Rozwoju';
