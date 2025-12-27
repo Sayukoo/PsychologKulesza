@@ -9,6 +9,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: '/private/',
     },
-    sitemap: 'https://www.kacperkulesza.pl/sitemap.xml',
+    sitemap: 'https://psychologkacper.pl/sitemap.xml',
   };
 }

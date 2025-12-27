@@ -19,17 +19,17 @@ const lato = Lato({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://www.kacperkulesza.pl'),
+  metadataBase: new URL('https://psychologkacper.pl'),
   title: {
-    default: "Kacper Kulesza - Twój Partner w Rozwoju",
+    default: "Kacper Kulesza - Tw?j Partner w Rozwoju",
     template: "%s | Kacper Kulesza"
   },
   description:
-    "Konsultacje rozwojowe, które pomogą Ci zrozumieć własny system operacyjny i budować życie w zgodzie z Twoim potencjałem.",
+    "Konsultacje rozwojowe, kt?re pomog? Ci zrozumie? w?asny system operacyjny i budowa? ?ycie w zgodzie z Twoim potencja?em.",
   openGraph: {
-    title: "Kacper Kulesza - Twój Partner w Rozwoju",
-    description: "Konsultacje rozwojowe, które pomogą Ci zrozumieć własny system operacyjny i budować życie w zgodzie z Twoim potencjałem.",
-    url: 'https://www.kacperkulesza.pl',
+    title: "Kacper Kulesza - Tw?j Partner w Rozwoju",
+    description: "Konsultacje rozwojowe, kt?re pomog? Ci zrozumie? w?asny system operacyjny i budowa? ?ycie w zgodzie z Twoim potencja?em.",
+    url: 'https://psychologkacper.pl',
     siteName: 'Kacper Kulesza',
     locale: 'pl_PL',
     type: 'website',

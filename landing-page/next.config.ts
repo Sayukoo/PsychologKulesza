@@ -1,10 +1,12 @@
 import type { NextConfig } from "next";
 
 // GitHub Pages needs a base path when hosted at <user>.github.io/<repo>.
-// Set GITHUB_PAGES=true in CI and the base path will be derived automatically from GITHUB_REPOSITORY.
+// Set GITHUB_PAGES=true in CI and the base path will be derived automatically from GITHUB_REPOSITORY,
+// unless you set CUSTOM_DOMAIN=true (for apex/custom domains on Pages) to keep assets at root.
 const repo = process.env.GITHUB_REPOSITORY?.split("/")[1];
 const isGhPages = process.env.GITHUB_PAGES === "true";
-const basePath = isGhPages && repo ? `/${repo}` : "";
+const useRepoBasePath = isGhPages && process.env.CUSTOM_DOMAIN !== "true";
+const basePath = useRepoBasePath && repo ? `/${repo}` : "";
 
 const nextConfig: NextConfig = {
   output: "export",
