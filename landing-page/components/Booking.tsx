@@ -11,10 +11,10 @@ export default function Booking() {
             <CalendarCheck className="w-8 h-8 text-accent" />
           </div>
 
-          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6">Zarezerwuj termin</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6">Umów konsultację</h2>
           <p className="text-lg text-slate-600 mb-12 max-w-2xl mx-auto">
-            Wybierz dogodną datę w kalendarzu.
-            <span className="block mt-2 text-sm text-slate-500">Bezpieczna rezerwacja przez ZnanyLekarz.pl</span>
+            Jeżeli to podejście jest Ci bliskie, zapraszam do rezerwacji terminu.
+            <span className="block mt-2 text-sm text-slate-500">Wybierz dogodną datę poniżej.</span>
           </p>
 
           <div className="bg-white p-6 rounded-xl shadow-2xl shadow-primary/5 min-h-[400px] border border-slate-100">

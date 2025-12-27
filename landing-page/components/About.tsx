@@ -22,24 +22,21 @@ export default function About() {
         <StaggerContainer className="order-1 md:order-2">
           <StaggerItem>
             <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6">
-              O mnie.<br />
-              <span className="text-accent">Partner w Twoim rozwoju.</span>
+              Kim jestem?<br />
+              <span className="text-accent">Racjonalność. Bezpieczeństwo. Spokój.</span>
             </h2>
           </StaggerItem>
 
           <StaggerItem>
              <div className="space-y-6 text-lg text-slate-700 leading-relaxed">
               <p>
-                Jestem psychologiem (mgr) i prowadzę poradnictwo psychologiczne w formie konsultacji online dla osób w różnym wieku, które doświadczają kryzysów, przeciążenia emocjonalnego, trudności w relacjach lub poczucia zagubienia.
+                Nazywam się Kacper Kulesza. Jestem magistrem psychologii. W swojej pracy stawiam na logikę, analizę i bezpieczną atmosferę. Nie oceniam, nie "kołczuję". Pomagam spojrzeć na Twoją sytuację z dystansu, nazwać to, co nienazwane, i poukładać to, co rozsypane.
               </p>
               <p>
-                Podczas spotkań skupiam się na analizie sytuacji, porządkowaniu myśli i zrozumieniu mechanizmów, które wpływają na codzienne funkcjonowanie. Pracuję w sposób analityczny, partnerski i wspierający, bez oceniania i narzucania gotowych rozwiązań.
+                Prowadzę konsultacje psychologiczne i psychoedukację. Moje podejście opiera się na porządkowaniu myślenia, analizie faktów oraz zrozumieniu mechanizmów, które Tobą kierują.
               </p>
               <p className="border-l-4 border-accent pl-4 italic text-slate-600">
-                Moim celem jest uzyskanie większej jasności, lepsze zrozumienie własnej sytuacji oraz wypracowanie możliwych kierunków dalszego działania — adekwatnych do aktualnych potrzeb i możliwości.
-              </p>
-              <p>
-                Moje doświadczenie w pracy edukacyjnej i mentoringowej, a także w środowisku technologicznym i startupowym, pomaga mi pracować z osobami stojącymi przed trudnymi decyzjami, zmianami zawodowymi i życiowymi.
+                Jestem tu po to, abyś mógł spokojnie przeanalizować swoje decyzje, poczuć stabilizację i odzyskać poczucie wpływu na własne życie. Bez presji, w Twoim tempie.
               </p>
             </div>
           </StaggerItem>
@@ -48,9 +45,9 @@ export default function About() {
             <ul className="grid grid-cols-1 gap-4 mt-8">
               {[
                 "Magister psychologii",
-                "Doświadczenie w pracy edukacyjnej i mentoringowej",
-                "Znajomość środowiska technologicznego i startupowego",
-                "Wyłącznie konsultacje online"
+                "Podejście analityczne i logiczne",
+                "Etyka i transparentność",
+                "Konsultacje online"
               ].map((item, idx) => (
                 <li key={idx} className="flex items-center text-primary font-medium">
                   <span className="w-2 h-2 bg-accent rounded-full mr-3" />

@@ -1,4 +1,4 @@
-import { Brain, Handshake, Target } from 'lucide-react';
+import { Monitor, Clock, MessageSquare, AlertCircle, Video } from 'lucide-react';
 import { FadeIn, StaggerContainer, StaggerItem } from './FadeIn';
 
 export default function Process() {
@@ -6,29 +6,29 @@ export default function Process() {
     <section id="process" className="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-white relative">
       <FadeIn>
         <h2 className="text-3xl md:text-4xl font-bold text-primary mb-16 text-center">
-          Jak pracuję?<br />
-          <span className="text-accent text-2xl font-normal block mt-2">Podejście, które daje efekty.</span>
+          Jak wygląda współpraca?<br />
+          <span className="text-accent text-2xl font-normal block mt-2">Zasady i forma spotkań.</span>
         </h2>
       </FadeIn>
 
-      <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
         {[
           {
-            icon: Brain,
-            title: "Analiza i Zrozumienie",
-            desc: "Skupiam się na analizie sytuacji, porządkowaniu myśli i zrozumieniu mechanizmów, które wpływają na Twoje codzienne funkcjonowanie.",
+            icon: Monitor,
+            title: "Forma online",
+            desc: "Spotykamy się przez wideorozmowę. Zapewnia to komfort, oszczędność czasu i możliwość rozmowy z dowolnego miejsca, w którym czujesz się swobodnie.",
             color: "text-blue-600"
           },
           {
-            icon: Handshake,
-            title: "Partnerstwo i Wsparcie",
-            desc: "Pracuję w sposób analityczny, partnerski i wspierający. Bez oceniania i narzucania gotowych rozwiązań, ale z pełnym zaangażowaniem w Twój proces.",
+            icon: Clock,
+            title: "Czas trwania",
+            desc: "Standardowa konsultacja trwa 50 minut. To optymalny czas na omówienie bieżących spraw, analizę i wypracowanie wniosków bez pośpiechu.",
             color: "text-accent"
           },
           {
-            icon: Target,
-            title: "Jasność i Cel",
-            desc: "Celem konsultacji jest uzyskanie większej jasności oraz wypracowanie możliwych kierunków działania — adekwatnych do Twoich aktualnych potrzeb i możliwości.",
+            icon: MessageSquare,
+            title: "Charakter rozmowy",
+            desc: "Rozmawiamy rzeczowo i wprost. Skupiamy się na 'tu i teraz'. Nie wracamy do przeszłości, jeśli nie jest to konieczne dla zrozumienia obecnej sytuacji.",
             color: "text-emerald-600"
           }
         ].map((step, idx) => (
@@ -46,6 +46,33 @@ export default function Process() {
           </StaggerItem>
         ))}
       </StaggerContainer>
+
+      {/* Important Disclaimers */}
+      <FadeIn direction="up">
+        <div className="bg-primary/5 rounded-xl p-8 border border-primary/10 max-w-4xl mx-auto space-y-6">
+           <div className="flex items-start gap-4">
+              <AlertCircle className="w-6 h-6 text-primary mt-1 shrink-0" />
+              <div>
+                <h3 className="font-bold text-lg text-primary mb-2">To nie jest psychoterapia</h3>
+                <p className="text-slate-700 leading-relaxed">
+                  Moje konsultacje mają charakter rozwojowy i edukacyjny. Nie prowadzę psychoterapii, nie leczę zaburzeń psychicznych ani nie wystawiam diagnoz klinicznych. Pracujemy na Twoich zasobach poznawczych, skupiając się na strategii i efektywności.
+                </p>
+              </div>
+           </div>
+
+           <div className="w-full h-px bg-primary/10" />
+
+           <div className="flex items-start gap-4">
+              <Video className="w-6 h-6 text-primary mt-1 shrink-0" />
+              <div>
+                <h3 className="font-bold text-lg text-primary mb-2">Nagrywanie spotkań</h3>
+                <p className="text-slate-700 leading-relaxed">
+                  Działam w sposób transparentny. Konsultacje są nagrywane (za Twoją zgodą) wyłącznie do celów rozwojowych i superwizyjnych, aby zapewnić najwyższą jakość mojej pracy. Nagrania są w pełni poufne i bezpieczne.
+                </p>
+              </div>
+           </div>
+        </div>
+      </FadeIn>
     </section>
   );
 }
