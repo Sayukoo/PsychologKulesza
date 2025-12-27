@@ -1,5 +1,6 @@
 import { CheckCircle2 } from 'lucide-react';
 import { FadeIn, StaggerContainer, StaggerItem } from './FadeIn';
+import AuroraBackground from './AuroraBackground';
 
 export default function Audience() {
   const problems = [
@@ -15,8 +16,8 @@ export default function Audience() {
 
   return (
     <section id="dla-kogo" className="py-24 px-4 sm:px-6 lg:px-8 bg-secondary text-white relative overflow-hidden">
-       {/* Ambient bg */}
-       <div className="absolute inset-0 bg-primary/20 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary/30 via-secondary to-secondary opacity-60 pointer-events-none" />
+       {/* Animated Aurora Background */}
+       <AuroraBackground />
 
       <div className="max-w-7xl mx-auto relative z-10">
         <FadeIn>
