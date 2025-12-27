@@ -46,7 +46,7 @@ export default function About() {
           <StaggerItem>
             <div className="mt-8">
               <Link
-                href="https://linkedin.com/konstruktywizm"
+                href="https://www.linkedin.com/in/konstruktywizm/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-white bg-accent hover:brightness-90 transition-all duration-300 shadow-lg hover:shadow-accent/25 rounded-sm"
