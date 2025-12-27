@@ -1,10 +1,12 @@
 
-> landing-page@0.1.0 start
-> next start
+> landing-page@0.1.0 dev
+> next dev
 
-▲ Next.js 16.1.1
+▲ Next.js 16.1.1 (Turbopack)
 - Local:         http://localhost:3000
 - Network:       http://192.168.0.2:3000
 
 ✓ Starting...
-✓ Ready in 693ms
+✓ Ready in 1059ms
+○ Compiling / ...
+ GET / 200 in 6.1s (compile: 5.1s, render: 980ms)

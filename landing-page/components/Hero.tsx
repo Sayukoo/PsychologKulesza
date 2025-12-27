@@ -1,13 +1,13 @@
 import Link from 'next/link';
 import { ArrowRight, Sparkles } from 'lucide-react';
 import { FadeIn, StaggerContainer, StaggerItem } from './FadeIn';
+import NeuralBackground from './NeuralBackground';
 
 export default function Hero() {
   return (
     <section id="start" className="relative w-full min-h-[90vh] flex items-center justify-center bg-primary overflow-hidden">
-      {/* Abstract Background Accents */}
-      <div className="absolute top-0 right-0 w-1/2 h-full bg-linear-to-bl from-accent/10 to-transparent opacity-50" />
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-accent/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
+      {/* Dynamic Background */}
+      <NeuralBackground />
 
       <div className="relative z-10 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
         <StaggerContainer className="max-w-4xl">
