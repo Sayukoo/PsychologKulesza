@@ -29,7 +29,6 @@ export default function Navbar() {
     { name: 'O mnie', href: '/#o-mnie' },
     { name: 'Dla kogo', href: '/#dla-kogo' },
     { name: 'Proces', href: '/#process' },
-    { name: 'Pytania', href: '/#pytania' },
     { name: 'Umów wizytę', href: '/#booking', cta: true },
   ];
 
@@ -53,21 +52,16 @@ export default function Navbar() {
             aria-label="Strona główna - Kacper Kulesza"
           >
             <motion.div
-              className="relative h-12 w-12 rounded-full bg-gradient-to-br from-accent via-blue-500 to-primary shadow-lg ring-2 ring-white/20 overflow-hidden"
+              className="relative h-12 w-12 rounded-full bg-white shadow-lg ring-2 ring-white/40 overflow-hidden"
               animate={{ rotate: [0, 2, -2, 0] }}
               transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut' }}
             >
-              <span className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(255,255,255,0.25),transparent_45%)] opacity-60 group-hover:opacity-90 transition-opacity duration-500" />
-              <motion.span
-                className="absolute inset-0 bg-white/10"
-                animate={{ opacity: [0.08, 0.2, 0.08] }}
-                transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
-              />
+              <span className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(255,255,255,0.45),transparent_10%)] opacity-80 group-hover:opacity-100 transition-opacity duration-500" />
               <Image
                 src={Logo}
                 alt="Logo Kacper Kulesza"
                 fill
-                className="object-cover"
+                className="object-contain"
                 sizes="48px"
                 priority
               />
