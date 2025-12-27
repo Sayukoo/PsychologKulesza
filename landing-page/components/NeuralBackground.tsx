@@ -34,15 +34,18 @@ const NeuralBackground: React.FC = () => {
 
     const initParticles = () => {
       particles = [];
-      const particleCount = Math.floor((canvas.width * canvas.height) / 9000); // Adjust density
+      // Increased density slightly by dividing by a smaller number
+      const particleCount = Math.floor((canvas.width * canvas.height) / 8000);
 
       for (let i = 0; i < particleCount; i++) {
         particles.push({
           x: Math.random() * canvas.width,
           y: Math.random() * canvas.height,
-          vx: (Math.random() - 0.5) * 0.5, // Slow speed
-          vy: (Math.random() - 0.5) * 0.5,
-          size: Math.random() * 2 + 1,
+          // Increased speed significantly (approx 3-4x faster than before)
+          vx: (Math.random() - 0.5) * 1.5,
+          vy: (Math.random() - 0.5) * 1.5,
+          // Increased size for better visibility
+          size: Math.random() * 3 + 2,
         });
       }
     };
@@ -71,9 +74,11 @@ const NeuralBackground: React.FC = () => {
           const dy = p.y - p2.y;
           const distance = Math.sqrt(dx * dx + dy * dy);
 
-          if (distance < 150) {
-            ctx.strokeStyle = `rgba(181, 158, 93, ${1 - distance / 150})`; // #B59E5D with opacity
-            ctx.lineWidth = 0.5;
+          // Increased connection distance
+          if (distance < 180) {
+            // Increased opacity calculation for better visibility
+            ctx.strokeStyle = `rgba(181, 158, 93, ${0.8 * (1 - distance / 180)})`;
+            ctx.lineWidth = 0.8; // Thicker lines
             ctx.beginPath();
             ctx.moveTo(p.x, p.y);
             ctx.lineTo(p2.x, p2.y);
