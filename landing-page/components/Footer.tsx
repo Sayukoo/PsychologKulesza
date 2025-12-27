@@ -11,7 +11,6 @@ export default function Footer() {
 
       <div className="relative z-10 max-w-4xl mx-auto flex flex-col items-center">
         <FadeIn>
-          <h2 className="text-3xl font-bold mb-6">Zacznij działać.</h2>
           <p className="text-xl text-slate-300 mb-10 max-w-2xl leading-relaxed">
             Jeśli jesteś gotów na pracę, która wymaga zaangażowania, ale daje wymierne efekty – zapraszam.
           </p>

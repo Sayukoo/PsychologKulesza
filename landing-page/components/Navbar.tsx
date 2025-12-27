@@ -2,10 +2,12 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Menu, X } from 'lucide-react';
 import { usePathname } from 'next/navigation';
 import { clsx } from 'clsx';
 import { motion, AnimatePresence } from 'framer-motion';
+import Logo from './images/logo.png';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -44,8 +46,36 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
-          <Link href="/" className="text-white font-serif text-2xl font-bold tracking-wide z-50 relative" onClick={handleLinkClick}>
-            Kacper Kulesza
+          <Link
+            href="/"
+            className="z-50 relative group flex items-center gap-3"
+            onClick={handleLinkClick}
+            aria-label="Strona główna - Kacper Kulesza"
+          >
+            <motion.div
+              className="relative h-12 w-12 rounded-full bg-gradient-to-br from-accent via-blue-500 to-primary shadow-lg ring-2 ring-white/20 overflow-hidden"
+              animate={{ rotate: [0, 2, -2, 0] }}
+              transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut' }}
+            >
+              <span className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(255,255,255,0.25),transparent_45%)] opacity-60 group-hover:opacity-90 transition-opacity duration-500" />
+              <motion.span
+                className="absolute inset-0 bg-white/10"
+                animate={{ opacity: [0.08, 0.2, 0.08] }}
+                transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
+              />
+              <Image
+                src={Logo}
+                alt="Logo Kacper Kulesza"
+                fill
+                className="object-cover"
+                sizes="48px"
+                priority
+              />
+            </motion.div>
+            <div className="flex flex-col leading-none">
+              <span className="text-white font-serif text-lg font-bold tracking-wide">Kacper Kulesza</span>
+              <span className="text-xs text-slate-300 uppercase tracking-[0.18em]">psycholog</span>
+            </div>
           </Link>
 
           {/* Desktop Menu */}

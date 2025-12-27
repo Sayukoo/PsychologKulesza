@@ -8,7 +8,6 @@ export default function Why() {
         <FadeIn>
            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-16 text-center">
             Dlaczego warto?<br />
-            <span className="text-slate-500 text-2xl font-normal block mt-2">Spokój. Konkret. Jasność.</span>
           </h2>
         </FadeIn>
 
@@ -20,7 +19,7 @@ export default function Why() {
                 <h3 className="text-xl font-bold">Porządkowanie myślenia</h3>
               </div>
               <p className="text-slate-600 leading-relaxed">
-                Zamiast chaosu i natłoku myśli — struktura. Pomagam nazwać to, co nienazwane, i ułożyć sprawy w logiczną całość. To przestrzeń na chłodną analizę, która przynosi ulgę.
+                Zamiast chaosu i natłoku myśli — struktura. Pomagam nazwać to, co nienazwane, i ułożyć sprawy w logiczną całość. 
               </p>
             </div>
           </StaggerItem>
@@ -44,7 +43,7 @@ export default function Why() {
                 <h3 className="text-xl font-bold">Bez pustych obietnic</h3>
               </div>
               <p className="text-slate-600 leading-relaxed">
-                Nie obiecuję, że "naprawię" Twoje życie w godzinę. Nie stosuję sztuczek motywacyjnych. Oferuję rzetelną, merytoryczną rozmowę, która daje oparcie i pozwala ruszyć z miejsca.
+                Nie obiecuję, że "naprawię" Twoje życie w godzinę.  Oferuję rzetelną, merytoryczną rozmowę, która daje oparcie i pozwala ruszyć z miejsca.
               </p>
             </div>
           </StaggerItem>

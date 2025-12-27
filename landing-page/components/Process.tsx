@@ -7,7 +7,7 @@ export default function Process() {
       <FadeIn>
         <h2 className="text-3xl md:text-4xl font-bold text-primary mb-16 text-center">
           Jak wygląda współpraca?<br />
-          <span className="text-accent text-2xl font-normal block mt-2">Zasady i forma spotkań.</span>
+          <span className="text-accent text-2xl font-normal block mt-2">Zasady i forma spotkań</span>
         </h2>
       </FadeIn>
 
@@ -22,7 +22,7 @@ export default function Process() {
           {
             icon: Clock,
             title: "Czas trwania",
-            desc: "Standardowa konsultacja trwa 50 minut. To optymalny czas na omówienie bieżących spraw, analizę i wypracowanie wniosków bez pośpiechu.",
+            desc: "Standardowa konsultacja trwa 50 minut. To optymalny czas na omówienie bieżących spraw, analizę i wypracowanie wniosków.",
             color: "text-accent"
           },
           {
@@ -55,7 +55,7 @@ export default function Process() {
               <div>
                 <h3 className="font-bold text-lg text-primary mb-2">To nie jest psychoterapia</h3>
                 <p className="text-slate-700 leading-relaxed">
-                  Moje konsultacje mają charakter rozwojowy i edukacyjny. Nie prowadzę psychoterapii, nie leczę zaburzeń psychicznych ani nie wystawiam diagnoz klinicznych. Pracujemy na Twoich zasobach poznawczych, skupiając się na strategii i efektywności.
+                  Moje konsultacje mają charakter rozwojowy i edukacyjny. Nie prowadzę psychoterapii, nie leczę zaburzeń psychicznych ani nie wystawiam diagnoz klinicznych. Pracujemy na Twoich zasobach, skupiając się na strategii i efektywności.
                 </p>
               </div>
            </div>
@@ -67,7 +67,7 @@ export default function Process() {
               <div>
                 <h3 className="font-bold text-lg text-primary mb-2">Nagrywanie spotkań</h3>
                 <p className="text-slate-700 leading-relaxed">
-                  Działam w sposób transparentny. Konsultacje są nagrywane (za Twoją zgodą) wyłącznie do celów rozwojowych i superwizyjnych, aby zapewnić najwyższą jakość mojej pracy. Nagrania są w pełni poufne i bezpieczne.
+                  Działam w sposób transparentny. W trosce o najwyższą jakość świadczonych usług, konsultacje są nagrywane wyłącznie za Twoją uprzednią, dobrowolną zgodą. Nagrania służą wyłącznie celom superwizyjnym i rozwojowym, są przechowywane w sposób bezpieczny i usuwane po zrealizowaniu celu. Jako psycholog gwarantuję pełną poufność i ochronę Twoich danych.
                 </p>
               </div>
            </div>

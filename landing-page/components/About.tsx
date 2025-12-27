@@ -15,7 +15,7 @@ export default function About() {
                src={ProfileImage}
                alt="Kacper Kulesza - Profil"
                fill
-               className="object-cover object-top grayscale hover:grayscale-0 transition-all duration-700"
+               className="object-cover object-top transition-all duration-700"
                sizes="(max-width: 768px) 100vw, 50vw"
              />
              <div className="absolute inset-0 bg-linear-to-tr from-primary/10 to-transparent pointer-events-none" />
@@ -24,28 +24,27 @@ export default function About() {
 
         <StaggerContainer className="order-1 md:order-2">
           <StaggerItem>
-            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6">
+            <h2 className="text-4xl md:text-4xl font-bold text-primary mb-6">
               Kim jestem?<br />
-              <span className="text-accent">Racjonalność. Bezpieczeństwo. Spokój.</span>
             </h2>
           </StaggerItem>
 
           <StaggerItem>
              <div className="space-y-6 text-lg text-foreground/80 leading-relaxed">
               <p>
-                Nazywam się Kacper Kulesza. Jestem magistrem psychologii. Na co dzień pracuję również jako <span className="font-semibold text-primary">analityk statystyczny</span> i <span className="font-semibold text-primary">korepetytor</span>. W swojej pracy łączę psychologiczną wiedzę z precyzją liczb i dydaktycznym podejściem. Nie oceniam, nie "kołczuję". Pomagam spojrzeć na Twoją sytuację z dystansu, nazwać to, co nienazwane, i poukładać to, co rozsypane.
+                Nazywam się Kacper Kulesza. Jestem magistrem psychologii. Na co dzień pracuję również jako <span className="font-semibold text-primary">analityk statystyczny</span> i <span className="font-semibold text-primary">korepetytor</span>. W swojej pracy łączę psychologiczną wiedzę z precyzją liczb i dydaktycznym podejściem.  Pomagam spojrzeć na Twoją sytuację z dystansu, nazwać to, co nienazwane, i poukładać to, co rozsypane.
               </p>
               <p>
-                Prowadzę konsultacje psychologiczne i psychoedukację. Moje podejście opiera się na porządkowaniu myślenia, analizie faktów oraz zrozumieniu mechanizmów, które Tobą kierują. Doświadczenie w analizie danych pozwala mi widzieć wzorce tam, gdzie inni widzą chaos.
+                Prowadzę konsultacje psychologiczne i psychoedukację. Moje podejście opiera się na porządkowaniu myślenia, analizie faktów oraz zrozumieniu mechanizmów, które Tobą kierują. 
               </p>
               <p className="border-l-4 border-accent pl-4 italic text-foreground/70">
-                Jestem tu po to, abyś mógł spokojnie przeanalizować swoje decyzje, poczuć stabilizację i odzyskać poczucie wpływu na własne życie. Bez presji, w Twoim tempie.
+                Jestem po to, abyś mógł spokojnie przeanalizować swoje decyzje, poczuć stabilizację i odzyskać poczucie wpływu na własne życie
               </p>
             </div>
           </StaggerItem>
 
           <StaggerItem>
-            <div className="mt-8">
+            <div className="mt-8 flex justify-start">
               <Link
                 href="https://www.linkedin.com/in/konstruktywizm/"
                 target="_blank"

@@ -27,7 +27,7 @@ export default function Hero() {
 
           <StaggerItem>
             <p className="text-xl sm:text-2xl text-slate-200 mb-10 leading-relaxed max-w-2xl">
-              Dla osób, które szukają zrozumienia, a nie motywacyjnych haseł.
+              Dla osób, które szukają zrozumienia.
               <span className="text-white font-semibold"> Konkretna rozmowa</span> o Twoich sprawach.
             </p>
           </StaggerItem>
