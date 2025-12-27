@@ -57,7 +57,7 @@ export default function Navbar() {
                 className={clsx(
                   'text-sm font-medium transition-colors hover:text-accent',
                   link.cta
-                    ? 'bg-accent text-white px-5 py-2 rounded-sm hover:bg-amber-500 shadow-lg hover:shadow-amber-500/20'
+                    ? 'bg-accent text-white px-5 py-2 rounded-sm hover:brightness-90 shadow-lg hover:shadow-accent/20'
                     : 'text-slate-200'
                 )}
               >

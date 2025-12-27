@@ -14,15 +14,15 @@ export default function Audience() {
   ];
 
   return (
-    <section id="dla-kogo" className="py-24 px-4 sm:px-6 lg:px-8 bg-slate-900 text-white relative overflow-hidden">
+    <section id="dla-kogo" className="py-24 px-4 sm:px-6 lg:px-8 bg-secondary text-white relative overflow-hidden">
        {/* Ambient bg */}
-       <div className="absolute inset-0 bg-primary/20 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary/30 via-slate-900 to-slate-900 opacity-60 pointer-events-none" />
+       <div className="absolute inset-0 bg-primary/20 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary/30 via-secondary to-secondary opacity-60 pointer-events-none" />
 
       <div className="max-w-7xl mx-auto relative z-10">
         <FadeIn>
            <h2 className="text-3xl md:text-4xl font-bold mb-16 text-center">
             Dla kogo są konsultacje?<br />
-            <span className="text-slate-400 text-2xl font-normal block mt-2">Sytuacje, w których pomagam.</span>
+            <span className="text-muted-foreground text-2xl font-normal block mt-2">Sytuacje, w których pomagam.</span>
           </h2>
         </FadeIn>
 

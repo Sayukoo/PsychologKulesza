@@ -8,23 +8,31 @@ html {
   --font-sans: var(--font-sans);
   --font-serif: var(--font-serif);
 
-  --color-primary: #0f4c5c;
+  /* Primary: Dark Navy / Steel Blue (#2E3A44) */
+  --color-primary: #2E3A44;
   --color-primary-foreground: #ffffff;
 
-  --color-secondary: #1e293b;
+  /* Secondary: Graphite / Anthracite (#2B2E33) */
+  --color-secondary: #2B2E33;
   --color-secondary-foreground: #ffffff;
 
-  --color-accent: #d97706;
+  /* Accent: Muted Gold / Brass (#B59E5D) */
+  --color-accent: #B59E5D;
   --color-accent-foreground: #ffffff;
 
-  --color-muted: #e2e8f0;
-  --color-muted-foreground: #475569;
+  /* Muted: Lighter Graphite/Grey for borders/muted text */
+  --color-muted: #E2E8F0;
+  --color-muted-foreground: #4A4E55;
 
+  /* Card: White or Off-white. Keeping white for contrast against off-white bg */
   --color-card: #ffffff;
-  --color-card-foreground: #0f172a;
+  --color-card-foreground: #2B2E33;
 
-  --color-background: #f8fafc;
-  --color-foreground: #334155;
+  /* Background: Off-white (#F4F4F2) */
+  --color-background: #F4F4F2;
+
+  /* Foreground: Graphite / Anthracite (#2B2E33) */
+  --color-foreground: #2B2E33;
 }
 
 @layer base {

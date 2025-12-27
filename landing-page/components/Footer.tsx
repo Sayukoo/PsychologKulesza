@@ -18,7 +18,7 @@ export default function Footer() {
 
           <a
             href="#booking"
-            className="group inline-flex items-center justify-center px-8 py-4 text-base font-bold text-white bg-accent hover:bg-amber-500 transition-all duration-300 rounded-sm shadow-lg mb-12"
+            className="group inline-flex items-center justify-center px-8 py-4 text-base font-bold text-white bg-accent hover:brightness-90 transition-all duration-300 rounded-sm shadow-lg mb-12"
           >
             Rezerwuj termin
             <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
