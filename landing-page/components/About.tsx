@@ -1,5 +1,6 @@
 import { FadeIn, StaggerContainer, StaggerItem } from './FadeIn';
 import Image from 'next/image';
+import ProfileImage from './images/Profile_website.png';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 
@@ -11,11 +12,11 @@ export default function About() {
           <div className="absolute inset-0 bg-accent/20 translate-x-4 translate-y-4 rounded-lg transition-transform group-hover:translate-x-2 group-hover:translate-y-2 duration-500 ease-out" />
           <div className="relative bg-white/50 h-[500px] w-full flex items-center justify-center text-muted-foreground font-mono text-sm border border-muted rounded-lg shadow-xl overflow-hidden">
              <Image
-                src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=1000&auto=format&fit=crop"
-                alt="Kacper Kulesza - Profil"
-                fill
-                className="object-cover object-top grayscale hover:grayscale-0 transition-all duration-700"
-                sizes="(max-width: 768px) 100vw, 50vw"
+               src={ProfileImage}
+               alt="Kacper Kulesza - Profil"
+               fill
+               className="object-cover object-top grayscale hover:grayscale-0 transition-all duration-700"
+               sizes="(max-width: 768px) 100vw, 50vw"
              />
              <div className="absolute inset-0 bg-linear-to-tr from-primary/10 to-transparent pointer-events-none" />
           </div>
