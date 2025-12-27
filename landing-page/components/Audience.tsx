@@ -23,7 +23,7 @@ export default function Audience() {
         <FadeIn>
            <h2 className="text-3xl md:text-4xl font-bold mb-16 text-center">
             Dla kogo są konsultacje?<br />
-            <span className="text-muted-foreground text-2xl font-normal block mt-2">Sytuacje, w których pomagam.</span>
+            <span className=" text-2xl font-normal block mt-2">Sytuacje, w których pomagam</span>
           </h2>
         </FadeIn>
 

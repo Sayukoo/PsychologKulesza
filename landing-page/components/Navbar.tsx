@@ -52,17 +52,17 @@ export default function Navbar() {
             aria-label="Strona główna - Kacper Kulesza"
           >
             <motion.div
-              className="relative h-12 w-12 rounded-full bg-white shadow-lg ring-2 ring-white/40 overflow-hidden"
+              className="relative h-12 w-12 overflow-visible"
               animate={{ rotate: [0, 2, -2, 0] }}
               transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut' }}
             >
-              <span className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(255,255,255,0.45),transparent_10%)] opacity-80 group-hover:opacity-100 transition-opacity duration-500" />
               <Image
                 src={Logo}
                 alt="Logo Kacper Kulesza"
                 fill
                 className="object-contain"
-                sizes="48px"
+                sizes="96px"
+                style={{ filter: 'brightness(0) invert(1)', transform: 'scale(2.8)', transformOrigin: 'center' }}
                 priority
               />
             </motion.div>

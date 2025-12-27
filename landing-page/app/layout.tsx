@@ -21,13 +21,13 @@ const lato = Lato({
 export const metadata: Metadata = {
   metadataBase: new URL('https://psychologkacper.pl'),
   title: {
-    default: "Kacper Kulesza - Tw?j Partner w Rozwoju",
+    default: "Psycholog Kacper",
     template: "%s | Kacper Kulesza"
   },
   description:
     "Konsultacje rozwojowe, kt?re pomog? Ci zrozumie? w?asny system operacyjny i budowa? ?ycie w zgodzie z Twoim potencja?em.",
   openGraph: {
-    title: "Kacper Kulesza - Tw?j Partner w Rozwoju",
+    title: "Psycholog Kacper",
     description: "Konsultacje rozwojowe, kt?re pomog? Ci zrozumie? w?asny system operacyjny i budowa? ?ycie w zgodzie z Twoim potencja?em.",
     url: 'https://psychologkacper.pl',
     siteName: 'Kacper Kulesza',
