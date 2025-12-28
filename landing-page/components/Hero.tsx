@@ -5,7 +5,7 @@ import NeuralBackground from './NeuralBackground';
 
 export default function Hero() {
   return (
-    <section id="start" className="relative w-full min-h-[90vh] flex items-center justify-center bg-primary overflow-hidden">
+    <section id="start" className="relative w-full min-h-[90vh] flex items-center justify-center bg-primary overflow-hidden pt-32">
       {/* Dynamic Background */}
       <NeuralBackground />
 

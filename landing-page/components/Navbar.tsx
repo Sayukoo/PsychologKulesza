@@ -39,7 +39,8 @@ export default function Navbar() {
   return (
     <nav
       className={clsx(
-        'fixed top-0 left-0 right-0 z-50 transition-all duration-300 backdrop-blur-md',
+        'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
+        !isOpen && 'backdrop-blur-md',
         scrolled ? 'bg-primary/95 py-3 shadow-lg' : 'bg-transparent py-5'
       )}
     >
@@ -109,7 +110,8 @@ export default function Navbar() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: '100%' }}
             transition={{ type: "spring", damping: 25, stiffness: 200 }}
-            className="fixed inset-0 bg-slate-900/95 backdrop-blur-xl z-40 flex flex-col items-center justify-center space-y-8 md:hidden"
+            className="fixed inset-0 bg-[#2E3A44] z-[60] flex flex-col items-center justify-center space-y-8 md:hidden"
+            style={{ backgroundColor: '#2E3A44' }}
           >
             {navLinks.map((link, i) => (
               <motion.div
