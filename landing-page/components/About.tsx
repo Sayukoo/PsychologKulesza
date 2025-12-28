@@ -6,11 +6,11 @@ import { ArrowRight } from 'lucide-react';
 
 export default function About() {
   return (
-    <section id="o-mnie" className="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto overflow-hidden">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-        <FadeIn direction="right" className="order-2 md:order-1 relative group">
+    <section id="o-mnie" className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto overflow-hidden">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center">
+        <FadeIn direction="right" className="relative group">
           <div className="absolute inset-0 bg-accent/20 translate-x-4 translate-y-4 rounded-lg transition-transform group-hover:translate-x-2 group-hover:translate-y-2 duration-500 ease-out" />
-          <div className="relative bg-white/50 h-[500px] w-full flex items-center justify-center text-muted-foreground font-mono text-sm border border-muted rounded-lg shadow-xl overflow-hidden">
+          <div className="relative bg-white/50 h-[350px] sm:h-[500px] w-full flex items-center justify-center text-muted-foreground font-mono text-sm border border-muted rounded-lg shadow-xl overflow-hidden">
              <Image
                src={ProfileImage}
                alt="Kacper Kulesza - Profil"
@@ -22,9 +22,9 @@ export default function About() {
           </div>
         </FadeIn>
 
-        <StaggerContainer className="order-1 md:order-2">
+        <StaggerContainer>
           <StaggerItem>
-            <h2 className="text-4xl md:text-4xl font-bold text-primary mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6">
               Kim jestem?<br />
             </h2>
           </StaggerItem>

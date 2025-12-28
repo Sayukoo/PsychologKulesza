@@ -3,6 +3,7 @@ import { Playfair_Display, Lato } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import CookieBanner from "@/components/CookieBanner";
 import ScrollToTop from "@/components/ScrollToTop";
+import MobileStickyCTA from "@/components/MobileStickyCTA";
 import "./globals.css";
 
 const playfair = Playfair_Display({
@@ -52,6 +53,7 @@ export default function RootLayout({
       >
         <Navbar />
         {children}
+        <MobileStickyCTA />
         <ScrollToTop />
         <CookieBanner />
       </body>

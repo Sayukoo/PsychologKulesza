@@ -12,14 +12,14 @@ export default function Hero() {
       <div className="relative z-10 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
         <StaggerContainer className="max-w-4xl">
           <StaggerItem>
-            <h1 className="text-5xl sm:text-7xl font-bold tracking-tight text-white mb-6 leading-[1.1]">
+            <h1 className="text-3xl sm:text-5xl md:text-7xl font-bold tracking-tight text-white mb-6 leading-[1.15] sm:leading-[1.1]">
               Przestrzeń do analizy, zrozumienia i trzeźwego spojrzenia <br />
               <span className="text-accent">na własne życie.</span>
             </h1>
           </StaggerItem>
 
           <StaggerItem>
-            <p className="text-xl sm:text-2xl text-slate-200 mb-10 leading-relaxed max-w-2xl">
+            <p className="text-lg sm:text-2xl text-slate-200 mb-8 sm:mb-10 leading-relaxed max-w-2xl">
               <span className="text-white font-semibold"> Konkretna rozmowa</span> o Twoich sprawach.
             </p>
           </StaggerItem>

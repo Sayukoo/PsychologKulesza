@@ -105,23 +105,33 @@ export default function Navbar() {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            className="fixed inset-0 bg-slate-900/98 z-40 flex flex-col items-center justify-center space-y-8 md:hidden"
+            initial={{ opacity: 0, x: '100%' }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: '100%' }}
+            transition={{ type: "spring", damping: 25, stiffness: 200 }}
+            className="fixed inset-0 bg-slate-900/95 backdrop-blur-xl z-40 flex flex-col items-center justify-center space-y-8 md:hidden"
           >
-            {navLinks.map((link) => (
-              <Link
+            {navLinks.map((link, i) => (
+              <motion.div
                 key={link.name}
-                href={link.href}
-                onClick={handleLinkClick}
-                className={clsx(
-                  'text-2xl font-serif font-medium transition-colors',
-                  link.cta ? 'text-accent' : 'text-white hover:text-accent'
-                )}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.1 + i * 0.1 }}
               >
-                {link.name}
-              </Link>
+                <Link
+                  href={link.href}
+                  onClick={handleLinkClick}
+                  className={clsx(
+                    'text-3xl font-serif font-medium transition-colors relative group',
+                    link.cta ? 'text-accent' : 'text-white hover:text-accent'
+                  )}
+                >
+                  {link.name}
+                  {!link.cta && (
+                    <span className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-accent transition-all group-hover:w-full" />
+                  )}
+                </Link>
+              </motion.div>
             ))}
           </motion.div>
         )}
