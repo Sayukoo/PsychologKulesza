@@ -1,4 +1,4 @@
-import ZnanyLekarzWidget from './ZnanyLekarzWidget';
+import GoogleCalendarWidget from './GoogleCalendarWidget';
 import { CalendarCheck } from 'lucide-react';
 import { FadeIn } from './FadeIn';
 
@@ -18,7 +18,7 @@ export default function Booking() {
           </p>
 
           <div className="bg-white p-4 md:p-6 rounded-xl shadow-2xl shadow-primary/5 min-h-[400px] border border-slate-100">
-            <ZnanyLekarzWidget />
+            <GoogleCalendarWidget />
           </div>
         </div>
       </FadeIn>
