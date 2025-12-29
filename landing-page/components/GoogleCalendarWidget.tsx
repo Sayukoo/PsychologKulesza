@@ -6,11 +6,11 @@ export default function GoogleCalendarWidget() {
         src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ1giqEn8r9GJbCeU8qHNnLb2djJcDieeG_apCipdUUoDuLT7vsigFUtaBfsCu5Gd07vgYRIY-Ip?gv=true"
         style={{ border: 0 }}
         width="100%"
-        height="1600"
+        height="1200"
         frameBorder="0"
         scrolling="no"
         title="Kalendarz rezerwacji wizyty"
-        className="w-full h-[1600px]"
+        className="w-full h-[1200px]"
       />
     </div>
   );
