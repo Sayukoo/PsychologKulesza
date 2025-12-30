@@ -1,12 +1,25 @@
+'use client';
+
+import { useEffect } from 'react';
 
 export default function GoogleCalendarWidget() {
+  useEffect(() => {
+    const scriptId = 'calendly-widget-script';
+    if (document.getElementById(scriptId)) return;
+
+    const script = document.createElement('script');
+    script.id = scriptId;
+    script.src = 'https://assets.calendly.com/assets/external/widget.js';
+    script.async = true;
+    document.body.appendChild(script);
+  }, []);
+
   return (
     <div className="w-full rounded-lg overflow-hidden">
-      <iframe
-        src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ1giqEn8r9GJbCeU8qHNnLb2djJcDieeG_apCipdUUoDuLT7vsigFUtaBfsCu5Gd07vgYRIY-Ip?gv=true"
-        title="Kalendarz rezerwacji wizyty"
-        className="w-full min-h-[1400px] sm:min-h-[1200px] md:min-h-[1100px] lg:min-h-[1200px] border-0"
-        loading="lazy"
+      <div
+        className="calendly-inline-widget w-full"
+        data-url="https://calendly.com/easystats/15min?hide_gdpr_banner=1"
+        style={{ minWidth: '320px', height: '1100px' }}
       />
     </div>
   );
