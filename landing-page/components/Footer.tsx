@@ -11,17 +11,6 @@ export default function Footer() {
 
       <div className="relative z-10 max-w-4xl mx-auto flex flex-col items-center">
         <FadeIn>
-          <p className="text-xl text-slate-300 mb-10 max-w-2xl leading-relaxed">
-            Jeśli jesteś gotów na pracę, która wymaga zaangażowania, ale daje wymierne efekty – zapraszam.
-          </p>
-
-          <a
-            href="#booking"
-            className="group inline-flex items-center justify-center px-8 py-4 text-base font-bold text-white bg-accent hover:brightness-90 transition-all duration-300 rounded-sm shadow-lg mb-12"
-          >
-            Rezerwuj termin
-            <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-          </a>
 
           <div className="text-sm text-slate-300 border-t border-white/10 pt-8 w-full">
              <div className="flex flex-col md:flex-row justify-between items-center gap-4">
