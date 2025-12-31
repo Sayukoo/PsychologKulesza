@@ -13,14 +13,14 @@ export default function Hero() {
         <StaggerContainer className="max-w-4xl">
           <StaggerItem>
             <h1 className="text-3xl sm:text-5xl md:text-7xl font-bold tracking-tight text-white mb-6 leading-[1.15] sm:leading-[1.1]">
-              Przestrzeń do analizy, zrozumienia i trzeźwego spojrzenia <br />
-              <span className="text-accent">na własne życie.</span>
+              Czujesz, że kręcisz się w kółko? Znajdź źródło problemu <br />
+              <span className="text-accent"> zamiast leczyć objawy. </span>
             </h1>
           </StaggerItem>
 
           <StaggerItem>
             <p className="text-lg sm:text-2xl text-slate-200 mb-8 sm:mb-10 leading-relaxed max-w-2xl">
-              <span className="text-white font-semibold"> Konkretna rozmowa</span> o Twoich sprawach.
+              <span className="text-white font-semibold"> </span>
             </p>
           </StaggerItem>
 
