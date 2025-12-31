@@ -1,17 +1,24 @@
 import Link from 'next/link';
-import { ArrowRight, Sparkles } from 'lucide-react';
+import { ArrowRight, Brain } from 'lucide-react';
 import { FadeIn, StaggerContainer, StaggerItem } from './FadeIn';
 import NeuralBackground from './NeuralBackground';
 
 export default function Hero() {
   return (
-    <section id="start" className="relative w-full min-h-[90vh] flex items-center justify-center bg-primary overflow-hidden pt-32">
+    <section id="start" className="relative w-full min-h-[90vh] flex items-center justify-center bg-primary overflow-hidden pt-24 pb-16 md:pt-28 md:pb-20">
       {/* Dynamic Background */}
       <NeuralBackground />
 
       <div className="relative z-10 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
         <StaggerContainer className="max-w-4xl">
           <StaggerItem>
+            <div className="mb-4 inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-semibold text-white/80 backdrop-blur-sm shadow-lg shadow-accent/10">
+              <span className="relative flex h-7 w-7 items-center justify-center">
+                <span className="absolute inline-flex h-full w-full rounded-full bg-accent/25 blur-md animate-pulse" aria-hidden />
+                <Brain className="relative h-4 w-4 text-accent drop-shadow-[0_0_10px_rgba(181,158,93,0.7)]" />
+              </span>
+              <span className="relative">Psychologia oparta na badaniach</span>
+            </div>
             <h1 className="text-3xl sm:text-5xl md:text-7xl font-bold tracking-tight text-white mb-6 leading-[1.15] sm:leading-[1.1]">
               Czujesz, że kręcisz się w kółko? Znajdź źródło problemu <br />
               <span className="text-accent"> zamiast leczyć objawy. </span>

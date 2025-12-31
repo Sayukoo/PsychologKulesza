@@ -30,15 +30,15 @@ export default function About() {
           </StaggerItem>
 
           <StaggerItem>
-             <div className="space-y-6 text-lg text-foreground/80 leading-relaxed">
+            <div className="space-y-6 text-lg text-foreground/80 leading-relaxed">
               <p>
-                Nazywam się Kacper Kulesza. Jestem magistrem psychologii. Na co dzień pracuję również jako <span className="font-semibold text-primary">analityk statystyczny</span> i <span className="font-semibold text-primary">korepetytor</span>. W swojej pracy łączę psychologiczną wiedzę z precyzją liczb i dydaktycznym podejściem.  Pomagam spojrzeć na Twoją sytuację z dystansu, nazwać to, co nienazwane, i poukładać to, co rozsypane.
+                Nazywam się Kacper i jestem psychologiem o umyśle analityka. Na co dzień pracuję jako <span className="font-semibold text-primary">analityk statystyczny</span> i <span className="font-semibold text-primary">korepetytor matematyki</span>. W swojej pracy łączę psychologiczną wiedzę z precyzją liczb i dydaktycznym podejściem. Pomagam nazwać to, co nienazwane, i poukładać to, co rozsypane – bez zbędnego teoretyzowania.
               </p>
               <p>
                 Prowadzę konsultacje psychologiczne i psychoedukację. Moje podejście opiera się na porządkowaniu myślenia, analizie faktów oraz zrozumieniu mechanizmów, które Tobą kierują. 
               </p>
               <p className="border-l-4 border-accent pl-4 italic text-foreground/70">
-                Jestem po to, abyś mógł spokojnie przeanalizować swoje decyzje, poczuć stabilizację i odzyskać poczucie wpływu na własne życie
+                Używam najnowszych badań naukowych, aby lepiej zrozumieć ludzką psychikę i skuteczniej pomagać moim klientom.
               </p>
             </div>
           </StaggerItem>
