@@ -35,6 +35,18 @@ html {
 
   /* Foreground: Graphite / Anthracite (#2B2E33) */
   --color-foreground: #2B2E33;
+
+  --animate-shimmer: shimmer 3s infinite;
+
+  @keyframes shimmer {
+    0% { transform: translateX(-150%) skewX(-12deg); }
+    20% { transform: translateX(150%) skewX(-12deg); }
+    100% { transform: translateX(150%) skewX(-12deg); }
+  }
+}
+
+@utility animate-shimmer {
+  animation: var(--animate-shimmer);
 }
 
 @layer base {

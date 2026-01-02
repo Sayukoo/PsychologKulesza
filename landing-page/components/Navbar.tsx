@@ -85,11 +85,16 @@ export default function Navbar() {
                 className={clsx(
                   'text-sm font-medium transition-colors hover:text-accent',
                   link.cta
-                    ? 'bg-accent text-white px-5 py-2 rounded-sm hover:brightness-90 shadow-lg hover:shadow-accent/20'
+                    ? 'relative overflow-hidden bg-accent text-white px-5 py-2 rounded-sm hover:brightness-90 shadow-lg hover:shadow-accent/20 group'
                     : 'text-slate-200'
                 )}
               >
-                {link.name}
+                {link.cta && (
+                  <div className="absolute inset-0 flex h-full w-full justify-center group-hover:animate-shimmer md:animate-shimmer">
+                    <div className="relative h-full w-8 bg-white/20" />
+                  </div>
+                )}
+                <span className="relative z-10">{link.name}</span>
               </Link>
             ))}
           </div>
@@ -127,11 +132,18 @@ export default function Navbar() {
                   href={link.href}
                   onClick={handleLinkClick}
                   className={clsx(
-                    'text-3xl font-serif font-medium transition-colors relative group',
-                    link.cta ? 'text-accent' : 'text-white hover:text-accent'
+                    'transition-colors relative group',
+                    link.cta
+                      ? 'relative overflow-hidden bg-accent text-white px-8 py-3 rounded-sm shadow-lg text-xl font-medium'
+                      : 'text-3xl font-serif font-medium text-white hover:text-accent'
                   )}
                 >
-                  {link.name}
+                  {link.cta && (
+                    <div className="absolute inset-0 flex h-full w-full justify-center animate-shimmer">
+                      <div className="relative h-full w-8 bg-white/20" />
+                    </div>
+                  )}
+                  <span className="relative z-10">{link.name}</span>
                   {!link.cta && (
                     <span className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-accent transition-all group-hover:w-full" />
                   )}
