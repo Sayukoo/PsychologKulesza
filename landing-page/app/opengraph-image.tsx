@@ -12,6 +12,14 @@ export const size = {
 export const contentType = 'image/png';
 
 export default async function Image() {
+  const logoData = await fetch(
+    new URL('../components/images/logo.png', import.meta.url)
+  );
+  const logoArrayBuffer = await logoData.arrayBuffer();
+  const logoSrc = `data:image/png;base64,${arrayBufferToBase64(
+    logoArrayBuffer
+  )}`;
+
   return new ImageResponse(
     (
       <div
@@ -29,17 +37,28 @@ export default async function Image() {
         }}
       >
         <div
-            style={{
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                width: '100%',
-                marginBottom: '20px',
-            }}
-        >
-            <span style={{ fontWeight: 'bold' }}>Kacper Kulesza</span>
-        </div>
-        <div
+        style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            width: '100%',
+            marginBottom: '24px',
+        }}
+      >
+            <img
+              src={logoSrc}
+              alt="Logo Kacper Kulesza"
+              width={180}
+              height={180}
+              style={{
+                borderRadius: '50%',
+                background: 'white',
+                padding: '16px',
+                boxShadow: '0 12px 50px rgba(0, 0, 0, 0.35)',
+              }}
+            />
+      </div>
+      <div
             style={{
                 fontSize: 48,
                 color: '#d97706', // Muted Gold/Amber (from theme)
@@ -57,4 +76,16 @@ export default async function Image() {
       ...size,
     }
   );
+}
+
+function arrayBufferToBase64(buffer: ArrayBuffer) {
+  const bytes = new Uint8Array(buffer);
+  const chunkSize = 0x8000;
+  let binary = '';
+
+  for (let i = 0; i < bytes.length; i += chunkSize) {
+    binary += String.fromCharCode(...bytes.subarray(i, i + chunkSize));
+  }
+
+  return btoa(binary);
 }
