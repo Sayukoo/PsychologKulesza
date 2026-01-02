@@ -36,30 +36,30 @@ export default function ContactPage() {
                     e-mail, a wrócę z terminem spotkania online.
                   </p>
 
-                  <div className="flex flex-col sm:flex-row gap-3">
+                  <div className="flex flex-col gap-3">
                     <a
                       href="tel:+48881408027"
-                      className="group inline-flex items-center gap-3 px-5 py-4 bg-accent text-white rounded-lg shadow-lg shadow-accent/25 hover:brightness-95 transition"
+                      className="group flex items-center gap-4 px-5 py-4 bg-accent text-white rounded-xl shadow-lg shadow-accent/25 hover:brightness-95 transition w-full"
                     >
-                      <span className="h-10 w-10 rounded-full bg-white/15 grid place-items-center">
-                        <Phone className="h-5 w-5" />
+                      <span className="h-12 w-12 rounded-full bg-white/20 grid place-items-center shrink-0">
+                        <Phone className="h-6 w-6" />
                       </span>
                       <div className="flex flex-col text-left">
-                        <span className="text-xs uppercase tracking-[0.18em] text-white/70">Telefon</span>
-                        <span className="text-lg font-semibold">{phone}</span>
+                        <span className="text-xs uppercase tracking-[0.18em] text-white/75 font-medium">Telefon</span>
+                        <span className="text-xl font-bold tracking-tight">{phone}</span>
                       </div>
                     </a>
 
                     <a
                       href={`mailto:${email}`}
-                      className="group inline-flex items-center gap-3 px-5 py-4 bg-white/10 text-white rounded-lg shadow-lg shadow-primary/25 hover:bg-white/15 transition border border-white/15"
+                      className="group flex items-center gap-4 px-5 py-4 bg-white/10 text-white rounded-xl shadow-lg shadow-black/10 hover:bg-white/15 transition border border-white/10 w-full"
                     >
-                      <span className="h-10 w-10 rounded-full bg-white/10 grid place-items-center">
-                        <Mail className="h-5 w-5" />
+                      <span className="h-12 w-12 rounded-full bg-white/10 grid place-items-center shrink-0">
+                        <Mail className="h-6 w-6" />
                       </span>
-                      <div className="flex flex-col text-left">
-                        <span className="text-xs uppercase tracking-[0.18em] text-white/70">E-mail</span>
-                        <span className="text-lg font-semibold">{email}</span>
+                      <div className="flex flex-col text-left overflow-hidden">
+                        <span className="text-xs uppercase tracking-[0.18em] text-white/60 font-medium">E-mail</span>
+                        <span className="text-lg font-semibold truncate w-full">{email}</span>
                       </div>
                     </a>
                   </div>
