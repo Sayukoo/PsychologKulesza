@@ -26,10 +26,10 @@ export const metadata: Metadata = {
     template: "%s | Kacper Kulesza"
   },
   description:
-    "Konsultacje rozwojowe, kt?re pomog? Ci zrozumie? w?asny system operacyjny i budowa? ?ycie w zgodzie z Twoim potencja?em.",
+    "Konsultacje psychologiczne, zrozum siebie dzięki podejściu science based ",
   openGraph: {
     title: "Psycholog Kacper",
-    description: "Konsultacje rozwojowe, kt?re pomog? Ci zrozumie? w?asny system operacyjny i budowa? ?ycie w zgodzie z Twoim potencja?em.",
+    description: "Konsultacje psychologiczne, zrozum siebie dzięki podejściu science based",
     url: 'https://psychologkacper.pl',
     siteName: 'Kacper Kulesza',
     locale: 'pl_PL',
