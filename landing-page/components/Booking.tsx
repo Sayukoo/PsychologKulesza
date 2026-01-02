@@ -13,7 +13,7 @@ export default function Booking() {
 
           <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4 md:mb-6">Umów konsultację</h2>
           <p className="text-base md:text-lg text-slate-600 mb-8 md:mb-12 max-w-2xl mx-auto">
-            Jeżeli to podejście jest Ci bliskie, zapraszam do rezerwacji terminu.
+            Jeżeli to podejście jest Ci bliskie, zapraszam do rezerwacji terminu
             <span className="block mt-2 text-sm text-slate-500">Wybierz dogodną datę poniżej.</span>
           </p>
 

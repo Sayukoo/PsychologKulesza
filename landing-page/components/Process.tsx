@@ -16,19 +16,19 @@ export default function Process() {
           {
             icon: Monitor,
             title: "Forma online",
-            desc: "Spotykamy się przez wideorozmowę. Zapewnia to komfort, oszczędność czasu i możliwość rozmowy z dowolnego miejsca, w którym czujesz się swobodnie.",
+            desc: "Spotykamy się przez wideorozmowę - oznacza to możliwość rozmowy z dowolnego miejsca, w którym czujesz się swobodnie.",
             color: "text-blue-600"
           },
           {
             icon: Clock,
             title: "Czas trwania",
-            desc: "Standardowa konsultacja trwa 50 minut. To optymalny czas na omówienie bieżących spraw, analizę i wypracowanie wniosków.",
+            desc: "Standardowa konsultacja trwa 50 minut. W tym czasie, omówimy twoją sprawę, zanalizujemy i wypracujemy wnioski.",
             color: "text-accent"
           },
           {
             icon: MessageSquare,
             title: "Charakter rozmowy",
-            desc: "Rozmawiamy rzeczowo i wprost. Skupiamy się na 'tu i teraz'. Nie wracamy do przeszłości, jeśli nie jest to konieczne dla zrozumienia obecnej sytuacji.",
+            desc: "Podchodzę do twojej sesji tak jakby miała być moją jedyną. Bazuje na modelu Single-Session Therapy, który skupia się na maksymalizacji wartości każdej rozmowy.",
             color: "text-emerald-600"
           }
         ].map((step, idx) => (
@@ -55,7 +55,7 @@ export default function Process() {
               <div>
                 <h3 className="font-bold text-lg text-primary mb-2">To nie jest psychoterapia</h3>
                 <p className="text-slate-700 leading-relaxed">
-                  Moje konsultacje mają charakter rozwojowy i edukacyjny. Nie prowadzę psychoterapii, nie leczę zaburzeń psychicznych ani nie wystawiam diagnoz klinicznych. Pracujemy na Twoich zasobach, skupiając się na strategii i efektywności.
+                  Moje konsultacje mają charakter rozwojowy i edukacyjny. Nie prowadzę psychoterapii, nie leczę zaburzeń psychicznych ani nie wystawiam diagnoz klinicznych.
                 </p>
               </div>
            </div>
@@ -67,7 +67,7 @@ export default function Process() {
               <div>
                 <h3 className="font-bold text-lg text-primary mb-2">Nagrywanie spotkań</h3>
                 <p className="text-slate-700 leading-relaxed">
-                  Działam w sposób transparentny. W trosce o najwyższą jakość świadczonych usług, konsultacje są nagrywane wyłącznie za Twoją uprzednią, dobrowolną zgodą. Nagrania służą wyłącznie celom superwizyjnym i rozwojowym, są przechowywane w sposób bezpieczny i usuwane po zrealizowaniu celu. Jako psycholog gwarantuję pełną poufność i ochronę Twoich danych.
+                  W celach zwiększenia jakości moich usług konsultacje są nagrywane wyłącznie za Twoją uprzednią, dobrowolną zgodą. Nagrania służą wyłącznie celom superwizyjnym i rozwojowym. Jako psycholog gwarantuję  poufność i ochronę Twoich danych.
                 </p>
               </div>
            </div>

@@ -9,9 +9,9 @@ export default function Audience() {
     "Twoje relacje stały się źródłem napięcia, a nie wsparcia",
     "Chcesz zrozumieć własne schematy działania",
     "Potrzebujesz uporządkować chaos w głowie",
-    "Szukasz konkretnej rozmowy, a nie pocieszenia",
+    "Szukasz konkretnej rozmowy",
     "Odczuwasz stres i napięcie utrudniające funkcjonowanie",
-    "Chcesz zrozumieć źródła swoich reakcji emocjonalnych"
+    "Chcesz zrozumieć źródła swoich reakcji"
   ];
 
   return (

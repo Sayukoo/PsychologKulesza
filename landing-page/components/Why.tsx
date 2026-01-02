@@ -16,10 +16,10 @@ export default function Why() {
             <div className="flex flex-col h-full bg-white p-6 md:p-8 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
               <div className="flex items-center mb-4 md:mb-6 text-primary">
                 <Lightbulb className="w-6 h-6 md:w-8 md:h-8 mr-3 text-accent" />
-                <h3 className="text-lg md:text-xl font-bold">Porządkowanie myślenia</h3>
+                <h3 className="text-lg md:text-xl font-bold">Struktura</h3>
               </div>
               <p className="text-slate-600 leading-relaxed text-sm md:text-base">
-                Zamiast chaosu i natłoku myśli — struktura. Pomagam nazwać to, co nienazwane, i ułożyć sprawy w logiczną całość. 
+                 Pomagam wyciągnąć sedno z natłoku myśli - zamiast analizować wszystko naraz, wspólnie ustalamy priorytety i nazywamy problem po imieniu. 
               </p>
             </div>
           </StaggerItem>
@@ -28,10 +28,10 @@ export default function Why() {
             <div className="flex flex-col h-full bg-white p-6 md:p-8 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
               <div className="flex items-center mb-4 md:mb-6 text-primary">
                 <CheckCircle2 className="w-6 h-6 md:w-8 md:h-8 mr-3 text-emerald-600" />
-                <h3 className="text-lg md:text-xl font-bold">Klarowność i decyzje</h3>
+                <h3 className="text-lg md:text-xl font-bold">Analiza i wybór</h3>
               </div>
               <p className="text-slate-600 leading-relaxed text-sm md:text-base">
-                Wspólnie analizujemy zyski, straty i możliwe scenariusze. Dzięki temu podejmujesz decyzje świadomie, w zgodzie ze swoimi wartościami, a nie pod wpływem chwilowych emocji.
+                Rozkładamy Twoją sytuację na czynniki pierwsze. Sprawdzamy zyski i straty, co pozwala Ci podjąć decyzję w zgodzie z faktami i własnymi wartościami, a nie pod dyktando lęku czy presji.
               </p>
             </div>
           </StaggerItem>
@@ -40,10 +40,10 @@ export default function Why() {
             <div className="flex flex-col h-full bg-white p-6 md:p-8 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
               <div className="flex items-center mb-4 md:mb-6 text-primary">
                 <ShieldCheck className="w-6 h-6 md:w-8 md:h-8 mr-3 text-blue-600" />
-                <h3 className="text-lg md:text-xl font-bold">Bez pustych obietnic</h3>
+                <h3 className="text-lg md:text-xl font-bold">Konkretny plan</h3>
               </div>
               <p className="text-slate-600 leading-relaxed text-sm md:text-base">
-                Nie obiecuję, że "naprawię" Twoje życie w godzinę.  Oferuję rzetelną, merytoryczną rozmowę, która daje oparcie i pozwala ruszyć z miejsca.
+              Nie oferuję gotowych recept na życie. Wychodzisz ze spotkania z jednym, konkretnym krokiem lub wnioskiem, który realnie możesz wdrożyć, by ruszyć z miejsca.
               </p>
             </div>
           </StaggerItem>

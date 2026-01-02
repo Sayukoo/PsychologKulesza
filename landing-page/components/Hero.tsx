@@ -21,7 +21,7 @@ export default function Hero() {
             </div>
             <h1 className="text-3xl sm:text-5xl md:text-7xl font-bold tracking-tight text-white mb-6 leading-[1.15] sm:leading-[1.1]">
               Czujesz, że kręcisz się w kółko? Znajdź źródło problemu <br />
-              <span className="text-accent"> zamiast leczyć objawy. </span>
+              <span className="text-accent"> zamiast leczyć objawy </span>
             </h1>
           </StaggerItem>
 
