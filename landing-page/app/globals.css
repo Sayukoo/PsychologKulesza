@@ -59,3 +59,46 @@ html {
     font-family: var(--font-serif);
   }
 }
+
+@layer components {
+  .btn-shine {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+  }
+
+  .btn-shine::after {
+    content: "";
+    position: absolute;
+    inset: -30%;
+    background: linear-gradient(120deg, transparent, rgba(255,255,255,0.55), transparent);
+    transform: translateX(-140%) skewX(-20deg);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  @media (hover: hover) {
+    .btn-shine:hover::after {
+      opacity: 1;
+      animation: button-shine 1s ease-out;
+    }
+  }
+
+  @media (hover: none) {
+    .btn-shine::after {
+      opacity: 0.25;
+      animation: button-shine 3s ease-out infinite;
+    }
+  }
+}
+
+@keyframes button-shine {
+  0% {
+    transform: translateX(-140%) skewX(-20deg);
+  }
+  100% {
+    transform: translateX(140%) skewX(-20deg);
+  }
+}

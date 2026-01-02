@@ -35,7 +35,7 @@ export default function Hero() {
             <div className="flex flex-col sm:flex-row gap-4">
               <a
                 href="#booking"
-                className="group relative inline-flex items-center justify-center px-8 py-4 text-base font-bold text-white bg-accent hover:brightness-90 transition-all duration-300 shadow-lg hover:shadow-accent/25 rounded-sm overflow-hidden"
+                className="group btn-shine relative inline-flex items-center justify-center px-8 py-4 text-base font-bold text-white bg-accent transition-all duration-300 shadow-lg hover:shadow-accent/25 rounded-sm overflow-hidden hover:text-white"
               >
                  <span className="relative z-10 flex items-center">
                   Umów konsultację
