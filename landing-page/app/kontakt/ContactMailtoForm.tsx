@@ -9,10 +9,11 @@ export default function ContactMailtoForm({ email }: { email: string }) {
     () => (data: { name: string; sender: string; subject?: string; message: string }) => {
       const subject = data.subject?.trim() || defaultSubject;
       const bodyLines = [
-        `Imię i nazwisko: ${data.name}`,
-        `E-mail: ${data.sender}`,
-        '',
         data.message,
+        '',
+        'Pozdrawiam serdecznie,',
+        data.name,
+        data.sender,
       ];
       const body = encodeURIComponent(bodyLines.join('\n'));
       return `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${body}`;
