@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, MouseEvent } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Menu, X } from 'lucide-react';
@@ -24,6 +24,32 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    if (!isHome) return;
+
+    const scrollToHash = () => {
+      const hash = window.location.hash;
+      if (!hash) return;
+
+      const targetId = hash.replace('#', '');
+
+      const scrollTarget = () => {
+        const targetElement = document.getElementById(targetId);
+        if (targetElement) {
+          targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      };
+
+      requestAnimationFrame(scrollTarget);
+      setTimeout(scrollTarget, 75);
+    };
+
+    scrollToHash();
+    window.addEventListener('hashchange', scrollToHash);
+
+    return () => window.removeEventListener('hashchange', scrollToHash);
+  }, [isHome]);
+
   const solidBackground = scrolled || !isHome;
 
   const navLinks = [
@@ -35,7 +61,18 @@ export default function Navbar() {
     { name: 'Umów wizytę', href: '/#booking', cta: true },
   ];
 
-  const handleLinkClick = () => {
+  const handleNavLinkClick = (event: MouseEvent<HTMLAnchorElement>, href: string) => {
+    if ((href.startsWith('/#') || href.startsWith('#')) && isHome) {
+      const targetId = href.replace('/#', '').replace('#', '');
+      const targetElement = document.getElementById(targetId);
+
+      if (targetElement) {
+        event.preventDefault();
+        targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        window.history.replaceState(null, '', `${window.location.pathname}#${targetId}`);
+      }
+    }
+
     setIsOpen(false);
   };
 
@@ -52,7 +89,7 @@ export default function Navbar() {
           <Link
             href="/"
             className="z-50 relative group flex items-center gap-3"
-            onClick={handleLinkClick}
+            onClick={(event) => handleNavLinkClick(event, '/')}
             aria-label="Strona główna - Kacper Kulesza"
           >
             <motion.div
@@ -82,6 +119,7 @@ export default function Navbar() {
               <Link
                 key={link.name}
                 href={link.href}
+                onClick={(event) => handleNavLinkClick(event, link.href)}
                 className={clsx(
                   'text-sm font-medium transition-colors hover:text-accent',
                   link.cta
@@ -90,7 +128,7 @@ export default function Navbar() {
                 )}
               >
                 {link.cta && (
-                  <div className="absolute inset-0 flex h-full w-full justify-center group-hover:animate-shimmer md:animate-shimmer">
+                  <div className="pointer-events-none absolute inset-0 flex h-full w-full justify-center group-hover:animate-shimmer md:animate-shimmer">
                     <div className="relative h-full w-8 bg-white/20" />
                   </div>
                 )}
@@ -130,16 +168,16 @@ export default function Navbar() {
               >
                 <Link
                   href={link.href}
-                  onClick={handleLinkClick}
+                  onClick={(event) => handleNavLinkClick(event, link.href)}
                   className={clsx(
                     'transition-colors relative group',
                     link.cta
-                      ? 'relative overflow-hidden bg-accent text-white px-8 py-3 rounded-sm shadow-lg text-xl font-medium'
+                      ? 'relative overflow-hidden bg-accent text-white px-8 py-3 rounded-sm shadow-lg text-xl font-medium inline-flex items-center justify-center'
                       : 'text-3xl font-serif font-medium text-white hover:text-accent'
                   )}
                 >
                   {link.cta && (
-                    <div className="absolute inset-0 flex h-full w-full justify-center animate-shimmer">
+                    <div className="pointer-events-none absolute inset-0 flex h-full w-full justify-center animate-shimmer">
                       <div className="relative h-full w-8 bg-white/20" />
                     </div>
                   )}

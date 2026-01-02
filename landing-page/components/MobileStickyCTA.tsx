@@ -30,7 +30,7 @@ export default function MobileStickyCTA() {
           className="fixed bottom-4 left-4 right-4 z-40 md:hidden"
         >
           <Link
-            href="#booking"
+            href="/#booking"
             className="flex items-center justify-center w-full bg-accent text-white font-bold py-4 rounded-lg shadow-xl shadow-accent/20 hover:brightness-95 transition-all"
           >
             <CalendarCheck className="w-5 h-5 mr-2" />
