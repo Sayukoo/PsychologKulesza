@@ -31,6 +31,7 @@ export default function Navbar() {
     { name: 'O mnie', href: '/#o-mnie' },
     { name: 'Dla kogo', href: '/#dla-kogo' },
     { name: 'Proces', href: '/#process' },
+    { name: 'Kontakt', href: '/kontakt' },
     { name: 'Umów wizytę', href: '/#booking', cta: true },
   ];
 
