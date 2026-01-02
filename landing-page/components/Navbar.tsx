@@ -24,6 +24,8 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const solidBackground = scrolled || !isHome;
+
   const navLinks = [
     { name: 'Start', href: '/#start' },
     { name: 'O mnie', href: '/#o-mnie' },
@@ -41,7 +43,7 @@ export default function Navbar() {
       className={clsx(
         'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
         !isOpen && 'backdrop-blur-md',
-        scrolled ? 'bg-primary/95 py-3 shadow-lg' : 'bg-transparent py-5'
+        solidBackground ? 'bg-primary/95 py-3 shadow-lg' : 'bg-transparent py-5'
       )}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
