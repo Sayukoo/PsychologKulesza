@@ -32,10 +32,10 @@ export default function About() {
           <StaggerItem>
             <div className="space-y-6 text-lg text-foreground/80 leading-relaxed">
               <p>
-                Nazywam się Kacper i jestem psychologiem o umyśle analityka.  Na co dzień pracuję jako <span className="font-semibold text-primary">analityk statystyczny</span> i <span className="font-semibold text-primary">korepetytor matematyki</span>. W swojej pracy łączę psychologiczną wiedzę z precyzją liczb i dydaktycznym podejściem. Pomagam nazwać to, co nienazwane, i poukładać to, co rozsypane.
+                Mam na imię Kacper i jestem psychologiem o umyśle analityka.  Na co dzień pracuję jako <span className="font-semibold text-primary">analityk statystyczny</span> i <span className="font-semibold text-primary">korepetytor matematyki</span>. W swojej pracy łączę psychologiczną wiedzę z precyzją liczb i dydaktycznym podejściem. Pomagam nazwać to, co nienazwane, i poukładać to, co rozsypane.
               </p>
               <p>
-                Od niedawana zacząłem prowadzić konsultacje psychologiczne. Moje podejście opiera się na porządkowaniu myślenia, analizie faktów oraz zrozumieniu mechanizmów, które Tobą kierują. Wierzę w naukowe podejście i zawsze próbuję używać najnowszych książek oraz badań w celu zrozumienia twojej sytuacji.
+                Moje podejście opiera się na porządkowaniu myślenia, analizie faktów oraz zrozumieniu mechanizmów, które Tobą kierują. Wierzę w naukowe podejście i zawsze używam najnowszych książek oraz badań w celu zrozumienia twojej sytuacji.
               </p>
     
             </div>
