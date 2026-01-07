@@ -8,12 +8,19 @@ const SECTION_REDIRECTS: Record<string, string> = {
   'umow-konsultacje': '/#booking',
 };
 
-export default function SectionRedirect({
+export function generateStaticParams() {
+  return Object.keys(SECTION_REDIRECTS).map((section) => ({
+    section,
+  }));
+}
+
+export default async function SectionRedirect({
   params,
 }: {
-  params: { section: string };
+  params: Promise<{ section: string }>;
 }) {
-  const target = SECTION_REDIRECTS[params.section];
+  const { section } = await params;
+  const target = SECTION_REDIRECTS[section];
 
   if (!target) {
     notFound();

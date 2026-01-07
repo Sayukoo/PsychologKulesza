@@ -1,6 +1,6 @@
 import Hero from '@/components/Hero';
 import About from '@/components/About';
-import Audience from '@/components/Audience';
+import TargetAudience from '@/components/TargetAudience';
 import Process from '@/components/Process';
 import Why from '@/components/Why';
 import Booking from '@/components/Booking';
@@ -18,7 +18,7 @@ export default function Home() {
       {/* New Order: Audience (Dla kogo) -> Process (Jak wygląda) -> Why (Jak pracuję/Dlaczego warto) -> About (O mnie) -> Offer (Cennik) -> Booking */}
 
       <FadeIn direction="up">
-        <Audience />
+        <TargetAudience />
       </FadeIn>
 
       <StaggerContainer className="py-0">
