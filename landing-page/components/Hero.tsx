@@ -6,7 +6,7 @@ export default function Hero() {
   return (
     <section id="start" className="relative w-full min-h-screen min-h-[100svh] flex items-center justify-center bg-[#FAF7F2] text-foreground overflow-hidden pt-24 pb-16 md:pt-28 md:pb-20">
       {/* Dynamic Background */}
-      <BackgroundBeams className="opacity-40" />
+      <BackgroundBeams className="opacity-80 sm:opacity-60" />
 
       <div className="relative z-10 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
         <StaggerContainer className="max-w-4xl">
