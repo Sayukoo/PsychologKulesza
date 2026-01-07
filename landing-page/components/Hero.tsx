@@ -22,7 +22,7 @@ export default function Hero() {
 
           <StaggerItem>
             <p className="text-lg sm:text-2xl text-foreground/70 mb-8 sm:mb-10 leading-relaxed max-w-2xl">
-              <span className="text-primary font-semibold"> </span>
+              Konsultacje dla osób, które myślą za dużo, analizują wszystko i stoją w miejscu
             </p>
           </StaggerItem>
 
