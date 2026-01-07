@@ -1,6 +1,6 @@
 import { CheckCircle2 } from 'lucide-react';
 import { FadeIn, StaggerContainer, StaggerItem } from './FadeIn';
-import { BubbleBackground } from '@/components/animate-ui/components/backgrounds/bubble';
+import { StarsBackground } from './StarsBackground';
 
 export default function Audience() {
   const problems = [
@@ -16,18 +16,11 @@ export default function Audience() {
 
   return (
     <section id="dla-kogo" className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-secondary text-white relative overflow-hidden">
-       {/* Animated Bubble Background */}
-       <BubbleBackground
-         className="absolute inset-0 bg-transparent"
-         colors={{
-           first: "46,58,68",
-           second: "181,158,93",
-           third: "43,46,51",
-           fourth: "46,58,68",
-           fifth: "181,158,93",
-           sixth: "43,46,51"
-         }}
-       />
+      <StarsBackground
+        className="absolute inset-0 bg-secondary"
+        starColor="#d4af37"
+        pointerEvents={false}
+      />
 
       <div className="max-w-7xl mx-auto relative z-10">
         <FadeIn>
