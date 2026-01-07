@@ -14,7 +14,9 @@ export default function Hero() {
 
             <h1 className="text-3xl sm:text-5xl md:text-7xl font-bold tracking-tight text-primary mb-6 leading-[1.15] sm:leading-[1.1]">
              Utknąłeś w myślach i nie możesz podjąć decyzji? <br />
-              <span className="text-foreground/90">W 60 minut uporządkujemy chaos</span>
+              <span className="text-foreground/90">
+                W <span className="text-accent">60 minut</span> uporządkujemy chaos
+              </span>
             </h1>
           </StaggerItem>
 
