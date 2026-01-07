@@ -51,12 +51,12 @@ export default function Navbar() {
   }, [isHome]);
 
   const navLinks = [
-    { name: 'Start', href: '/#start' },
-    { name: 'O mnie', href: '/#o-mnie' },
     { name: 'Dla kogo', href: '/#dla-kogo' },
-    { name: 'Proces', href: '/#process' },
+    { name: 'Jak wygląda konsultacja', href: '/#process' },
+    { name: 'Cennik', href: '/#cennik' },
+    { name: 'O mnie', href: '/#o-mnie' },
     { name: 'Kontakt', href: '/kontakt' },
-    { name: 'Umów wizytę', href: '/#booking', cta: true },
+    { name: 'Umów konsultację', href: '/#booking', cta: true },
   ];
 
   const handleNavLinkClick = (event: MouseEvent<HTMLAnchorElement>, href: string) => {
@@ -74,11 +74,22 @@ export default function Navbar() {
     setIsOpen(false);
   };
 
+  // Visual Logic:
+  // Top (Hero): Transparent BG, Ivory Text (scrolled=false)
+  // Scrolled: Ivory BG, Navy Text, Shadow (scrolled=true)
+  const navBgClass = scrolled ? 'bg-[#FAF7F2] shadow-sm border-b border-[var(--color-border)]' : 'bg-transparent';
+  const textColorClass = scrolled ? 'text-[var(--color-primary)]' : 'text-[#FAF7F2]';
+  const logoFilter = scrolled ? 'none' : 'brightness(0) invert(1)';
+  // Note: Logo image is dark by default? If yes, invert makes it white.
+  // Assuming Logo is dark (Navy/Black).
+  // Scrolled (Ivory BG) -> Dark Logo (No filter)
+  // Top (Dark/Transparent BG) -> White Logo (Invert)
+
   return (
     <nav
       className={clsx(
-        'fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-transparent',
-        !isOpen && 'backdrop-blur-md',
+        'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
+        navBgClass,
         scrolled ? 'py-3' : 'py-5'
       )}
     >
@@ -101,18 +112,22 @@ export default function Navbar() {
                 fill
                 className="object-contain"
                 sizes="96px"
-                style={{ filter: 'brightness(0) invert(1)', transform: 'scale(2.8)', transformOrigin: 'center' }}
+                style={{ filter: logoFilter, transform: 'scale(2.8)', transformOrigin: 'center', transition: 'filter 0.3s' }}
                 priority
               />
             </motion.div>
             <div className="flex flex-col leading-none">
-              <span className="text-white font-serif text-lg font-bold tracking-wide">Kacper Kulesza</span>
-              <span className="text-xs text-slate-300 uppercase tracking-[0.18em]">psycholog</span>
+              <span className={clsx("font-serif text-lg font-bold tracking-wide transition-colors", textColorClass)}>
+                Kacper Kulesza
+              </span>
+              <span className={clsx("text-xs uppercase tracking-[0.18em] transition-colors", scrolled ? "text-slate-500" : "text-slate-300")}>
+                psycholog
+              </span>
             </div>
           </Link>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
@@ -121,14 +136,13 @@ export default function Navbar() {
                 className={clsx(
                   'text-sm font-medium transition-colors hover:text-accent',
                   link.cta
-                    ? 'relative overflow-hidden bg-accent text-white px-5 py-2 rounded-sm hover:brightness-90 hover:text-white shadow-lg hover:shadow-accent/20 group'
-                    : 'text-slate-200'
+                    ? 'relative overflow-hidden bg-[#FAF7F2] text-[var(--color-primary)] border border-[var(--color-accent)] px-5 py-2.5 rounded-sm hover:bg-[var(--color-accent)] hover:text-white hover:border-[var(--color-accent)] shadow-sm group'
+                    : textColorClass
                 )}
               >
+                {/* Shine effect for CTA */}
                 {link.cta && (
-                  <div className="pointer-events-none absolute inset-0 flex h-full w-full justify-center group-hover:animate-shimmer md:animate-shimmer">
-                    <div className="relative h-full w-8 bg-white/20" />
-                  </div>
+                   <div className="absolute inset-0 -translate-x-full group-hover:animate-[shimmer_1.5s_infinite] bg-gradient-to-r from-transparent via-white/20 to-transparent z-10" />
                 )}
                 <span className="relative z-10">{link.name}</span>
               </Link>
@@ -138,7 +152,7 @@ export default function Navbar() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden text-white z-50 relative focus:outline-none"
+            className={clsx("md:hidden z-50 relative focus:outline-none transition-colors", isOpen ? "text-white" : textColorClass)}
             aria-label="Toggle menu"
           >
             {isOpen ? <X className="w-8 h-8" /> : <Menu className="w-8 h-8" />}
@@ -154,9 +168,10 @@ export default function Navbar() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: '100%' }}
             transition={{ type: "spring", damping: 25, stiffness: 200 }}
-            className="fixed inset-0 bg-[#2E3A44] z-[60] flex flex-col items-center justify-center space-y-8 md:hidden"
-            style={{ backgroundColor: '#2E3A44' }}
+            className="fixed inset-0 z-[60] flex flex-col items-center justify-center space-y-8 md:hidden"
+            style={{ backgroundColor: '#111827' }}
           >
+             {/* Navy Background for Mobile Menu */}
             {navLinks.map((link, i) => (
               <motion.div
                 key={link.name}
@@ -170,18 +185,13 @@ export default function Navbar() {
                   className={clsx(
                     'transition-colors relative group',
                     link.cta
-                      ? 'relative overflow-hidden bg-accent text-white px-8 py-3 rounded-sm shadow-lg text-xl font-medium inline-flex items-center justify-center'
-                      : 'text-3xl font-serif font-medium text-white hover:text-accent'
+                      ? 'bg-[#FAF7F2] text-[var(--color-primary)] border border-[var(--color-accent)] px-8 py-3 rounded-sm shadow-lg text-xl font-medium inline-flex items-center justify-center'
+                      : 'text-3xl font-serif font-medium text-[#FAF7F2] hover:text-[var(--color-accent)]'
                   )}
                 >
-                  {link.cta && (
-                    <div className="pointer-events-none absolute inset-0 flex h-full w-full justify-center animate-shimmer">
-                      <div className="relative h-full w-8 bg-white/20" />
-                    </div>
-                  )}
                   <span className="relative z-10">{link.name}</span>
                   {!link.cta && (
-                    <span className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-accent transition-all group-hover:w-full" />
+                    <span className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-[var(--color-accent)] transition-all group-hover:w-full" />
                   )}
                 </Link>
               </motion.div>
