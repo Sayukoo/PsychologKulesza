@@ -1,6 +1,6 @@
 import Hero from '@/components/Hero';
 import About from '@/components/About';
-import Audience from '@/components/Audience';
+import TargetAudience from '@/components/TargetAudience';
 import Process from '@/components/Process';
 import Why from '@/components/Why';
 import Booking from '@/components/Booking';
@@ -14,12 +14,10 @@ export default function Home() {
         <Hero />
       </FadeIn>
 
+      <TargetAudience />
+
       <About />
       {/* About has its own internal animations */}
-
-      <FadeIn direction="up">
-        <Audience />
-      </FadeIn>
 
       <StaggerContainer className="py-8">
          <StaggerItem><Process /></StaggerItem>
