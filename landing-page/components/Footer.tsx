@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import { ArrowRight, Mail } from 'lucide-react';
 import { FadeIn } from './FadeIn';
 
 export default function Footer() {
@@ -11,18 +10,23 @@ export default function Footer() {
 
       <div className="relative z-10 max-w-4xl mx-auto flex flex-col items-center">
         <FadeIn>
+          <div className="text-sm text-slate-300 w-full space-y-8">
+             {/* Disclaimer */}
+             <div className="space-y-2 opacity-80">
+               <p>Strona ma charakter informacyjny i edukacyjny.</p>
+               <p>Treści nie zastępują porady lekarskiej ani psychoterapii.</p>
+               <p>W przypadku problemów zdrowotnych skonsultuj się z lekarzem.</p>
+             </div>
 
-          <div className="text-sm text-slate-300 border-t border-white/10 pt-8 w-full">
-             <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-                <p>&copy; {new Date().getFullYear()} Kacper Kulesza. Wszelkie prawa zastrzeżone.</p>
-                <div className="flex gap-6">
-                  <Link href="/polityka-prywatnosci" className="hover:text-white transition-colors">Polityka Prywatności</Link>
-                  <Link href="/regulamin" className="hover:text-white transition-colors">Regulamin</Link>
+             {/* Copyright & Links */}
+             <div className="border-t border-white/10 pt-8 flex flex-col items-center gap-4">
+                <p>&copy; 2026 Kacper Kulesza</p>
+                <div className="flex gap-4 text-xs uppercase tracking-wider">
+                  <Link href="/polityka-prywatnosci" className="hover:text-accent transition-colors">Polityka prywatności</Link>
+                  <span className="text-white/20">|</span>
+                  <Link href="/regulamin" className="hover:text-accent transition-colors">Regulamin</Link>
                 </div>
              </div>
-             <p className="mt-4 text-xs opacity-60 max-w-2xl mx-auto">
-               Strona ma charakter informacyjny i edukacyjny. Treści tu zawarte nie zastępują porady lekarskiej ani psychoterapii. W przypadku problemów zdrowotnych skonsultuj się z lekarzem.
-             </p>
           </div>
         </FadeIn>
       </div>

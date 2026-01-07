@@ -20,20 +20,21 @@ export default function Hero() {
               <span className="relative">Psychologia oparta na badaniach</span>
             </div>
             <h1 className="text-3xl sm:text-5xl md:text-7xl font-bold tracking-tight text-white mb-6 leading-[1.15] sm:leading-[1.1]">
-             Utknąłeś w myślach i nie możesz podjąć decyzji? <br />
-              <span className="text-white/90">
-                W{' '}
-                <span className="inline-flex items-center gap-2 rounded-md bg-accent/15 px-3 py-2 text-accent ring-1 ring-accent/30 align-top">
-                  <span className="text-4xl sm:text-6xl md:text-7xl font-black leading-none tracking-tight">60</span>
-                </span>{' '}
-                minut uporządkujemy chaos
+              Masz emocje, myśli i decyzje, które się ze sobą plączą.
+              <br />
+              <span className="text-white/90 text-2xl sm:text-4xl md:text-5xl font-medium mt-4 block">
+                Pomagam je uporządkować – spokojnie, konkretnie i bez ocen.
               </span>
             </h1>
           </StaggerItem>
 
           <StaggerItem>
-            <p className="text-lg sm:text-2xl text-slate-200 mb-8 sm:mb-10 leading-relaxed max-w-2xl">
-              <span className="text-white font-semibold"> </span>
+            <p className="text-xl sm:text-2xl text-accent font-semibold mb-2">
+              Jedno spotkanie. 60 minut.
+            </p>
+            <p className="text-lg sm:text-xl text-slate-200 mb-8 max-w-2xl leading-relaxed">
+              Rozmowa, która ma sens – nie tylko ulgę.<br/><br/>
+              Jeśli czujesz chaos w głowie, napięcie w ciele albo stoisz przed decyzją, której nie możesz podjąć – to jest dobre miejsce, żeby się zatrzymać i zobaczyć, co naprawdę się z Tobą dzieje.
             </p>
           </StaggerItem>
 
@@ -44,15 +45,15 @@ export default function Hero() {
                 className="group btn-shine relative inline-flex items-center justify-center px-8 py-4 text-base font-bold text-white bg-accent transition-all duration-300 shadow-lg hover:shadow-accent/25 rounded-sm overflow-hidden hover:text-white"
               >
                  <span className="relative z-10 flex items-center">
-                  Umów konsultację
+                  Umów 60-minutową konsultację
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                  </span>
               </a>
               <a
-                href="#process"
+                href="#audience"
                 className="inline-flex items-center justify-center px-8 py-4 text-base font-medium text-white border border-white/20 hover:bg-white/10 transition-colors duration-200 rounded-sm"
               >
-                Zobacz jak pracuję
+                Sprawdź, czy to dla Ciebie
               </a>
             </div>
           </StaggerItem>

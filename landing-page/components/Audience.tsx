@@ -1,110 +1,106 @@
-import {
-  BrainCircuit,
-  Scale,
-  Users,
-  Workflow,
-  Library,
-  MessageSquare,
-  Activity,
-  Microscope,
-  LucideIcon
-} from 'lucide-react';
-import { FadeIn, StaggerContainer, StaggerItem } from './FadeIn';
-import NeuralBackground from './NeuralBackground';
+'use client';
 
-interface ProblemItem {
-  text: string;
-  icon: LucideIcon;
-}
+import { FadeIn, StaggerContainer, StaggerItem } from './FadeIn';
+import { CircleOff, AlertCircle, HelpCircle, Activity, Brain, Shuffle, BatteryWarning } from 'lucide-react';
 
 export default function Audience() {
-  const problems: ProblemItem[] = [
+  const problems = [
     {
-      text: "Czujesz przeciążenie nadmiarem bodźców i spraw",
-      icon: BrainCircuit
-    },
-    {
-      text: "Stoisz przed trudną decyzją i potrzebujesz chłodnej analizy",
-      icon: Scale
-    },
-    {
-      text: "Twoje relacje stały się źródłem napięcia, a nie wsparcia",
-      icon: Users
-    },
-    {
-      text: "Chcesz zrozumieć własne schematy działania",
-      icon: Workflow
-    },
-    {
-      text: "Potrzebujesz uporządkować chaos w głowie",
-      icon: Library
-    },
-    {
-      text: "Szukasz konkretnej rozmowy",
-      icon: MessageSquare
-    },
-    {
-      text: "Odczuwasz stres i napięcie utrudniające funkcjonowanie",
+      text: "Czują napięcie, stres lub emocjonalny chaos, ale nie potrafią go nazwać",
       icon: Activity
     },
     {
-      text: "Chcesz zrozumieć źródła swoich reakcji",
-      icon: Microscope
+      text: "Mają wrażenie, że „wszystko analizują”, a emocje i tak robią swoje",
+      icon: Brain
+    },
+    {
+      text: "Stoją przed trudną decyzją (relacja, praca, kierunek życia)",
+      icon: Shuffle
+    },
+    {
+      text: "Chcą zrozumieć swoje reakcje, zamiast z nimi walczyć",
+      icon: HelpCircle
+    },
+    {
+      text: "Są zmęczone byciem „ciągle w głowie” albo „ciągle w emocjach”",
+      icon: BatteryWarning
     }
   ];
 
+  const NOT_FOR_YOU = [
+    'szukasz psychoterapii długoterminowej',
+    'oczekujesz diagnozy klinicznej lub leczenia zaburzeń',
+    'chcesz tylko „wygadać się” bez refleksji i wniosków',
+    'nie masz gotowości, żeby przyjrzeć się sobie uczciwie'
+  ];
+
   return (
-    <section id="dla-kogo" className="relative py-24 md:py-32 px-4 sm:px-6 lg:px-8 bg-secondary overflow-hidden">
-        {/* Background Layer with Neural Network Visualization */}
-        <div className="absolute inset-0 z-0">
-            <div className="absolute inset-0 bg-secondary/95 z-0" />
-            <NeuralBackground />
-             {/* Gradient overlay to soften edges */}
-            <div className="absolute inset-0 bg-gradient-to-b from-secondary via-transparent to-secondary z-0 pointer-events-none" />
-        </div>
+    <section id="audience" className="relative py-20 bg-slate-50 overflow-hidden">
+      <div className="relative z-10 container mx-auto px-4">
+        <FadeIn>
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <h2 className="text-3xl md:text-4xl font-serif font-bold text-primary mb-6 uppercase tracking-wider">
+              DLA KOGO JEST TA KONSULTACJA
+            </h2>
+            <p className="text-xl text-slate-600">
+              Najczęściej przychodzą do mnie osoby, które:
+            </p>
+          </div>
+        </FadeIn>
 
-        <div className="max-w-7xl mx-auto relative z-10">
-            <FadeIn>
-                <div className="text-center mb-20">
-                     <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 tracking-tight font-serif">
-                        Dla kogo są konsultacje?
-                    </h2>
-                    <p className="text-xl text-accent/90 font-light tracking-wide uppercase text-sm md:text-base">
-                        Obszary wsparcia i analizy
-                    </p>
+        <StaggerContainer className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-20">
+          {problems.map((item, index) => (
+            <StaggerItem key={index}>
+              <div className="h-full p-8 bg-white border border-slate-200 shadow-sm hover:shadow-md hover:border-accent/30 transition-all duration-300 rounded-xl group">
+                <div className="mb-6 p-3 bg-accent/10 w-fit rounded-lg group-hover:bg-accent/20 transition-colors">
+                  <item.icon className="h-8 w-8 text-accent" />
                 </div>
-            </FadeIn>
-
-            <StaggerContainer>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative">
-                    {problems.map((item, idx) => (
-                        <StaggerItem key={idx} className="h-full">
-                             <div className="group h-full p-6 md:p-8 rounded-xl bg-[#1F2226]/80 backdrop-blur-md border border-white/5 hover:border-accent/40 transition-all duration-500 hover:shadow-[0_0_30px_-10px_rgba(181,158,93,0.15)] flex flex-col items-start gap-5 relative overflow-hidden isolate">
-
-                                {/* Geometric accent lines - 'Diagram' feel */}
-                                <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-                                <div className="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-
-                                {/* Icon container */}
-                                <div className="p-3.5 rounded-lg bg-secondary border border-white/10 group-hover:border-accent/40 group-hover:bg-accent/10 transition-colors duration-500 shadow-lg">
-                                    <item.icon className="w-6 h-6 text-accent group-hover:text-[#D4C495] transition-colors duration-300" strokeWidth={1.5} />
-                                </div>
-
-                                {/* Connector Line Visualization */}
-                                <div className="absolute top-8 left-16 right-0 h-[1px] bg-gradient-to-r from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 delay-100" />
-
-                                <p className="text-gray-300 group-hover:text-white transition-colors text-base md:text-lg leading-relaxed font-light z-10">
-                                    {item.text}
-                                </p>
-
-                                {/* Corner marker for technical feel */}
-                                <div className="absolute bottom-3 right-3 w-1.5 h-1.5 bg-accent/20 rounded-full group-hover:bg-accent transition-colors duration-500" />
-                             </div>
-                        </StaggerItem>
-                    ))}
+                <p className="text-primary font-medium text-lg leading-relaxed">{item.text}</p>
+              </div>
+            </StaggerItem>
+          ))}
+          {/* Last card spans if needed, or fits grid. 5 items -> 3 cols: 3 + 2. */}
+           <StaggerItem>
+             <div className="h-full p-8 bg-primary/5 border border-primary/10 rounded-xl flex items-center justify-center text-center">
+                <div>
+                   <h3 className="text-xl font-serif font-bold text-primary mb-2">Nie musisz mieć „dużego problemu”.</h3>
+                   <p className="text-slate-600">Wystarczy, że coś w Tobie nie daje spokoju.</p>
                 </div>
-            </StaggerContainer>
-        </div>
+             </div>
+           </StaggerItem>
+        </StaggerContainer>
+
+        {/* Not for you section */}
+        <FadeIn>
+          <div className="max-w-4xl mx-auto mt-20 p-8 md:p-12 bg-white border border-red-100 shadow-sm rounded-xl">
+            <div className="flex flex-col md:flex-row gap-8 items-start">
+              <div className="shrink-0">
+                <div className="p-4 bg-red-50 rounded-full">
+                  <CircleOff className="h-10 w-10 text-red-500" />
+                </div>
+              </div>
+              <div className="flex-grow">
+                <h3 className="text-2xl font-serif font-bold text-primary mb-6">
+                  To NIE jest dla Ciebie, jeśli:
+                </h3>
+                <ul className="space-y-4">
+                  {NOT_FOR_YOU.map((item, index) => (
+                    <li key={index} className="flex items-start gap-3 text-slate-600">
+                      <span className="mt-2 h-1.5 w-1.5 rounded-full bg-red-400 shrink-0" />
+                      <span className="text-lg">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+                <div className="mt-8 pt-6 border-t border-slate-100 text-center md:text-left">
+                  <p className="text-lg font-medium text-primary">
+                    Ta rozmowa wymaga Twojej obecności, nie tylko obecności emocji.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </FadeIn>
+      </div>
     </section>
   );
 }
