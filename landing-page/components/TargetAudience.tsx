@@ -5,30 +5,31 @@ export default function TargetAudience() {
   return (
     <section className="py-24 md:py-32 px-4 sm:px-6 lg:px-8 bg-[#FAF7F2]">
       <div className="max-w-7xl mx-auto">
+        <div className="text-center mb-12 md:mb-16">
+          <h2 className="text-3xl md:text-5xl font-bold text-[#2E3A44] font-serif tracking-tight">
+            To nie są konsultacje dla każdego.
+          </h2>
+        </div>
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-stretch">
 
           {/* Left Column (YES) - 60% */}
-          <div className="lg:col-span-3">
-            <FadeIn>
+          <div className="lg:col-span-3 h-full">
+            <FadeIn className="h-full">
               <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 md:p-12 h-full hover:shadow-md transition-shadow duration-300">
-                <h2 className="text-3xl md:text-4xl font-bold text-[#2E3A44] mb-6 font-serif tracking-tight">
-                  To nie są konsultacje dla każdego.
-                </h2>
-
-                <p className="text-lg md:text-xl text-[#1F1F1F] mb-10 leading-relaxed font-light">
-                  Jeśli masz wrażenie, że ciągle wszystko analizujesz, a mimo to stoisz w miejscu — <span className="font-medium">to jest rozmowa dla Ciebie.</span>
+                <p className="text-2xl font-bold text-[#2E3A44] mb-8 font-serif tracking-tight">
+                   Pracuję z osobami, które:
                 </p>
 
                 <div className="space-y-2 mb-8">
-                    <p className="font-semibold text-[#1F1F1F] text-lg uppercase tracking-wide text-sm opacity-80">Pracuję z osobami, które:</p>
+                    <p className="font-semibold text-[#1F1F1F] text-lg uppercase tracking-wide text-sm opacity-80"></p>
                 </div>
 
                 <StaggerContainer>
                   <ul className="space-y-5">
                     {[
-                      "myślą analitycznie i utknęły w pętli rozkmin",
+                      "utknęły w pętli rozkmin",
                       "stoją przed konkretną decyzją (relacja, praca, kierunek działania)",
-                      "czują napięcie wynikające z przeciążenia, nie z „choroby”",
+                      "czują napięcie wynikające z przeciążenia",
                       "chcą rozmowy prowadzącej do wniosku, nie wielomiesięcznego procesu"
                     ].map((item, idx) => (
                       <StaggerItem key={idx}>
@@ -49,8 +50,8 @@ export default function TargetAudience() {
           </div>
 
           {/* Right Column (NO) - 40% */}
-          <div className="lg:col-span-2">
-            <FadeIn delay={0.2}>
+          <div className="lg:col-span-2 h-full">
+            <FadeIn delay={0.2} className="h-full">
               <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 md:p-12 h-full flex flex-col hover:shadow-md transition-shadow duration-300">
                 <div className="flex-grow">
                   <h3 className="text-2xl font-bold text-[#2E3A44] mb-8 font-serif tracking-tight">
