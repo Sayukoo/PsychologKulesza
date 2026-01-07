@@ -24,7 +24,7 @@ export default function Hero() {
               <span className="text-white/90">
                 W{' '}
                 <span className="inline-flex items-center gap-2 rounded-md bg-accent/15 px-3 py-2 text-accent ring-1 ring-accent/30 align-top">
-                  <span className="text-4xl sm:text-6xl md:text-7xl font-black leading-none tracking-tight">50</span>
+                  <span className="text-4xl sm:text-6xl md:text-7xl font-black leading-none tracking-tight">60</span>
                 </span>{' '}
                 minut uporządkujemy chaos
               </span>
