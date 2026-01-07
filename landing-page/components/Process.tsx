@@ -1,78 +1,88 @@
-import { Monitor, Clock, MessageSquare, AlertCircle, Video } from 'lucide-react';
+'use client';
+
 import { FadeIn, StaggerContainer, StaggerItem } from './FadeIn';
+import { Heart, BrainCircuit, ArrowRightCircle } from 'lucide-react';
+
+const steps = [
+  {
+    number: "01",
+    title: "Emocje – co naprawdę czujesz",
+    description: "Zatrzymujemy się przy tym, co jest aktualne: napięcie, złość, lęk, smutek, chaos. Nie po to, żeby się w tym utopić, tylko żeby to zrozumieć.",
+    icon: Heart
+  },
+  {
+    number: "02",
+    title: "Myśli i schematy – jak to interpretujesz",
+    description: "Sprawdzamy, jakie myśli, przekonania i automatyczne reakcje napędzają emocje.",
+    icon: BrainCircuit
+  },
+  {
+    number: "03",
+    title: "Wnioski – co z tym zrobić dalej",
+    description: "Nie daję gotowych recept. Pomagam dojść do jednego sensownego wniosku, kierunku albo decyzji, która jest zgodna z Tobą – nie z presją.",
+    icon: ArrowRightCircle
+  }
+];
 
 export default function Process() {
   return (
-    <section id="process" className="py-16 md:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-white relative">
-      <FadeIn>
-        <h2 className="text-3xl md:text-4xl font-bold text-primary mb-10 md:mb-16 text-center">
-          Jak wygląda współpraca?<br />
-          <span className="text-accent text-xl md:text-2xl font-normal block mt-2">Zasady i forma spotkań</span>
-        </h2>
-      </FadeIn>
-
-      <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-12 md:mb-16">
-        {[
-          {
-            icon: Monitor,
-            title: "Forma online",
-            desc: "Spotykamy się przez wideorozmowę - oznacza to możliwość rozmowy z dowolnego miejsca, w którym czujesz się swobodnie.",
-            color: "text-blue-600"
-          },
-          {
-            icon: Clock,
-            title: "Czas trwania",
-            desc: "Standardowa konsultacja trwa 50 minut. W tym czasie, omówimy twoją sprawę, zanalizujemy i wypracujemy wnioski.",
-            color: "text-accent"
-          },
-          {
-            icon: MessageSquare,
-            title: "Charakter rozmowy",
-            desc: "Podchodzę do twojej sesji tak jakby miała być moją jedyną. Bazuje na modelu Single-Session Therapy, który skupia się na maksymalizacji wartości każdej rozmowy.",
-            color: "text-emerald-600"
-          }
-        ].map((step, idx) => (
-          <StaggerItem key={idx} className="group flex flex-col items-center text-center p-6 md:p-8 border border-slate-100 rounded-2xl bg-slate-50 hover:bg-white hover:shadow-xl hover:shadow-primary/5 hover:-translate-y-2 transition-all duration-300 relative overflow-hidden h-full">
-            <div className={`absolute top-0 w-full h-1 ${idx === 1 ? 'bg-accent' : idx === 2 ? 'bg-emerald-500' : 'bg-blue-600'}`} />
-
-            <div className={`p-4 rounded-full mb-4 md:mb-6 ${idx === 1 ? 'bg-accent/10' : idx === 2 ? 'bg-emerald-500/10' : 'bg-blue-600/10'} group-hover:scale-110 transition-transform duration-300`}>
-              <step.icon className={`h-8 w-8 md:h-10 md:w-10 ${idx === 1 ? 'text-accent' : idx === 2 ? 'text-emerald-600' : 'text-blue-600'}`} />
+    <section id="process" className="py-24 bg-white">
+      <div className="container mx-auto px-4">
+        <FadeIn>
+          <div className="text-center max-w-3xl mx-auto mb-20">
+            <h2 className="text-3xl md:text-4xl font-serif font-bold text-primary mb-6 uppercase tracking-wider">
+              CO SIĘ DZIEJE W TRAKCIE 60 MINUT
+            </h2>
+            <div className="text-xl text-slate-600 font-medium">
+              To nie jest luźna pogadanka<br/>
+              <span className="text-slate-400">i nie jest też sztywna analiza.</span>
             </div>
-
-            <h3 className="text-lg md:text-xl font-bold mb-3 md:mb-4 text-slate-800">{step.title}</h3>
-            <p className="text-slate-600 leading-relaxed text-sm">
-              {step.desc}
+            <p className="mt-4 text-lg text-slate-600">
+              Pracujemy na trzech poziomach:
             </p>
-          </StaggerItem>
-        ))}
-      </StaggerContainer>
+          </div>
+        </FadeIn>
 
-      {/* Important Disclaimers */}
-      <FadeIn direction="up">
-        <div className="bg-primary/5 rounded-xl p-8 border border-primary/10 max-w-4xl mx-auto space-y-6">
-           <div className="flex items-start gap-4">
-              <AlertCircle className="w-6 h-6 text-primary mt-1 shrink-0" />
-              <div>
-                <h3 className="font-bold text-lg text-primary mb-2">To nie jest psychoterapia</h3>
-                <p className="text-slate-700 leading-relaxed">
-                  Moje konsultacje mają charakter rozwojowy i edukacyjny. Nie prowadzę psychoterapii, nie leczę zaburzeń psychicznych ani nie wystawiam diagnoz klinicznych.
-                </p>
-              </div>
-           </div>
+        <div className="max-w-5xl mx-auto mb-20">
+          <StaggerContainer className="grid md:grid-cols-3 gap-8 relative">
+            {/* Connecting line for desktop */}
+            <div className="hidden md:block absolute top-12 left-0 w-full h-0.5 bg-slate-100 -z-10" />
 
-           <div className="w-full h-px bg-primary/10" />
+            {steps.map((step, index) => (
+              <StaggerItem key={index}>
+                <div className="relative bg-white pt-8 group h-full flex flex-col">
+                  <div className="mb-6 flex justify-center">
+                    <div className="relative">
+                      <div className="w-24 h-24 bg-background rounded-full border-4 border-slate-50 flex items-center justify-center group-hover:border-accent/30 transition-colors duration-300">
+                        <step.icon className="h-10 w-10 text-primary group-hover:text-accent transition-colors duration-300" />
+                      </div>
+                      <div className="absolute -top-3 -right-3 w-8 h-8 bg-accent text-white text-sm font-bold flex items-center justify-center rounded-full shadow-lg">
+                        {step.number}
+                      </div>
+                    </div>
+                  </div>
 
-           <div className="flex items-start gap-4">
-              <Video className="w-6 h-6 text-primary mt-1 shrink-0" />
-              <div>
-                <h3 className="font-bold text-lg text-primary mb-2">Nagrywanie spotkań</h3>
-                <p className="text-slate-700 leading-relaxed">
-                  W celach zwiększenia jakości moich usług konsultacje są nagrywane wyłącznie za Twoją uprzednią, dobrowolną zgodą. Nagrania służą wyłącznie celom superwizyjnym i rozwojowym. Jako psycholog gwarantuję  poufność i ochronę Twoich danych.
-                </p>
-              </div>
-           </div>
+                  <div className="text-center px-4 flex-grow">
+                    <h3 className="text-xl font-bold text-primary mb-3 group-hover:text-accent transition-colors">
+                      {step.title}
+                    </h3>
+                    <p className="text-slate-600 leading-relaxed">
+                      {step.description}
+                    </p>
+                  </div>
+                </div>
+              </StaggerItem>
+            ))}
+          </StaggerContainer>
         </div>
-      </FadeIn>
+
+        <FadeIn>
+            <div className="max-w-2xl mx-auto text-center p-8 bg-slate-50 rounded-xl border border-slate-100">
+                <p className="text-xl font-medium text-primary mb-2">Celem nie jest „naprawić Cię”.</p>
+                <p className="text-lg text-slate-600">Celem jest, żebyś wyszedł / wyszła z większą jasnością i spokojem.</p>
+            </div>
+        </FadeIn>
+      </div>
     </section>
   );
 }
