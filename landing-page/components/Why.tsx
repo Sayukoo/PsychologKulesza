@@ -14,7 +14,7 @@ export default function Why() {
 
         <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
           <StaggerItem>
-            <StarsBackground className="flex flex-col h-full p-6 md:p-8 rounded-xl border border-slate-700 shadow-sm hover:shadow-md transition-shadow relative z-0">
+            <StarsBackground className="flex flex-col h-full p-6 md:p-8 rounded-xl border border-slate-200/70 shadow-sm hover:shadow-md transition-shadow relative z-0">
               <div className="flex items-center mb-4 md:mb-6 text-slate-900 relative z-10">
                 <Lightbulb className="w-6 h-6 md:w-8 md:h-8 mr-3 text-accent" />
                 <h3 className="text-lg md:text-xl font-bold">Struktura</h3>
@@ -26,7 +26,7 @@ export default function Why() {
           </StaggerItem>
 
           <StaggerItem>
-            <StarsBackground className="flex flex-col h-full p-6 md:p-8 rounded-xl border border-slate-700 shadow-sm hover:shadow-md transition-shadow relative z-0">
+            <StarsBackground className="flex flex-col h-full p-6 md:p-8 rounded-xl border border-slate-200/70 shadow-sm hover:shadow-md transition-shadow relative z-0">
               <div className="flex items-center mb-4 md:mb-6 text-slate-900 relative z-10">
                 <CheckCircle2 className="w-6 h-6 md:w-8 md:h-8 mr-3 text-emerald-400" />
                 <h3 className="text-lg md:text-xl font-bold">Analiza i wybór</h3>
@@ -38,7 +38,7 @@ export default function Why() {
           </StaggerItem>
 
           <StaggerItem>
-            <StarsBackground className="flex flex-col h-full p-6 md:p-8 rounded-xl border border-slate-700 shadow-sm hover:shadow-md transition-shadow relative z-0">
+            <StarsBackground className="flex flex-col h-full p-6 md:p-8 rounded-xl border border-slate-200/70 shadow-sm hover:shadow-md transition-shadow relative z-0">
               <div className="flex items-center mb-4 md:mb-6 text-slate-900 relative z-10">
                 <ShieldCheck className="w-6 h-6 md:w-8 md:h-8 mr-3 text-blue-400" />
                 <h3 className="text-lg md:text-xl font-bold">Konkretny plan</h3>
