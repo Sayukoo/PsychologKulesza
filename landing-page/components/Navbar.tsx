@@ -50,8 +50,6 @@ export default function Navbar() {
     return () => window.removeEventListener('hashchange', scrollToHash);
   }, [isHome]);
 
-  const solidBackground = scrolled || !isHome;
-
   const navLinks = [
     { name: 'Start', href: '/#start' },
     { name: 'O mnie', href: '/#o-mnie' },
@@ -79,9 +77,9 @@ export default function Navbar() {
   return (
     <nav
       className={clsx(
-        'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
+        'fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-transparent',
         !isOpen && 'backdrop-blur-md',
-        solidBackground ? 'bg-primary/95 py-3 shadow-lg' : 'bg-transparent py-5'
+        scrolled ? 'py-3' : 'py-5'
       )}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

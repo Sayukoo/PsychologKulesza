@@ -1,10 +1,10 @@
-import { ArrowRight, Brain } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { StaggerContainer, StaggerItem } from './FadeIn';
 import { BackgroundBeams } from './animate-ui/components/backgrounds/background-beams';
 
 export default function Hero() {
   return (
-    <section id="start" className="relative w-full min-h-[90vh] flex items-center justify-center bg-[#F7F1E6] text-foreground overflow-hidden pt-24 pb-16 md:pt-28 md:pb-20">
+    <section id="start" className="relative w-full min-h-screen min-h-[100svh] flex items-center justify-center bg-[#FAF7F2] text-foreground overflow-hidden pt-24 pb-16 md:pt-28 md:pb-20">
       {/* Dynamic Background */}
       <BackgroundBeams className="opacity-40" />
 
@@ -14,13 +14,7 @@ export default function Hero() {
 
             <h1 className="text-3xl sm:text-5xl md:text-7xl font-bold tracking-tight text-primary mb-6 leading-[1.15] sm:leading-[1.1]">
              Utknąłeś w myślach i nie możesz podjąć decyzji? <br />
-              <span className="text-foreground/90">
-                W{' '}
-                <span className="inline-flex items-center gap-2 rounded-md bg-accent/15 px-3 py-2 text-accent ring-1 ring-accent/30 align-top">
-                  <span className="text-4xl sm:text-6xl md:text-7xl font-black leading-none tracking-tight">60</span>
-                </span>{' '}
-                minut uporządkujemy chaos
-              </span>
+              <span className="text-foreground/90">W 60 minut uporządkujemy chaos</span>
             </h1>
           </StaggerItem>
 
@@ -34,7 +28,7 @@ export default function Hero() {
             <div className="flex flex-col sm:flex-row gap-4">
               <a
                 href="#booking"
-                className="group btn-shine relative inline-flex items-center justify-center px-8 py-4 text-base font-bold text-white bg-accent transition-all duration-300 shadow-lg hover:shadow-accent/25 rounded-sm overflow-hidden hover:text-white"
+                className="group btn-shine relative inline-flex items-center justify-center px-8 py-4 text-base font-bold text-[#FAF7F2] bg-accent transition-all duration-300 shadow-lg hover:shadow-accent/25 rounded-sm overflow-hidden hover:text-[#FAF7F2]"
               >
                  <span className="relative z-10 flex items-center">
                   Umów 60-minutową konsultację
