@@ -10,31 +10,35 @@ html {
   --font-sans: var(--font-sans);
   --font-serif: var(--font-serif);
 
-  /* Primary: Dark Navy / Steel Blue (#2E3A44) */
-  --color-primary: #2E3A44;
-  --color-primary-foreground: #ffffff;
+  /* Primary: Navy (#111827) - Used for Hero BG, Text on Ivory, Strong Elements */
+  --color-primary: #111827;
+  --color-primary-foreground: #FAF7F2;
 
-  /* Secondary: Graphite / Anthracite (#2B2E33) */
-  --color-secondary: #2B2E33;
-  --color-secondary-foreground: #ffffff;
+  /* Secondary: Sage (#9FB6A1) - Used for Process/Why backgrounds */
+  --color-sage: #9FB6A1;
+  --color-sage-foreground: #111827;
+  /* Keeping secondary variable for compatibility, mapped to Sage or Navy depending on usage */
+  --color-secondary: #9FB6A1;
+  --color-secondary-foreground: #111827;
 
-  /* Accent: Muted Gold / Brass (#B59E5D) */
-  --color-accent: #B59E5D;
+  /* Accent: Brass (#C6A75E) - Links, icons, details */
+  --color-accent: #C6A75E;
   --color-accent-foreground: #ffffff;
 
-  /* Muted: Lighter Graphite/Grey for borders/muted text */
-  --color-muted: #E2E8F0;
-  --color-muted-foreground: #4A4E55;
+  /* Muted: Tech colors */
+  --color-muted: #6B7280;
+  --color-muted-foreground: #FAF7F2;
+  --color-border: #E7E1D8;
 
-  /* Card: White or Off-white. Keeping white for contrast against off-white bg */
-  --color-card: #ffffff;
-  --color-card-foreground: #2B2E33;
+  /* Card: Ivory */
+  --color-card: #FAF7F2;
+  --color-card-foreground: #111827;
 
-  /* Background: Off-white (#F4F4F2) */
-  --color-background: #F4F4F2;
+  /* Background: Ivory (#FAF7F2) - Dominant (55-65%) */
+  --color-background: #FAF7F2;
 
-  /* Foreground: Graphite / Anthracite (#2B2E33) */
-  --color-foreground: #2B2E33;
+  /* Foreground: Navy (#111827) - Text on Ivory */
+  --color-foreground: #111827;
 
   --animate-shimmer: shimmer 3s infinite;
 
