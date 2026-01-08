@@ -15,7 +15,7 @@ export default function TargetAudience() {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16 md:mb-24">
           <h2 className="text-3xl md:text-5xl font-bold text-[#2E3A44] font-serif tracking-tight">
-            To nie są konsultacje dla każdego.
+            To nie są konsultacje dla każdego
           </h2>
         </div>
 
@@ -138,11 +138,6 @@ export default function TargetAudience() {
                   </ul>
                 </StaggerContainer>
 
-                <div className="pt-8 border-t border-[#E6E6E6]">
-                  <p className="text-base text-[#5F5F5F] font-medium italic leading-relaxed">
-                    "Współpraca wymaga Twojej aktywności, logicznej analizy i odwagi w podejmowaniu decyzji."
-                  </p>
-                </div>
               </div>
             </FadeIn>
           </div>
