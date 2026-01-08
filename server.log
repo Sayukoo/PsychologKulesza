@@ -1,66 +1,19 @@
-npm warn exec The following package was not found and will be installed: serve@14.2.5
- INFO  Accepting connections at http://localhost:3000
- HTTP  12/28/2025 8:04:22 PM ::1 GET /
- HTTP  12/28/2025 8:04:22 PM ::1 Returned 200 in 301 ms
- HTTP  12/28/2025 8:04:23 PM ::1 GET /_next/static/media/2a65768255d6b625-s.p.d19752fb.woff2
- HTTP  12/28/2025 8:04:23 PM ::1 GET /_next/static/media/345c85a432359eed-s.p.eead68dd.woff2
- HTTP  12/28/2025 8:04:23 PM ::1 GET /_next/static/chunks/854dc616cfaf77c2.css
- HTTP  12/28/2025 8:04:23 PM ::1 GET /_next/static/media/8e451580e5e95631-s.p.0e564e6e.woff2
- HTTP  12/28/2025 8:04:23 PM ::1 GET /_next/static/media/9be384ea93fe3f49-s.p.ab26386e.woff2
- HTTP  12/28/2025 8:04:23 PM ::1 GET /_next/static/media/f30fd2e485acf1bc-s.p.3d1b066d.woff2
- HTTP  12/28/2025 8:04:23 PM ::1 Returned 200 in 8 ms
- HTTP  12/28/2025 8:04:23 PM ::1 Returned 200 in 8 ms
- HTTP  12/28/2025 8:04:23 PM ::1 Returned 200 in 7 ms
- HTTP  12/28/2025 8:04:23 PM ::1 Returned 200 in 8 ms
- HTTP  12/28/2025 8:04:23 PM ::1 Returned 200 in 7 ms
- HTTP  12/28/2025 8:04:23 PM ::1 Returned 200 in 7 ms
- HTTP  12/28/2025 8:04:23 PM ::1 GET /_next/static/media/logo.6c5fd576.png
- HTTP  12/28/2025 8:04:23 PM ::1 Returned 200 in 12 ms
- HTTP  12/28/2025 8:04:23 PM ::1 GET /_next/static/chunks/0e0f006df0e6af0d.js
- HTTP  12/28/2025 8:04:23 PM ::1 GET /_next/static/chunks/236f7e5abd6f09ff.js
- HTTP  12/28/2025 8:04:23 PM ::1 Returned 200 in 4 ms
- HTTP  12/28/2025 8:04:23 PM ::1 Returned 200 in 3 ms
- HTTP  12/28/2025 8:04:23 PM ::1 GET /_next/static/chunks/30ea11065999f7ac.js
- HTTP  12/28/2025 8:04:23 PM ::1 GET /_next/static/chunks/9eb7feadbe6fd57b.js
- HTTP  12/28/2025 8:04:23 PM ::1 GET /_next/static/chunks/turbopack-f80852782158f8e9.js
- HTTP  12/28/2025 8:04:23 PM ::1 GET /_next/static/chunks/e9e61af4c0b04135.js
- HTTP  12/28/2025 8:04:23 PM ::1 GET /_next/static/chunks/7253e1c1669538ce.js
- HTTP  12/28/2025 8:04:23 PM ::1 GET /_next/static/chunks/ff1a16fafef87110.js
- HTTP  12/28/2025 8:04:23 PM ::1 Returned 200 in 6 ms
- HTTP  12/28/2025 8:04:23 PM ::1 Returned 200 in 6 ms
- HTTP  12/28/2025 8:04:23 PM ::1 Returned 200 in 7 ms
- HTTP  12/28/2025 8:04:23 PM ::1 Returned 200 in 9 ms
- HTTP  12/28/2025 8:04:23 PM ::1 Returned 200 in 10 ms
- HTTP  12/28/2025 8:04:23 PM ::1 Returned 200 in 12 ms
- HTTP  12/28/2025 8:04:23 PM ::1 GET /_next/static/chunks/7340adf74ff47ec0.js
- HTTP  12/28/2025 8:04:23 PM ::1 Returned 200 in 5 ms
- HTTP  12/28/2025 8:04:23 PM ::1 GET /_next/static/chunks/59bb33662a261da7.js
- HTTP  12/28/2025 8:04:23 PM ::1 Returned 200 in 16 ms
- HTTP  12/28/2025 8:04:23 PM ::1 GET /_next/static/media/Profile_website.40479919.png
- HTTP  12/28/2025 8:04:23 PM ::1 GET /_next/static/media/b49b0d9b851e4899-s.4f3fa681.woff2
- HTTP  12/28/2025 8:04:23 PM ::1 GET /_next/static/media/d74bdd14d6019bc6-s.99b0b73b.woff2
- HTTP  12/28/2025 8:04:23 PM ::1 GET /_next/static/media/b529365fa126a3f2-s.38647399.woff2
- HTTP  12/28/2025 8:04:23 PM ::1 Returned 200 in 3 ms
- HTTP  12/28/2025 8:04:23 PM ::1 Returned 200 in 6 ms
- HTTP  12/28/2025 8:04:23 PM ::1 Returned 200 in 4 ms
- HTTP  12/28/2025 8:04:23 PM ::1 Returned 200 in 18 ms
- HTTP  12/28/2025 8:04:23 PM ::1 HEAD /
- HTTP  12/28/2025 8:04:23 PM ::1 Returned 304 in 1 ms
- HTTP  12/28/2025 8:04:24 PM ::1 GET /__next._tree.txt?_rsc=1r34m
- HTTP  12/28/2025 8:04:24 PM ::1 Returned 200 in 2 ms
- HTTP  12/28/2025 8:04:24 PM ::1 GET /__next._head.txt?_rsc=1pn8p
- HTTP  12/28/2025 8:04:24 PM ::1 GET /__next._index.txt?_rsc=nn07o
- HTTP  12/28/2025 8:04:24 PM ::1 GET /__next.__PAGE__.txt?_rsc=ivliq
- HTTP  12/28/2025 8:04:24 PM ::1 Returned 200 in 5 ms
- HTTP  12/28/2025 8:04:24 PM ::1 Returned 200 in 4 ms
- HTTP  12/28/2025 8:04:24 PM ::1 Returned 200 in 3 ms
- HTTP  12/28/2025 8:04:25 PM ::1 HEAD /polityka-prywatnosci
- HTTP  12/28/2025 8:04:25 PM ::1 Returned 200 in 15 ms
- HTTP  12/28/2025 8:04:25 PM ::1 GET /polityka-prywatnosci/__next._tree.txt?_rsc=1r34m
- HTTP  12/28/2025 8:04:25 PM ::1 Returned 200 in 1 ms
- HTTP  12/28/2025 8:04:25 PM ::1 GET /polityka-prywatnosci/__next._head.txt?_rsc=1pn8p
- HTTP  12/28/2025 8:04:25 PM ::1 GET /polityka-prywatnosci/__next.polityka-prywatnosci.txt?_rsc=15ako
- HTTP  12/28/2025 8:04:25 PM ::1 GET /polityka-prywatnosci/__next.polityka-prywatnosci.__PAGE__.txt?_rsc=1y9kq
- HTTP  12/28/2025 8:04:25 PM ::1 Returned 200 in 3 ms
- HTTP  12/28/2025 8:04:25 PM ::1 Returned 200 in 4 ms
- HTTP  12/28/2025 8:04:25 PM ::1 Returned 200 in 4 ms
+
+> landing-page@0.1.0 dev
+> next dev
+
+▲ Next.js 16.1.1 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://192.168.0.2:3000
+
+✓ Starting...
+Attention: Next.js now collects completely anonymous telemetry regarding usage.
+This information is used to shape Next.js' roadmap and prioritize features.
+You can learn more, including how to opt-out if you'd not like to participate in this anonymous program, by visiting the following URL:
+https://nextjs.org/telemetry
+
+✓ Ready in 1125ms
+○ Compiling / ...
+ GET / 200 in 9.6s (compile: 7.7s, render: 1843ms)
+ GET / 200 in 411ms (compile: 8ms, render: 403ms)
+ GET / 200 in 380ms (compile: 8ms, render: 372ms)

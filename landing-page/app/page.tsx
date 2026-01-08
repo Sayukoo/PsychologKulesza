@@ -20,11 +20,11 @@ export default function Home() {
         <TargetAudience />
       </FadeIn>
 
+      <About />
+
       <StaggerContainer className="py-0">
          <StaggerItem><Process /></StaggerItem>
       </StaggerContainer>
-
-      <About />
 
       <FadeIn direction="up">
         <OfferDetails />
