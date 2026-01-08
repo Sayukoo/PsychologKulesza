@@ -14,7 +14,7 @@ export default function Home() {
         <Hero />
       </FadeIn>
 
-      {/* New Order: Audience (Dla kogo) -> Process (Jak wygląda) -> Why (Jak pracuję/Dlaczego warto) -> About (O mnie) -> Offer (Cennik) -> Booking */}
+      {/* Order: Dla kogo -> O mnie -> Jak wygląda konsultacja -> Cennik -> Umów konsultację -> Kontakt */}
 
       <FadeIn direction="up">
         <TargetAudience />

@@ -42,7 +42,7 @@ export default function About() {
               <StaggerItem>
                 <div className="border-l-4 border-[#C1AE78] pl-6 py-2">
                   <p className="text-xl font-medium text-[#2E3A44] italic font-serif">
-                    "Celem spotkania nie jest proces — celem jest klarowność i decyzja."
+                  Jeśli wychodzisz z rozmów z innymi z poczuciem „fajnie było, ale dalej nie wiem co robić” to tu pracujemy inaczej
                   </p>
                 </div>
               </StaggerItem>
