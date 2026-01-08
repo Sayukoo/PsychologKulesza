@@ -14,8 +14,8 @@ export default function Process() {
         <FadeIn>
           <div className="text-center mb-16 md:mb-24 max-w-3xl mx-auto">
             <h2 className="text-3xl md:text-5xl font-serif font-bold text-white mb-6 leading-tight">
-              Jedno 60-minutowe spotkanie.<br />
-              <span className="text-[#B59E5D]">Konkretna rozmowa. Jasny wniosek.</span>
+              60-minutowe spotkanie<br />
+              <span className="text-[#B59E5D]">Konkretna rozmowa i jasny wniosek</span>
             </h2>
             <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
               To nie jest proces ciągnący się miesiącami.<br className="hidden md:block" />
@@ -53,7 +53,7 @@ export default function Process() {
                         <h3 className="text-2xl font-bold text-white mb-4">Analizujemy opcje <span className="text-[#B59E5D] text-base font-normal block mt-1">(25–30 min)</span></h3>
                         <p className="text-gray-300 leading-relaxed">
                            Rozkładamy możliwe scenariusze.
-                           Sprawdzamy konsekwencje, koszty i zyski — bez dramatyzowania.
+                           Sprawdzamy konsekwencje, koszty i zyski.
                         </p>
                     </div>
                 </StaggerItem>

@@ -38,7 +38,7 @@ export default function OfferDetails() {
                  <span className="text-5xl font-bold text-white">50 zł</span>
                  <span className="text-gray-300 text-lg">/ 60 minut</span>
                </div>
-               <p className="text-sm text-accent mb-6 font-medium">(oferta tymczasowa – limitowana)</p>
+               <p className="text-sm text-accent mb-6 font-medium">oferta tymczasowa</p>
 
                <div className="space-y-6 flex-grow relative z-10">
                  <p className="text-gray-300">
@@ -95,7 +95,7 @@ export default function OfferDetails() {
 
                <div className="mt-8 pt-6 relative z-10">
                  <Link href="#booking" className="w-full inline-flex items-center justify-center px-6 py-4 bg-accent text-white font-bold text-lg rounded-lg hover:bg-[#D4B56A] transition-colors shadow-lg group">
-                   👉 Umów konsultację w cenie pilotażowej
+                   Umów konsultację w cenie pilotażowej
                  </Link>
                </div>
             </div>
