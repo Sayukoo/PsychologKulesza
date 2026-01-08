@@ -2,7 +2,6 @@ import Hero from '@/components/Hero';
 import About from '@/components/About';
 import TargetAudience from '@/components/TargetAudience';
 import Process from '@/components/Process';
-import Why from '@/components/Why';
 import Booking from '@/components/Booking';
 import Footer from '@/components/Footer';
 import OfferDetails from '@/components/OfferDetails';
@@ -24,10 +23,6 @@ export default function Home() {
       <StaggerContainer className="py-0">
          <StaggerItem><Process /></StaggerItem>
       </StaggerContainer>
-
-      <FadeIn direction="up">
-        <Why />
-      </FadeIn>
 
       <About />
 
