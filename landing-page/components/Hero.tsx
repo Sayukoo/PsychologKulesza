@@ -7,13 +7,13 @@ export default function Hero() {
     <section id="start" className="relative w-full min-h-screen min-h-[100svh] flex items-center justify-center bg-[var(--color-primary)] text-[var(--color-primary-foreground)] overflow-hidden pt-32 pb-20 md:pt-28 md:pb-20">
       <WavyBackground
         containerClassName="absolute inset-0 z-0 pointer-events-none"
-        colors={['#C6A75E', '#8FA99A', '#5C7280', '#3B4E59']}
+        colors={['#C6A75E', '#9FB6A1', '#B59E5D', '#6B7280']}
         backgroundFill="#111827"
-        waveOpacity={0.96}
-        waveWidth={40}
-        blur={14}
+        waveOpacity={0.16}
+        waveWidth={60}
+        blur={6}
         speed="slow"
-        waveCount={8}
+        waveCount={4}
       />
 
       <div className="relative z-10 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
