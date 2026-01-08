@@ -52,7 +52,7 @@ export default function TargetAudience() {
                         </div>
                         <div>
                           <p className="text-[#1F1F1F] text-lg font-medium leading-relaxed group-hover:text-black transition-colors duration-300">
-                            Stoją przed przełomową decyzją (zawodową lub osobistą) i potrzebują strategicznego planu.
+                            Stoją przed konkretną decyzją  i potrzebują  planu.
                           </p>
                         </div>
                       </li>
@@ -109,7 +109,7 @@ export default function TargetAudience() {
                            <Stethoscope className="w-5 h-5 text-[#8C8C8C]" strokeWidth={2} />
                         </div>
                         <span className="text-[#5F5F5F] text-lg leading-relaxed group-hover:text-[#4A4A4A] transition-colors duration-300 border-l-2 border-transparent pl-4 group-hover:border-[#D1D1D1]">
-                          Wymagają leczenia klinicznego, farmakoterapii lub pogłębionej psychoterapii.
+                          Szukasz leczenia klinicznego, farmakoterapii lub  psychoterapii.
                         </span>
                       </li>
                     </StaggerItem>
@@ -120,7 +120,7 @@ export default function TargetAudience() {
                            <MessageSquare className="w-5 h-5 text-[#8C8C8C]" strokeWidth={2} />
                         </div>
                         <span className="text-[#5F5F5F] text-lg leading-relaxed group-hover:text-[#4A4A4A] transition-colors duration-300 border-l-2 border-transparent pl-4 group-hover:border-[#D1D1D1]">
-                           Chcą się jedynie „wygadać” bez intencji wprowadzania realnych zmian.
+                           Chcesz pogadać bez intencji wprowadzania realnych zmian.
                         </span>
                       </li>
                     </StaggerItem>
@@ -131,7 +131,7 @@ export default function TargetAudience() {
                            <Scroll className="w-5 h-5 text-[#8C8C8C]" strokeWidth={2} />
                         </div>
                         <span className="text-[#5F5F5F] text-lg leading-relaxed group-hover:text-[#4A4A4A] transition-colors duration-300 border-l-2 border-transparent pl-4 group-hover:border-[#D1D1D1]">
-                           Oczekują, że ktoś podejmie decyzję za nich i poda gotową receptę na życie.
+                           Oczekujesz, że ktoś podejmie decyzję za nich i poda gotową receptę na życie.
                         </span>
                       </li>
                     </StaggerItem>
