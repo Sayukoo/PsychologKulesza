@@ -53,10 +53,10 @@ export default function About() {
                         href="https://www.linkedin.com/in/konstruktywizm/"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center text-[#2E3A44] hover:text-[#C1AE78] transition-colors font-medium group"
+                        className="group btn-shine relative inline-flex items-center justify-center gap-2 rounded-sm border border-[#C1AE78] bg-[#FAF7F2] px-6 py-3 text-sm font-semibold text-[#2E3A44] shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:brightness-95 hover:shadow-[#C1AE78]/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C1AE78]/40"
                     >
                         Zobacz profil zawodowy
-                        <span className="ml-2 transform group-hover:translate-x-1 transition-transform">→</span>
+                        <span className="text-[#2E3A44] transition-transform duration-200 group-hover:translate-x-0.5">→</span>
                     </Link>
                  </div>
               </StaggerItem>
