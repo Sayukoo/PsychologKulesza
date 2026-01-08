@@ -8,12 +8,9 @@ export default function OfferDetails() {
       <div className="max-w-7xl mx-auto">
         <FadeIn>
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold text-primary mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-primary mb-6">
               Cennik
             </h2>
-            <p className="text-lg md:text-xl text-muted max-w-2xl mx-auto">
-              Wybierz opcję dopasowaną do Twoich potrzeb.
-            </p>
           </div>
         </FadeIn>
 
