@@ -1,5 +1,5 @@
 import { FadeIn, StaggerContainer, StaggerItem } from './FadeIn';
-import { Clock, CheckCircle2, Lock, Monitor, Info, ArrowRight, AlertCircle } from 'lucide-react';
+import { Clock, CheckCircle2, Lock, Monitor, Info, ArrowRight, AlertCircle, Mic } from 'lucide-react';
 import Link from 'next/link';
 
 export default function OfferDetails() {
@@ -12,7 +12,7 @@ export default function OfferDetails() {
               Cennik
             </h2>
             <p className="text-lg md:text-xl text-muted max-w-2xl mx-auto">
-              Przejrzyste zasady. Wybierz opcję dopasowaną do obecnego etapu.
+              Wybierz opcję dopasowaną do Twoich potrzeb.
             </p>
           </div>
         </FadeIn>
@@ -38,20 +38,16 @@ export default function OfferDetails() {
                  <span className="text-5xl font-bold text-white">50 zł</span>
                  <span className="text-gray-300 text-lg">/ 60 minut</span>
                </div>
-               <p className="text-sm text-accent mb-6 font-medium">oferta tymczasowa</p>
+               <p className="text-sm text-accent mb-6 font-medium">oferta limitowana</p>
 
                <div className="space-y-6 flex-grow relative z-10">
-                 <p className="text-gray-300">
-                   Pełna, 60-minutowa konsultacja decyzyjna w ramach etapu pilotażowego.
-                   Zakres pracy nie różni się od standardowej konsultacji.
-                 </p>
 
                  <div className="bg-white/5 rounded-lg p-4 border border-white/10">
                     <h4 className="flex items-center gap-2 text-accent font-semibold mb-2 text-sm uppercase tracking-wider">
                       <Info className="w-4 h-4" /> Dlaczego taka cena?
                     </h4>
                     <p className="text-sm text-gray-300 leading-relaxed">
-                      Ten etap służy dopracowaniu modelu pracy i zebrania doświadczeń z określoną liczbą osób.
+                      Dopracowuję model pracy i zbieram doświadczenie.
                     </p>
                  </div>
 
@@ -60,42 +56,34 @@ export default function OfferDetails() {
                    <ul className="space-y-3">
                      <li className="flex items-start gap-3">
                        <Clock className="w-5 h-5 text-accent shrink-0 mt-0.5" />
-                       <span className="text-gray-300">60 minut indywidualnej, intensywnej pracy</span>
+                       <span className="text-gray-300">60 minut intensywnej pracy online</span>
                      </li>
                      <li className="flex items-start gap-3">
                        <CheckCircle2 className="w-5 h-5 text-accent shrink-0 mt-0.5" />
-                       <span className="text-gray-300">Analiza i uporządkowanie Twojej sytuacji</span>
+                       <span className="text-gray-300">Analiza sytuacji i opcji działania</span>
                      </li>
                      <li className="flex items-start gap-3">
                        <CheckCircle2 className="w-5 h-5 text-accent shrink-0 mt-0.5" />
-                       <span className="text-gray-300">Omówienie możliwych scenariuszy</span>
+                       <span className="text-gray-300">Konkretny plan lub wniosek końcowy</span>
                      </li>
                      <li className="flex items-start gap-3">
-                       <CheckCircle2 className="w-5 h-5 text-accent shrink-0 mt-0.5" />
-                       <span className="text-gray-300">Jeden kluczowy wniosek lub następny krok</span>
+                       <Mic className="w-5 h-5 text-accent shrink-0 mt-0.5" />
+                       <div className="flex flex-col">
+                         <span className="text-gray-300">Spotkanie jest nagrywane</span>
+                         <span className="text-xs text-gray-400 mt-0.5">W celach analizy i doskonalenia warsztatu</span>
+                       </div>
                      </li>
                      <li className="flex items-start gap-3">
                        <Lock className="w-5 h-5 text-accent shrink-0 mt-0.5" />
-                       <span className="text-gray-300">Pełna poufność</span>
+                       <span className="text-gray-300">Poufność (nagranie tylko do użytku wewn.)</span>
                      </li>
                    </ul>
-                 </div>
-
-                 <div className="space-y-2 pt-4 border-t border-white/10">
-                   <div className="flex items-center gap-2 text-gray-300 text-sm">
-                      <Monitor className="w-4 h-4 text-accent" />
-                      <span>Forma: online (Google Meet)</span>
-                   </div>
-                   <div className="flex items-center gap-2 text-gray-300 text-sm">
-                      <AlertCircle className="w-4 h-4 text-accent" />
-                      <span>Liczba miejsc: <strong className="text-white">ściśle ograniczona</strong></span>
-                   </div>
                  </div>
                </div>
 
                <div className="mt-8 pt-6 relative z-10">
                  <Link href="#booking" className="w-full inline-flex items-center justify-center px-6 py-4 bg-accent text-white font-bold text-lg rounded-lg hover:bg-[#D4B56A] transition-colors shadow-lg group">
-                   Umów konsultację w cenie pilotażowej
+                   Umów konsultację
                  </Link>
                </div>
             </div>
@@ -116,11 +104,14 @@ export default function OfferDetails() {
                </div>
 
                <div className="space-y-6 flex-grow">
-                 <p className="text-primary/80 leading-relaxed">
-                   Cena obowiązująca po zakończeniu etapu pilotażowego.
-                   <br />
-                   Zakres pracy pozostaje bez zmian.
+                 <p className="text-primary/80 leading-relaxed text-lg">
+                   Cena regularna obowiązująca po zakończeniu etapu pilotażowego.
                  </p>
+
+                 <div className="flex items-center gap-3 text-primary/80">
+                    <CheckCircle2 className="w-5 h-5 text-primary shrink-0" />
+                    <span className="font-medium">Ten sam zakres co w wersji pilotażowej</span>
+                 </div>
 
                  <div className="bg-gray-50 rounded-lg p-6 border border-gray-100 mt-auto">
                     <h4 className="flex items-center gap-2 text-primary font-semibold mb-2">
@@ -132,7 +123,6 @@ export default function OfferDetails() {
                  </div>
                </div>
 
-               {/* Placeholder button or simple text to indicate it's not active yet, or just link to booking too but it's secondary */}
                <div className="mt-8 pt-6 opacity-50 cursor-not-allowed">
                   <div className="w-full inline-flex items-center justify-center px-6 py-4 border-2 border-dashed border-gray-300 text-gray-400 font-medium rounded-lg">
                     Dostępne wkrótce
