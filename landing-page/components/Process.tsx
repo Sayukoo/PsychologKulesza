@@ -91,10 +91,7 @@ export default function Process() {
                             <Video className="w-6 h-6 text-[#B59E5D]" />
                             <span className="text-gray-200 text-lg">Forma: <strong className="text-white">online (rozmowa wideo)</strong></span>
                         </li>
-                        <li className="flex items-start gap-4">
-                            <CheckCircle className="w-6 h-6 text-[#B59E5D] shrink-0 mt-1" />
-                            <span className="text-gray-200 text-lg">Jedno spotkanie — kolejne tylko, jeśli uznasz to za sensowne</span>
-                        </li>
+            
                     </ul>
                 </div>
             </FadeIn>
