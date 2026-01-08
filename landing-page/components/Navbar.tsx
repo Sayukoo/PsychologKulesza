@@ -53,10 +53,10 @@ export default function Navbar() {
   const navLinks = [
     { name: 'Dla kogo', href: '/#dla-kogo' },
     { name: 'Jak wygląda konsultacja', href: '/#process' },
-    { name: 'Cennik', href: '/#cennik' },
     { name: 'O mnie', href: '/#o-mnie' },
-    { name: 'Kontakt', href: '/kontakt' },
+    { name: 'Cennik', href: '/#cennik' },
     { name: 'Umów konsultację', href: '/#booking', cta: true },
+    { name: 'Kontakt', href: '/kontakt' },
   ];
 
   const handleNavLinkClick = (event: MouseEvent<HTMLAnchorElement>, href: string) => {
