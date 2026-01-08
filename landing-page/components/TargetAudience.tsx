@@ -15,7 +15,7 @@ export default function TargetAudience() {
           {/* Left Column (YES) - 60% */}
           <div className="lg:col-span-3 h-full">
             <FadeIn className="h-full">
-              <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 md:p-12 h-full hover:shadow-md transition-shadow duration-300">
+              <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 md:p-12 h-full hover:shadow-md transition-shadow duration-300">
                 <p className="text-2xl font-bold text-[#2E3A44] mb-8 font-serif tracking-tight">
                    Pracuję z osobami, które:
                 </p>
@@ -25,7 +25,7 @@ export default function TargetAudience() {
                 </div>
 
                 <StaggerContainer>
-                  <ul className="space-y-5">
+                  <ul className="space-y-6">
                     {[
                       "utknęły w pętli rozkmin",
                       "stoją przed konkretną decyzją (relacja, praca, kierunek działania)",
@@ -52,14 +52,14 @@ export default function TargetAudience() {
           {/* Right Column (NO) - 40% */}
           <div className="lg:col-span-2 h-full">
             <FadeIn delay={0.2} className="h-full">
-              <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-8 md:p-12 h-full flex flex-col hover:shadow-md transition-shadow duration-300">
+              <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 md:p-12 h-full flex flex-col hover:shadow-md transition-shadow duration-300">
                 <div className="flex-grow">
                   <h3 className="text-2xl font-bold text-[#2E3A44] mb-8 font-serif tracking-tight">
                     To NIE jest dla Ciebie, jeśli:
                   </h3>
 
                   <StaggerContainer delay={0.2}>
-                    <ul className="space-y-5 mb-10">
+                    <ul className="space-y-6 mb-10">
                       {[
                         "szukasz psychoterapii lub leczenia zaburzeń",
                         "chcesz „pogadać”, ale bez realnej zmiany",

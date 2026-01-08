@@ -12,7 +12,7 @@ export default function Process() {
 
       <div className="max-w-7xl mx-auto relative z-10">
         <FadeIn>
-          <div className="text-center mb-16 md:mb-24 max-w-3xl mx-auto">
+          <div className="text-center mb-20 md:mb-24 max-w-3xl mx-auto">
             <h2 className="text-3xl md:text-5xl font-serif font-bold text-white mb-6 leading-tight">
               60-minutowe spotkanie<br />
               <span className="text-[#B59E5D]">Konkretna rozmowa i jasny wniosek</span>
@@ -29,7 +29,7 @@ export default function Process() {
             {/* Connecting line for desktop */}
             <div className="hidden md:block absolute top-12 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-[#B59E5D]/30 to-transparent" />
 
-            <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8">
+            <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-8">
                 {/* Step 1 */}
                 <StaggerItem>
                     <div className="relative flex flex-col items-center text-center group">

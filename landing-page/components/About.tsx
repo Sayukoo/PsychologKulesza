@@ -24,7 +24,7 @@ export default function About() {
               </StaggerItem>
 
               <StaggerItem>
-                <div className="space-y-6 text-lg text-[#4A4A4A] leading-relaxed font-sans">
+                <div className="space-y-8 text-lg text-[#4A4A4A] leading-relaxed font-sans">
                   <p>
                     Nazywam się Kacper Kulesza.
                   </p>

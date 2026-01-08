@@ -4,14 +4,14 @@ import { BackgroundBeams } from './animate-ui/components/backgrounds/background-
 
 export default function Hero() {
   return (
-    <section id="start" className="relative w-full min-h-screen min-h-[100svh] flex items-center justify-center bg-[var(--color-primary)] text-[var(--color-primary-foreground)] overflow-hidden pt-24 pb-16 md:pt-28 md:pb-20">
+    <section id="start" className="relative w-full min-h-screen min-h-[100svh] flex items-center justify-center bg-[var(--color-primary)] text-[var(--color-primary-foreground)] overflow-hidden pt-32 pb-20 md:pt-28 md:pb-20">
       {/* Dynamic Background - Beams fits the Dark Navy theme perfectly */}
       <BackgroundBeams className="opacity-40" />
 
       <div className="relative z-10 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
         <StaggerContainer className="max-w-4xl">
           <StaggerItem>
-            <h1 className="text-3xl sm:text-5xl md:text-7xl font-bold tracking-tight text-[#FAF7F2] mb-6 leading-[1.15] sm:leading-[1.1]">
+            <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight text-[#FAF7F2] mb-6 leading-[1.15] sm:leading-[1.1]">
              Utknąłeś w myślach i nie możesz podjąć decyzji? <br />
               <span className="text-gray-300">
                 W <span className="text-[var(--color-accent)]">60 minut</span> uporządkujemy chaos
