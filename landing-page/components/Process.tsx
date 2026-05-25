@@ -3,7 +3,7 @@ import { FadeIn, StaggerContainer, StaggerItem } from './FadeIn';
 
 export default function Process() {
   return (
-    <section id="process" className="py-20 md:py-32 px-4 sm:px-6 lg:px-8 bg-[#2E3A44] text-[#FAF7F2] relative overflow-hidden">
+    <section id="process" className="py-20 md:py-32 px-4 sm:px-6 lg:px-8 bg-[var(--color-sage)] text-[var(--color-sage-foreground)] relative overflow-hidden">
         {/* Optional background decoration */}
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none opacity-5">
             <div className="absolute -top-[20%] -right-[10%] w-[60%] h-[60%] rounded-full bg-[#FAF7F2] blur-[120px]" />
@@ -13,11 +13,11 @@ export default function Process() {
       <div className="max-w-7xl mx-auto relative z-10">
         <FadeIn>
           <div className="text-center mb-20 md:mb-24 max-w-3xl mx-auto">
-            <h2 className="text-3xl md:text-5xl font-serif font-bold text-white mb-6 leading-tight">
+            <h2 className="text-3xl md:text-5xl font-serif font-bold text-[#2B2E33] mb-6 leading-tight">
               60-minutowe spotkanie<br />
-              <span className="text-[#B59E5D]">Konkretna rozmowa i jasny wniosek</span>
+              <span className="text-[#2E3A44]">Konkretna rozmowa i jasny wniosek</span>
             </h2>
-            <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
+            <p className="text-lg md:text-xl text-[#2B2E33]/80 leading-relaxed">
               To nie jest proces ciągnący się miesiącami.<br className="hidden md:block" />
               Przez 60 minut intensywnie pracujemy nad Twoją sytuacją, żebyś mógł ruszyć z miejsca.
             </p>
@@ -31,13 +31,13 @@ export default function Process() {
 
             <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-8">
                 {/* Step 1 */}
-                <StaggerItem>
-                    <div className="relative flex flex-col items-center text-center group">
+                <StaggerItem className="h-full">
+                    <div className="relative flex flex-col items-center text-center group bg-[#FAF7F2] rounded-2xl p-8 h-full shadow-lg border border-[#B59E5D]/10 hover:-translate-y-2 transition-transform duration-300">
                         <div className="w-24 h-24 rounded-full bg-[#2B2E33] border border-[#B59E5D]/20 flex items-center justify-center mb-8 relative z-10 shadow-lg group-hover:border-[#B59E5D] transition-colors duration-300">
                              <span className="text-3xl font-serif text-[#B59E5D] font-bold">1</span>
                         </div>
-                        <h3 className="text-2xl font-bold text-white mb-4">Zbieramy fakty <span className="text-[#B59E5D] text-base font-normal block mt-1">(10–15 min)</span></h3>
-                        <p className="text-gray-300 leading-relaxed">
+                        <h3 className="text-2xl font-bold text-[#2B2E33] mb-4">Zbieramy fakty <span className="text-[#B59E5D] text-base font-normal block mt-1">(10–15 min)</span></h3>
+                        <p className="text-[#4A4A4A] leading-relaxed">
                             Porządkujemy to, co się wydarzyło i co jest teraz.
                             Oddzielamy fakty od interpretacji i lęku.
                         </p>
@@ -45,13 +45,13 @@ export default function Process() {
                 </StaggerItem>
 
                 {/* Step 2 */}
-                <StaggerItem>
-                    <div className="relative flex flex-col items-center text-center group">
+                <StaggerItem className="h-full">
+                    <div className="relative flex flex-col items-center text-center group bg-[#FAF7F2] rounded-2xl p-8 h-full shadow-lg border border-[#B59E5D]/10 hover:-translate-y-2 transition-transform duration-300">
                         <div className="w-24 h-24 rounded-full bg-[#2B2E33] border border-[#B59E5D]/20 flex items-center justify-center mb-8 relative z-10 shadow-lg group-hover:border-[#B59E5D] transition-colors duration-300">
                              <span className="text-3xl font-serif text-[#B59E5D] font-bold">2</span>
                         </div>
-                        <h3 className="text-2xl font-bold text-white mb-4">Analizujemy opcje <span className="text-[#B59E5D] text-base font-normal block mt-1">(25–30 min)</span></h3>
-                        <p className="text-gray-300 leading-relaxed">
+                        <h3 className="text-2xl font-bold text-[#2B2E33] mb-4">Analizujemy opcje <span className="text-[#B59E5D] text-base font-normal block mt-1">(25–30 min)</span></h3>
+                        <p className="text-[#4A4A4A] leading-relaxed">
                            Rozkładamy możliwe scenariusze.
                            Sprawdzamy konsekwencje, koszty i zyski.
                         </p>
@@ -59,13 +59,13 @@ export default function Process() {
                 </StaggerItem>
 
                 {/* Step 3 */}
-                <StaggerItem>
-                     <div className="relative flex flex-col items-center text-center group">
+                <StaggerItem className="h-full">
+                     <div className="relative flex flex-col items-center text-center group bg-[#FAF7F2] rounded-2xl p-8 h-full shadow-lg border border-[#B59E5D]/10 hover:-translate-y-2 transition-transform duration-300">
                         <div className="w-24 h-24 rounded-full bg-[#2B2E33] border border-[#B59E5D]/20 flex items-center justify-center mb-8 relative z-10 shadow-lg group-hover:border-[#B59E5D] transition-colors duration-300">
                              <span className="text-3xl font-serif text-[#B59E5D] font-bold">3</span>
                         </div>
-                        <h3 className="text-2xl font-bold text-white mb-4">Dochodzimy do wniosku <span className="text-[#B59E5D] text-base font-normal block mt-1">(10–15 min)</span></h3>
-                        <p className="text-gray-300 leading-relaxed">
+                        <h3 className="text-2xl font-bold text-[#2B2E33] mb-4">Dochodzimy do wniosku <span className="text-[#B59E5D] text-base font-normal block mt-1">(10–15 min)</span></h3>
+                        <p className="text-[#4A4A4A] leading-relaxed">
                             Formułujemy jedną kluczową decyzję, wniosek lub następny krok, który możesz wdrożyć po spotkaniu.
                         </p>
                     </div>

@@ -10,19 +10,20 @@ html {
   --font-sans: var(--font-sans);
   --font-serif: var(--font-serif);
 
-  /* Primary: Navy (#111827) - Used for Hero BG, Text on Ivory, Strong Elements */
-  --color-primary: #111827;
+  /* Primary: Graphite/Anthracite (#2B2E33) - Used for Hero BG, Text on Ivory, Strong Elements */
+  --color-primary: #2B2E33;
   --color-primary-foreground: #FAF7F2;
 
-  /* Secondary: Sage (#9FB6A1) - Used for Process/Why backgrounds */
-  --color-sage: #9FB6A1;
-  --color-sage-foreground: #111827;
-  /* Keeping secondary variable for compatibility, mapped to Sage or Navy depending on usage */
-  --color-secondary: #9FB6A1;
-  --color-secondary-foreground: #111827;
+  /* Secondary: Dark Navy (#2E3A44) */
+  --color-secondary: #2E3A44;
+  --color-secondary-foreground: #FAF7F2;
 
-  /* Accent: Brass (#C6A75E) - Links, icons, details */
-  --color-accent: #C6A75E;
+  /* Sage (#9FB6A1) - Used for Process backgrounds */
+  --color-sage: #9FB6A1;
+  --color-sage-foreground: #2B2E33;
+
+  /* Accent: Muted Gold/Brass (#B59E5D) - Links, icons, details */
+  --color-accent: #B59E5D;
   --color-accent-foreground: #ffffff;
 
   /* Muted: Tech colors */
@@ -37,20 +38,30 @@ html {
   /* Background: Ivory (#FAF7F2) - Dominant (55-65%) */
   --color-background: #FAF7F2;
 
-  /* Foreground: Navy (#111827) - Text on Ivory */
-  --color-foreground: #111827;
+  /* Foreground: Graphite/Anthracite (#2B2E33) - Text on Ivory */
+  --color-foreground: #2B2E33;
 
   --animate-shimmer: shimmer 3s infinite;
+  --animate-pulse-soft: pulse-soft 3s infinite;
 
   @keyframes shimmer {
     0% { transform: translateX(-150%) skewX(-12deg); }
     20% { transform: translateX(150%) skewX(-12deg); }
     100% { transform: translateX(150%) skewX(-12deg); }
   }
+
+  @keyframes pulse-soft {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.9; transform: scale(1.02); }
+  }
 }
 
 @utility animate-shimmer {
   animation: var(--animate-shimmer);
+}
+
+@utility animate-pulse-soft {
+  animation: var(--animate-pulse-soft);
 }
 
 @layer base {

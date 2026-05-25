@@ -18,7 +18,7 @@ export default function OfferDetails() {
 
           {/* Card 1: Pilot Consultation (Featured) */}
           <StaggerItem className="h-full">
-            <div className="flex flex-col h-full bg-primary text-primary-foreground rounded-2xl p-8 shadow-2xl relative overflow-hidden border border-primary/10 ring-1 ring-white/10">
+            <div className="flex flex-col h-full bg-primary text-primary-foreground rounded-2xl p-6 md:p-10 shadow-2xl hover:shadow-accent/20 relative overflow-hidden border border-[#B59E5D]/30 ring-1 ring-[#B59E5D]/10 transition-shadow duration-300">
                {/* Badge */}
                <div className="absolute top-6 right-6">
                  <span className="bg-accent text-white text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wide shadow-sm">
@@ -88,7 +88,7 @@ export default function OfferDetails() {
 
           {/* Card 2: Standard (Future) */}
           <StaggerItem className="h-full">
-            <div className="flex flex-col h-full bg-white rounded-2xl p-8 shadow-lg border border-[var(--color-border)] relative overflow-hidden opacity-90 hover:opacity-100 transition-opacity">
+            <div className="flex flex-col h-full bg-white rounded-2xl p-6 md:p-10 shadow-lg border border-slate-200 relative overflow-hidden opacity-90 hover:opacity-100 transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
 
                <div className="mb-6">
                  <h3 className="text-2xl font-bold text-primary mb-2">Konsultacja decyzyjna</h3>
@@ -120,7 +120,7 @@ export default function OfferDetails() {
                  </div>
                </div>
 
-               <div className="mt-8 pt-6 opacity-50 cursor-not-allowed">
+               <div className="mt-8 pt-6 opacity-50 cursor-not-allowed filter grayscale transition-all duration-300 hover:grayscale-0 hover:opacity-70">
                   <div className="w-full inline-flex items-center justify-center px-6 py-4 border-2 border-dashed border-gray-300 text-gray-400 font-medium rounded-lg">
                     Dostępne wkrótce
                   </div>

@@ -38,7 +38,7 @@ export default function TargetAudience() {
                            <Brain className="w-6 h-6 text-[#C1AE78]" strokeWidth={1.5} />
                         </div>
                         <div>
-                          <p className="text-[#1F1F1F] text-lg font-medium leading-relaxed group-hover:text-black transition-colors duration-300">
+                          <p className="text-[#2E3A44] text-xl font-semibold leading-relaxed group-hover:text-black transition-all duration-300 group-hover:translate-x-1">
                             Czują, że kręcą się w kółko, analizując w nieskończoność te same scenariusze.
                           </p>
                         </div>
@@ -51,7 +51,7 @@ export default function TargetAudience() {
                            <Signpost className="w-6 h-6 text-[#C1AE78]" strokeWidth={1.5} />
                         </div>
                         <div>
-                          <p className="text-[#1F1F1F] text-lg font-medium leading-relaxed group-hover:text-black transition-colors duration-300">
+                          <p className="text-[#2E3A44] text-xl font-semibold leading-relaxed group-hover:text-black transition-all duration-300 group-hover:translate-x-1">
                             Stoją przed konkretną decyzją  i potrzebują  planu.
                           </p>
                         </div>
@@ -64,7 +64,7 @@ export default function TargetAudience() {
                            <Zap className="w-6 h-6 text-[#C1AE78]" strokeWidth={1.5} />
                         </div>
                         <div>
-                          <p className="text-[#1F1F1F] text-lg font-medium leading-relaxed group-hover:text-black transition-colors duration-300">
+                          <p className="text-[#2E3A44] text-xl font-semibold leading-relaxed group-hover:text-black transition-all duration-300 group-hover:translate-x-1">
                             Doświadczają paraliżu decyzyjnego i przewlekłego napięcia mentalnego.
                           </p>
                         </div>
@@ -77,7 +77,7 @@ export default function TargetAudience() {
                            <Target className="w-6 h-6 text-[#C1AE78]" strokeWidth={1.5} />
                         </div>
                         <div>
-                          <p className="text-[#1F1F1F] text-lg font-medium leading-relaxed group-hover:text-black transition-colors duration-300">
+                          <p className="text-[#2E3A44] text-xl font-semibold leading-relaxed group-hover:text-black transition-all duration-300 group-hover:translate-x-1">
                              Szukają konkretnych wniosków i rozwiązań, a nie tylko emocjonalnego wsparcia.
                           </p>
                         </div>
@@ -108,7 +108,7 @@ export default function TargetAudience() {
                         <div className="mt-1 flex-shrink-0">
                            <Stethoscope className="w-5 h-5 text-[#8C8C8C]" strokeWidth={2} />
                         </div>
-                        <span className="text-[#5F5F5F] text-lg leading-relaxed group-hover:text-[#4A4A4A] transition-colors duration-300 border-l-2 border-transparent pl-4 group-hover:border-[#D1D1D1]">
+                        <span className="text-[#5F5F5F] text-lg leading-relaxed transition-all duration-300 border-l-2 border-transparent pl-4 group-hover:border-[#D1D1D1] group-hover:pl-6 group-hover:text-[#4A4A4A]">
                           Szukasz leczenia klinicznego, farmakoterapii lub  psychoterapii.
                         </span>
                       </li>
@@ -119,7 +119,7 @@ export default function TargetAudience() {
                         <div className="mt-1 flex-shrink-0">
                            <MessageSquare className="w-5 h-5 text-[#8C8C8C]" strokeWidth={2} />
                         </div>
-                        <span className="text-[#5F5F5F] text-lg leading-relaxed group-hover:text-[#4A4A4A] transition-colors duration-300 border-l-2 border-transparent pl-4 group-hover:border-[#D1D1D1]">
+                        <span className="text-[#5F5F5F] text-lg leading-relaxed transition-all duration-300 border-l-2 border-transparent pl-4 group-hover:border-[#D1D1D1] group-hover:pl-6 group-hover:text-[#4A4A4A]">
                            Chcesz pogadać bez intencji wprowadzania realnych zmian.
                         </span>
                       </li>
@@ -130,7 +130,7 @@ export default function TargetAudience() {
                         <div className="mt-1 flex-shrink-0">
                            <Scroll className="w-5 h-5 text-[#8C8C8C]" strokeWidth={2} />
                         </div>
-                        <span className="text-[#5F5F5F] text-lg leading-relaxed group-hover:text-[#4A4A4A] transition-colors duration-300 border-l-2 border-transparent pl-4 group-hover:border-[#D1D1D1]">
+                        <span className="text-[#5F5F5F] text-lg leading-relaxed transition-all duration-300 border-l-2 border-transparent pl-4 group-hover:border-[#D1D1D1] group-hover:pl-6 group-hover:text-[#4A4A4A]">
                            Oczekujesz, że ktoś podejmie decyzję za nich i poda gotową receptę na życie.
                         </span>
                       </li>
