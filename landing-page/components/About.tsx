@@ -40,8 +40,8 @@ export default function About() {
               </StaggerItem>
 
               <StaggerItem>
-                <div className="border-l-4 border-[#C1AE78] pl-6 py-2">
-                  <p className="text-xl font-medium text-[#2E3A44] italic font-serif">
+                <div className="border-l-4 border-[#C1AE78] pl-6 py-4 bg-[#C1AE78]/5 rounded-r-lg shadow-sm hover:shadow-md transition-shadow">
+                  <p className="text-2xl font-medium text-[#2B2E33] italic font-serif leading-snug">
                   Jeśli wychodzisz z rozmów z innymi z poczuciem „fajnie było, ale dalej nie wiem co robić” to tu pracujemy inaczej
                   </p>
                 </div>
@@ -68,7 +68,7 @@ export default function About() {
              <FadeIn direction="left" duration={0.8}>
                 <div className="relative mx-auto max-w-md lg:max-w-full">
                     {/* Decorative element - frame */}
-                    <div className="absolute top-4 -right-4 w-full h-full border-2 border-[#C1AE78]/30 rounded-2xl -z-10 translate-x-4 translate-y-4 hidden md:block" />
+                    <div className="absolute top-4 -right-4 w-full h-full border-2 border-[#C1AE78]/40 rounded-2xl -z-10 translate-x-4 translate-y-4 hidden md:block bg-[#C1AE78]/5 transition-transform duration-500 hover:translate-x-6 hover:translate-y-6" />
 
                     <div className="relative rounded-2xl overflow-hidden shadow-xl aspect-[3/4] lg:aspect-[4/5] bg-[#FAF7F2]">
                         <Image

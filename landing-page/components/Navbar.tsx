@@ -169,7 +169,7 @@ export default function Navbar() {
             exit={{ opacity: 0, x: '100%' }}
             transition={{ type: "spring", damping: 25, stiffness: 200 }}
             className="fixed inset-0 z-[60] flex flex-col items-center justify-center space-y-8 md:hidden"
-            style={{ backgroundColor: '#111827' }}
+            style={{ backgroundColor: '#2E3A44' }}
           >
              {/* Navy Background for Mobile Menu */}
             {navLinks.map((link, i) => (
