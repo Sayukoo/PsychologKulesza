@@ -31,10 +31,13 @@ export default function MobileStickyCTA() {
         >
           <Link
             href="/#booking"
-            className="flex items-center justify-center w-full bg-accent text-white font-bold py-4 rounded-lg shadow-xl shadow-accent/20 hover:brightness-95 transition-all btn-shine animate-[pulse_2.5s_ease-in-out_infinite]"
+            className="relative overflow-hidden flex items-center justify-center w-full bg-accent text-white font-bold py-4 rounded-lg shadow-xl shadow-accent/20 hover:brightness-95 transition-all group"
           >
-            <CalendarCheck className="w-5 h-5 mr-2" />
-            Umów wizytę
+            <div className="absolute inset-0 -translate-x-full animate-[shimmer_3s_infinite] bg-gradient-to-r from-transparent via-white/30 to-transparent z-10" />
+            <span className="relative z-10 flex items-center">
+              <CalendarCheck className="w-5 h-5 mr-2" />
+              Umów wizytę
+            </span>
           </Link>
         </motion.div>
       )}

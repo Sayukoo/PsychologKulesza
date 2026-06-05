@@ -33,8 +33,8 @@ export default function TargetAudience() {
                 <StaggerContainer>
                   <ul className="space-y-10">
                     <StaggerItem>
-                      <li className="flex items-start gap-6 group p-4 -ml-4 rounded-xl transition-all duration-300 hover:bg-white hover:shadow-lg hover:shadow-[#C1AE78]/5">
-                        <div className="mt-1 flex-shrink-0 p-3 bg-white rounded-xl shadow-sm border border-[#E6E6E6] group-hover:border-[#C1AE78]/50 group-hover:shadow-md group-hover:scale-110 transition-all duration-300">
+                      <li className="flex items-start gap-6 group">
+                        <div className="mt-1 flex-shrink-0 p-3 bg-white rounded-xl shadow-sm border border-[#E6E6E6] group-hover:border-[#C1AE78]/30 group-hover:shadow-md transition-all duration-300">
                            <Brain className="w-6 h-6 text-[#C1AE78]" strokeWidth={1.5} />
                         </div>
                         <div>
@@ -46,8 +46,8 @@ export default function TargetAudience() {
                     </StaggerItem>
 
                     <StaggerItem>
-                      <li className="flex items-start gap-6 group p-4 -ml-4 rounded-xl transition-all duration-300 hover:bg-white hover:shadow-lg hover:shadow-[#C1AE78]/5">
-                        <div className="mt-1 flex-shrink-0 p-3 bg-white rounded-xl shadow-sm border border-[#E6E6E6] group-hover:border-[#C1AE78]/50 group-hover:shadow-md group-hover:scale-110 transition-all duration-300">
+                      <li className="flex items-start gap-6 group">
+                        <div className="mt-1 flex-shrink-0 p-3 bg-white rounded-xl shadow-sm border border-[#E6E6E6] group-hover:border-[#C1AE78]/30 group-hover:shadow-md transition-all duration-300">
                            <Signpost className="w-6 h-6 text-[#C1AE78]" strokeWidth={1.5} />
                         </div>
                         <div>
@@ -59,8 +59,8 @@ export default function TargetAudience() {
                     </StaggerItem>
 
                     <StaggerItem>
-                      <li className="flex items-start gap-6 group p-4 -ml-4 rounded-xl transition-all duration-300 hover:bg-white hover:shadow-lg hover:shadow-[#C1AE78]/5">
-                        <div className="mt-1 flex-shrink-0 p-3 bg-white rounded-xl shadow-sm border border-[#E6E6E6] group-hover:border-[#C1AE78]/50 group-hover:shadow-md group-hover:scale-110 transition-all duration-300">
+                      <li className="flex items-start gap-6 group">
+                        <div className="mt-1 flex-shrink-0 p-3 bg-white rounded-xl shadow-sm border border-[#E6E6E6] group-hover:border-[#C1AE78]/30 group-hover:shadow-md transition-all duration-300">
                            <Zap className="w-6 h-6 text-[#C1AE78]" strokeWidth={1.5} />
                         </div>
                         <div>
@@ -72,8 +72,8 @@ export default function TargetAudience() {
                     </StaggerItem>
 
                     <StaggerItem>
-                      <li className="flex items-start gap-6 group p-4 -ml-4 rounded-xl transition-all duration-300 hover:bg-white hover:shadow-lg hover:shadow-[#C1AE78]/5">
-                        <div className="mt-1 flex-shrink-0 p-3 bg-white rounded-xl shadow-sm border border-[#E6E6E6] group-hover:border-[#C1AE78]/50 group-hover:shadow-md group-hover:scale-110 transition-all duration-300">
+                      <li className="flex items-start gap-6 group">
+                        <div className="mt-1 flex-shrink-0 p-3 bg-white rounded-xl shadow-sm border border-[#E6E6E6] group-hover:border-[#C1AE78]/30 group-hover:shadow-md transition-all duration-300">
                            <Target className="w-6 h-6 text-[#C1AE78]" strokeWidth={1.5} />
                         </div>
                         <div>

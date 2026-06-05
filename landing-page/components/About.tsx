@@ -65,11 +65,11 @@ export default function About() {
           {/* Right Column: Image */}
           <div className="order-1 lg:order-2 relative">
              <FadeIn direction="left" duration={0.8}>
-                <div className="relative mx-auto max-w-md lg:max-w-full group">
+                <div className="relative mx-auto max-w-md lg:max-w-full">
                     {/* Decorative element - frame */}
-                    <div className="absolute top-4 -right-4 w-full h-full border-2 border-[#C1AE78]/30 rounded-2xl -z-10 translate-x-4 translate-y-4 hidden md:block transition-transform duration-500 group-hover:translate-x-6 group-hover:translate-y-6" />
+                    <div className="absolute top-4 -right-4 w-full h-full border-2 border-[#C1AE78]/30 rounded-2xl -z-10 translate-x-4 translate-y-4 hidden md:block" />
 
-                    <div className="relative rounded-2xl overflow-hidden shadow-xl aspect-[3/4] lg:aspect-[4/5] bg-[#FAF7F2] transition-all duration-500 group-hover:shadow-2xl group-hover:shadow-[#C1AE78]/20">
+                    <div className="relative rounded-2xl overflow-hidden shadow-xl aspect-[3/4] lg:aspect-[4/5] bg-[#FAF7F2]">
                         <Image
                             src={profileImage}
                             alt="Kacper Kulesza"
