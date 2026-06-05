@@ -136,13 +136,13 @@ export default function Navbar() {
                 className={clsx(
                   'text-sm font-medium transition-colors hover:text-accent',
                   link.cta
-                    ? 'relative overflow-hidden bg-[#FAF7F2] text-[var(--color-primary)] border border-[var(--color-accent)] px-5 py-2.5 rounded-sm hover:bg-[var(--color-accent)] hover:text-white hover:border-[var(--color-accent)] shadow-sm group'
+                    ? 'relative overflow-hidden bg-[#FAF7F2] text-[var(--color-primary)] border border-[var(--color-accent)] px-5 py-2.5 rounded-sm hover:bg-[var(--color-accent)] hover:text-white hover:border-[var(--color-accent)] shadow-sm group animate-[pulse_3s_ease-in-out_infinite]'
                     : textColorClass
                 )}
               >
                 {/* Shine effect for CTA */}
                 {link.cta && (
-                   <div className="absolute inset-0 -translate-x-full group-hover:animate-[shimmer_1.5s_infinite] bg-gradient-to-r from-transparent via-white/20 to-transparent z-10" />
+                   <div className="absolute inset-0 -translate-x-full animate-[shimmer_3s_infinite] bg-gradient-to-r from-transparent via-[var(--color-accent)]/30 to-transparent z-10" />
                 )}
                 <span className="relative z-10">{link.name}</span>
               </Link>
@@ -183,12 +183,15 @@ export default function Navbar() {
                   href={link.href}
                   onClick={(event) => handleNavLinkClick(event, link.href)}
                   className={clsx(
-                    'transition-colors relative group',
+                    'transition-colors relative group overflow-hidden',
                     link.cta
-                      ? 'bg-[#FAF7F2] text-[var(--color-primary)] border border-[var(--color-accent)] px-8 py-3 rounded-sm shadow-lg text-xl font-medium inline-flex items-center justify-center'
+                      ? 'bg-[#FAF7F2] text-[var(--color-primary)] border border-[var(--color-accent)] px-8 py-3 rounded-sm shadow-lg text-xl font-medium inline-flex items-center justify-center animate-[pulse_3s_ease-in-out_infinite]'
                       : 'text-3xl font-serif font-medium text-[#FAF7F2] hover:text-[var(--color-accent)]'
                   )}
                 >
+                  {link.cta && (
+                    <div className="absolute inset-0 -translate-x-full animate-[shimmer_3s_infinite] bg-gradient-to-r from-transparent via-[var(--color-accent)]/30 to-transparent z-10" />
+                  )}
                   <span className="relative z-10">{link.name}</span>
                   {!link.cta && (
                     <span className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-[var(--color-accent)] transition-all group-hover:w-full" />

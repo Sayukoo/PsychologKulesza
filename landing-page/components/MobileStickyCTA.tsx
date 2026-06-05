@@ -31,7 +31,7 @@ export default function MobileStickyCTA() {
         >
           <Link
             href="/#booking"
-            className="flex items-center justify-center w-full bg-accent text-white font-bold py-4 rounded-lg shadow-xl shadow-accent/20 hover:brightness-95 transition-all"
+            className="flex items-center justify-center w-full bg-accent text-white font-bold py-4 rounded-lg shadow-xl shadow-accent/20 hover:brightness-95 transition-all btn-shine animate-[pulse_2.5s_ease-in-out_infinite]"
           >
             <CalendarCheck className="w-5 h-5 mr-2" />
             Umów wizytę

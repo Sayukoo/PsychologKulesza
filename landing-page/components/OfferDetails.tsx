@@ -16,8 +16,11 @@ export default function OfferDetails() {
 
         <StaggerContainer className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto items-stretch">
           {/* Krok 1 */}
-          <StaggerItem className="h-full">
-            <div className="flex flex-col h-full bg-primary text-primary-foreground rounded-2xl p-8 shadow-2xl border border-primary/10 ring-1 ring-white/10">
+          <StaggerItem className="h-full relative">
+            <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-accent text-white px-4 py-1.5 rounded-full text-sm font-bold shadow-md z-10 whitespace-nowrap">
+              Najczęściej wybierane na start
+            </div>
+            <div className="flex flex-col h-full bg-primary text-primary-foreground rounded-2xl p-8 shadow-2xl border-2 border-accent relative ring-4 ring-accent/10">
               <p className="text-accent font-semibold text-sm uppercase tracking-wider mb-3">
                 Krok 1
               </p>
@@ -39,7 +42,7 @@ export default function OfferDetails() {
               <div className="mt-8 pt-6">
                 <Link
                   href="#booking"
-                  className="w-full inline-flex items-center justify-center gap-2 px-6 py-4 bg-accent text-white font-bold text-lg rounded-lg hover:bg-[#D4B56A] transition-colors shadow-lg"
+                  className="w-full inline-flex items-center justify-center gap-2 px-6 py-4 bg-accent text-white font-bold text-lg rounded-lg hover:bg-[#D4B56A] transition-all shadow-lg hover:shadow-accent/40 btn-shine animate-[pulse_2.5s_ease-in-out_infinite]"
                 >
                   Umów bezpłatną rozmowę
                   <ArrowRight className="w-5 h-5" />
