@@ -39,16 +39,10 @@ export default function Hero() {
                 href="#booking"
                 className="group btn-shine relative inline-flex items-center justify-center px-8 py-4 text-base font-bold text-[var(--color-primary)] bg-[#FAF7F2] border border-[var(--color-accent)] transition-all duration-300 shadow-lg hover:shadow-accent/25 rounded-sm overflow-hidden hover:brightness-90"
               >
-                 <span className="relative z-10 flex items-center">
-                  Umów 60-minutową konsultację
-                  <ArrowRight className="ml-2 h-5 w-5 text-[var(--color-primary)] group-hover:translate-x-1 transition-transform" />
-                 </span>
-              </a>
-              <a
-                href="#process"
-                className="inline-flex items-center justify-center px-8 py-4 text-base font-medium text-[#FAF7F2] border border-[#FAF7F2]/30 hover:bg-[#FAF7F2]/10 transition-colors duration-200 rounded-sm"
-              >
-                Zobacz, czy to dla mnie →
+                <span className="relative z-10 flex items-center text-center sm:text-left">
+                  Sprawdź, czy to dla Ciebie
+                  <ArrowRight className="ml-2 h-5 w-5 shrink-0 text-[var(--color-primary)] group-hover:translate-x-1 transition-transform" />
+                </span>
               </a>
             </div>
           </StaggerItem>

@@ -11,10 +11,11 @@ export default function Booking() {
             <CalendarCheck className="w-6 h-6 md:w-8 md:h-8 text-accent" />
           </div>
 
-          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4 md:mb-6">Umów konsultację</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4 md:mb-6">Zrób pierwszy krok</h2>
           <p className="text-base md:text-lg text-slate-600 mb-8 md:mb-12 max-w-2xl mx-auto">
-            Jeżeli to podejście jest Ci bliskie, zapraszam do rezerwacji terminu
-            <span className="block mt-2 text-sm text-slate-500">Wybierz dogodną datę poniżej.</span>
+            Wybierz dogodną datę poniżej i umów się na bezpłatną, 15-minutową rozmowę wstępną.
+            Zobaczymy, czy nadajemy na tych samych falach i czy moje podejście jest dla Ciebie
+            odpowiednie.
           </p>
 
           <div className="bg-white p-4 md:p-6 rounded-xl shadow-2xl shadow-primary/5 min-h-[400px] border border-slate-100">

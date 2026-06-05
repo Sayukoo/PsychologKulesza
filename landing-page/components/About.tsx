@@ -24,13 +24,12 @@ export default function About() {
               </StaggerItem>
 
               <StaggerItem>
-                <div className="space-y-8 text-lg text-[#4A4A4A] leading-relaxed font-sans">
-                  <p>
-                    Nazywam się Kacper Kulesza.
-                  </p>
+                <div className="space-y-6 text-lg text-[#4A4A4A] leading-relaxed font-sans">
+                  <p>Nazywam się Kacper Kulesza.</p>
                   <p>
                     Jestem psychologiem z analitycznym podejściem — na co dzień pracuję z danymi,
-                    strukturą i logicznym wnioskowaniem.
+                    strukturą i logicznym wnioskowaniem. Posiadam również 7-letnie doświadczenie w
+                    pracy z młodzieżą i dydaktyce.
                   </p>
                   <p>
                     W konsultacjach robię to samo, tylko na Twojej sytuacji: porządkujemy fakty,

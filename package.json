@@ -1,4 +1,10 @@
 {
+  "scripts": {
+    "dev": "npm run dev --prefix landing-page",
+    "build": "npm run build --prefix landing-page",
+    "start": "npm run start --prefix landing-page",
+    "lint": "npm run lint --prefix landing-page"
+  },
   "devDependencies": {
     "@playwright/test": "^1.57.0"
   }
