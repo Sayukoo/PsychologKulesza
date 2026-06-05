@@ -42,10 +42,13 @@ export default function OfferDetails() {
               <div className="mt-8 pt-6">
                 <Link
                   href="#booking"
-                  className="w-full inline-flex items-center justify-center gap-2 px-6 py-4 bg-accent text-white font-bold text-lg rounded-lg hover:bg-[#D4B56A] transition-all shadow-lg hover:shadow-accent/40 btn-shine animate-[pulse_2.5s_ease-in-out_infinite]"
+                  className="relative group overflow-hidden w-full inline-flex items-center justify-center gap-2 px-6 py-4 bg-accent text-white font-bold text-lg rounded-lg hover:bg-[#D4B56A] transition-colors shadow-lg"
                 >
-                  Umów bezpłatną rozmowę
-                  <ArrowRight className="w-5 h-5" />
+                  <div className="absolute inset-0 -translate-x-full animate-[shimmer_3s_infinite] bg-gradient-to-r from-transparent via-white/30 to-transparent z-10" />
+                  <span className="relative z-10 flex items-center">
+                    Umów bezpłatną rozmowę
+                    <ArrowRight className="w-5 h-5 ml-2" />
+                  </span>
                 </Link>
               </div>
             </div>

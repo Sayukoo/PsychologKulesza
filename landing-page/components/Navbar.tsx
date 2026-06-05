@@ -75,11 +75,12 @@ export default function Navbar() {
   };
 
   // Visual Logic:
-  // Top (Hero): Transparent BG, Ivory Text (scrolled=false)
-  // Scrolled: Ivory BG, Navy Text, Shadow (scrolled=true)
-  const navBgClass = scrolled ? 'bg-[#FAF7F2] shadow-sm border-b border-[var(--color-border)]' : 'bg-transparent';
-  const textColorClass = scrolled ? 'text-[var(--color-primary)]' : 'text-[#FAF7F2]';
-  const logoFilter = scrolled ? 'none' : 'brightness(0) invert(1)';
+  // Top (Hero) on Homepage: Transparent BG, Ivory Text (scrolled=false)
+  // Scrolled OR Not Homepage: Ivory BG, Navy Text, Shadow
+  const shouldShowSolidBg = scrolled || !isHome;
+  const navBgClass = shouldShowSolidBg ? 'bg-[#FAF7F2] shadow-sm border-b border-[var(--color-border)]' : 'bg-transparent';
+  const textColorClass = shouldShowSolidBg ? 'text-[var(--color-primary)]' : 'text-[#FAF7F2]';
+  const logoFilter = shouldShowSolidBg ? 'none' : 'brightness(0) invert(1)';
   // Note: Logo image is dark by default? If yes, invert makes it white.
   // Assuming Logo is dark (Navy/Black).
   // Scrolled (Ivory BG) -> Dark Logo (No filter)
@@ -90,7 +91,7 @@ export default function Navbar() {
       className={clsx(
         'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
         navBgClass,
-        scrolled ? 'py-3' : 'py-5'
+        shouldShowSolidBg ? 'py-3' : 'py-5'
       )}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -120,7 +121,7 @@ export default function Navbar() {
               <span className={clsx("font-serif text-lg font-bold tracking-wide transition-colors", textColorClass)}>
                 Kacper Kulesza
               </span>
-              <span className={clsx("text-xs uppercase tracking-[0.18em] transition-colors", scrolled ? "text-slate-500" : "text-slate-300")}>
+              <span className={clsx("text-xs uppercase tracking-[0.18em] transition-colors", shouldShowSolidBg ? "text-slate-500" : "text-slate-300")}>
                 psycholog
               </span>
             </div>
@@ -136,7 +137,7 @@ export default function Navbar() {
                 className={clsx(
                   'text-sm font-medium transition-colors hover:text-accent',
                   link.cta
-                    ? 'relative overflow-hidden bg-[#FAF7F2] text-[var(--color-primary)] border border-[var(--color-accent)] px-5 py-2.5 rounded-sm hover:bg-[var(--color-accent)] hover:text-white hover:border-[var(--color-accent)] shadow-sm group animate-[pulse_3s_ease-in-out_infinite]'
+                    ? 'relative overflow-hidden bg-[#FAF7F2] text-[var(--color-primary)] border border-[var(--color-accent)] px-5 py-2.5 rounded-sm hover:bg-[var(--color-accent)] hover:text-white hover:border-[var(--color-accent)] shadow-sm group btn-shine'
                     : textColorClass
                 )}
               >
@@ -185,7 +186,7 @@ export default function Navbar() {
                   className={clsx(
                     'transition-colors relative group overflow-hidden',
                     link.cta
-                      ? 'bg-[#FAF7F2] text-[var(--color-primary)] border border-[var(--color-accent)] px-8 py-3 rounded-sm shadow-lg text-xl font-medium inline-flex items-center justify-center animate-[pulse_3s_ease-in-out_infinite]'
+                      ? 'bg-[#FAF7F2] text-[var(--color-primary)] border border-[var(--color-accent)] px-8 py-3 rounded-sm shadow-lg text-xl font-medium inline-flex items-center justify-center btn-shine'
                       : 'text-3xl font-serif font-medium text-[#FAF7F2] hover:text-[var(--color-accent)]'
                   )}
                 >
