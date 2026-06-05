@@ -4,7 +4,7 @@ import { StaggerContainer, StaggerItem } from '@/components/FadeIn';
 import ContactMailtoForm from './ContactMailtoForm';
 
 const email = 'kackul17@gmail.com';
-const phone = '881 408 027';
+const phone = '572 450 606';
 
 export const metadata: Metadata = {
   title: 'Kontakt | Kacper Kulesza',
