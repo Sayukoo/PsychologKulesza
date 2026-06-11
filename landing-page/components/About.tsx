@@ -1,20 +1,106 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { FadeIn, StaggerContainer, StaggerItem } from './FadeIn';
+import { GraduationCap, Users, LineChart, ShieldCheck, Quote } from 'lucide-react';
 import profileImage from './images/Profile_website.png';
+
+const stats = [
+  { value: '7', unit: 'lat', label: 'w pracy z ludźmi' },
+  { value: 'M.Sc.', unit: '', label: 'Magister psychologii' },
+  { value: '100%', unit: '', label: 'poufności rozmów' },
+];
+
+const credentials = [
+  {
+    icon: GraduationCap,
+    title: 'Wykształcenie',
+    desc: 'Magister psychologii — dyplom ukończenia studiów wyższych',
+  },
+  {
+    icon: Users,
+    title: '7 lat z młodzieżą i dydaktyką',
+    desc: 'Praktyczne doświadczenie w pracy z ludźmi i przekazywaniu wiedzy',
+  },
+  {
+    icon: LineChart,
+    title: 'Podejście analityczne',
+    desc: 'Codzienne operowanie na danych, strukturze i logicznym wnioskowaniu',
+  },
+  {
+    icon: ShieldCheck,
+    title: 'Pełna poufność',
+    desc: 'Rozmowa objęta tajemnicą zawodową — nic nie wychodzi poza sesję',
+  },
+];
 
 export default function About() {
   return (
-    <section id="o-mnie" className="bg-white py-20 lg:py-32 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          {/* Left Column: Text */}
-          <div className="order-2 lg:order-1">
+    <section id="o-mnie" className="bg-white overflow-hidden border-t border-[#F0EDE7]">
+
+      {/* ── Stats banner ── */}
+      <div className="bg-[#0F1923] px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-3 divide-x divide-white/10">
+            {stats.map((s) => (
+              <div key={s.label} className="py-5 px-4 sm:px-8 text-center">
+                <p className="font-serif text-2xl sm:text-3xl font-bold text-white leading-none">
+                  {s.value}
+                  {s.unit && (
+                    <span className="text-[#C9A85C] text-lg sm:text-xl ml-0.5">{s.unit}</span>
+                  )}
+                </p>
+                <p className="text-xs sm:text-sm text-white/55 mt-1.5 leading-snug">{s.label}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* ── Main content ── */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+
+          {/* ── Left: Image ── */}
+          <FadeIn direction="right" duration={0.7} className="order-1">
+            <div className="relative mx-auto max-w-md lg:max-w-full">
+              {/* Decorative offset frame */}
+              <div
+                className="absolute top-5 -left-5 w-full h-full rounded-2xl border-2 border-[#C9A85C]/25 hidden md:block"
+                aria-hidden="true"
+              />
+
+              {/* Photo */}
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl aspect-[3/4] lg:aspect-[4/5] bg-[#FAF7F2]">
+                <Image
+                  src={profileImage}
+                  alt="Kacper Kulesza — psycholog, konsultant decyzyjny"
+                  fill
+                  className="object-cover object-center"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  priority
+                />
+                {/* Bottom gradient for badge readability */}
+                <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-black/55 to-transparent" />
+              </div>
+
+              {/* Floating credential badge */}
+              <div className="absolute bottom-5 left-1/2 -translate-x-1/2 w-[calc(100%-2.5rem)] bg-white/95 backdrop-blur-sm border border-[#E8E3DA] rounded-xl px-4 py-3 shadow-xl flex items-center gap-3">
+                <span className="grid place-items-center h-9 w-9 rounded-full bg-[#C9A85C]/10 border border-[#C9A85C]/30 shrink-0">
+                  <ShieldCheck className="w-4 h-4 text-[#C9A85C]" strokeWidth={2} />
+                </span>
+                <div className="min-w-0">
+                  <p className="text-xs font-bold text-[#0F1923] uppercase tracking-wide">Zweryfikowany specjalista</p>
+                  <p className="text-xs text-[#6B7280] truncate">Magister psychologii · dyplom UJ</p>
+                </div>
+              </div>
+            </div>
+          </FadeIn>
+
+          {/* ── Right: Text + credentials ── */}
+          <div className="order-2">
             <StaggerContainer className="space-y-8">
               <StaggerItem>
-                <span className="text-[#C1AE78] font-bold tracking-widest text-sm uppercase">
-                  Kim jestem
-                </span>
+                <span className="section-label">Kim jestem</span>
               </StaggerItem>
 
               <StaggerItem>
@@ -24,12 +110,12 @@ export default function About() {
               </StaggerItem>
 
               <StaggerItem>
-                <div className="space-y-6 text-lg text-[#4A4A4A] leading-relaxed font-sans">
+                <div className="space-y-4 text-[1.05rem] text-[#4A4A4A] leading-relaxed">
                   <p>Nazywam się Kacper Kulesza.</p>
                   <p>
                     Jestem psychologiem z analitycznym podejściem — na co dzień pracuję z danymi,
-                    strukturą i logicznym wnioskowaniem. Posiadam również 7-letnie doświadczenie w
-                    pracy z młodzieżą i dydaktyce.
+                    strukturą i logicznym wnioskowaniem. Posiadam 7-letnie doświadczenie w pracy
+                    z młodzieżą i dydaktyce.
                   </p>
                   <p>
                     W konsultacjach robię to samo, tylko na Twojej sytuacji: porządkujemy fakty,
@@ -38,50 +124,64 @@ export default function About() {
                 </div>
               </StaggerItem>
 
+              {/* Credential badge grid — Trust & Authority pattern */}
               <StaggerItem>
-                <div className="border-l-4 border-[#C1AE78] pl-6 py-2">
-                  <p className="text-xl font-medium text-[#2E3A44] italic font-serif">
-                  Jeśli wychodzisz z rozmów z innymi z poczuciem „fajnie było, ale dalej nie wiem co robić” to tu pracujemy inaczej
-                  </p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  {credentials.map((c) => (
+                    <div
+                      key={c.title}
+                      className="group flex items-start gap-3.5 bg-[#FAF8F4] border border-[#E8E3DA] rounded-xl p-4 transition-all duration-200 hover:border-[#C9A85C]/50 hover:bg-[#C9A85C]/[0.04] hover:shadow-sm cursor-default"
+                    >
+                      <span className="grid place-items-center h-10 w-10 rounded-lg bg-white border border-[#E8E3DA] group-hover:border-[#C9A85C]/40 group-hover:bg-[#C9A85C]/5 transition-colors duration-200 shrink-0 shadow-sm">
+                        <c.icon className="w-4.5 h-4.5 text-[#C9A85C]" strokeWidth={1.75} />
+                      </span>
+                      <div className="min-w-0">
+                        <p className="text-sm font-semibold text-[#2B2E33] leading-snug mb-0.5">{c.title}</p>
+                        <p className="text-xs text-[#6B7280] leading-relaxed">{c.desc}</p>
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </StaggerItem>
 
+              {/* Pull quote — editorial blockquote style */}
               <StaggerItem>
-                 <div className="pt-4">
-                    <Link
-                        href="https://www.linkedin.com/in/konstruktywizm/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="group btn-shine relative inline-flex items-center justify-center gap-2 rounded-sm border border-[#C1AE78] bg-[#FAF7F2] px-6 py-3 text-sm font-semibold text-[#2E3A44] shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:brightness-95 hover:shadow-[#C1AE78]/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C1AE78]/40"
-                    >
-                        Zobacz profil zawodowy
-                        <span className="text-[#2E3A44] transition-transform duration-200 group-hover:translate-x-0.5">→</span>
-                    </Link>
-                 </div>
+                <blockquote className="relative pl-6 border-l-4 border-[#C9A85C] py-1">
+                  <Quote
+                    className="absolute -top-2 -left-1 w-5 h-5 text-[#C9A85C]/40 rotate-180"
+                    strokeWidth={1.5}
+                    aria-hidden="true"
+                  />
+                  <p className="text-lg font-serif italic text-[#2E3A44] leading-relaxed">
+                    Jeśli wychodzisz z rozmów z innymi z poczuciem „fajnie było, ale dalej nie
+                    wiem co robić" — tu pracujemy inaczej.
+                  </p>
+                </blockquote>
+              </StaggerItem>
+
+              <StaggerItem>
+                <Link
+                  href="https://www.linkedin.com/in/konstruktywizm/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group btn-shine relative inline-flex items-center gap-2.5 rounded-lg border border-[#C9A85C] bg-white px-6 py-3 text-sm font-semibold text-[#2E3A44] shadow-sm transition-all duration-200 hover:bg-[#C9A85C]/5 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C9A85C]/40 cursor-pointer"
+                >
+                  {/* LinkedIn icon */}
+                  <svg
+                    className="w-4 h-4 text-[#0A66C2] shrink-0"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                  </svg>
+                  Zobacz profil zawodowy
+                  <span className="transition-transform duration-200 group-hover:translate-x-0.5 text-[#C9A85C]">→</span>
+                </Link>
               </StaggerItem>
             </StaggerContainer>
           </div>
 
-          {/* Right Column: Image */}
-          <div className="order-1 lg:order-2 relative">
-             <FadeIn direction="left" duration={0.8}>
-                <div className="relative mx-auto max-w-md lg:max-w-full">
-                    {/* Decorative element - frame */}
-                    <div className="absolute top-4 -right-4 w-full h-full border-2 border-[#C1AE78]/30 rounded-2xl -z-10 translate-x-4 translate-y-4 hidden md:block" />
-
-                    <div className="relative rounded-2xl overflow-hidden shadow-xl aspect-[3/4] lg:aspect-[4/5] bg-[#FAF7F2]">
-                        <Image
-                            src={profileImage}
-                            alt="Kacper Kulesza"
-                            fill
-                            className="object-cover object-center"
-                            sizes="(max-width: 768px) 100vw, 50vw"
-                            priority
-                        />
-                    </div>
-                </div>
-             </FadeIn>
-          </div>
         </div>
       </div>
     </section>

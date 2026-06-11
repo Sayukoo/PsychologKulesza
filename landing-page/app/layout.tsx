@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Lato } from "next/font/google";
+import { Playfair_Display, Inter } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import CookieBanner from "@/components/CookieBanner";
 import ScrollToTop from "@/components/ScrollToTop";
@@ -12,10 +12,9 @@ const playfair = Playfair_Display({
   display: "swap",
 });
 
-const lato = Lato({
+const inter = Inter({
   variable: "--font-sans",
   subsets: ["latin"],
-  weight: ["300", "400", "700", "900"],
   display: "swap",
 });
 
@@ -49,7 +48,7 @@ export default function RootLayout({
   return (
     <html lang="pl">
       <body
-        className={`${playfair.variable} ${lato.variable} antialiased font-sans`}
+        className={`${playfair.variable} ${inter.variable} antialiased font-sans`}
       >
         <Navbar />
         {children}

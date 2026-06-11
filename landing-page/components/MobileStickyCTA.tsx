@@ -9,12 +9,7 @@ export default function MobileStickyCTA() {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      // Show after scrolling down 300px
-      const show = window.scrollY > 300;
-      setIsVisible(show);
-    };
-
+    const handleScroll = () => setIsVisible(window.scrollY > 300);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -31,12 +26,12 @@ export default function MobileStickyCTA() {
         >
           <Link
             href="/#booking"
-            className="relative overflow-hidden flex items-center justify-center w-full bg-accent text-white font-bold py-4 rounded-lg shadow-xl shadow-accent/20 hover:brightness-95 transition-all group"
+            className="relative overflow-hidden flex items-center justify-center w-full bg-[#C9A85C] text-white font-bold py-4 rounded-lg shadow-xl shadow-[#C9A85C]/20 hover:brightness-95 transition-all"
           >
             <div className="absolute inset-0 -translate-x-full animate-[shimmer_3s_infinite] bg-gradient-to-r from-transparent via-white/30 to-transparent z-10" />
             <span className="relative z-10 flex items-center">
               <CalendarCheck className="w-5 h-5 mr-2" />
-              Umów wizytę
+              Bezpłatne 15 minut
             </span>
           </Link>
         </motion.div>

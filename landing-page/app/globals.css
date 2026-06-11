@@ -10,42 +10,42 @@ html {
   --font-sans: var(--font-sans);
   --font-serif: var(--font-serif);
 
-  /* Primary: Navy (#111827) - Used for Hero BG, Text on Ivory, Strong Elements */
-  --color-primary: #111827;
-  --color-primary-foreground: #FAF7F2;
+  /* Primary: Deep Navy */
+  --color-primary: #0F1923;
+  --color-primary-foreground: #FAF8F4;
 
-  /* Secondary: Sage (#9FB6A1) - Used for Process/Why backgrounds */
-  --color-sage: #9FB6A1;
-  --color-sage-foreground: #111827;
-  /* Keeping secondary variable for compatibility, mapped to Sage or Navy depending on usage */
-  --color-secondary: #9FB6A1;
-  --color-secondary-foreground: #111827;
+  /* Secondary: Slate Blue */
+  --color-secondary: #1E2D3D;
+  --color-secondary-foreground: #FAF8F4;
 
-  /* Accent: Brass (#C6A75E) - Links, icons, details */
-  --color-accent: #C6A75E;
+  /* Accent: Warm Gold */
+  --color-accent: #C9A85C;
   --color-accent-foreground: #ffffff;
+  --color-accent-light: #E8D5A3;
 
-  /* Muted: Tech colors */
+  /* Muted */
   --color-muted: #6B7280;
-  --color-muted-foreground: #FAF7F2;
-  --color-border: #E7E1D8;
+  --color-muted-foreground: #FAF8F4;
+  --color-border: #E8E3DA;
+  --color-border-subtle: #F0EDE7;
 
-  /* Card: Ivory */
-  --color-card: #FAF7F2;
-  --color-card-foreground: #111827;
+  /* Surface */
+  --color-card: #FFFFFF;
+  --color-card-foreground: #0F1923;
 
-  /* Background: Ivory (#FAF7F2) - Dominant (55-65%) */
-  --color-background: #FAF7F2;
+  /* Background: Warm Ivory */
+  --color-background: #FAF8F4;
+  --color-foreground: #0F1923;
 
-  /* Foreground: Navy (#111827) - Text on Ivory */
-  --color-foreground: #111827;
+  /* Section tints */
+  --color-surface-alt: #F4F1EB;
 
   --animate-shimmer: shimmer 3s infinite;
 
   @keyframes shimmer {
-    0% { transform: translateX(-150%) skewX(-12deg); }
-    20% { transform: translateX(150%) skewX(-12deg); }
-    100% { transform: translateX(150%) skewX(-12deg); }
+    0%   { transform: translateX(-150%) skewX(-12deg); }
+    20%  { transform: translateX(150%)  skewX(-12deg); }
+    100% { transform: translateX(150%)  skewX(-12deg); }
   }
 }
 
@@ -57,10 +57,19 @@ html {
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-serif);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
   }
 }
 
@@ -75,7 +84,7 @@ html {
     content: "";
     position: absolute;
     inset: -30%;
-    background: linear-gradient(120deg, transparent, rgba(255,255,255,0.55), transparent);
+    background: linear-gradient(120deg, transparent, rgba(255,255,255,0.5), transparent);
     transform: translateX(-140%) skewX(-20deg);
     opacity: 0;
     transition: opacity 0.2s ease;
@@ -86,23 +95,60 @@ html {
   @media (hover: hover) {
     .btn-shine:hover::after {
       opacity: 1;
-      animation: button-shine 1s ease-out;
+      animation: button-shine 0.9s ease-out;
     }
   }
 
   @media (hover: none) {
     .btn-shine::after {
-      opacity: 0.25;
+      opacity: 0.2;
       animation: button-shine 3s ease-out infinite;
     }
+  }
+
+  .section-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+  }
+
+  .section-label::before {
+    content: "";
+    display: block;
+    width: 2rem;
+    height: 1.5px;
+    background-color: var(--color-accent);
+    flex-shrink: 0;
+  }
+
+  .card-hover {
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  }
+
+  .card-hover:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px rgba(15, 25, 35, 0.10);
+    border-color: color-mix(in srgb, var(--color-accent) 40%, transparent);
   }
 }
 
 @keyframes button-shine {
-  0% {
-    transform: translateX(-140%) skewX(-20deg);
-  }
-  100% {
-    transform: translateX(140%) skewX(-20deg);
-  }
+  0%   { transform: translateX(-140%) skewX(-20deg); }
+  100% { transform: translateX(140%)  skewX(-20deg); }
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse-ring {
+  0%   { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(201,168,92,0.45); }
+  70%  { transform: scale(1);    box-shadow: 0 0 0 10px rgba(201,168,92,0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(201,168,92,0); }
 }
