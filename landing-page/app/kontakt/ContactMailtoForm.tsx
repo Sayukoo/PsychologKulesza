@@ -1,6 +1,7 @@
 'use client';
 
 import { useMemo } from 'react';
+import { trackEvent } from '@/lib/analytics';
 
 export default function ContactMailtoForm({ email }: { email: string }) {
   const defaultSubject = 'Zapytanie z formularza kontaktowego';
@@ -29,6 +30,11 @@ export default function ContactMailtoForm({ email }: { email: string }) {
       sender: String(formData.get('email') || ''),
       subject: String(formData.get('subject') || ''),
       message: String(formData.get('message') || ''),
+    });
+    trackEvent({
+      action: 'contact_form_submit',
+      category: 'Contact',
+      label: 'Contact Page Form',
     });
     window.location.href = mailto;
   };

@@ -1,6 +1,9 @@
+'use client';
+
 import { ArrowRight, GraduationCap, Users, ShieldCheck } from 'lucide-react';
 import { StaggerContainer, StaggerItem } from './FadeIn';
 import { WavyBackground } from './ui/wavy-background';
+import { trackEvent } from '@/lib/analytics';
 
 const trustItems = [
   { icon: GraduationCap, label: 'Magister psychologii' },
@@ -47,6 +50,7 @@ export default function Hero() {
             <div className="flex flex-col sm:flex-row gap-4">
               <a
                 href="#booking"
+                onClick={() => trackEvent({ action: 'cta_hero_click', category: 'Engagement', label: 'Hero Main CTA' })}
                 className="group btn-shine relative inline-flex items-center justify-center px-8 py-4 text-base font-bold text-[var(--color-primary)] bg-[#FAF7F2] border border-[var(--color-accent)] transition-all duration-300 shadow-lg hover:shadow-accent/25 rounded-sm overflow-hidden hover:brightness-90 cursor-pointer"
               >
                 <span className="relative z-10 flex items-center">

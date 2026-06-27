@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import CookieBanner from "@/components/CookieBanner";
 import ScrollToTop from "@/components/ScrollToTop";
 import MobileStickyCTA from "@/components/MobileStickyCTA";
+import Script from "next/script";
 import "./globals.css";
 
 const playfair = Playfair_Display({
@@ -47,6 +48,31 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pl">
+      <head>
+        {/* Google Analytics */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-GLRYY28TND"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-GLRYY28TND');
+          `}
+        </Script>
+        {/* Microsoft Clarity */}
+        <Script id="microsoft-clarity" strategy="afterInteractive">
+          {`
+            (function(c,l,a,r,i,t,y){
+                c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+                y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+            })(window, document, "clarity", "script", "xdloekxfbn");
+          `}
+        </Script>
+      </head>
       <body
         className={`${playfair.variable} ${inter.variable} antialiased font-sans`}
       >

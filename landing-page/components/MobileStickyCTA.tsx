@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { CalendarCheck } from 'lucide-react';
 import Link from 'next/link';
+import { trackEvent } from '@/lib/analytics';
 
 export default function MobileStickyCTA() {
   const [isVisible, setIsVisible] = useState(false);
@@ -26,6 +27,7 @@ export default function MobileStickyCTA() {
         >
           <Link
             href="/#booking"
+            onClick={() => trackEvent({ action: 'cta_mobile_sticky_click', category: 'Engagement', label: 'Mobile Sticky CTA' })}
             className="relative overflow-hidden flex items-center justify-center w-full bg-[#C9A85C] text-white font-bold py-4 rounded-lg shadow-xl shadow-[#C9A85C]/20 hover:brightness-95 transition-all"
           >
             <div className="absolute inset-0 -translate-x-full animate-[shimmer_3s_infinite] bg-gradient-to-r from-transparent via-white/30 to-transparent z-10" />

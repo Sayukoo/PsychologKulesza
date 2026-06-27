@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect } from 'react';
+import { trackEvent } from '@/lib/analytics';
 
 export default function GoogleCalendarWidget() {
   useEffect(() => {
@@ -12,6 +13,24 @@ export default function GoogleCalendarWidget() {
     script.src = 'https://assets.calendly.com/assets/external/widget.js';
     script.async = true;
     document.body.appendChild(script);
+  }, []);
+
+  useEffect(() => {
+    const handleCalendlyMessage = (e: MessageEvent) => {
+      if (e.data && e.data.event && e.data.event.indexOf('calendly.') === 0) {
+        const action = e.data.event.replace('.', '_');
+        trackEvent({
+          action,
+          category: 'Booking',
+          label: 'Calendly Widget',
+        });
+      }
+    };
+
+    window.addEventListener('message', handleCalendlyMessage);
+    return () => {
+      window.removeEventListener('message', handleCalendlyMessage);
+    };
   }, []);
 
   return (

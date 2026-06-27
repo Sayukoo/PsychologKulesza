@@ -1,7 +1,10 @@
+'use client';
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { FadeIn, StaggerContainer, StaggerItem } from './FadeIn';
 import { GraduationCap, Users, LineChart, ShieldCheck, Quote } from 'lucide-react';
+import { trackEvent } from '@/lib/analytics';
 import profileImage from './images/Profile_website.png';
 
 
@@ -144,6 +147,7 @@ export default function About() {
                   href="https://www.linkedin.com/in/konstruktywizm/"
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => trackEvent({ action: 'linkedin_click', category: 'Engagement', label: 'LinkedIn Profile' })}
                   className="group btn-shine relative inline-flex items-center gap-2.5 rounded-lg border border-[#C9A85C] bg-white px-6 py-3 text-sm font-semibold text-[#2E3A44] shadow-sm transition-all duration-200 hover:bg-[#C9A85C]/5 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C9A85C]/40 cursor-pointer"
                 >
                   {/* LinkedIn icon */}
