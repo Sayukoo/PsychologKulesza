@@ -27,12 +27,6 @@ export default function Hero() {
 
       <div className="relative z-10 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
         <StaggerContainer className="max-w-4xl">
-          <StaggerItem>
-            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/15 text-sm font-medium text-white/90 mb-8 backdrop-blur-sm">
-              <span className="h-1.5 w-1.5 rounded-full bg-[var(--color-accent)] animate-pulse" />
-              Konsultacje psychologiczne online
-            </span>
-          </StaggerItem>
 
           <StaggerItem>
             <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight text-[#FAF7F2] mb-6 leading-[1.15] sm:leading-[1.1]">

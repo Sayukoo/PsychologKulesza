@@ -4,11 +4,7 @@ import { FadeIn, StaggerContainer, StaggerItem } from './FadeIn';
 import { GraduationCap, Users, LineChart, ShieldCheck, Quote } from 'lucide-react';
 import profileImage from './images/Profile_website.png';
 
-const stats = [
-  { value: '7', unit: 'lat', label: 'w pracy z ludźmi' },
-  { value: 'M.Sc.', unit: '', label: 'Magister psychologii' },
-  { value: '100%', unit: '', label: 'poufności rozmów' },
-];
+
 
 const credentials = [
   {
@@ -37,24 +33,7 @@ export default function About() {
   return (
     <section id="o-mnie" className="bg-white overflow-hidden border-t border-[#F0EDE7]">
 
-      {/* ── Stats banner ── */}
-      <div className="bg-[#0F1923] px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-3 divide-x divide-white/10">
-            {stats.map((s) => (
-              <div key={s.label} className="py-5 px-4 sm:px-8 text-center">
-                <p className="font-serif text-2xl sm:text-3xl font-bold text-white leading-none">
-                  {s.value}
-                  {s.unit && (
-                    <span className="text-[#C9A85C] text-lg sm:text-xl ml-0.5">{s.unit}</span>
-                  )}
-                </p>
-                <p className="text-xs sm:text-sm text-white/55 mt-1.5 leading-snug">{s.label}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
+
 
       {/* ── Main content ── */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
@@ -62,35 +41,36 @@ export default function About() {
 
           {/* ── Left: Image ── */}
           <FadeIn direction="right" duration={0.7} className="order-1">
-            <div className="relative mx-auto max-w-md lg:max-w-full">
-              {/* Decorative offset frame */}
-              <div
-                className="absolute top-5 -left-5 w-full h-full rounded-2xl border-2 border-[#C9A85C]/25 hidden md:block"
-                aria-hidden="true"
-              />
-
-              {/* Photo */}
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl aspect-[3/4] lg:aspect-[4/5] bg-[#FAF7F2]">
-                <Image
-                  src={profileImage}
-                  alt="Kacper Kulesza — psycholog, konsultant decyzyjny"
-                  fill
-                  className="object-cover object-center"
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                  priority
+            <div className="mx-auto max-w-md lg:max-w-full">
+              {/* Photo container with relative context for offset frame */}
+              <div className="relative">
+                {/* Decorative offset frame */}
+                <div
+                  className="absolute top-5 -left-5 w-full h-full rounded-2xl border-2 border-[#C9A85C]/25 hidden md:block"
+                  aria-hidden="true"
                 />
-                {/* Bottom gradient for badge readability */}
-                <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-black/55 to-transparent" />
+
+                {/* Photo */}
+                <div className="relative rounded-2xl overflow-hidden shadow-2xl aspect-[3/4] lg:aspect-[4/5] bg-[#FAF7F2]">
+                  <Image
+                    src={profileImage}
+                    alt="Kacper Kulesza — psycholog, konsultant decyzyjny"
+                    fill
+                    className="object-cover object-center"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    priority
+                  />
+                </div>
               </div>
 
-              {/* Floating credential badge */}
-              <div className="absolute bottom-5 left-1/2 -translate-x-1/2 w-[calc(100%-2.5rem)] bg-white/95 backdrop-blur-sm border border-[#E8E3DA] rounded-xl px-4 py-3 shadow-xl flex items-center gap-3">
+              {/* Credential badge placed under the photo */}
+              <div className="mt-6 bg-[#FAF8F4] border border-[#E8E3DA] rounded-xl px-4 py-3 shadow-md flex items-center gap-3 w-full">
                 <span className="grid place-items-center h-9 w-9 rounded-full bg-[#C9A85C]/10 border border-[#C9A85C]/30 shrink-0">
                   <ShieldCheck className="w-4 h-4 text-[#C9A85C]" strokeWidth={2} />
                 </span>
                 <div className="min-w-0">
                   <p className="text-xs font-bold text-[#0F1923] uppercase tracking-wide">Zweryfikowany specjalista</p>
-                  <p className="text-xs text-[#6B7280] truncate">Magister psychologii · dyplom UJ</p>
+                  <p className="text-xs text-[#6B7280] truncate">Magister psychologii · dyplom SWPS</p>
                 </div>
               </div>
             </div>
