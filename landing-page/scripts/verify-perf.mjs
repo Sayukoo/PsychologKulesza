@@ -65,14 +65,22 @@ async function main() {
   check('Hero CTA obecny', await page.locator('a[href="#booking"]').first().isVisible());
 
   // 3. Sticky bar hidden at top
-  const stickyVisibleTop = await page.getByText('Bezpłatne 15 minut').last().isVisible().catch(() => false);
-  check('Sticky CTA ukryty na starcie', !stickyVisibleTop);
+  const stickyHiddenTop = await page.locator('.sticky-cta').evaluate((el) => {
+    const s = getComputedStyle(el);
+    return !el.classList.contains('show') || s.opacity === '0' || s.pointerEvents === 'none';
+  });
+  check('Sticky CTA ukryty na starcie', stickyHiddenTop);
 
-  // 4. Scroll -> sticky bar shows with call button
+  // 4. Scroll -> sticky bar shows with call button (correct number!)
   await page.evaluate(() => window.scrollTo(0, 800));
   await page.waitForTimeout(700);
-  const callBtn = page.locator('a[href^="tel:"]');
-  check('Sticky CTA pokazuje "Zadzwoń"', await callBtn.isVisible());
+  const callBtn = page.locator('.sticky-cta a[href^="tel:"]');
+  const callShown = await callBtn.evaluate((el) =>
+    el.closest('.sticky-cta').classList.contains('show') && getComputedStyle(el.closest('.sticky-cta')).opacity === '1',
+  );
+  check('Sticky CTA pokazuje "Zadzwoń"', callShown);
+  const telHref = await page.locator('.sticky-cta a[href^="tel:"]').getAttribute('href');
+  check('Numer telefonu 572 450 606', telHref === 'tel:+48572450606', telHref);
 
   // 5. Calendly NOT loaded yet (lazy) — skeleton instead
   const calendlyScript = await page.evaluate(() => document.getElementById('calendly-widget-script') !== null);
@@ -94,16 +102,49 @@ async function main() {
   // 8. No page errors
   check('Brak błędów JS', errors.length === 0, errors.slice(0, 3).join(' | '));
 
-  // 9. Kontakt page works
+  // 9. Kontakt page works (correct number)
   await page.goto(`http://127.0.0.1:${PORT}/kontakt`, { waitUntil: 'load' });
-  check('Strona /kontakt działa', await page.locator('a[href="tel:+48881408027"]').first().isVisible());
+  check(
+    'Strona /kontakt działa',
+    await page.locator('main a[href="tel:+48572450606"]').first().isVisible(),
+  );
 
-  // 10. Desktop sanity
+  // 10. Mobile menu opens/closes via CSS classes
+  await page.goto(`http://127.0.0.1:${PORT}/`, { waitUntil: 'networkidle' });
+  await page.getByRole('button', { name: 'Otwórz menu' }).click();
+  await page.waitForTimeout(500);
+  const menuOpen = await page.locator('.mobile-menu').evaluate((el) => {
+    const s = getComputedStyle(el);
+    return el.classList.contains('open') && s.visibility === 'visible' && s.opacity === '1';
+  });
+  check('Menu mobilne otwiera się', menuOpen);
+  check('Menu ma przycisk Zadzwoń', await page.locator('.mobile-menu a[href="tel:+48572450606"]').isVisible());
+  await page.keyboard.press('Escape');
+  await page.waitForTimeout(500);
+  const menuClosed = await page.locator('.mobile-menu').evaluate((el) => getComputedStyle(el).visibility === 'hidden');
+  check('Menu zamyka się (Esc)', menuClosed);
+
+  // 11. JSON-LD present
+  const hasJsonLd = await page.evaluate(() =>
+    [...document.querySelectorAll('script[type="application/ld+json"]')].some((s) => s.textContent.includes('+48572450606')),
+  );
+  check('JSON-LD z numerem telefonu', hasJsonLd);
+
+  // 12. Desktop sanity
   const desktop = await browser.newPage({ viewport: { width: 1440, height: 900 } });
   await desktop.goto(`http://127.0.0.1:${PORT}/`, { waitUntil: 'networkidle' });
   check('Desktop: nav linki', await desktop.locator('nav >> text=Cennik').first().isVisible());
   const canvasVisible = await desktop.locator('#start canvas').first().isVisible();
   check('Desktop: tło canvas hero', canvasVisible);
+
+  // 13. Reveal-on-scroll still works below the fold
+  await desktop.evaluate(() => document.getElementById('o-mnie')?.scrollIntoView());
+  await desktop.waitForTimeout(800);
+  const revealed = await desktop.evaluate(() => {
+    const section = document.getElementById('o-mnie');
+    return !!section.querySelector('.reveal.in-view');
+  });
+  check('Animacje reveal działają przy scrollu', revealed);
 
   await browser.close();
   server.close();

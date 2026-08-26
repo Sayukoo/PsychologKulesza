@@ -4,7 +4,7 @@ export const runtime = 'edge';
 export const revalidate = 86400; // regenerate once a day for export compatibility
 
 // Image metadata
-export const alt = 'Kacper Kulesza - Twój Partner w Rozwoju';
+export const alt = 'Kacper Kulesza — psycholog, konsultacje decyzyjne online';
 export const size = {
   width: 1200,
   height: 630,
@@ -25,50 +25,64 @@ export default async function Image() {
       <div
         style={{
           fontSize: 128,
-          background: '#0f4c5c', // Deep Teal/Petrol (from theme)
+          background: '#0F1923', // Deep Navy (brand primary)
           width: '100%',
           height: '100%',
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
           justifyContent: 'center',
-          color: 'white',
+          color: '#FAF8F2',
           padding: '40px',
         }}
       >
         <div
-        style={{
+          style={{
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
             width: '100%',
             marginBottom: '24px',
-        }}
-      >
-            <img
-              src={logoSrc}
-              alt="Logo Kacper Kulesza"
-              width={180}
-              height={180}
-              style={{
-                borderRadius: '50%',
-                background: 'white',
-                padding: '16px',
-                boxShadow: '0 12px 50px rgba(0, 0, 0, 0.35)',
-              }}
-            />
-      </div>
-      <div
-            style={{
-                fontSize: 48,
-                color: '#d97706', // Muted Gold/Amber (from theme)
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                textAlign: 'center',
-            }}
+          }}
         >
-            Konsultacje rozwojowe & Trening mentalny
+          <img
+            src={logoSrc}
+            alt="Logo Kacper Kulesza"
+            width={180}
+            height={180}
+            style={{
+              borderRadius: '50%',
+              background: '#FAF8F4',
+              padding: '16px',
+              boxShadow: '0 12px 50px rgba(201, 168, 92, 0.35)',
+            }}
+          />
+        </div>
+        <div
+          style={{
+            fontSize: 72,
+            fontWeight: 700,
+            color: '#FAF8F2',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            textAlign: 'center',
+            marginBottom: '16px',
+          }}
+        >
+          Kacper Kulesza · psycholog
+        </div>
+        <div
+          style={{
+            fontSize: 40,
+            color: '#C9A85C', // Warm Gold (brand accent)
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            textAlign: 'center',
+          }}
+        >
+          Konsultacje decyzyjne online — pierwsze 15 minut bezpłatnie
         </div>
       </div>
     ),

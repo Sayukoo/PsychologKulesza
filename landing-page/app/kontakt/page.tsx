@@ -38,7 +38,7 @@ export default function ContactPage() {
 
                   <div className="flex flex-col gap-3">
                     <a
-                      href="tel:+48881408027"
+                      href="tel:+48572450606"
                       className="group flex items-center gap-4 px-5 py-4 bg-accent text-white rounded-xl shadow-lg shadow-accent/25 hover:brightness-95 transition w-full"
                     >
                       <span className="h-12 w-12 rounded-full bg-white/20 grid place-items-center shrink-0">
