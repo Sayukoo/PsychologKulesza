@@ -13,7 +13,7 @@ export const contentType = 'image/png';
 
 export default async function Image() {
   const logoData = await fetch(
-    new URL('../components/images/logo.png', import.meta.url)
+    new URL('../components/images/logo-og.png', import.meta.url)
   );
   const logoArrayBuffer = await logoData.arrayBuffer();
   const logoSrc = `data:image/png;base64,${arrayBufferToBase64(

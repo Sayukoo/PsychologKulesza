@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { cn } from '@/lib/utils';
 
 type WavySpeed = 'slow' | 'fast';
@@ -41,7 +41,7 @@ const noise3D = (x: number, y: number, z: number) => {
   const n100 = hash3(xi + 1, yi, zi);
   const n010 = hash3(xi, yi + 1, zi);
   const n110 = hash3(xi + 1, yi + 1, zi);
-  const n001 = hash3(xi, yi, zi + 1);
+  const n001 = hash3(xi, yi + 1, zi + 1);
   const n101 = hash3(xi + 1, yi, zi + 1);
   const n011 = hash3(xi, yi + 1, zi + 1);
   const n111 = hash3(xi + 1, yi + 1, zi + 1);
@@ -73,15 +73,6 @@ export const WavyBackground = ({
 }: WavyBackgroundProps) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const animationRef = useRef<number | null>(null);
-  const [isSafari, setIsSafari] = useState(false);
-
-  useEffect(() => {
-    setIsSafari(
-      typeof window !== 'undefined' &&
-        navigator.userAgent.includes('Safari') &&
-        !navigator.userAgent.includes('Chrome'),
-    );
-  }, []);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -102,32 +93,46 @@ export const WavyBackground = ({
     let height = 0;
     let nt = 0;
     let observer: ResizeObserver | null = null;
+    let intersectionObserver: IntersectionObserver | null = null;
+    let lastFrameTime = 0;
+    let isVisible = true;
 
     const speedValue = speed === 'fast' ? 0.002 : 0.001;
+    // Target ~30fps — plenty for a slow, blurred ambient animation,
+    // halves CPU/GPU work compared to 60fps rAF.
+    const FRAME_INTERVAL = 1000 / 30;
+
+    // Blur is applied once via CSS filter (GPU-composited) instead of an
+    // expensive per-frame ctx.filter call; DPR capped at 1 because the heavy
+    // blur makes extra resolution invisible.
+    const dpr = 1;
 
     const resize = () => {
       const parent = canvas.parentElement;
       const rect = parent?.getBoundingClientRect();
       const nextWidth = rect?.width ?? window.innerWidth;
       const nextHeight = rect?.height ?? window.innerHeight;
-      const dpr = window.devicePixelRatio || 1;
 
       width = Math.max(1, Math.floor(nextWidth));
       height = Math.max(1, Math.floor(nextHeight));
 
-      canvas.width = Math.max(1, Math.floor(nextWidth * dpr));
-      canvas.height = Math.max(1, Math.floor(nextHeight * dpr));
+      canvas.width = width;
+      canvas.height = height;
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-      ctx.filter = `blur(${blur}px)`;
+
+      // Resolution changed -> repaint current state immediately.
+      drawFrame();
     };
 
     const drawWave = () => {
-      nt += speedValue;
       for (let i = 0; i < waveCount; i += 1) {
         ctx.beginPath();
         ctx.lineWidth = waveWidth;
         ctx.strokeStyle = waveColors[i % waveColors.length];
-        for (let x = 0; x <= width + 10; x += 6) {
+        // Wider sampling step on small screens: fewer noise evaluations,
+        // visually identical under blur.
+        const step = width < 640 ? 10 : 6;
+        for (let x = 0; x <= width + 10; x += step) {
           const y = noise3D(x / 800, 0.3 * i, nt) * 90;
           ctx.lineTo(x, y + height * 0.5);
         }
@@ -136,7 +141,7 @@ export const WavyBackground = ({
       }
     };
 
-    const render = () => {
+    const drawFrame = () => {
       ctx.clearRect(0, 0, width, height);
       ctx.globalAlpha = 1;
       ctx.fillStyle = backgroundFill;
@@ -144,8 +149,18 @@ export const WavyBackground = ({
 
       ctx.globalAlpha = waveOpacity;
       drawWave();
+    };
 
+    const render = (time: number) => {
       animationRef.current = requestAnimationFrame(render);
+
+      if (!isVisible || document.hidden || time - lastFrameTime < FRAME_INTERVAL) {
+        return;
+      }
+      lastFrameTime = time;
+
+      nt += speedValue;
+      drawFrame();
     };
 
     if (typeof ResizeObserver !== 'undefined') {
@@ -157,8 +172,31 @@ export const WavyBackground = ({
       window.addEventListener('resize', resize);
     }
 
+    // Pause completely while the hero is scrolled out of view.
+    if (typeof IntersectionObserver !== 'undefined') {
+      intersectionObserver = new IntersectionObserver(
+        (entries) => {
+          isVisible = entries[0]?.isIntersecting ?? true;
+        },
+        { threshold: 0 },
+      );
+      if (canvas.parentElement) {
+        intersectionObserver.observe(canvas.parentElement);
+      }
+    }
+
+    // Respect reduced-motion: paint one static frame, no loop.
+    const prefersReducedMotion =
+      typeof window !== 'undefined' &&
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
     resize();
-    render();
+
+    if (prefersReducedMotion) {
+      drawFrame();
+    } else {
+      animationRef.current = requestAnimationFrame(render);
+    }
 
     return () => {
       if (animationRef.current) {
@@ -168,6 +206,9 @@ export const WavyBackground = ({
         observer.disconnect();
       } else {
         window.removeEventListener('resize', resize);
+      }
+      if (intersectionObserver) {
+        intersectionObserver.disconnect();
       }
     };
   }, [backgroundFill, blur, colors, speed, waveCount, waveOpacity, waveWidth]);
@@ -179,7 +220,8 @@ export const WavyBackground = ({
       <canvas
         ref={canvasRef}
         className="absolute inset-0 h-full w-full pointer-events-none"
-        style={isSafari ? { filter: `blur(${blur}px)` } : undefined}
+        style={{ filter: `blur(${blur}px)` }}
+        aria-hidden="true"
       />
       <div className={cn('relative z-10', className)} {...props}>
         {children}

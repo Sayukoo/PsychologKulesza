@@ -3,11 +3,12 @@
 import { useState, useEffect, MouseEvent } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Phone } from 'lucide-react';
 import { usePathname } from 'next/navigation';
 import { clsx } from 'clsx';
 import { motion, AnimatePresence } from 'framer-motion';
-import Logo from './images/logo.png';
+import Logo from './images/logo.webp';
+import { trackEvent } from '@/lib/analytics';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,7 +17,16 @@ export default function Navbar() {
   const isHome = pathname === '/';
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 40);
+    let ticking = false;
+    const handleScroll = () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        ticking = false;
+        const next = window.scrollY > 40;
+        setScrolled((prev) => (prev === next ? prev : next));
+      });
+    };
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -176,6 +186,7 @@ export default function Navbar() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.05 + navLinks.length * 0.07 }}
+              className="flex flex-col items-center gap-4"
             >
               <Link
                 href="/#booking"
@@ -184,6 +195,14 @@ export default function Navbar() {
               >
                 <span className="relative z-10">Bezpłatne 15 min →</span>
               </Link>
+              <a
+                href="tel:+48881408027"
+                onClick={() => trackEvent({ action: 'cta_menu_call_click', category: 'Engagement', label: 'Mobile Menu Call' })}
+                className="inline-flex items-center gap-2 px-8 py-3 border border-white/25 text-white font-semibold text-lg rounded-xl hover:bg-white/10 transition-colors cursor-pointer"
+              >
+                <Phone className="w-5 h-5 text-[#C9A85C]" />
+                Zadzwoń teraz
+              </a>
             </motion.div>
           </motion.div>
         )}

@@ -1,11 +1,11 @@
 'use client';
 
-import Image from 'next/image';
 import Link from 'next/link';
 import { FadeIn, StaggerContainer, StaggerItem } from './FadeIn';
 import { GraduationCap, Users, LineChart, ShieldCheck, Quote } from 'lucide-react';
 import { trackEvent } from '@/lib/analytics';
-import profileImage from './images/Profile_website.png';
+import profileImage480 from './images/profile-480.webp';
+import profileImage960 from './images/profile-960.webp';
 
 
 
@@ -55,13 +55,15 @@ export default function About() {
 
                 {/* Photo */}
                 <div className="relative rounded-2xl overflow-hidden shadow-2xl aspect-[3/4] lg:aspect-[4/5] bg-[#FAF7F2]">
-                  <Image
-                    src={profileImage}
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={profileImage480.src}
+                    srcSet={`${profileImage480.src} 480w, ${profileImage960.src} 960w`}
+                    sizes="(max-width: 768px) 92vw, 44vw"
                     alt="Kacper Kulesza — psycholog, konsultant decyzyjny"
-                    fill
-                    className="object-cover object-center"
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                    priority
+                    className="absolute inset-0 h-full w-full object-cover object-center"
+                    loading="lazy"
+                    decoding="async"
                   />
                 </div>
               </div>
@@ -137,7 +139,7 @@ export default function About() {
                   />
                   <p className="text-lg font-serif italic text-[#2E3A44] leading-relaxed">
                     Jeśli wychodzisz z rozmów z innymi z poczuciem „fajnie było, ale dalej nie
-                    wiem co robić" — tu pracujemy inaczej.
+                    wiem co robić&rdquo; — tu pracujemy inaczej.
                   </p>
                 </blockquote>
               </StaggerItem>

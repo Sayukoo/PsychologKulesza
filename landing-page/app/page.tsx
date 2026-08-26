@@ -10,9 +10,7 @@ import { FadeIn, StaggerContainer, StaggerItem } from '@/components/FadeIn';
 export default function Home() {
   return (
     <main className="min-h-screen bg-background text-foreground selection:bg-accent selection:text-white">
-      <FadeIn direction="down" duration={0.8}>
-        <Hero />
-      </FadeIn>
+      <Hero />
 
       {/* Order: Dla kogo -> O mnie -> Jak wygląda konsultacja -> Cennik -> Umów konsultację -> Kontakt */}
 

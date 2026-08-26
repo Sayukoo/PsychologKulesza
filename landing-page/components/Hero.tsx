@@ -1,9 +1,6 @@
-'use client';
-
-import { ArrowRight, GraduationCap, Users, ShieldCheck } from 'lucide-react';
-import { StaggerContainer, StaggerItem } from './FadeIn';
+import { GraduationCap, Users, ShieldCheck } from 'lucide-react';
 import { WavyBackground } from './ui/wavy-background';
-import { trackEvent } from '@/lib/analytics';
+import HeroCta from './HeroCta';
 
 const trustItems = [
   { icon: GraduationCap, label: 'Magister psychologii' },
@@ -29,40 +26,31 @@ export default function Hero() {
       />
 
       <div className="relative z-10 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
-        <StaggerContainer className="max-w-4xl">
+        <div className="max-w-4xl">
 
-          <StaggerItem>
+          <div className="hero-enter">
             <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight text-[#FAF7F2] mb-6 leading-[1.15] sm:leading-[1.1]">
               Utknąłeś w myślach i nie możesz podjąć decyzji? <br />
               <span className="text-gray-300">
                 W <span className="text-[var(--color-accent)]">60 minut</span> uporządkujemy chaos
               </span>
             </h1>
-          </StaggerItem>
+          </div>
 
-          <StaggerItem>
+          <div className="hero-enter" style={{ animationDelay: '0.12s' }}>
             <p className="text-lg sm:text-xl text-gray-400 mb-10 leading-relaxed max-w-2xl">
               Spokojna, ustrukturyzowana rozmowa, po której wiesz, jaki jest Twój następny krok.
             </p>
-          </StaggerItem>
+          </div>
 
-          <StaggerItem>
+          <div className="hero-enter" style={{ animationDelay: '0.24s' }}>
             <div className="flex flex-col sm:flex-row gap-4">
-              <a
-                href="#booking"
-                onClick={() => trackEvent({ action: 'cta_hero_click', category: 'Engagement', label: 'Hero Main CTA' })}
-                className="group btn-shine relative inline-flex items-center justify-center px-8 py-4 text-base font-bold text-[var(--color-primary)] bg-[#FAF7F2] border border-[var(--color-accent)] transition-all duration-300 shadow-lg hover:shadow-accent/25 rounded-sm overflow-hidden hover:brightness-90 cursor-pointer"
-              >
-                <span className="relative z-10 flex items-center">
-                  Sprawdź, czy to dla Ciebie (Bezpłatne 15 min)
-                  <ArrowRight className="ml-2 h-5 w-5 shrink-0 text-[var(--color-primary)] group-hover:translate-x-1 transition-transform" />
-                </span>
-              </a>
+              <HeroCta />
             </div>
-          </StaggerItem>
+          </div>
 
           {/* Trust strip */}
-          <StaggerItem>
+          <div className="hero-enter" style={{ animationDelay: '0.36s' }}>
             <div className="mt-14 pt-8 border-t border-white/10">
               <ul className="flex flex-col sm:flex-row gap-4 sm:gap-8">
                 {trustItems.map((item) => (
@@ -75,8 +63,8 @@ export default function Hero() {
                 ))}
               </ul>
             </div>
-          </StaggerItem>
-        </StaggerContainer>
+          </div>
+        </div>
       </div>
     </section>
   );

@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Playfair_Display, Inter } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import CookieBanner from "@/components/CookieBanner";
@@ -41,6 +41,10 @@ export const metadata: Metadata = {
   },
 };
 
+export const viewport: Viewport = {
+  themeColor: "#0F1923",
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -49,12 +53,17 @@ export default function RootLayout({
   return (
     <html lang="pl">
       <head>
-        {/* Google Analytics */}
+        {/* Early connections to third-party origins (cheap, no download) */}
+        <link rel="preconnect" href="https://assets.calendly.com" crossOrigin="" />
+        <link rel="dns-prefetch" href="https://assets.calendly.com" />
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+        <link rel="dns-prefetch" href="https://www.clarity.ms" />
+        {/* Google Analytics — deferred until the page is fully loaded */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-GLRYY28TND"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         />
-        <Script id="google-analytics" strategy="afterInteractive">
+        <Script id="google-analytics" strategy="lazyOnload">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
@@ -62,8 +71,8 @@ export default function RootLayout({
             gtag('config', 'G-GLRYY28TND');
           `}
         </Script>
-        {/* Microsoft Clarity */}
-        <Script id="microsoft-clarity" strategy="afterInteractive">
+        {/* Microsoft Clarity — heavy session recording, load last */}
+        <Script id="microsoft-clarity" strategy="lazyOnload">
           {`
             (function(c,l,a,r,i,t,y){
                 c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
