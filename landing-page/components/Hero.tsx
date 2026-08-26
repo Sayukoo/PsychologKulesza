@@ -51,7 +51,7 @@ export default function Hero() {
 
           {/* Trust strip */}
           <div className="hero-enter" style={{ animationDelay: '0.36s' }}>
-            <div className="mt-14 pt-8 border-t border-white/10">
+            <div className="mt-10 md:mt-14 pt-6 md:pt-8 border-t border-white/10">
               <ul className="flex flex-col sm:flex-row gap-4 sm:gap-8">
                 {trustItems.map((item) => (
                   <li key={item.label} className="flex items-center gap-3">

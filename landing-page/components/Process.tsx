@@ -48,19 +48,19 @@ export default function Process() {
         </FadeIn>
 
         {/* Process Steps */}
-        <div className="relative mb-20 md:mb-24">
+        <div className="relative mb-16 md:mb-24">
           <div className="hidden md:block absolute top-12 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-[#B59E5D]/30 to-transparent" />
 
-          <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-8">
+          <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8">
             {steps.map((step) => (
               <StaggerItem key={step.number}>
                 <div className="relative flex flex-col items-center text-center group">
-                  <div className="w-24 h-24 rounded-full bg-[#2B2E33] border border-[#B59E5D]/20 flex items-center justify-center mb-8 relative z-10 shadow-lg group-hover:border-[#B59E5D] transition-colors duration-300">
-                    <span className="text-3xl font-serif text-[#B59E5D] font-bold">{step.number}</span>
+                  <div className="w-16 h-16 md:w-24 md:h-24 rounded-full bg-[#2B2E33] border border-[#B59E5D]/20 flex items-center justify-center mb-4 md:mb-8 relative z-10 shadow-lg group-hover:border-[#B59E5D] transition-colors duration-300">
+                    <span className="text-2xl md:text-3xl font-serif text-[#B59E5D] font-bold">{step.number}</span>
                   </div>
-                  <h3 className="text-2xl font-bold text-white mb-1">{step.title}</h3>
-                  <p className="text-[#B59E5D] text-sm font-medium mb-4">({step.time})</p>
-                  <p className="text-gray-300 leading-relaxed">{step.description}</p>
+                  <h3 className="text-xl md:text-2xl font-bold text-white mb-1">{step.title}</h3>
+                  <p className="text-[#B59E5D] text-sm font-medium mb-3 md:mb-4">({step.time})</p>
+                  <p className="text-gray-300 leading-relaxed max-w-xs">{step.description}</p>
                 </div>
               </StaggerItem>
             ))}
@@ -70,7 +70,7 @@ export default function Process() {
         {/* Parameters & Disclaimer */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
           <FadeIn delay={0.2} className="h-full">
-            <div className="bg-[#2B2E33] p-8 md:p-10 rounded-2xl border border-white/5 h-full flex flex-col justify-center relative overflow-hidden">
+            <div className="bg-[#2B2E33] p-6 sm:p-8 md:p-10 rounded-lg border border-white/5 h-full flex flex-col justify-center relative overflow-hidden">
               <div className="absolute top-0 right-0 w-32 h-32 bg-[#B59E5D]/5 rounded-full blur-2xl -mr-10 -mt-10 pointer-events-none" />
               <h3 className="text-xl font-serif text-white mb-8 border-b border-white/10 pb-4 relative z-10">
                 Parametry współpracy
@@ -93,7 +93,7 @@ export default function Process() {
           </FadeIn>
 
           <FadeIn delay={0.4} className="h-full">
-            <div className="bg-[#FAF7F2] p-8 md:p-10 rounded-2xl border border-white/10 h-full flex flex-col justify-center text-[#2E3A44] relative overflow-hidden">
+            <div className="bg-[#FAF7F2] p-6 sm:p-8 md:p-10 rounded-lg border border-white/10 h-full flex flex-col justify-center text-[#2E3A44] relative overflow-hidden">
               <div className="absolute bottom-0 left-0 w-24 h-24 bg-[#B59E5D]/10 rounded-full blur-xl -ml-5 -mb-5 pointer-events-none" />
               <h3 className="text-xl font-serif font-bold mb-6 flex items-center gap-3 relative z-10">
                 <span className="w-1.5 h-8 bg-[#B59E5D] block" />

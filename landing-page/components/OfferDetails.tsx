@@ -1,5 +1,5 @@
 import { FadeIn, StaggerContainer, StaggerItem } from './FadeIn';
-import { ArrowRight, PhoneCall, ClipboardCheck } from 'lucide-react';
+import { ArrowRight, PhoneCall, ClipboardCheck, Clock } from 'lucide-react';
 import Link from 'next/link';
 
 export default function OfferDetails() {
@@ -10,7 +10,7 @@ export default function OfferDetails() {
     >
       <div className="max-w-7xl mx-auto">
         <FadeIn>
-          <div className="text-center mb-16">
+          <div className="text-center mb-10 md:mb-16">
             <span className="section-label justify-center mb-5 inline-flex">Cennik</span>
             <h2 className="text-4xl md:text-5xl font-bold text-[#0F1923] mb-5">
               Jak zaczynamy?
@@ -25,17 +25,17 @@ export default function OfferDetails() {
         <StaggerContainer className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto items-stretch">
           {/* Krok 1 — bezpłatna rozmowa */}
           <StaggerItem className="h-full">
-            <div className="flex flex-col h-full bg-[#0F1923] text-[#FAF8F4] rounded-2xl p-8 shadow-xl relative overflow-hidden">
+            <div className="flex flex-col h-full bg-[#0F1923] text-[#FAF8F4] rounded-lg p-6 sm:p-8 shadow-xl relative overflow-hidden">
               <div className="absolute -top-16 -right-16 w-48 h-48 rounded-full bg-[#C9A85C]/15 blur-3xl pointer-events-none" aria-hidden="true" />
 
               <div className="flex items-center gap-3 mb-5 relative z-10">
-                <span className="grid place-items-center h-10 w-10 rounded-full bg-white/10 border border-white/15">
+                <span className="grid place-items-center h-10 w-10 rounded-full bg-white/10 border border-white/15 shrink-0">
                   <PhoneCall className="w-5 h-5 text-[#C9A85C]" strokeWidth={1.75} />
                 </span>
                 <p className="text-[#C9A85C] font-semibold text-sm uppercase tracking-wider">Krok 1</p>
               </div>
 
-              <h3 className="text-2xl font-bold text-white mb-4 relative z-10">
+              <h3 className="text-xl sm:text-2xl font-bold text-white mb-4 relative z-10">
                 Bezpłatna konsultacja wstępna (15 minut)
               </h3>
 
@@ -53,7 +53,7 @@ export default function OfferDetails() {
               <div className="mt-8 pt-6 relative z-10">
                 <Link
                   href="#booking"
-                  className="w-full inline-flex items-center justify-center gap-2 px-6 py-4 bg-[#C9A85C] text-white font-bold text-lg rounded-lg hover:bg-[#D4B56A] transition-colors shadow-lg cursor-pointer"
+                  className="w-full inline-flex items-center justify-center gap-2 px-6 py-4 bg-[#C9A85C] text-white font-bold text-base sm:text-lg rounded-lg hover:bg-[#D4B56A] transition-colors shadow-lg cursor-pointer"
                 >
                   Umów bezpłatną rozmowę
                   <ArrowRight className="w-5 h-5" />
@@ -64,15 +64,15 @@ export default function OfferDetails() {
 
           {/* Krok 2 — pełna konsultacja */}
           <StaggerItem className="h-full">
-            <div className="flex flex-col h-full bg-white rounded-2xl p-8 shadow-md border border-[#E8E3DA] card-hover">
+            <div className="flex flex-col h-full bg-white rounded-lg p-6 sm:p-8 shadow-md border border-[#E8E3DA] card-hover">
               <div className="flex items-center gap-3 mb-5">
-                <span className="grid place-items-center h-10 w-10 rounded-full bg-[#C9A85C]/10 border border-[#C9A85C]/25">
+                <span className="grid place-items-center h-10 w-10 rounded-full bg-[#C9A85C]/10 border border-[#C9A85C]/25 shrink-0">
                   <ClipboardCheck className="w-5 h-5 text-[#C9A85C]" strokeWidth={1.75} />
                 </span>
                 <p className="text-[#C9A85C] font-semibold text-sm uppercase tracking-wider">Krok 2</p>
               </div>
 
-              <h3 className="text-2xl font-bold text-[#0F1923] mb-4">
+              <h3 className="text-xl sm:text-2xl font-bold text-[#0F1923] mb-4">
                 Pełna konsultacja decyzyjna (60 minut)
               </h3>
 
@@ -88,9 +88,10 @@ export default function OfferDetails() {
               </p>
 
               <div className="mt-8 pt-6">
-                <div className="w-full text-center text-sm text-[#6B7280] bg-[#FAF8F4] border border-[#E8E3DA] rounded-lg px-4 py-3.5">
+                <p className="flex items-start justify-center gap-2 text-center text-sm text-[#6B7280] leading-relaxed">
+                  <Clock className="w-4 h-4 mt-0.5 shrink-0 text-[#C9A85C]" />
                   Termin ustalamy po bezpłatnej rozmowie wstępnej
-                </div>
+                </p>
               </div>
             </div>
           </StaggerItem>

@@ -42,7 +42,7 @@ export default function Booking() {
             ))}
           </ul>
 
-          <div className="bg-[#FAF8F4] p-4 md:p-6 rounded-2xl shadow-xl shadow-[#0F1923]/5 min-h-[400px] border border-[#E8E3DA]">
+          <div className="bg-[#FAF8F4] p-4 md:p-6 rounded-lg shadow-xl shadow-[#0F1923]/5 min-h-[400px] border border-[#E8E3DA]">
             <GoogleCalendarWidget />
           </div>
         </div>

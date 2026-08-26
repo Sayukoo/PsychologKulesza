@@ -49,12 +49,12 @@ export default function About() {
               <div className="relative">
                 {/* Decorative offset frame */}
                 <div
-                  className="absolute top-5 -left-5 w-full h-full rounded-2xl border-2 border-[#C9A85C]/25 hidden md:block"
+                  className="absolute top-5 -left-5 w-full h-full rounded-lg border-2 border-[#C9A85C]/25 hidden md:block"
                   aria-hidden="true"
                 />
 
                 {/* Photo */}
-                <div className="relative rounded-2xl overflow-hidden shadow-2xl aspect-[3/4] lg:aspect-[4/5] bg-[#FAF7F2]">
+                <div className="relative rounded-lg overflow-hidden shadow-2xl aspect-[3/4] lg:aspect-[4/5] bg-[#FAF7F2]">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={profileImage480.src}
@@ -69,7 +69,7 @@ export default function About() {
               </div>
 
               {/* Credential badge placed under the photo */}
-              <div className="mt-6 bg-[#FAF8F4] border border-[#E8E3DA] rounded-xl px-4 py-3 shadow-md flex items-center gap-3 w-full">
+              <div className="mt-6 bg-[#FAF8F4] border border-[#E8E3DA] rounded-lg px-4 py-3 shadow-md flex items-center gap-3 w-full">
                 <span className="grid place-items-center h-9 w-9 rounded-full bg-[#C9A85C]/10 border border-[#C9A85C]/30 shrink-0">
                   <ShieldCheck className="w-4 h-4 text-[#C9A85C]" strokeWidth={2} />
                 </span>
@@ -115,7 +115,7 @@ export default function About() {
                   {credentials.map((c) => (
                     <div
                       key={c.title}
-                      className="group flex items-start gap-3.5 bg-[#FAF8F4] border border-[#E8E3DA] rounded-xl p-4 transition-all duration-200 hover:border-[#C9A85C]/50 hover:bg-[#C9A85C]/[0.04] hover:shadow-sm cursor-default"
+                      className="group flex items-start gap-3.5 bg-[#FAF8F4] border border-[#E8E3DA] rounded-lg p-4 transition-all duration-200 hover:border-[#C9A85C]/50 hover:bg-[#C9A85C]/[0.04] hover:shadow-sm cursor-default"
                     >
                       <span className="grid place-items-center h-10 w-10 rounded-lg bg-white border border-[#E8E3DA] group-hover:border-[#C9A85C]/40 group-hover:bg-[#C9A85C]/5 transition-colors duration-200 shrink-0 shadow-sm">
                         <c.icon className="w-4.5 h-4.5 text-[#C9A85C]" strokeWidth={1.75} />

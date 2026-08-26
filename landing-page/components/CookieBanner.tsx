@@ -25,7 +25,7 @@ export default function CookieBanner() {
       className={`fixed left-0 right-0 z-50 px-4 pb-4 pt-0 md:p-6 transition-all duration-300 ease-out ${isVisible ? 'bottom-[5.5rem] translate-y-0 opacity-100 md:bottom-0' : '-bottom-full translate-y-full opacity-0 pointer-events-none md:translate-y-[150%]'}`}
       aria-hidden={!isVisible}
     >
-      <div className="max-w-7xl mx-auto bg-white/95 backdrop-blur-md border border-slate-200 shadow-2xl rounded-2xl p-4 sm:p-6 flex flex-col md:flex-row items-center justify-between gap-3 md:gap-6">
+      <div className="max-w-7xl mx-auto bg-white/95 backdrop-blur-md border border-slate-200 shadow-2xl rounded-lg p-4 sm:p-6 flex flex-col md:flex-row items-center justify-between gap-3 md:gap-6">
         <div className="text-slate-600 text-xs sm:text-sm md:text-base">
           <p>
             Ta strona używa plików cookies, aby zapewnić Ci najlepsze doświadczenie.

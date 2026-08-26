@@ -56,7 +56,7 @@ const sections = [
 export default function Terms() {
   return (
     <main className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto min-h-screen">
-      <section className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-primary via-primary/90 to-secondary text-white shadow-2xl border border-primary/20 px-6 sm:px-10 py-10 sm:py-12">
+      <section className="relative overflow-hidden rounded-lg bg-gradient-to-br from-primary via-primary/90 to-secondary text-white shadow-2xl border border-primary/20 px-6 sm:px-10 py-10 sm:py-12">
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute -top-10 -right-20 h-48 w-48 bg-accent/30 blur-3xl rounded-full" />
           <div className="absolute -bottom-16 -left-10 h-52 w-52 bg-white/15 blur-3xl rounded-full" />
@@ -80,7 +80,7 @@ export default function Terms() {
         {sections.map((section, idx) => (
           <article
             key={section.title}
-            className="group relative overflow-hidden rounded-2xl bg-white shadow-xl border border-slate-200/80 px-6 py-6 sm:px-8 sm:py-8"
+            className="group relative overflow-hidden rounded-lg bg-white shadow-xl border border-slate-200/80 px-6 py-6 sm:px-8 sm:py-8"
           >
             <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-primary via-accent to-primary opacity-60" />
             <div className="flex items-center gap-3 mb-4">

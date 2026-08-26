@@ -19,7 +19,7 @@ export default function ContactPage() {
         <div className="grid gap-8 lg:grid-cols-5 items-start">
           <StaggerContainer className="lg:col-span-2">
             <StaggerItem>
-              <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-primary via-primary/90 to-secondary text-white shadow-2xl border border-primary/20 p-8 sm:p-10">
+              <div className="relative overflow-hidden rounded-lg bg-gradient-to-br from-primary via-primary/90 to-secondary text-white shadow-2xl border border-primary/20 p-6 sm:p-10">
                 <div className="absolute inset-0 pointer-events-none">
                   <div className="absolute -top-10 -right-16 h-40 w-40 bg-accent/25 blur-3xl rounded-full" />
                   <div className="absolute -bottom-14 -left-10 h-44 w-44 bg-white/10 blur-3xl rounded-full" />
@@ -39,7 +39,7 @@ export default function ContactPage() {
                   <div className="flex flex-col gap-3">
                     <a
                       href="tel:+48572450606"
-                      className="group flex items-center gap-4 px-5 py-4 bg-accent text-white rounded-xl shadow-lg shadow-accent/25 hover:brightness-95 transition w-full"
+                      className="group flex items-center gap-4 px-5 py-4 bg-accent text-white rounded-lg shadow-lg shadow-accent/25 hover:brightness-95 transition w-full"
                     >
                       <span className="h-12 w-12 rounded-full bg-white/20 grid place-items-center shrink-0">
                         <Phone className="h-6 w-6" />
@@ -52,7 +52,7 @@ export default function ContactPage() {
 
                     <a
                       href={`mailto:${email}`}
-                      className="group flex items-center gap-4 px-5 py-4 bg-white/10 text-white rounded-xl shadow-lg shadow-black/10 hover:bg-white/15 transition border border-white/10 w-full"
+                      className="group flex items-center gap-4 px-5 py-4 bg-white/10 text-white rounded-lg shadow-lg shadow-black/10 hover:bg-white/15 transition border border-white/10 w-full"
                     >
                       <span className="h-12 w-12 rounded-full bg-white/10 grid place-items-center shrink-0">
                         <Mail className="h-6 w-6" />
@@ -65,7 +65,7 @@ export default function ContactPage() {
                   </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-                    <div className="sm:col-span-2 flex w-full items-center gap-3 bg-white/5 border border-white/10 rounded-xl px-4 py-3">
+                    <div className="sm:col-span-2 flex w-full items-center gap-3 bg-white/5 border border-white/10 rounded-lg px-4 py-3">
                       <Clock className="h-5 w-5 text-accent" />
                       <div className="text-sm">
                         <p className="font-semibold text-white">Oddzwaniam lub odpisuję w 24h</p>
@@ -80,7 +80,7 @@ export default function ContactPage() {
 
           <StaggerContainer className="lg:col-span-3">
             <StaggerItem>
-              <div className="bg-white rounded-2xl shadow-xl border border-slate-200/80 p-6 sm:p-8">
+              <div className="bg-white rounded-lg shadow-xl border border-slate-200/80 p-6 sm:p-8">
                 <div className="flex items-center gap-3 mb-6">
                   <span className="h-10 w-10 rounded-full bg-accent/10 text-accent grid place-items-center border border-accent/20">
                     <Send className="h-5 w-5" />
