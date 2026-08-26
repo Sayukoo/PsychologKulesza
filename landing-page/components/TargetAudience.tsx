@@ -28,20 +28,20 @@ export default function TargetAudience() {
         </FadeIn>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-10 items-start">
-          {/* YES column */}
+          {/* YES column — soft wash, carved into the background */}
           <FadeIn>
-            <div className="bg-white rounded-lg border border-[#E8E3DA] shadow-sm overflow-hidden h-full">
-              <div className="px-6 sm:px-8 py-5 border-b border-[#E8E3DA] flex items-center gap-3 bg-[#C9A85C]/[0.04]">
-                <span className="grid place-items-center h-8 w-8 rounded-full bg-[#C9A85C]/10 border border-[#C9A85C]/25 shrink-0">
+            <div className="bg-[#C9A85C]/[0.06] overflow-hidden h-full">
+              <div className="px-6 sm:px-8 py-5 border-b border-[#C9A85C]/20 flex items-center gap-3">
+                <span className="grid place-items-center h-8 w-8 rounded-full bg-[#C9A85C]/15 border border-[#C9A85C]/30 shrink-0">
                   <Check className="w-4 h-4 text-[#C9A85C]" strokeWidth={2.5} />
                 </span>
-                <p className="font-serif text-lg sm:text-xl font-bold text-[#0F1923]">Pracuję z osobami, które:</p>
+                <p className="font-serif text-lg sm:text-xl font-bold text-[#0F1923]">Jeżeli:</p>
               </div>
               <StaggerContainer className="p-6 sm:p-8 space-y-5 sm:space-y-7">
                 {yesItems.map((it, i) => (
                   <StaggerItem key={i}>
                     <div className="flex items-start gap-4 group cursor-default">
-                      <div className="shrink-0 mt-0.5 p-2.5 rounded-lg bg-[#FAF8F4] border border-[#E8E3DA] group-hover:border-[#C9A85C]/40 group-hover:bg-[#C9A85C]/5 transition-all duration-200">
+                      <div className="shrink-0 mt-0.5 p-2.5 bg-[#C9A85C]/[0.08] group-hover:bg-[#C9A85C]/[0.14] transition-colors duration-200">
                         <it.icon className="w-5 h-5 text-[#C9A85C]" strokeWidth={1.5} />
                       </div>
                       <p className="text-[#374151] text-base leading-relaxed pt-0.5">{it.text}</p>
@@ -52,11 +52,11 @@ export default function TargetAudience() {
             </div>
           </FadeIn>
 
-          {/* NO column */}
+          {/* NO column — neutral wash */}
           <FadeIn delay={0.15}>
-            <div className="bg-[#F7F5F1] rounded-lg border border-[#E8E3DA] overflow-hidden h-full flex flex-col">
-              <div className="px-6 sm:px-8 py-5 border-b border-[#E8E3DA] flex items-center gap-3">
-                <span className="grid place-items-center h-8 w-8 rounded-full bg-[#D1C8B8] border border-[#C4BCB0] shrink-0">
+            <div className="bg-[#0F1923]/[0.045] overflow-hidden h-full flex flex-col">
+              <div className="px-6 sm:px-8 py-5 border-b border-[#0F1923]/10 flex items-center gap-3">
+                <span className="grid place-items-center h-8 w-8 rounded-full bg-[#0F1923]/10 border border-[#0F1923]/15 shrink-0">
                   <X className="w-4 h-4 text-[#6B7280]" strokeWidth={2.5} />
                 </span>
                 <p className="font-serif text-lg sm:text-xl font-bold text-[#6B7280]">To NIE jest dla Ciebie, jeśli:</p>
