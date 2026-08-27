@@ -6,6 +6,8 @@ const SECTION_REDIRECTS: Record<string, string> = {
   cennik: '/#cennik',
   'o-mnie': '/#o-mnie',
   'umow-konsultacje': '/#booking',
+  testy: '/testy-psychologiczne',
+  test: '/testy-psychologiczne',
 };
 
 export function generateStaticParams() {
