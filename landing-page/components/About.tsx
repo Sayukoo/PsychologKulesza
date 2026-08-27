@@ -1,9 +1,7 @@
 'use client';
 
-import Link from 'next/link';
 import { FadeIn, StaggerContainer, StaggerItem } from './FadeIn';
 import { GraduationCap, Users, LineChart, ShieldCheck, Quote } from 'lucide-react';
-import { trackEvent } from '@/lib/analytics';
 import profileImage480 from './images/profile-480.webp';
 import profileImage960 from './images/profile-960.webp';
 
@@ -69,12 +67,12 @@ export default function About() {
               </div>
 
               {/* Credential badge placed under the photo */}
-              <div className="mt-6 bg-[#FAF8F4] border border-[#E8E3DA] rounded-lg px-4 py-3 shadow-md flex items-center gap-3 w-full">
-                <span className="grid place-items-center h-9 w-9 rounded-full bg-[#C9A85C]/10 border border-[#C9A85C]/30 shrink-0">
-                  <ShieldCheck className="w-4 h-4 text-[#C9A85C]" strokeWidth={2} />
+              <div className="mt-4 flex items-center gap-3 px-2 py-2 text-[#0F1923]">
+                <span className="grid place-items-center h-8 w-8 rounded-full bg-[#C9A85C]/15 text-[#C9A85C] shrink-0">
+                  <ShieldCheck className="w-4 h-4" strokeWidth={2} />
                 </span>
                 <div className="min-w-0">
-                  <p className="text-xs font-bold text-[#0F1923] uppercase tracking-wide">Zweryfikowany specjalista</p>
+                  <p className="text-xs font-bold uppercase tracking-wider text-[#0F1923]">Zweryfikowany specjalista</p>
                   <p className="text-xs text-[#6B7280] truncate">Magister psychologii · dyplom SWPS</p>
                 </div>
               </div>
@@ -109,20 +107,24 @@ export default function About() {
                 </div>
               </StaggerItem>
 
-              {/* Credential badge grid — Trust & Authority pattern */}
+              {/* Clean, unified credentials list (No busy bento boxes) */}
               <StaggerItem>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-6 pt-2 pb-2">
                   {credentials.map((c) => (
                     <div
                       key={c.title}
-                      className="group flex items-start gap-3.5 bg-[#FAF8F4] border border-[#E8E3DA] rounded-lg p-4 transition-all duration-200 hover:border-[#C9A85C]/50 hover:bg-[#C9A85C]/[0.04] hover:shadow-sm cursor-default"
+                      className="flex items-start gap-3.5 group cursor-default"
                     >
-                      <span className="grid place-items-center h-10 w-10 rounded-lg bg-white border border-[#E8E3DA] group-hover:border-[#C9A85C]/40 group-hover:bg-[#C9A85C]/5 transition-colors duration-200 shrink-0 shadow-sm">
-                        <c.icon className="w-4.5 h-4.5 text-[#C9A85C]" strokeWidth={1.75} />
+                      <span className="w-8 h-8 rounded-lg bg-[#C9A85C]/10 flex items-center justify-center shrink-0 text-[#C9A85C] mt-0.5 group-hover:bg-[#C9A85C]/20 transition-colors">
+                        <c.icon className="w-4 h-4" strokeWidth={2} />
                       </span>
-                      <div className="min-w-0">
-                        <p className="text-sm font-semibold text-[#2B2E33] leading-snug mb-0.5">{c.title}</p>
-                        <p className="text-xs text-[#6B7280] leading-relaxed">{c.desc}</p>
+                      <div className="space-y-0.5 min-w-0">
+                        <p className="text-sm font-semibold text-[#0F1923] leading-snug">
+                          {c.title}
+                        </p>
+                        <p className="text-xs text-[#6B7280] leading-relaxed">
+                          {c.desc}
+                        </p>
                       </div>
                     </div>
                   ))}
@@ -142,28 +144,6 @@ export default function About() {
                     wiem co robić&rdquo; — tu pracujemy inaczej.
                   </p>
                 </blockquote>
-              </StaggerItem>
-
-              <StaggerItem>
-                <Link
-                  href="https://www.linkedin.com/in/konstruktywizm/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={() => trackEvent({ action: 'linkedin_click', category: 'Engagement', label: 'LinkedIn Profile' })}
-                  className="group btn-shine relative inline-flex items-center gap-2.5 rounded-lg border border-[#C9A85C] bg-white px-6 py-3 text-sm font-semibold text-[#2E3A44] shadow-sm transition-all duration-200 hover:bg-[#C9A85C]/5 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C9A85C]/40 cursor-pointer"
-                >
-                  {/* LinkedIn icon */}
-                  <svg
-                    className="w-4 h-4 text-[#0A66C2] shrink-0"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    aria-hidden="true"
-                  >
-                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-                  </svg>
-                  Zobacz profil zawodowy
-                  <span className="transition-transform duration-200 group-hover:translate-x-0.5 text-[#C9A85C]">→</span>
-                </Link>
               </StaggerItem>
             </StaggerContainer>
           </div>

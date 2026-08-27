@@ -6,7 +6,6 @@ const footerLinks = [
   { name: 'O mnie', href: '/#o-mnie' },
   { name: 'Jak pracujemy', href: '/#process' },
   { name: 'Cennik', href: '/#cennik' },
-  { name: 'Testy psychologiczne', href: '/testy-psychologiczne' },
   { name: 'Kontakt', href: '/kontakt' },
 ];
 
