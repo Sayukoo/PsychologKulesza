@@ -1,7 +1,7 @@
 'use client';
 
 import { FadeIn, StaggerContainer, StaggerItem } from './FadeIn';
-import { GraduationCap, Users, LineChart, ShieldCheck, Quote } from 'lucide-react';
+import { GraduationCap, Users, LineChart, ShieldCheck } from 'lucide-react';
 import profileImage480 from './images/profile-480.webp';
 import profileImage960 from './images/profile-960.webp';
 
@@ -131,19 +131,13 @@ export default function About() {
                 </div>
               </StaggerItem>
 
-              {/* Pull quote — editorial blockquote style */}
+              {/* Refined editorial quote (No heavy left border) */}
               <StaggerItem>
-                <blockquote className="relative pl-6 border-l-4 border-[#C9A85C] py-1">
-                  <Quote
-                    className="absolute -top-2 -left-1 w-5 h-5 text-[#C9A85C]/40 rotate-180"
-                    strokeWidth={1.5}
-                    aria-hidden="true"
-                  />
-                  <p className="text-lg font-serif italic text-[#2E3A44] leading-relaxed">
-                    Jeśli wychodzisz z rozmów z innymi z poczuciem „fajnie było, ale dalej nie
-                    wiem co robić&rdquo; — tu pracujemy inaczej.
+                <div className="relative pt-4 pb-2">
+                  <p className="text-lg sm:text-xl font-serif italic text-[#0F1923] leading-relaxed">
+                    „Jeśli wychodzisz z rozmów z innymi z poczuciem &bdquo;fajnie było, ale dalej nie wiem co robić&rdquo; — tu pracujemy inaczej.”
                   </p>
-                </blockquote>
+                </div>
               </StaggerItem>
             </StaggerContainer>
           </div>

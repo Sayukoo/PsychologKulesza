@@ -133,15 +133,12 @@ export default function Process() {
                 Wyraźne rozróżnienie
               </h3>
 
-              <div className="space-y-3.5 text-base sm:text-lg text-[#374151]">
+              <div className="space-y-3 text-base sm:text-lg text-[#374151]">
                 <p className="text-[#0F1923] font-medium text-lg sm:text-xl">
                   To nie jest psychoterapia.
                 </p>
                 <p className="text-[#4B5563] leading-relaxed">
                   Nie diagnozuję i nie leczę zaburzeń psychicznych.
-                </p>
-                <p className="font-bold text-[#B38226] text-lg sm:text-xl pt-2">
-                  To konsultacja decyzyjna i rozwojowa.
                 </p>
               </div>
             </div>
