@@ -350,6 +350,22 @@ const TESTS = {
       "Nerwowe ruchy rąk lub stóp (wiercenie się), gdy musisz siedzieć przez dłuższy czas",
       "Uczucie nadmiernego pobudzenia — poczucie, że musisz coś robić, jakbyś „był nakręcony”",
       "Błędy wynikające z nieuwagi podczas pracy nad nudnym lub trudnym projektem",
+      "Problem z utrzymaniem uwagi nad zadaniami, które są monotonne lub rutynowe",
+      "Trudność ze skupieniem się na tym, co mówią inni, nawet gdy mówią bezpośrednio do Ciebie",
+      "Gubienie lub odkładanie rzeczy w niewłaściwe miejsce (zarówno w pracy, jak i w domu)",
+      "Łatwe rozpraszanie się przez dźwięki, ruch lub inne aktywności wokół Ciebie",
+      "Wstawanie z miejsca w sytuacjach wymagających długiego siedzenia (w pracy, na spotkaniach)",
+      "Poczucie wewnętrznego niepokoju, napięcia lub trudności z usiedzeniem w bezruchu",
+      "Trudność ze zrelaksowaniem się i wyciszeniem, gdy masz wolny czas dla siebie",
+      "Mówienie zbyt dużo lub nadmierna gadatliwość w sytuacjach społecznych",
+      "Kończenie wypowiedzi za innych rozmówców, zanim sami zdążą dokończyć zdanie",
+      "Trudność z odczekaniem na swoją kolej podczas rozmowy lub dyskusji",
+      "Przeszkadzanie lub przerywanie innym, gdy są czymś zajęci"
+    ],
+    source: "Adult ADHD Self-Report Scale (ASRS-v1.1) z autorską interpretacją skorelowaną z wywiadem diagnostycznym DIVA-5 (odnośnik 50/90 pkt)."
+  }
+};
+
 const BANDS = {
   who5: [
     { max: 28, color: "#FF7A29", title: "Samopoczucie mocno obniżone",
