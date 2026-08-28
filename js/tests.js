@@ -368,66 +368,66 @@ const TESTS = {
 
 const BANDS = {
   who5: [
-    { max: 28, color: "#FF7A29", title: "Samopoczucie mocno obniżone",
-      text: "Twój wynik wskazuje na znaczny spadek dobrostanu. Warto skonsultować się ze specjalistą." },
-    { max: 50, color: "#FFC542", title: "Samopoczucie poniżej normy",
-      text: "Wynik wskazuje na obniżone samopoczucie. Warto poobserwować swój poziom energii i snu." },
-    { max: 74, color: "#1C86EE", title: "Samopoczucie w normie",
-      text: "Twoje samopoczucie mieści się w typowym, zdrowym zakresie." },
-    { max: 100, color: "#1C86EE", title: "Samopoczucie wysokie",
-      text: "Wysoki poziom dobrostanu psychicznego i życiowej energii." }
+    { max: 7, color: "#FF7A29", title: "Samopoczucie mocno obniżone",
+      text: "Twój wynik (0–7 pkt) wskazuje na znaczny spadek dobrostanu psychicznego. Warto skonsultować się ze specjalistą." },
+    { max: 12, color: "#FFC542", title: "Samopoczucie poniżej normy",
+      text: "Twój wynik (8–12 pkt) wskazuje na obniżony nastrój i energię. Warto zadbać o regenerację i sen." },
+    { max: 19, color: "#1C86EE", title: "Samopoczucie w normie",
+      text: "Twój wynik (13–19 pkt) mieści się w typowym, zdrowym zakresie dobrostanu psychicznego." },
+    { max: 25, color: "#1C86EE", title: "Wysoki dobrostan",
+      text: "Twój wynik (20–25 pkt) wskazuje na wysoki poziom spokoju, motywacji i życiowej energii." }
   ],
   gad7: [
     { max: 4, color: "#1C86EE", title: "Brak istotnych objawów lęku",
-      text: "Objawy lękowe mieszczą się w normie i nie wpływają negatywnie na codzienne życie." },
-    { max: 9, color: "#FFC542", title: "Łagodne objawy lęku",
-      text: "Umiarkowane napięcie i zamartwianie się. Warto zadbać o techniki relaksacji." },
-    { max: 14, color: "#FF9445", title: "Umiarkowane objawy lęku",
-      text: "Wynik wskazuje na zauważalny poziom lęku, który może utrudniać koncentrację lub sen." },
+      text: "Twój wynik (0–4 pkt) mieści się w normie. Poziom napięcia nie wpływa negatywnie na codzienne życie." },
+    { max: 9, color: "#FFC542", title: "Łagodne objawy lękowe",
+      text: "Twój wynik (5–9 pkt) wskazuje na łagodne napięcie. Pomocne mogą być techniki relaksacji i higiena pracy." },
+    { max: 14, color: "#FF9445", title: "Umiarkowane nasilenie lęku",
+      text: "Twój wynik (10–14 pkt) wskazuje na zauważalny lęk utrudniający koncentrację lub sen. Zalecana konsultacja." },
     { max: 21, color: "#FF7A29", title: "Nasilone objawy lęku",
-      text: "Wysoki poziom lęku. Zalecana konsultacja z psychologiem lub psychiatrą." }
+      text: "Wysoki wynik (15–21 pkt). Wskazana konsultacja z psychologiem lub lekarzem psychiatrą." }
   ],
   phq9: [
     { max: 4, color: "#1C86EE", title: "Brak objawów depresyjnych",
-      text: "Twój wynik mieści się w normie. Brak przesłanek wskazujących na depresję." },
+      text: "Twój wynik (0–4 pkt) mieści się w normie. Brak przesłanek wskazujących na trudności depresyjne." },
     { max: 9, color: "#FFC542", title: "Łagodne objawy depresyjne",
-      text: "Lekkie obniżenie nastroju i energii. Warto poobserwować stan przez kolejne 2 tygodnie." },
+      text: "Twój wynik (5–9 pkt) wskazuje na lekki spadek energii i nastroju. Warto poobserwować samopoczucie." },
     { max: 14, color: "#FF9445", title: "Umiarkowane objawy depresyjne",
-      text: "Zauważalny spadek nastroju i motywacji. Zalecana konsultacja psychologiczna." },
+      text: "Twój wynik (10–14 pkt) sugeruje zauważalny spadek motywacji i nastroju. Zalecana konsultacja psychologiczna." },
     { max: 19, color: "#FF7A29", title: "Umiarkowanie ciężka depresja",
-      text: "Nasilone objawy depresyjne. Wskazany pilny kontakt ze specjalistą." },
+      text: "Twój wynik (15–19 pkt) wskazuje na nasilone trudności nastroju. Zalecany kontakt ze specjalistą." },
     { max: 27, color: "#FF7A29", title: "Ciężkie objawy depresyjne",
-      text: "Bardzo wysoki wynik. Konieczna pilna konsultacja z lekarzem psychiatrą lub psychologiem." }
+      text: "Bardzo wysoki wynik (20–27 pkt). Wskazana pilna konsultacja z psychiatrą lub psychologiem." }
   ],
   lsas: [
     { max: 54, color: "#1C86EE", title: "Brak fobii społecznej",
-      text: "Poziom lęku społecznego mieści się w typowym zakresie." },
+      text: "Twój wynik (0–54 pkt) mieści się w normie. Swoboda funkcjonowania w sytuacjach społecznych." },
     { max: 65, color: "#FFC542", title: "Łagodna fobia społeczna",
-      text: "Łagodne napięcie w wybranych sytuacjach społecznych lub zawodowych." },
+      text: "Twój wynik (55–65 pkt) wskazuje na lekkie napięcie w wybranych sytuacjach społecznych lub zawodowych." },
     { max: 80, color: "#FF9445", title: "Umiarkowana fobia społeczna",
-      text: "Zauważalny lęk społeczny, który może prowadzić do unikania wyzwań." },
+      text: "Twój wynik (66–80 pkt) wskazuje na zauważalny lęk i unikanie wyzwań. Skuteczna jest terapia CBT." },
     { max: 95, color: "#FF7A29", title: "Nasilona fobia społeczna",
-      text: "Wysoki poziom lęku społecznego utrudniający relacje i pracę." },
+      text: "Wysoki wynik (81–95 pkt) utrudniający relacje i pracę. Zalecana konsultacja ze specjalistą." },
     { max: 144, color: "#FF7A29", title: "Bardzo nasilona fobia społeczna",
-      text: "Bardzo wysokie nasilenie lęku społecznego. Zalecana terapia CBT." }
+      text: "Bardzo wysoki wynik (96–144 pkt). Wskazana psychoterapia ukierunkowana na lęk społeczny." }
   ],
   bdi: [
-    { max: 11, color: "#1C86EE", title: "Brak depresji (wynik w normie)",
-      text: "Twój nastrój mieści się w normie. Brak przesłanek depresyjnych." },
-    { max: 19, color: "#FFC542", title: "Łagodna depresja",
-      text: "Łagodne obniżenie nastroju. Warto skonsultować się z psychologiem." },
+    { max: 11, color: "#1C86EE", title: "Brak objawów depresji",
+      text: "Twój wynik (0–11 pkt) mieści się w normie. Nastrój znajduje się w typowym, zdrowym zakresie." },
+    { max: 19, color: "#FFC542", title: "Łagodne obniżenie nastroju",
+      text: "Twój wynik (12–19 pkt) wskazuje na łagodne trudności nastrojowe. Warto skonsultować się z psychologiem." },
     { max: 25, color: "#FF9445", title: "Umiarkowana depresja",
-      text: "Umiarkowane nasilenie objawów depresyjnych. Zalecana konsultacja i psychoterapia." },
+      text: "Twój wynik (20–25 pkt) wskazuje na umiarkowane nasilenie depresji. Zalecana konsultacja i psychoterapia." },
     { max: 63, color: "#FF7A29", title: "Ciężka depresja",
-      text: "Nasilone objawy depresyjne. Wskazany pilny kontakt z psychiatrą lub psychologiem." }
+      text: "Wysoki wynik (26–63 pkt). Wskazana pilna pomoc psychologiczna lub psychiatryczna." }
   ],
   asrs: [
-    { max: 35, color: "#1C86EE", title: "Brak wskazań do ADHD (wynik w normie)",
-      text: "Wynik poniżej progu wywiadu DIVA-5 (próg: ≥ 50/90 pkt). Trudności ze skupieniem mieszczą się w typowej normie." },
+    { max: 35, color: "#1C86EE", title: "Brak wskazań do ADHD",
+      text: "Twój wynik (18–35 pkt) mieści się poniżej progu DIVA-5 (wymagane ≥ 50/90 pkt). Trudności mieszczą się w normie." },
     { max: 49, color: "#FFC542", title: "Umiarkowane trudności (poniżej progu)",
-      text: "Wynik poniżej progu DIVA-5 (≥ 50/90 pkt), wskazujący na okresowe trudności z organizacją lub prokrastynacją." },
+      text: "Twój wynik (36–49 pkt) jest poniżej progu DIVA-5 (≥ 50/90 pkt), wskazując na okresowe rozproszenie lub prokrastynację." },
     { max: 90, color: "#FF7A29", title: "Wskazanie do diagnostyki ADHD (Próg DIVA-5)",
-      text: "Wynik przekracza próg odniesienia DIVA-5 (≥ 50/90 pkt), co sugeruje wysokie prawdopodobieństwo cech ADHD u dorosłych." }
+      text: "Twój wynik (50–90 pkt) przekracza próg odniesienia DIVA-5 (≥ 50/90 pkt), sugerując wysokie nasilenie cech ADHD." }
   ]
 };
 
@@ -679,10 +679,8 @@ function renderQuizRunner() {
 
 function renderQuizResult() {
   const t = TESTS[state.activeTest];
-  const raw = Object.values(state.answers).reduce((a, b) => a + b, 0);
-  const isWho = state.activeTest === 'who5';
-  const displayScore = isWho ? raw * 4 : raw;
-  const maxScore = isWho ? 100 : (state.activeTest === 'lsas' ? 144 : (state.activeTest === 'asrs' ? 90 : (state.activeTest === 'bdi' ? 63 : (state.activeTest === 'gad7' ? 21 : 27))));
+  const displayScore = Object.values(state.answers).reduce((a, b) => a + b, 0);
+  const maxScore = state.activeTest === 'who5' ? 25 : (state.activeTest === 'lsas' ? 144 : (state.activeTest === 'asrs' ? 90 : (state.activeTest === 'bdi' ? 63 : (state.activeTest === 'gad7' ? 21 : 27))));
   const band = BANDS[state.activeTest].find(b => displayScore <= b.max) || BANDS[state.activeTest][BANDS[state.activeTest].length - 1];
   
   const isCrisis = (state.activeTest === 'phq9' && (state.answers['8-v'] > 0 || displayScore >= 20)) ||
@@ -703,7 +701,7 @@ function renderQuizResult() {
       <div style="margin-top: 18px; display: grid; grid-template-columns: auto 1fr; gap: 24px; align-items: center;" class="result-grid">
         <div class="score-badge-circle" style="background-color: ${band.color}; box-shadow: 0 12px 28px ${band.color}35;">
           <span style="font-size: 2.5rem; font-weight: 800; letter-spacing: -0.04em; line-height: 1;">${displayScore}</span>
-          <span style="margin-top: 3px; font-size: 0.78rem; font-weight: 600; opacity: 0.9;">na ${isWho ? '100' : maxScore}</span>
+          <span style="margin-top: 3px; font-size: 0.78rem; font-weight: 600; opacity: 0.9;">na ${maxScore} pkt</span>
         </div>
         <div>
           <h2 style="font-size: 1.5rem; line-height: 1.25; font-weight: 800; letter-spacing: -0.02em;">${band.title}</h2>
@@ -765,10 +763,8 @@ function renderQuizResult() {
 
 function copyTestResult() {
   const t = TESTS[state.activeTest];
-  const raw = Object.values(state.answers).reduce((a, b) => a + b, 0);
-  const isWho = state.activeTest === 'who5';
-  const displayScore = isWho ? raw * 4 : raw;
-  const maxScore = isWho ? 100 : (state.activeTest === 'lsas' ? 144 : (state.activeTest === 'asrs' ? 90 : (state.activeTest === 'bdi' ? 63 : (state.activeTest === 'gad7' ? 21 : 27))));
+  const displayScore = Object.values(state.answers).reduce((a, b) => a + b, 0);
+  const maxScore = state.activeTest === 'who5' ? 25 : (state.activeTest === 'lsas' ? 144 : (state.activeTest === 'asrs' ? 90 : (state.activeTest === 'bdi' ? 63 : (state.activeTest === 'gad7' ? 21 : 27))));
   const band = BANDS[state.activeTest].find(b => displayScore <= b.max) || BANDS[state.activeTest][BANDS[state.activeTest].length - 1];
   const dateStr = new Date().toLocaleDateString('pl-PL', { day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit' });
   
@@ -810,10 +806,8 @@ function fallbackCopy(text) {
 
 function downloadTestPdf() {
   const t = TESTS[state.activeTest];
-  const raw = Object.values(state.answers).reduce((a, b) => a + b, 0);
-  const isWho = state.activeTest === 'who5';
-  const displayScore = isWho ? raw * 4 : raw;
-  const maxScore = isWho ? 100 : (state.activeTest === 'lsas' ? 144 : (state.activeTest === 'asrs' ? 90 : (state.activeTest === 'bdi' ? 63 : (state.activeTest === 'gad7' ? 21 : 27))));
+  const displayScore = Object.values(state.answers).reduce((a, b) => a + b, 0);
+  const maxScore = state.activeTest === 'who5' ? 25 : (state.activeTest === 'lsas' ? 144 : (state.activeTest === 'asrs' ? 90 : (state.activeTest === 'bdi' ? 63 : (state.activeTest === 'gad7' ? 21 : 27))));
   const band = BANDS[state.activeTest].find(b => displayScore <= b.max) || BANDS[state.activeTest][BANDS[state.activeTest].length - 1];
   const dateStr = new Date().toLocaleDateString('pl-PL', { day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit' });
   
@@ -886,7 +880,7 @@ function downloadTestPdf() {
       <div class="score-card">
         <div class="score-badge">
           ${displayScore}
-          <span class="score-sub">na ${isWho ? '100' : maxScore}</span>
+          <span class="score-sub">na ${maxScore} pkt</span>
         </div>
         <div>
           <div class="score-title">${band.title}</div>
