@@ -338,9 +338,9 @@ const TESTS = {
     official: "ASRS-v1.1 (ADHD)",
     title: "Czy to może być ADHD u dorosłych?",
     meta: "18 pytań · 3 min",
-    blurb: "Oficjalna skala przesiewowa WHO (Światowej Organizacji Zdrowia) do wstępnej samooceny objawów deficytu uwagi i nadpobudliwości u dorosłych.",
+    blurb: "Kwestionariusz samooceny ADHD u dorosłych. Autorska skala 1–5 (wynik 18–90 pkt) powiązana z kryteriami wywiadu diagnostycznego DIVA-5 (próg 50/90).",
     prompt: "Jak często w ciągu ostatnich 6 miesięcy dotyczyło Cię to zachowanie?",
-    scaleType: "freq",
+    scaleType: "asrs",
     options: ASRS5,
     items: [
       "Trudności z dopracowaniem szczegółów zadania, po tym jak zostało już prawie wykonane",
@@ -362,7 +362,7 @@ const TESTS = {
       "Trudność z odczekaniem na swoją kolej podczas rozmowy lub dyskusji",
       "Przeszkadzanie lub przerywanie innym, gdy są czymś zajęci"
     ],
-    source: "Adult ADHD Self-Report Scale (ASRS-v1.1). Światowa Organizacja Zdrowia (WHO) & Grupa Robocza ds. ADHD u Dorosłych (Adler, Kessler, Spencer, 2003). Tłumaczenie: Monika Teodorowicz (2023)."
+    source: "Adult ADHD Self-Report Scale (ASRS-v1.1) z autorską interpretacją skorelowaną z wywiadem diagnostycznym DIVA-5 (odnośnik 50/90 pkt)."
   }
 };
 
@@ -444,15 +444,15 @@ const BANDS = {
       advice: "Konieczne jest pilne udanie się do lekarza psychiatry lub psychologa. Nie zostawaj z tym sam — depresja to choroba, z której dzięki profesjonalnej pomocy można w pełni wyjść." }
   ],
   asrs: [
-    { max: 23, color: "#1C86EE", title: "Niskie prawdopodobieństwo ADHD",
-      text: "Twój wynik mieści się w przedziale 0–23 punktów. Zgłaszane objawy mieszczą się w typowej normie i rzadko utrudniają codzienne funkcjonowanie.",
-      advice: "Brak przesłanek wskazujących na ADHD u dorosłych. Jeśli doświadczasz trudności ze skupieniem lub energią, ich źródłem może być stres, przeciążenie pracą lub niedobór snu." },
-    { max: 35, color: "#FFC542", title: "Umiarkowane nasilenie cech ADHD",
-      text: "Twój wynik (24–35 punktów) wskazuje na umiarkowane nasilenie trudności z uwagą lub regulacją pobudzenia.",
-      advice: "Część cech może utrudniać organizację codziennych zadań. Warto skonsultować się z psychologiem, aby wypracować skuteczne strategie pracy i w razie potrzeby rozważyć pogłębioną diagnozę." },
-    { max: 72, color: "#FF7A29", title: "Wysokie prawdopodobieństwo ADHD u dorosłych",
-      text: "Twój wynik (36–72 punkty) wskazuje na znaczne nasilenie objawów nieuwagi, impulsywności lub nadruchliwości w ostatnich 6 miesiącach.",
-      advice: "Wynik silnie sugeruje potrzebę wykonania profesjonalnej diagnozy klinicznej (np. wywiadem DIVA-5 u psychologa lub psychiatry specjalizującego się w ADHD u dorosłych). Diagnoza pozwala dobrać skuteczną psychoedukację, psychoterapię CBT i ewentualne leczenie." }
+    { max: 35, color: "#1C86EE", title: "Niski poziom objawów (Brak przesłanek do ADHD)",
+      text: "Twój wynik (18–35 punktów) mieści się w typowym zakresie. Doświadczasz sporadycznego rozproszenia lub trudności z motywacją, które są naturalne i nie wskazują na trudności o charakterze neuroatypowym.",
+      advice: "Brak wskazań do diagnostyki ADHD. Jeśli odczuwasz zmęczenie, zadbaj o higienę snu, regularny odpoczynek i redukcję przebodźcowania." },
+    { max: 49, color: "#FFC542", title: "Umiarkowane trudności z koncentracją / organizacją",
+      text: "Twój wynik (36–49 punktów) wskazuje na zauważalne trudności w skupieniu uwagi, planowaniu lub prokrastynacji. Wynik znajduje się poniżej progu diagnostycznego dla ADHD, ale może wpływać na codzienną produktywność.",
+      advice: "Warto przyjrzeć się nawykom organizacyjnym, poziomowi stresu i przebodźcowaniu. Na bezpłatnych 15 minutach możemy omówić praktyczne techniki radzenia sobie z rozproszeniem." },
+    { max: 90, color: "#FF7A29", title: "Wysokie nasilenie cech ADHD (Próg DIVA-5)",
+      text: "Twój wynik (50–90 punktów) przekracza próg odniesienia (≥ 50/90 pkt). W wywiadzie diagnostycznym DIVA-5 odpowiada to spełnieniu co najmniej 5 z 9 kryteriów objawowych u dorosłych.",
+      advice: "Wynik jest wyraźną przesłanką do pogłębionej diagnostyki u lekarza psychiatry lub psychologa diagnosty. W razie wątpliwości dotyczących wyniku, możesz skontaktować się bezpośrednio ze mną." }
   ]
 };
 
@@ -658,6 +658,25 @@ function renderQuizRunner() {
         `).join('')}
       </div>
     `;
+  } else if (t.scaleType === 'asrs') {
+    const slot = `${state.step}-v`;
+    const val = state.answers[slot];
+    
+    scalesHtml = `
+      <div style="margin-top: 26px; display: flex; flex-direction: column; gap: 9px;">
+        ${t.options.map((opt, i) => {
+          const scoreVal = i + 1;
+          return `
+            <button class="quiz-option-btn ${val === scoreVal ? 'selected' : ''}" onclick="pickOption('${slot}', ${scoreVal}, ${isLast}, false, '')">
+              <span class="quiz-option-mark">
+                ${val === scoreVal ? '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 5 5 9-10"></path></svg>' : ''}
+              </span>
+              <span style="font-size: 1rem; font-weight: 600; color: var(--color-text-main); text-align: left;">${opt}</span>
+            </button>
+          `;
+        }).join('')}
+      </div>
+    `;
   } else {
     const slot = `${state.step}-v`;
     const val = state.answers[slot];
@@ -705,7 +724,7 @@ function renderQuizResult() {
   const raw = Object.values(state.answers).reduce((a, b) => a + b, 0);
   const isWho = state.activeTest === 'who5';
   const displayScore = isWho ? raw * 4 : raw;
-  const maxScore = isWho ? 100 : (state.activeTest === 'lsas' ? 144 : (state.activeTest === 'asrs' ? 72 : (state.activeTest === 'bdi' ? 63 : (state.activeTest === 'gad7' ? 21 : 27))));
+  const maxScore = isWho ? 100 : (state.activeTest === 'lsas' ? 144 : (state.activeTest === 'asrs' ? 90 : (state.activeTest === 'bdi' ? 63 : (state.activeTest === 'gad7' ? 21 : 27))));
   const band = BANDS[state.activeTest].find(b => displayScore <= b.max) || BANDS[state.activeTest][BANDS[state.activeTest].length - 1];
   
   // Crisis condition for PHQ-9 (item 9 > 0 or score >= 20) and BDI (item 9 > 0 or score >= 26)
@@ -714,29 +733,17 @@ function renderQuizResult() {
   
   let extraMetricsHtml = '';
   if (state.activeTest === 'asrs') {
-    const partA_indices = [0, 1, 2, 3, 4, 5];
-    let partA_sig_count = 0;
-    partA_indices.forEach(idx => {
-      const val = state.answers[`${idx}-v`] || 0;
-      if (idx <= 2 && val >= 2) partA_sig_count++;
-      else if (idx >= 3 && val >= 3) partA_sig_count++;
-    });
-    
-    const partAScore = partA_indices.reduce((sum, idx) => sum + (state.answers[`${idx}-v`] || 0), 0);
-    const partBScore = displayScore - partAScore;
-    
     extraMetricsHtml = `
-      <div style="margin-top: 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px;">
-        <div style="padding: 14px 18px; border-radius: 14px; background: rgba(28,134,238,0.06); border: 1px solid var(--color-blue-border);">
-          <span style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--color-blue);">Kluczowe objawy (Część A)</span>
-          <div style="margin-top: 4px; font-size: 1.15rem; font-weight: 800; color: var(--color-text-main);">${partA_sig_count} z 6 cech</div>
-          <span style="font-size: 0.8rem; color: var(--color-text-muted);">${partA_sig_count >= 4 ? 'Wskazanie do diagnozy ADHD (próg: ≥ 4)' : 'Poniżej progu (próg: ≥ 4)'}</span>
+      <div style="margin-top: 20px; padding: 18px 22px; border-radius: 16px; background: rgba(28,134,238,0.06); border: 1.5px solid var(--color-blue-border);">
+        <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px;">
+          <span style="font-size: 0.82rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--color-blue);">Odnośnik diagnostyczny DIVA-5</span>
+          <span style="font-size: 0.85rem; font-weight: 800; color: ${displayScore >= 50 ? 'var(--color-orange)' : 'var(--color-blue)'};">
+            ${displayScore >= 50 ? '⚠️ Przekroczony próg (≥ 50/90 pkt)' : '✓ Poniżej progu klinicznego (próg: ≥ 50/90 pkt)'}
+          </span>
         </div>
-        <div style="padding: 14px 18px; border-radius: 14px; background: rgba(255,197,66,0.08); border: 1px solid rgba(255,197,66,0.3);">
-          <span style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--color-orange);">Codzienne trudności (Część B)</span>
-          <div style="margin-top: 4px; font-size: 1.15rem; font-weight: 800; color: var(--color-text-main);">${partBScore} / 48 pkt</div>
-          <span style="font-size: 0.8rem; color: var(--color-text-muted);">Poziom wpływu na organizację dnia</span>
-        </div>
+        <p style="margin-top: 8px; font-size: 0.88rem; line-height: 1.55; color: var(--color-text-muted);">
+          Ocena opiera się na autorskiej punktacji 1–5 (wynik 18–90 pkt), skorelowanej z wywiadem diagnostycznym DIVA-5 (gdzie do stwierdzenia ADHD w dorosłości wymagana jest punktacja co najmniej 5/9, co odpowiada odnośnikowi 50/90). W razie wątpliwości dotyczących wyniku, możesz skontaktować się bezpośrednio ze mną.
+        </p>
       </div>
     `;
   }
@@ -829,7 +836,7 @@ function copyTestResult() {
   const raw = Object.values(state.answers).reduce((a, b) => a + b, 0);
   const isWho = state.activeTest === 'who5';
   const displayScore = isWho ? raw * 4 : raw;
-  const maxScore = isWho ? 100 : (state.activeTest === 'lsas' ? 144 : (state.activeTest === 'asrs' ? 72 : (state.activeTest === 'bdi' ? 63 : (state.activeTest === 'gad7' ? 21 : 27))));
+  const maxScore = isWho ? 100 : (state.activeTest === 'lsas' ? 144 : (state.activeTest === 'asrs' ? 90 : (state.activeTest === 'bdi' ? 63 : (state.activeTest === 'gad7' ? 21 : 27))));
   const band = BANDS[state.activeTest].find(b => displayScore <= b.max) || BANDS[state.activeTest][BANDS[state.activeTest].length - 1];
   
   const dateStr = new Date().toLocaleDateString('pl-PL', { day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit' });
@@ -845,12 +852,8 @@ function copyTestResult() {
   text += `Wskazówki i rekomendacje:\n${band.advice}\n\n`;
   
   if (state.activeTest === 'asrs') {
-    let partA_sig = 0;
-    [0,1,2,3,4,5].forEach(i => {
-      const v = state.answers[`${i}-v`] || 0;
-      if ((i <= 2 && v >= 2) || (i >= 3 && v >= 3)) partA_sig++;
-    });
-    text += `Kryterium przesiewowe WHO (Część A): ${partA_sig}/6 cech w strefie istotnej klinicznie (próg: ≥ 4)\n\n`;
+    text += `Odnośnik DIVA-5: ${displayScore >= 50 ? 'Przekroczony próg (≥ 50/90 pkt)' : 'Poniżej progu (próg: ≥ 50/90 pkt)'}\n`;
+    text += `Autorska skala 1-5 (zakres 18-90 pkt) odpowiada kryteriom wywiadu DIVA-5 (wymagane min. 5/9 objawów u dorosłych).\n\n`;
   }
   
   text += `Badanie wykonane anonimowo na stronie: https://psychologkacper.pl/testy.html#${state.activeTest}\n`;
@@ -904,7 +907,7 @@ function downloadTestPdf() {
   const raw = Object.values(state.answers).reduce((a, b) => a + b, 0);
   const isWho = state.activeTest === 'who5';
   const displayScore = isWho ? raw * 4 : raw;
-  const maxScore = isWho ? 100 : (state.activeTest === 'lsas' ? 144 : (state.activeTest === 'asrs' ? 72 : (state.activeTest === 'bdi' ? 63 : (state.activeTest === 'gad7' ? 21 : 27))));
+  const maxScore = isWho ? 100 : (state.activeTest === 'lsas' ? 144 : (state.activeTest === 'asrs' ? 90 : (state.activeTest === 'bdi' ? 63 : (state.activeTest === 'gad7' ? 21 : 27))));
   const band = BANDS[state.activeTest].find(b => displayScore <= b.max) || BANDS[state.activeTest][BANDS[state.activeTest].length - 1];
   const dateStr = new Date().toLocaleDateString('pl-PL', { day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit' });
   
@@ -923,6 +926,10 @@ function downloadTestPdf() {
     } else if (t.scaleType === 'custom') {
       const ansVal = state.answers[`${idx}-v`] ?? 0;
       const ansLabel = item.options[ansVal] || '-';
+      chosenAnsText = `<strong>${ansLabel}</strong> (${ansVal} pkt)`;
+    } else if (t.scaleType === 'asrs') {
+      const ansVal = state.answers[`${idx}-v`] ?? 1;
+      const ansLabel = t.options[ansVal - 1] || '-';
       chosenAnsText = `<strong>${ansLabel}</strong> (${ansVal} pkt)`;
     } else {
       const ansVal = state.answers[`${idx}-v`] ?? 0;
