@@ -4,6 +4,7 @@
 
 const FREQ4 = ["Wcale nie dokuczały", "Kilka dni", "Więcej niż połowę dni", "Niemal codziennie"];
 const WHO6 = ["Nigdy", "Od czasu do czasu", "Mniej niż połowę czasu", "Więcej niż połowę czasu", "Prawie cały czas", "Cały czas"];
+const ASRS5 = ["Nigdy", "Rzadko", "Czasami", "Często", "Bardzo często"];
 const LSAS_FEAR = ["Brak", "Łagodny", "Umiarkowany", "Silny"];
 const LSAS_AVOID = ["Nigdy", "Niekiedy", "Często", "Zawsze"];
 
@@ -19,6 +20,17 @@ const GLYPHS = {
   phq9: `<svg width="34" height="34" viewBox="0 0 40 40" fill="none" stroke="#1C86EE" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
     <path d="M6 12c4 0 5 4 8 8s5 8 9 8 7-3 11-3"></path>
     <circle cx="23" cy="28" r="2.6" fill="#FF7A29" stroke="none"></circle>
+  </svg>`,
+  bdi: `<svg width="34" height="34" viewBox="0 0 40 40" fill="none" stroke="#1C86EE" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M8 28c4-6 8-10 12-10s8 4 12 10"></path>
+    <path d="M20 6v12"></path>
+    <circle cx="20" cy="6" r="2.6" fill="#FF7A29" stroke="none"></circle>
+  </svg>`,
+  asrs: `<svg width="34" height="34" viewBox="0 0 40 40" fill="none" stroke="#1C86EE" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="20" cy="20" r="14"></circle>
+    <path d="M20 10v10l7 4"></path>
+    <path d="M12 28l4-4" stroke="#FF7A29"></path>
+    <circle cx="12" cy="28" r="2" fill="#FF7A29" stroke="none"></circle>
   </svg>`,
   lsas: `<svg width="34" height="34" viewBox="0 0 40 40" fill="none" stroke="#1C86EE" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
     <circle cx="24" cy="15" r="4.2"></circle>
@@ -87,6 +99,206 @@ const TESTS = {
     ],
     source: "Kwestionariusz Zdrowia Pacjenta PHQ-9. Opracowanie: dr Robert L. Spitzer, dr Janet B.W. Williams, dr Kurt Kroenke i współpracownicy, z wykorzystaniem grantu oświatowego firmy Pfizer Inc."
   },
+  bdi: {
+    official: "BDI (Skala Becka)",
+    title: "Skala Depresji Becka",
+    meta: "21 pytań · 4 min",
+    blurb: "Klasyczny, 21-pytaniowy kwestionariusz służący do samodzielnej oceny samopoczucia i nasilenia objawów depresyjnych w ostatnich 7 dniach.",
+    prompt: "Wybierz odpowiedź najlepiej opisującą Twoje uczucia podczas ostatnich 7 dni:",
+    scaleType: "custom",
+    items: [
+      {
+        title: "1. Uczucie smutku i przygnębienia",
+        options: [
+          "Nie jestem smutny ani przygnębiony.",
+          "Odczuwam często smutek, przygnębienie.",
+          "Przeżywam stale smutek, przygnębienie i nie mogę uwolnić się od tych przeżyć.",
+          "Jestem stale tak smutny i nieszczęśliwy, że jest to nie do wytrzymania."
+        ]
+      },
+      {
+        title: "2. Spojrzenie w przyszłość",
+        options: [
+          "Nie przejmuję się zbytnio przyszłością.",
+          "Często martwię się o przyszłość.",
+          "Obawiam się, że w przyszłości nic dobrego mnie nie czeka.",
+          "Czuję, że przyszłość jest beznadziejna i nic tego nie zmieni."
+        ]
+      },
+      {
+        title: "3. Poczucie popełniania błędów i zaniedbań",
+        options: [
+          "Sądzę, że nie popełniam większych zaniedbań.",
+          "Sądzę, że czynię więcej zaniedbań niż inni.",
+          "Kiedy spoglądam na to, co robiłem, widzę mnóstwo błędów i zaniedbań.",
+          "Jestem zupełnie niewydolny i wszystko robię źle."
+        ]
+      },
+      {
+        title: "4. Zadowolenie i odczuwanie przyjemności",
+        options: [
+          "To, co robię, sprawia mi przyjemność.",
+          "Nie cieszy mnie to, co robię.",
+          "Nic mi teraz nie daje prawdziwego zadowolenia.",
+          "Nie potrafię przeżywać zadowolenia i przyjemności; wszystko mnie nuży."
+        ]
+      },
+      {
+        title: "5. Poczucie winy",
+        options: [
+          "Nie czuję się winnym ani wobec siebie, ani wobec innych.",
+          "Dość często miewam wyrzuty sumienia.",
+          "Często czuję, że zawiniłem.",
+          "Stale czuję się winny."
+        ]
+      },
+      {
+        title: "6. Poczucie zasługiwania na karę",
+        options: [
+          "Sądzę, że nie zasługuję na karę.",
+          "Sądzę, że zasługuję na karę.",
+          "Spodziewam się ukarania.",
+          "Wiem, że jestem karany (lub ukarany)."
+        ]
+      },
+      {
+        title: "7. Stosunek do samego siebie",
+        options: [
+          "Jestem z siebie zadowolony.",
+          "Nie jestem z siebie zadowolony.",
+          "Czuję do siebie niechęć.",
+          "Nienawidzę siebie."
+        ]
+      },
+      {
+        title: "8. Samooskarżanie i poczucie gorszości",
+        options: [
+          "Nie czuję się gorszy od innych ludzi.",
+          "Zarzucam sobie, że jestem nieudolny i popełniam błędy.",
+          "Stale potępiam siebie za popełnione błędy.",
+          "Winię siebie za wszelkie zło, które istnieje."
+        ]
+      },
+      {
+        title: "9. Myśli samobójcze i rezygnacyjne",
+        options: [
+          "Nie myślę o odebraniu sobie życia.",
+          "Myślę o samobójstwie — ale nie mógłbym tego dokonać.",
+          "Pragnę odebrać sobie życie.",
+          "Popełnię samobójstwo, jak będzie odpowiednia sposobność."
+        ]
+      },
+      {
+        title: "10. Płaczliwość",
+        options: [
+          "Nie płaczę częściej niż zwykle.",
+          "Płaczę częściej niż dawniej.",
+          "Ciągle chce mi się płakać.",
+          "Chciałbym płakać, lecz nie jestem w stanie."
+        ]
+      },
+      {
+        title: "11. Podenerwowanie i drażliwość",
+        options: [
+          "Nie jestem bardziej podenerwowany niż dawniej.",
+          "Jestem bardziej nerwowy i przykry niż dawniej.",
+          "Jestem stale zdenerwowany lub rozdrażniony.",
+          "Wszystko, co dawniej mnie drażniło, stało się obojętne."
+        ]
+      },
+      {
+        title: "12. Zainteresowanie kontaktami z ludźmi",
+        options: [
+          "Ludzie interesują mnie jak dawniej.",
+          "Interesuję się ludźmi mniej niż dawniej.",
+          "Utraciłem większość zainteresowań innymi ludźmi.",
+          "Utraciłem wszelkie zainteresowanie innymi ludźmi."
+        ]
+      },
+      {
+        title: "13. Podejmowanie decyzji",
+        options: [
+          "Decyzje podejmuję łatwo, tak jak dawniej.",
+          "Częściej niż kiedyś odwlekam podjęcie decyzji.",
+          "Mam dużo trudności z podjęciem decyzji.",
+          "Nie jestem w stanie podjąć żadnej decyzji."
+        ]
+      },
+      {
+        title: "14. Ocena własnego wyglądu",
+        options: [
+          "Sądzę, że wyglądam nie gorzej niż dawniej.",
+          "Martwię się tym, że wyglądam staro i nieatrakcyjnie.",
+          "Czuję, że wyglądam coraz gorzej.",
+          "Jestem przekonany, że wyglądam okropnie i odpychająco."
+        ]
+      },
+      {
+        title: "15. Zdolność do pracy i działania",
+        options: [
+          "Mogę pracować jak dawniej.",
+          "Z trudem rozpoczynam każdą czynność.",
+          "Z wielkim wysiłkiem zmuszam się do zrobienia czegokolwiek.",
+          "Nie jestem w stanie nic zrobić."
+        ]
+      },
+      {
+        title: "16. Jakość snu",
+        options: [
+          "Sypiam dobrze, jak zwykle.",
+          "Sypiam gorzej niż dawniej.",
+          "Rano budzę się 1–2 godziny za wcześnie i trudno jest mi ponownie usnąć.",
+          "Budzę się kilka godzin za wcześnie i nie mogę usnąć."
+        ]
+      },
+      {
+        title: "17. Męczliwość i brak energii",
+        options: [
+          "Nie męczę się bardziej niż dawniej.",
+          "Męczę się znacznie łatwiej niż poprzednio.",
+          "Męczę się wszystkim, co robię.",
+          "Jestem zbyt zmęczony, aby cokolwiek robić."
+        ]
+      },
+      {
+        title: "18. Apetyt",
+        options: [
+          "Mam apetyt nie gorszy niż dawniej.",
+          "Mam trochę gorszy apetyt.",
+          "Apetyt mam wyraźnie gorszy.",
+          "Nie mam w ogóle apetytu."
+        ]
+      },
+      {
+        title: "19. Spadek masy ciała",
+        options: [
+          "Nie tracę na wadze (w okresie ostatniego miesiąca).",
+          "Straciłem na wadze więcej niż 2 kg.",
+          "Straciłem na wadze więcej niż 4 kg.",
+          "Straciłem na wadze więcej niż 6 kg."
+        ]
+      },
+      {
+        title: "20. Troska o zdrowie somatyczne",
+        options: [
+          "Nie martwię się o swoje zdrowie bardziej niż zawsze.",
+          "Martwię się swoimi dolegliwościami (żołądek, bóle, zaparcia).",
+          "Stan mojego zdrowia bardzo mnie martwi, często o tym myślę.",
+          "Tak bardzo martwię się o swoje zdrowie, że nie mogę o niczym innym myśleć."
+        ]
+      },
+      {
+        title: "21. Zainteresowania seksualne",
+        options: [
+          "Moje zainteresowania seksualne nie uległy zmianom.",
+          "Jestem mniej zainteresowany sprawami płci (seksu).",
+          "Problemy płciowe wyraźnie mniej mnie interesują.",
+          "Utraciłem wszelkie zainteresowanie sprawami seksu."
+        ]
+      }
+    ],
+    source: "Skala Depresji Becka (BDI). Beck AT, Ward CH, Mendelson M, Mock J, Erbaugh J (1961). An inventory for measuring depression. Arch Gen Psychiatry 4:561-571."
+  },
   lsas: {
     official: "LSAS",
     title: "Ludzie Cię męczą czy przerażają?",
@@ -121,6 +333,36 @@ const TESTS = {
       "Opieranie się natrętnemu sprzedawcy"
     ],
     source: "Skala Lęku Społecznego Liebowitza (LSAS). Opracowano na podstawie: Liebowitz MR, Social Phobia, Mod Probl Pharmacopsychiatry 1987;22:141-173."
+  },
+  asrs: {
+    official: "ASRS-v1.1 (ADHD)",
+    title: "Czy to może być ADHD u dorosłych?",
+    meta: "18 pytań · 3 min",
+    blurb: "Oficjalna skala przesiewowa WHO (Światowej Organizacji Zdrowia) do wstępnej samooceny objawów deficytu uwagi i nadpobudliwości u dorosłych.",
+    prompt: "Jak często w ciągu ostatnich 6 miesięcy dotyczyło Cię to zachowanie?",
+    scaleType: "freq",
+    options: ASRS5,
+    items: [
+      "1. Trudności z dopracowaniem szczegółów zadania, po tym jak zostało już prawie wykonane",
+      "2. Trudności w planowaniu i organizowaniu skomplikowanych zadań",
+      "3. Zapominanie o spotkaniach, terminach lub codziennych obowiązkach",
+      "4. Unikanie lub odkładanie na później zadań wymagających długotrwałego wysiłku umysłowego",
+      "5. Nerwowe ruchy rąk lub stóp (wiercenie się), gdy musisz siedzieć przez dłuższy czas",
+      "6. Uczucie nadmiernego pobudzenia — poczucie, że musisz coś robić, jakbyś „był nakręcony”",
+      "7. Błędy wynikające z nieuwagi podczas pracy nad nudnym lub trudnym projektem",
+      "8. Problem z utrzymaniem uwagi nad zadaniami, które są monotonne lub rutynowe",
+      "9. Trudność ze skupieniem się na tym, co mówią inni, nawet gdy mówią bezpośrednio do Ciebie",
+      "10. Gubienie lub odkładanie rzeczy w niewłaściwe miejsce (zarówno w pracy, jak i w domu)",
+      "11. Łatwe rozpraszanie się przez dźwięki, ruch lub inne aktywności wokół Ciebie",
+      "12. Wstawanie z miejsca w sytuacjach wymagających długiego siedzenia (w pracy, na spotkaniach)",
+      "13. Poczucie wewnętrznego niepokoju, napięcia lub trudności z usiedzeniem w bezruchu",
+      "14. Trudność ze zrelaksowaniem się i wyciszeniem, gdy masz wolny czas dla siebie",
+      "15. Mówienie zbyt dużo lub nadmierna gadatliwość w sytuacjach społecznych",
+      "16. Kończenie wypowiedzi za innych rozmówców, zanim sami zdążą dokończyć zdanie",
+      "17. Trudność z odczekaniem na swoją kolej podczas rozmowy lub dyskusji",
+      "18. Przeszkadzanie lub przerywanie innym, gdy są czymś zajęci"
+    ],
+    source: "Adult ADHD Self-Report Scale (ASRS-v1.1). Światowa Organizacja Zdrowia (WHO) & Grupa Robocza ds. ADHD u Dorosłych (Adler, Kessler, Spencer, 2003). Tłumaczenie: Monika Teodorowicz (2023)."
   }
 };
 
@@ -186,6 +428,31 @@ const BANDS = {
     { max: 144, color: "#FF7A29", title: "Bardzo nasilona fobia społeczna",
       text: "Bardzo wysoki wynik. Poziom lęku i unikania jest na tyle duży, że prawdopodobnie organizuje Twoje codzienne decyzje.",
       advice: "Nie próbuj z tym walczyć samodzielnie. Umów się do psychologa lub psychiatry — dostępne metody leczenia są skuteczne, a przy tym nasileniu profesjonalne prowadzenie robi realną różnicę." }
+  ],
+  bdi: [
+    { max: 11, color: "#1C86EE", title: "Brak depresji (wynik w normie)",
+      text: "Twój wynik mieści się w przedziale 0–11 punktów. Prawdopodobnie to tymczasowe pogorszenie nastroju, spowodowane bieżącymi wydarzeniami w Twoim życiu.",
+      advice: "Jeśli przykre objawy będą utrzymywać się nadal, wykonaj ten test po 7 dniach i porównaj wyniki czy następuje pogorszenie czy poprawa." },
+    { max: 19, color: "#FFC542", title: "Łagodna depresja",
+      text: "Wynik w przedziale 12–19 punktów wskazuje na potrzebę udania się do psychologa lub psychoterapeuty w celu dalszej diagnostyki.",
+      advice: "Łagodne objawy depresyjne skutecznie leczy się psychoterapią (np. CBT), bez konieczności włączania farmakoterapii. Psycholog w razie potrzeby pokieruje Cię dalej." },
+    { max: 25, color: "#FF9445", title: "Umiarkowana depresja",
+      text: "Punktacja w przedziale 20–25 punktów sugeruje umiarkowane nasilenie depresji i potrzebę podjęcia szybkich działań.",
+      advice: "Zalecany jest kontakt z psychologiem/psychoterapeutą lub lekarzem psychiatrą. Połączenie psychoterapii z ewentualnym leczeniem farmakologicznym warunkuje skuteczne leczenie." },
+    { max: 63, color: "#FF7A29", title: "Ciężka depresja",
+      text: "Wynik w przedziale 26–63 punkty wskazuje na ciężkie objawy depresyjne, które stanowią poważne zagrożenie dla Twojego zdrowia i samopoczucia.",
+      advice: "Konieczne jest pilne udanie się do lekarza psychiatry lub psychologa. Nie zostawaj z tym sam — depresja to choroba, z której dzięki profesjonalnej pomocy można w pełni wyjść." }
+  ],
+  asrs: [
+    { max: 23, color: "#1C86EE", title: "Niskie prawdopodobieństwo ADHD",
+      text: "Twój wynik mieści się w przedziale 0–23 punktów. Zgłaszane objawy mieszczą się w typowej normie i rzadko utrudniają codzienne funkcjonowanie.",
+      advice: "Brak przesłanek wskazujących na ADHD u dorosłych. Jeśli doświadczasz trudności ze skupieniem lub energią, ich źródłem może być stres, przeciążenie pracą lub niedobór snu." },
+    { max: 35, color: "#FFC542", title: "Umiarkowane nasilenie cech ADHD",
+      text: "Twój wynik (24–35 punktów) wskazuje na umiarkowane nasilenie trudności z uwagą lub regulacją pobudzenia.",
+      advice: "Część cech może utrudniać organizację codziennych zadań. Warto skonsultować się z psychologiem, aby wypracować skuteczne strategie pracy i w razie potrzeby rozważyć pogłębioną diagnozę." },
+    { max: 72, color: "#FF7A29", title: "Wysokie prawdopodobieństwo ADHD u dorosłych",
+      text: "Twój wynik (36–72 punkty) wskazuje na znaczne nasilenie objawów nieuwagi, impulsywności lub nadruchliwości w ostatnich 6 miesiącach.",
+      advice: "Wynik silnie sugeruje potrzebę wykonania profesjonalnej diagnozy klinicznej (np. wywiadem DIVA-5 u psychologa lub psychiatry specjalizującego się w ADHD u dorosłych). Diagnoza pozwala dobrać skuteczną psychoedukację, psychoterapię CBT i ewentualne leczenie." }
   ]
 };
 
@@ -329,8 +596,9 @@ function renderQuizRunner() {
   const t = TESTS[state.activeTest];
   const total = t.items.length;
   const isLsas = t.scaleType === 'lsas';
+  const isCustom = t.scaleType === 'custom';
   const isLast = state.step === total - 1;
-  const currentItem = t.items[state.step];
+  const currentItem = isCustom ? t.items[state.step].title : t.items[state.step];
   
   const runnerContainer = document.getElementById('quiz-runner-content');
   if (!runnerContainer) return;
@@ -353,7 +621,7 @@ function renderQuizRunner() {
               <span class="quiz-option-mark">
                 ${valF === i ? '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 5 5 9-10"></path></svg>' : ''}
               </span>
-              <span style="font-size: 1rem; font-weight: 600; color: var(--color-text-main);">${opt}</span>
+              <span style="font-size: 1rem; font-weight: 600; color: var(--color-text-main); text-align: left;">${opt}</span>
             </button>
           `).join('')}
         </div>
@@ -367,10 +635,27 @@ function renderQuizRunner() {
               <span class="quiz-option-mark">
                 ${valA === i ? '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 5 5 9-10"></path></svg>' : ''}
               </span>
-              <span style="font-size: 1rem; font-weight: 600; color: var(--color-text-main);">${opt}</span>
+              <span style="font-size: 1rem; font-weight: 600; color: var(--color-text-main); text-align: left;">${opt}</span>
             </button>
           `).join('')}
         </div>
+      </div>
+    `;
+  } else if (isCustom) {
+    const slot = `${state.step}-v`;
+    const val = state.answers[slot];
+    const customOpts = t.items[state.step].options;
+    
+    scalesHtml = `
+      <div style="margin-top: 26px; display: flex; flex-direction: column; gap: 10px;">
+        ${customOpts.map((opt, i) => `
+          <button class="quiz-option-btn ${val === i ? 'selected' : ''}" onclick="pickOption('${slot}', ${i}, ${isLast}, false, '')" style="align-items: flex-start; padding: 14px 18px;">
+            <span class="quiz-option-mark" style="margin-top: 2px;">
+              ${val === i ? '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 5 5 9-10"></path></svg>' : ''}
+            </span>
+            <span style="font-size: 0.98rem; font-weight: 600; color: var(--color-text-main); text-align: left; line-height: 1.45;">${opt}</span>
+          </button>
+        `).join('')}
       </div>
     `;
   } else {
@@ -384,7 +669,7 @@ function renderQuizRunner() {
             <span class="quiz-option-mark">
               ${val === i ? '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 5 5 9-10"></path></svg>' : ''}
             </span>
-            <span style="font-size: 1rem; font-weight: 600; color: var(--color-text-main);">${opt}</span>
+            <span style="font-size: 1rem; font-weight: 600; color: var(--color-text-main); text-align: left;">${opt}</span>
           </button>
         `).join('')}
       </div>
@@ -420,11 +705,41 @@ function renderQuizResult() {
   const raw = Object.values(state.answers).reduce((a, b) => a + b, 0);
   const isWho = state.activeTest === 'who5';
   const displayScore = isWho ? raw * 4 : raw;
-  const maxScore = isWho ? 100 : (state.activeTest === 'lsas' ? 144 : (state.activeTest === 'gad7' ? 21 : 27));
+  const maxScore = isWho ? 100 : (state.activeTest === 'lsas' ? 144 : (state.activeTest === 'asrs' ? 72 : (state.activeTest === 'bdi' ? 63 : (state.activeTest === 'gad7' ? 21 : 27))));
   const band = BANDS[state.activeTest].find(b => displayScore <= b.max) || BANDS[state.activeTest][BANDS[state.activeTest].length - 1];
   
-  // Crisis condition for PHQ-9: question 9 > 0 or score >= 20
-  const isPhqCrisis = state.activeTest === 'phq9' && (state.answers['8-v'] > 0 || displayScore >= 20);
+  // Crisis condition for PHQ-9 (item 9 > 0 or score >= 20) and BDI (item 9 > 0 or score >= 26)
+  const isCrisis = (state.activeTest === 'phq9' && (state.answers['8-v'] > 0 || displayScore >= 20)) ||
+                   (state.activeTest === 'bdi' && (state.answers['8-v'] > 0 || displayScore >= 26));
+  
+  let extraMetricsHtml = '';
+  if (state.activeTest === 'asrs') {
+    const partA_indices = [0, 1, 2, 3, 4, 5];
+    let partA_sig_count = 0;
+    partA_indices.forEach(idx => {
+      const val = state.answers[`${idx}-v`] || 0;
+      if (idx <= 2 && val >= 2) partA_sig_count++;
+      else if (idx >= 3 && val >= 3) partA_sig_count++;
+    });
+    
+    const partAScore = partA_indices.reduce((sum, idx) => sum + (state.answers[`${idx}-v`] || 0), 0);
+    const partBScore = displayScore - partAScore;
+    
+    extraMetricsHtml = `
+      <div style="margin-top: 24px; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px;">
+        <div style="padding: 16px 20px; border-radius: 14px; background: rgba(28,134,238,0.06); border: 1px solid var(--color-blue-border);">
+          <span style="font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--color-blue);">Część A (Przesiewowa WHO)</span>
+          <div style="margin-top: 6px; font-size: 1.2rem; font-weight: 800; color: var(--color-text-main);">${partA_sig_count} z 6 cech w strefie kryterium</div>
+          <span style="font-size: 0.8125rem; color: var(--color-text-muted);">Próg przesiewowy WHO: ≥ 4 cechy (suma: ${partAScore}/24 pkt)</span>
+        </div>
+        <div style="padding: 16px 20px; border-radius: 14px; background: rgba(255,197,66,0.08); border: 1px solid rgba(255,197,66,0.3);">
+          <span style="font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--color-orange);">Część B (Objawy pogłębione)</span>
+          <div style="margin-top: 6px; font-size: 1.2rem; font-weight: 800; color: var(--color-text-main);">${partBScore} pkt (na 48 pkt)</div>
+          <span style="font-size: 0.8125rem; color: var(--color-text-muted);">Ocena natężenia trudności w codziennym życiu</span>
+        </div>
+      </div>
+    `;
+  }
   
   const resultContainer = document.getElementById('quiz-result-content');
   if (!resultContainer) return;
@@ -449,13 +764,15 @@ function renderQuizResult() {
         </div>
       </div>
       
+      ${extraMetricsHtml}
+      
       <div style="margin-top: 26px; padding-top: 24px; border-top: 1px solid rgba(28, 134, 238, 0.16);">
         <h3 style="font-size: 0.98rem; font-weight: 700;">Co z tym zrobić</h3>
         <p style="margin-top: 8px; font-size: 0.95rem; line-height: 1.68;">${band.advice}</p>
       </div>
     </div>
     
-    ${isPhqCrisis ? `
+    ${isCrisis ? `
       <div class="crisis-box">
         <h3 style="font-size: 1.15rem; font-weight: 800; letter-spacing: -0.02em; color: var(--color-orange-dark);">Jeśli myślisz o zrobieniu sobie krzywdy, zadzwoń teraz</h3>
         <p style="margin-top: 10px; font-size: 0.9375rem; line-height: 1.65;">Nie musisz z tym czekać na wizytę u kogokolwiek. Te numery są bezpłatne i działają całą dobę.</p>
