@@ -511,8 +511,18 @@ function downloadTestPdf() {
       <meta charset="UTF-8">
       <title>Raport_${state.activeTest.toUpperCase()}_PsychologKacper</title>
       <style>
-        @page { size: A4; margin: 12mm 15mm; }
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; color: #0F172A; background: #FFF; margin: 0; padding: 12px; }
+        @page { size: A4 portrait; margin: 0mm; }
+        * { box-sizing: border-box; }
+        html, body { 
+          margin: 0; 
+          padding: 0; 
+          background: #FFF; 
+          font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; 
+          color: #0F172A; 
+          -webkit-print-color-adjust: exact; 
+          print-color-adjust: exact; 
+        }
+        .page-wrapper { padding: 14mm 16mm; width: 100%; }
         .header { display: flex; justify-content: space-between; align-items: flex-start; border-bottom: 2px solid #1C86EE; padding-bottom: 10px; margin-bottom: 14px; }
         .logo { font-size: 17px; font-weight: 800; color: #0F172A; }
         .logo span { color: #1C86EE; }
@@ -530,43 +540,45 @@ function downloadTestPdf() {
       </style>
     </head>
     <body>
-      <div class="header">
-        <div>
-          <div class="logo">Kacper Kulesza <span>·</span> Psycholog</div>
-          <div class="sub">Konsultacje psychologiczne online | psychologkacper.pl</div>
+      <div class="page-wrapper">
+        <div class="header">
+          <div>
+            <div class="logo">Kacper Kulesza <span>·</span> Psycholog</div>
+            <div class="sub">Konsultacje psychologiczne online | psychologkacper.pl</div>
+          </div>
+          <div class="meta">
+            <div><strong>Data badania:</strong> ${dateStr}</div>
+            <div><strong>Kwestionariusz:</strong> ${t.official}</div>
+          </div>
         </div>
-        <div class="meta">
-          <div><strong>Data badania:</strong> ${dateStr}</div>
-          <div><strong>Kwestionariusz:</strong> ${t.official}</div>
+        
+        <div class="score-card">
+          <div class="score-badge">
+            ${displayScore}
+            <span class="score-sub">na ${maxScore} pkt</span>
+          </div>
+          <div>
+            <div class="score-title">${band.title}</div>
+            <p class="score-desc">${band.text}</p>
+          </div>
         </div>
-      </div>
-      
-      <div class="score-card">
-        <div class="score-badge">
-          ${displayScore}
-          <span class="score-sub">na ${maxScore} pkt</span>
+        
+        <div class="table-title">Szczegółowy wykaz odpowiedzi:</div>
+        <table>
+          <thead>
+            <tr>
+              <th>Pytanie</th>
+              <th>Twoja odpowiedź</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${answersListHtml}
+          </tbody>
+        </table>
+        
+        <div class="footer">
+          Raport stanowi wynik wstępnej samooceny i nie zastępuje diagnozy lekarskiej. | Kacper Kulesza – Psycholog | psychologkacper.pl
         </div>
-        <div>
-          <div class="score-title">${band.title}</div>
-          <p class="score-desc">${band.text}</p>
-        </div>
-      </div>
-      
-      <div class="table-title">Szczegółowy wykaz odpowiedzi:</div>
-      <table>
-        <thead>
-          <tr>
-            <th>Pytanie</th>
-            <th>Twoja odpowiedź</th>
-          </tr>
-        </thead>
-        <tbody>
-          ${answersListHtml}
-        </tbody>
-      </table>
-      
-      <div class="footer">
-        Raport stanowi wynik wstępnej samooceny i nie zastępuje diagnozy lekarskiej. | Kacper Kulesza – Psycholog | psychologkacper.pl
       </div>
     </body>
     </html>
