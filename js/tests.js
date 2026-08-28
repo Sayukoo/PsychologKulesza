@@ -770,6 +770,19 @@ function renderQuizResult() {
         <h3 style="font-size: 0.98rem; font-weight: 700;">Co z tym zrobić</h3>
         <p style="margin-top: 8px; font-size: 0.95rem; line-height: 1.68;">${band.advice}</p>
       </div>
+
+      <!-- Action Buttons: Copy Result & Download PDF -->
+      <div style="margin-top: 24px; padding-top: 20px; border-top: 1px dashed rgba(28, 134, 238, 0.2); display: flex; flex-wrap: wrap; gap: 12px; align-items: center;">
+        <button id="btn-copy-result" onclick="copyTestResult()" class="btn-action-pill">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span>Skopiuj wynik na wizytę</span>
+        </button>
+        
+        <button onclick="downloadTestPdf()" class="btn-action-pill">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+          <span>Pobierz raport (PDF / Drukuj)</span>
+        </button>
+      </div>
     </div>
     
     ${isCrisis ? `
@@ -809,4 +822,203 @@ function renderQuizResult() {
     
     <p style="margin-top: 26px; font-size: 0.78rem; line-height: 1.6; color: var(--color-text-muted);">${t.source}</p>
   `;
+}
+
+function copyTestResult() {
+  const t = TESTS[state.activeTest];
+  const raw = Object.values(state.answers).reduce((a, b) => a + b, 0);
+  const isWho = state.activeTest === 'who5';
+  const displayScore = isWho ? raw * 4 : raw;
+  const maxScore = isWho ? 100 : (state.activeTest === 'lsas' ? 144 : (state.activeTest === 'asrs' ? 72 : (state.activeTest === 'bdi' ? 63 : (state.activeTest === 'gad7' ? 21 : 27))));
+  const band = BANDS[state.activeTest].find(b => displayScore <= b.max) || BANDS[state.activeTest][BANDS[state.activeTest].length - 1];
+  
+  const dateStr = new Date().toLocaleDateString('pl-PL', { day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit' });
+  
+  let text = `📋 WYNIK WSTĘPNEJ SAMOOCENY PSYCHOLOGICZNEJ\n`;
+  text += `━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n`;
+  text += `Test: ${t.official} (${t.title})\n`;
+  text += `Data: ${dateStr}\n`;
+  text += `Uzyskany wynik: ${displayScore} / ${maxScore} pkt\n`;
+  text += `Kategoria: ${band.title}\n`;
+  text += `━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n`;
+  text += `Opis stanu:\n${band.text}\n\n`;
+  text += `Wskazówki i rekomendacje:\n${band.advice}\n\n`;
+  
+  if (state.activeTest === 'asrs') {
+    let partA_sig = 0;
+    [0,1,2,3,4,5].forEach(i => {
+      const v = state.answers[`${i}-v`] || 0;
+      if ((i <= 2 && v >= 2) || (i >= 3 && v >= 3)) partA_sig++;
+    });
+    text += `Kryterium przesiewowe WHO (Część A): ${partA_sig}/6 cech w strefie istotnej klinicznie (próg: ≥ 4)\n\n`;
+  }
+  
+  text += `Badanie wykonane anonimowo na stronie: https://psychologkacper.pl/testy.html#${state.activeTest}\n`;
+  text += `Konsultacje psychologiczne: Kacper Kulesza – Psycholog (https://psychologkacper.pl)\n`;
+  
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(() => {
+      const btn = document.getElementById('btn-copy-result');
+      if (btn) {
+        const origHtml = btn.innerHTML;
+        btn.innerHTML = `<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg><span style="color: #059669; font-weight: 700;">Skopiowano do schowka!</span>`;
+        btn.style.borderColor = '#10B981';
+        btn.style.background = '#ECFDF5';
+        setTimeout(() => {
+          btn.innerHTML = origHtml;
+          btn.style.borderColor = '';
+          btn.style.background = '';
+        }, 2500);
+      }
+    }).catch(() => fallbackCopy(text));
+  } else {
+    fallbackCopy(text);
+  }
+}
+
+function fallbackCopy(text) {
+  const ta = document.createElement('textarea');
+  ta.value = text;
+  ta.style.position = 'fixed';
+  ta.style.opacity = '0';
+  document.body.appendChild(ta);
+  ta.focus();
+  ta.select();
+  try {
+    document.execCommand('copy');
+    alert("Wynik został skopiowany do schowka!");
+  } catch (err) {
+    alert("Zaznacz i skopiuj wynik ręcznie.");
+  }
+  document.body.removeChild(ta);
+}
+
+function downloadTestPdf() {
+  const t = TESTS[state.activeTest];
+  const raw = Object.values(state.answers).reduce((a, b) => a + b, 0);
+  const isWho = state.activeTest === 'who5';
+  const displayScore = isWho ? raw * 4 : raw;
+  const maxScore = isWho ? 100 : (state.activeTest === 'lsas' ? 144 : (state.activeTest === 'asrs' ? 72 : (state.activeTest === 'bdi' ? 63 : (state.activeTest === 'gad7' ? 21 : 27))));
+  const band = BANDS[state.activeTest].find(b => displayScore <= b.max) || BANDS[state.activeTest][BANDS[state.activeTest].length - 1];
+  const dateStr = new Date().toLocaleDateString('pl-PL', { day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit' });
+  
+  let answersListHtml = '';
+  t.items.forEach((item, idx) => {
+    let questionTitle = typeof item === 'object' ? item.title : item;
+    let chosenAnsText = '';
+    
+    if (t.scaleType === 'lsas') {
+      const fearVal = state.answers[`${idx}-f`] ?? '-';
+      const avoidVal = state.answers[`${idx}-a`] ?? '-';
+      const fearText = LSAS_FEAR[fearVal] || '-';
+      const avoidText = LSAS_AVOID[avoidVal] || '-';
+      chosenAnsText = `Lęk: <strong>${fearText} (${fearVal} pkt)</strong> | Unikanie: <strong>${avoidText} (${avoidVal} pkt)</strong>`;
+    } else if (t.scaleType === 'custom') {
+      const ansVal = state.answers[`${idx}-v`] ?? 0;
+      const ansLabel = item.options[ansVal] || '-';
+      chosenAnsText = `<strong>${ansLabel}</strong> (${ansVal} pkt)`;
+    } else {
+      const ansVal = state.answers[`${idx}-v`] ?? 0;
+      const ansLabel = t.options[ansVal] || '-';
+      chosenAnsText = `<strong>${ansLabel}</strong> (${ansVal} pkt)`;
+    }
+    
+    answersListHtml += `
+      <tr style="border-bottom: 1px solid #E5E7EB;">
+        <td style="padding: 10px 12px; font-size: 13px; color: #374151; vertical-align: top; width: 55%; font-weight: 500;">${idx + 1}. ${questionTitle}</td>
+        <td style="padding: 10px 12px; font-size: 13px; color: #111827; vertical-align: top; width: 45%;">${chosenAnsText}</td>
+      </tr>
+    `;
+  });
+  
+  const printContent = `
+    <!DOCTYPE html>
+    <html lang="pl">
+    <head>
+      <meta charset="UTF-8">
+      <title>Raport: ${t.official} – Kacper Kulesza Psycholog</title>
+      <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color: #16181C; margin: 0; padding: 36px 44px; line-height: 1.5; }
+        .header { display: flex; justify-content: space-between; align-items: flex-start; border-bottom: 2.5px solid #1C86EE; padding-bottom: 18px; margin-bottom: 24px; }
+        .brand { font-size: 22px; font-weight: 800; color: #16181C; letter-spacing: -0.02em; }
+        .brand span { color: #1C86EE; }
+        .date { font-size: 13px; color: #6B7280; line-height: 1.6; }
+        .badge-box { display: flex; align-items: center; gap: 24px; background: #F8FAFC; border: 1.5px solid #E2E8F0; border-radius: 16px; padding: 22px 26px; margin-bottom: 24px; }
+        .score-circle { width: 88px; height: 88px; border-radius: 50%; background: ${band.color}; color: #FFFFFF; display: flex; flex-direction: column; align-items: center; justify-content: center; font-weight: 800; font-size: 28px; line-height: 1; flex-shrink: 0; }
+        .score-circle small { font-size: 11px; font-weight: 600; opacity: 0.9; margin-top: 4px; }
+        .band-title { font-size: 20px; font-weight: 800; color: #111827; margin: 0 0 6px; }
+        .band-text { font-size: 14px; line-height: 1.55; color: #4B5563; margin: 0; }
+        .advice-box { background: #EFF6FF; border-left: 4px solid #1C86EE; padding: 14px 18px; border-radius: 8px; margin-bottom: 28px; font-size: 13.5px; line-height: 1.6; color: #1E3A8A; }
+        .table-title { font-size: 16px; font-weight: 700; margin: 26px 0 12px; color: #111827; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 30px; }
+        th { text-align: left; padding: 11px 12px; background: #F1F5F9; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #475569; border-top: 1px solid #E2E8F0; border-bottom: 1px solid #CBD5E1; }
+        .footer { border-top: 1px solid #E5E7EB; padding-top: 18px; font-size: 12px; color: #6B7280; line-height: 1.6; text-align: center; }
+        @media print {
+          body { padding: 16px 20px; }
+          @page { margin: 1.5cm; }
+        }
+      </style>
+    </head>
+    <body>
+      <div class="header">
+        <div>
+          <div class="brand">Kacper Kulesza <span>·</span> Psycholog</div>
+          <div style="font-size: 13.5px; color: #4B5563; margin-top: 3px;">Konsultacje psychologiczne online | psychologkacper.pl</div>
+        </div>
+        <div class="date" style="text-align: right;">
+          <div><strong>Data badania:</strong> ${dateStr}</div>
+          <div><strong>Kwestionariusz:</strong> ${t.official}</div>
+        </div>
+      </div>
+      
+      <div class="badge-box">
+        <div class="score-circle">
+          ${displayScore}
+          <small>na ${isWho ? '100' : maxScore}</small>
+        </div>
+        <div>
+          <h2 class="band-title">${band.title}</h2>
+          <p class="band-text">${band.text}</p>
+        </div>
+      </div>
+      
+      <div class="advice-box">
+        <strong>Wskazówki i rekomendacja:</strong> ${band.advice}
+      </div>
+      
+      <h3 class="table-title">Szczegółowy wykaz udzielonych odpowiedzi:</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Pytanie / Sytuacja</th>
+            <th>Wybrana odpowiedź</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${answersListHtml}
+        </tbody>
+      </table>
+      
+      <div class="footer">
+        <p><strong>Uwaga kliniczna:</strong> Niniejszy raport stanowi wynik wstępnego badania przesiewowego i nie zastępuje profesjonalnej diagnozy lekarskiej lub psychologicznej.</p>
+        <p>Kacper Kulesza – Psycholog | Kontakt: kackul17@gmail.com | Tel: 572 450 606 | Rezerwacja: https://psychologkacper.pl</p>
+      </div>
+      
+      <script>
+        window.onload = function() {
+          setTimeout(function() { window.print(); }, 250);
+        };
+      <\/script>
+    </body>
+    </html>
+  `;
+  
+  const printWin = window.open('', '_blank', 'width=880,height=920');
+  if (printWin) {
+    printWin.document.open();
+    printWin.document.write(printContent);
+    printWin.document.close();
+  } else {
+    alert("Zezwól przeglądarce na otwieranie wyskakujących okien, aby wygenerować raport PDF.");
+  }
 }
