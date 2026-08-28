@@ -1266,6 +1266,11 @@ p {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 16px;
+  align-items: start;
+}
+
+.form-grid-2 .form-group {
+  margin-top: 0;
 }
 
 .form-group {
