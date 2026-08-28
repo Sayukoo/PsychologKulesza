@@ -519,25 +519,30 @@ function updateView() {
 }
 
 function renderHubCards() {
-  const grid = document.getElementById('test-hub-grid');
-  if (!grid) return;
+  const hubContainer = document.getElementById('tests-hub-cards') || document.getElementById('test-hub-grid');
+  if (!hubContainer) return;
   
-  grid.innerHTML = Object.entries(TESTS).map(([key, t]) => `
-    <article class="test-card" style="display: flex; flex-direction: column; justify-content: space-between; border-radius: 20px; padding: 26px; border: 1.5px solid var(--color-blue-border); background: var(--color-bg-card); transition: all 0.2s ease;">
-      <div>
-        <div style="display: flex; align-items: center; justify-content: space-between; gap: 8px;">
-          <span style="font-size: 0.78rem; font-weight: 700; color: var(--color-blue); text-transform: uppercase; letter-spacing: 0.08em;">${t.official}</span>
-          <span style="font-size: 0.75rem; font-weight: 600; color: var(--color-text-muted);">${t.meta}</span>
+  hubContainer.innerHTML = Object.keys(TESTS).map(key => {
+    const t = TESTS[key];
+    return `
+      <div class="test-hub-card" onclick="openTest('${key}')">
+        <div style="display: flex; align-items: center; justify-content: space-between; gap: 16px; width: 100%;">
+          <div class="glyph-circle">${GLYPHS[key] || ''}</div>
+          <span class="test-card-tag">${t.meta}</span>
         </div>
-        <h3 style="margin-top: 10px; font-size: 1.25rem; font-weight: 800; line-height: 1.3; color: var(--color-text-main);">${t.title}</h3>
-        <p style="margin-top: 8px; font-size: 0.88rem; line-height: 1.55; color: var(--color-text-muted);">${t.blurb}</p>
+        <h3 style="margin-top: 22px; font-size: 1.35rem; font-weight: 800; letter-spacing: -0.02em;">${t.title}</h3>
+        <p style="margin-top: 10px; font-size: 0.9375rem; line-height: 1.6;">${t.blurb}</p>
+        <span style="margin-top: auto; padding-top: 24px; display: inline-flex; align-items: center; gap: 8px; font-size: 0.9rem; font-weight: 700; color: var(--color-blue);">
+          Zacznij test
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13"></path><path d="M13 6l6 6-6 6"></path></svg>
+        </span>
       </div>
-      <button onclick="startTest('${key}')" class="btn-primary" style="margin-top: 20px; width: 100%; justify-content: center; padding: 11px 18px; font-size: 0.9rem;">
-        Rozpocznij test
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13"></path><path d="M13 6l6 6-6 6"></path></svg>
-      </button>
-    </article>
-  `).join('');
+    `;
+  }).join('');
+}
+
+function openTest(key) {
+  startTest(key);
 }
 
 function renderQuizRunner() {
