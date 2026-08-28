@@ -350,109 +350,68 @@ const TESTS = {
       "Nerwowe ruchy rąk lub stóp (wiercenie się), gdy musisz siedzieć przez dłuższy czas",
       "Uczucie nadmiernego pobudzenia — poczucie, że musisz coś robić, jakbyś „był nakręcony”",
       "Błędy wynikające z nieuwagi podczas pracy nad nudnym lub trudnym projektem",
-      "Problem z utrzymaniem uwagi nad zadaniami, które są monotonne lub rutynowe",
-      "Trudność ze skupieniem się na tym, co mówią inni, nawet gdy mówią bezpośrednio do Ciebie",
-      "Gubienie lub odkładanie rzeczy w niewłaściwe miejsce (zarówno w pracy, jak i w domu)",
-      "Łatwe rozpraszanie się przez dźwięki, ruch lub inne aktywności wokół Ciebie",
-      "Wstawanie z miejsca w sytuacjach wymagających długiego siedzenia (w pracy, na spotkaniach)",
-      "Poczucie wewnętrznego niepokoju, napięcia lub trudności z usiedzeniem w bezruchu",
-      "Trudność ze zrelaksowaniem się i wyciszeniem, gdy masz wolny czas dla siebie",
-      "Mówienie zbyt dużo lub nadmierna gadatliwość w sytuacjach społecznych",
-      "Kończenie wypowiedzi za innych rozmówców, zanim sami zdążą dokończyć zdanie",
-      "Trudność z odczekaniem na swoją kolej podczas rozmowy lub dyskusji",
-      "Przeszkadzanie lub przerywanie innym, gdy są czymś zajęci"
-    ],
-    source: "Adult ADHD Self-Report Scale (ASRS-v1.1) z autorską interpretacją skorelowaną z wywiadem diagnostycznym DIVA-5 (odnośnik 50/90 pkt)."
-  }
-};
-
 const BANDS = {
   who5: [
     { max: 28, color: "#FF7A29", title: "Samopoczucie mocno obniżone",
-      text: "Twój wynik jest niski. W ostatnich dwóch tygodniach niewiele rzeczy dawało Ci energię, spokój lub przyjemność. WHO traktuje wynik poniżej 13 punktów surowych jako sygnał, żeby sprawdzić, czy nie chodzi o depresję.",
-      advice: "Zrób jeszcze test PHQ-9 — jest po to, żeby odróżnić przejściowy dołek od czegoś, co wymaga pomocy. Jeśli taki stan trwa dłużej niż dwa tygodnie, umów rozmowę z psychologiem albo lekarzem rodzinnym." },
+      text: "Twój wynik wskazuje na znaczny spadek dobrostanu. Warto skonsultować się ze specjalistą." },
     { max: 50, color: "#FFC542", title: "Samopoczucie poniżej normy",
-      text: "Wynik wskazuje na obniżone samopoczucie. To jeszcze nie musi oznaczać zaburzenia, ale też nie jest to poziom, przy którym można powiedzieć, że wszystko gra.",
-      advice: "Sprawdź, co konkretnie zabiera Ci energię: sen, praca, relacje, brak ruchu. Wypełnij test za dwa tygodnie i porównaj — zmiana o 10 punktów procentowych jest już istotna." },
+      text: "Wynik wskazuje na obniżone samopoczucie. Warto poobserwować swój poziom energii i snu." },
     { max: 74, color: "#1C86EE", title: "Samopoczucie w normie",
-      text: "Twoje samopoczucie w ostatnich dwóch tygodniach mieściło się w typowym zakresie. Zdarzały się gorsze momenty, ale ogólny poziom jest w porządku.",
-      advice: "Nic nie musisz robić. Jeśli chcesz mieć punkt odniesienia, zapisz sobie ten wynik i wróć do testu za miesiąc." },
+      text: "Twoje samopoczucie mieści się w typowym, zdrowym zakresie." },
     { max: 100, color: "#1C86EE", title: "Samopoczucie wysokie",
-      text: "Wysoki wynik. W ostatnich dwóch tygodniach czułeś się dobrze, miałeś energię i rzeczy, które Cię interesowały.",
-      advice: "Warto wiedzieć, co u Ciebie działa. Zastanów się, co konkretnie sprawiło, że ten okres wypadł dobrze — to informacja, która przyda się w gorszym miesiącu." }
+      text: "Wysoki poziom dobrostanu psychicznego i życiowej energii." }
   ],
   gad7: [
     { max: 4, color: "#1C86EE", title: "Brak istotnych objawów lęku",
-      text: "Twój wynik mieści się w zakresie, w którym objawy lękowe nie są nasilone. Napięcie zdarza się każdemu — tu nie układa się w problem.",
-      advice: "Nie ma powodu do działania. Jeśli coś konkretnego Cię niepokoi, to raczej temat na jedną rozmowę niż na leczenie." },
+      text: "Objawy lękowe mieszczą się w normie i nie wpływają negatywnie na codzienne życie." },
     { max: 9, color: "#FFC542", title: "Łagodne objawy lęku",
-      text: "Objawy są obecne, ale w łagodnym nasileniu. Częste martwienie się i napięcie pojawiają się regularnie, choć zwykle nie blokują codziennego funkcjonowania.",
-      advice: "To dobry moment, żeby nauczyć się kilku technik zanim nasilenie wzrośnie. Praca poznawczo-behawioralna nad zamartwianiem daje tu wyraźne efekty w kilku spotkaniach." },
+      text: "Umiarkowane napięcie i zamartwianie się. Warto zadbać o techniki relaksacji." },
     { max: 14, color: "#FF9445", title: "Umiarkowane objawy lęku",
-      text: "Wynik wskazuje na umiarkowane nasilenie lęku. Na tym poziomie objawy zwykle już kosztują — utrudniają sen, koncentrację albo relacje.",
-      advice: "Warto skonsultować się z psychologiem. Zaburzenia lękowe dobrze reagują na terapię poznawczo-behawioralną, a im wcześniej się zacznie, tym krócej to trwa." },
+      text: "Wynik wskazuje na zauważalny poziom lęku, który może utrudniać koncentrację lub sen." },
     { max: 21, color: "#FF7A29", title: "Nasilone objawy lęku",
-      text: "Wysoki wynik. Objawy lękowe są nasilone i najprawdopodobniej istotnie wpływają na Twoje codzienne funkcjonowanie.",
-      advice: "Umów się na konsultację z psychologiem lub psychiatrą. Przy tym nasileniu zaleca się aktywne leczenie — psychoterapię, czasem w połączeniu z farmakoterapią. To nie jest coś, co trzeba przeczekać samemu." }
+      text: "Wysoki poziom lęku. Zalecana konsultacja z psychologiem lub psychiatrą." }
   ],
   phq9: [
     { max: 4, color: "#1C86EE", title: "Brak objawów depresyjnych",
-      text: "Twój wynik mieści się w zakresie, w którym objawy depresyjne nie są nasilone.",
-      advice: "Nie ma powodu do działania. Jeśli mimo to czujesz, że coś jest nie tak, zaufaj temu — kwestionariusz mierzy tylko dziewięć rzeczy." },
+      text: "Twój wynik mieści się w normie. Brak przesłanek wskazujących na depresję." },
     { max: 9, color: "#FFC542", title: "Łagodne objawy depresyjne",
-      text: "Objawy są obecne w łagodnym nasileniu. To poziom, na którym często się słyszy, że jakoś się funkcjonuje, ale kosztuje to więcej wysiłku niż powinno.",
-      advice: "Obserwuj to przez dwa tygodnie i wypełnij test ponownie. Jeśli wynik nie spada, umów konsultację — na tym etapie zwykle wystarczy praca psychologiczna bez leków." },
+      text: "Lekkie obniżenie nastroju i energii. Warto poobserwować stan przez kolejne 2 tygodnie." },
     { max: 14, color: "#FF9445", title: "Umiarkowane objawy depresyjne",
-      text: "Wynik wskazuje na umiarkowane nasilenie objawów. Na tym poziomie zwykle cierpi sen, energia i zdolność cieszenia się rzeczami, które wcześniej cieszyły.",
-      advice: "Warto skonsultować się z psychologiem. Umiarkowana depresja dobrze reaguje na psychoterapię, a odkładanie tego zwykle tylko wydłuża cały proces." },
-    { max: 19, color: "#FF7A29", title: "Umiarkowanie ciężkie objawy depresyjne",
-      text: "Wysoki wynik. Objawy są nasilone i prawdopodobnie wyraźnie ograniczają Twoje codzienne funkcjonowanie.",
-      advice: "Skonsultuj się z psychiatrą lub psychologiem w najbliższym możliwym terminie. Przy tym nasileniu zaleca się aktywne leczenie, często łączące psychoterapię z farmakoterapią." },
+      text: "Zauważalny spadek nastroju i motywacji. Zalecana konsultacja psychologiczna." },
+    { max: 19, color: "#FF7A29", title: "Umiarkowanie ciężka depresja",
+      text: "Nasilone objawy depresyjne. Wskazany pilny kontakt ze specjalistą." },
     { max: 27, color: "#FF7A29", title: "Ciężkie objawy depresyjne",
-      text: "Bardzo wysoki wynik. Objawy depresyjne są ciężkie i z dużym prawdopodobieństwem znacząco utrudniają Ci codzienne życie.",
-      advice: "Nie zostawaj z tym sam. Umów wizytę u psychiatry — do psychiatry w Polsce nie potrzebujesz skierowania. Jeśli czekanie na termin wydaje się nie do zniesienia, zadzwoń pod numery poniżej." }
+      text: "Bardzo wysoki wynik. Konieczna pilna konsultacja z lekarzem psychiatrą lub psychologiem." }
   ],
   lsas: [
     { max: 54, color: "#1C86EE", title: "Brak fobii społecznej",
-      text: "Twój wynik nie wskazuje na fobię społeczną. Część sytuacji może być niekomfortowa — to normalne i nie układa się w zaburzenie.",
-      advice: "Nic nie musisz robić. Jeśli konkretna sytuacja, na przykład wystąpienia publiczne, mocno Cię blokuje, to temat na jedno spotkanie, nie na terapię." },
+      text: "Poziom lęku społecznego mieści się w typowym zakresie." },
     { max: 65, color: "#FFC542", title: "Łagodna fobia społeczna",
-      text: "Wynik wskazuje na łagodne nasilenie lęku społecznego. Prawdopodobnie unikasz niektórych sytuacji albo przechodzisz przez nie kosztem sporego napięcia.",
-      advice: "Terapia poznawczo-behawioralna z ekspozycją jest tu metodą pierwszego wyboru i przy łagodnym nasileniu działa szybko. Warto zacząć od nazwania, których sytuacji dokładnie dotyczy." },
+      text: "Łagodne napięcie w wybranych sytuacjach społecznych lub zawodowych." },
     { max: 80, color: "#FF9445", title: "Umiarkowana fobia społeczna",
-      text: "Umiarkowane nasilenie. Na tym poziomie unikanie zwykle zaczyna zawężać życie — odmawiasz rzeczy, na które faktycznie masz ochotę.",
-      advice: "Skonsultuj się z psychologiem. Im dłużej trwa unikanie, tym mocniej się utrwala, więc to dobry moment, żeby to przerwać." },
+      text: "Zauważalny lęk społeczny, który może prowadzić do unikania wyzwań." },
     { max: 95, color: "#FF7A29", title: "Nasilona fobia społeczna",
-      text: "Wysoki wynik. Lęk społeczny jest nasilony i z dużym prawdopodobieństwem wpływa na Twoją pracę, naukę i relacje.",
-      advice: "Umów konsultację z psychologiem lub psychiatrą. Fobia społeczna to jedno z zaburzeń, które najlepiej reagują na leczenie — u większości osób udaje się uzyskać wyraźną poprawę." },
+      text: "Wysoki poziom lęku społecznego utrudniający relacje i pracę." },
     { max: 144, color: "#FF7A29", title: "Bardzo nasilona fobia społeczna",
-      text: "Bardzo wysoki wynik. Poziom lęku i unikania jest na tyle duży, że prawdopodobnie organizuje Twoje codzienne decyzje.",
-      advice: "Nie próbuj z tym walczyć samodzielnie. Umów się do psychologa lub psychiatry — dostępne metody leczenia są skuteczne, a przy tym nasileniu profesjonalne prowadzenie robi realną różnicę." }
+      text: "Bardzo wysokie nasilenie lęku społecznego. Zalecana terapia CBT." }
   ],
   bdi: [
     { max: 11, color: "#1C86EE", title: "Brak depresji (wynik w normie)",
-      text: "Twój wynik mieści się w przedziale 0–11 punktów. Prawdopodobnie to tymczasowe pogorszenie nastroju, spowodowane bieżącymi wydarzeniami w Twoim życiu.",
-      advice: "Jeśli przykre objawy będą utrzymywać się nadal, wykonaj ten test po 7 dniach i porównaj wyniki czy następuje pogorszenie czy poprawa." },
+      text: "Twój nastrój mieści się w normie. Brak przesłanek depresyjnych." },
     { max: 19, color: "#FFC542", title: "Łagodna depresja",
-      text: "Wynik w przedziale 12–19 punktów wskazuje na potrzebę udania się do psychologa lub psychoterapeuty w celu dalszej diagnostyki.",
-      advice: "Łagodne objawy depresyjne skutecznie leczy się psychoterapią (np. CBT), bez konieczności włączania farmakoterapii. Psycholog w razie potrzeby pokieruje Cię dalej." },
+      text: "Łagodne obniżenie nastroju. Warto skonsultować się z psychologiem." },
     { max: 25, color: "#FF9445", title: "Umiarkowana depresja",
-      text: "Punktacja w przedziale 20–25 punktów sugeruje umiarkowane nasilenie depresji i potrzebę podjęcia szybkich działań.",
-      advice: "Zalecany jest kontakt z psychologiem/psychoterapeutą lub lekarzem psychiatrą. Połączenie psychoterapii z ewentualnym leczeniem farmakologicznym warunkuje skuteczne leczenie." },
+      text: "Umiarkowane nasilenie objawów depresyjnych. Zalecana konsultacja i psychoterapia." },
     { max: 63, color: "#FF7A29", title: "Ciężka depresja",
-      text: "Wynik w przedziale 26–63 punkty wskazuje na ciężkie objawy depresyjne, które stanowią poważne zagrożenie dla Twojego zdrowia i samopoczucia.",
-      advice: "Konieczne jest pilne udanie się do lekarza psychiatry lub psychologa. Nie zostawaj z tym sam — depresja to choroba, z której dzięki profesjonalnej pomocy można w pełni wyjść." }
+      text: "Nasilone objawy depresyjne. Wskazany pilny kontakt z psychiatrą lub psychologiem." }
   ],
   asrs: [
-    { max: 35, color: "#1C86EE", title: "Niski poziom objawów (Brak przesłanek do ADHD)",
-      text: "Twój wynik (18–35 punktów) mieści się w typowym zakresie. Doświadczasz sporadycznego rozproszenia lub trudności z motywacją, które są naturalne i nie wskazują na trudności o charakterze neuroatypowym.",
-      advice: "Brak wskazań do diagnostyki ADHD. Jeśli odczuwasz zmęczenie, zadbaj o higienę snu, regularny odpoczynek i redukcję przebodźcowania." },
-    { max: 49, color: "#FFC542", title: "Umiarkowane trudności z koncentracją / organizacją",
-      text: "Twój wynik (36–49 punktów) wskazuje na zauważalne trudności w skupieniu uwagi, planowaniu lub prokrastynacji. Wynik znajduje się poniżej progu diagnostycznego dla ADHD, ale może wpływać na codzienną produktywność.",
-      advice: "Warto przyjrzeć się nawykom organizacyjnym, poziomowi stresu i przebodźcowaniu. Na bezpłatnych 15 minutach możemy omówić praktyczne techniki radzenia sobie z rozproszeniem." },
-    { max: 90, color: "#FF7A29", title: "Wysokie nasilenie cech ADHD (Próg DIVA-5)",
-      text: "Twój wynik (50–90 punktów) przekracza próg odniesienia (≥ 50/90 pkt). W wywiadzie diagnostycznym DIVA-5 odpowiada to spełnieniu co najmniej 5 z 9 kryteriów objawowych u dorosłych.",
-      advice: "Wynik jest wyraźną przesłanką do pogłębionej diagnostyki u lekarza psychiatry lub psychologa diagnosty. W razie wątpliwości dotyczących wyniku, możesz skontaktować się bezpośrednio ze mną." }
+    { max: 35, color: "#1C86EE", title: "Brak wskazań do ADHD (wynik w normie)",
+      text: "Wynik poniżej progu wywiadu DIVA-5 (próg: ≥ 50/90 pkt). Trudności ze skupieniem mieszczą się w typowej normie." },
+    { max: 49, color: "#FFC542", title: "Umiarkowane trudności (poniżej progu)",
+      text: "Wynik poniżej progu DIVA-5 (≥ 50/90 pkt), wskazujący na okresowe trudności z organizacją lub prokrastynacją." },
+    { max: 90, color: "#FF7A29", title: "Wskazanie do diagnostyki ADHD (Próg DIVA-5)",
+      text: "Wynik przekracza próg odniesienia DIVA-5 (≥ 50/90 pkt), co sugeruje wysokie prawdopodobieństwo cech ADHD u dorosłych." }
   ]
 };
 
@@ -471,65 +430,33 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function syncFromHash() {
-  const hash = (window.location.hash || '').replace('#', '');
-  if (TESTS[hash]) {
+  const hash = window.location.hash.replace('#', '').toLowerCase();
+  if (hash && TESTS[hash]) {
     startTest(hash);
-  } else if (state.activeTest) {
+  } else {
     goHub();
   }
 }
 
-function renderHubCards() {
-  const hubContainer = document.getElementById('tests-hub-cards');
-  if (!hubContainer) return;
-  
-  hubContainer.innerHTML = Object.keys(TESTS).map(key => {
-    const t = TESTS[key];
-    return `
-      <div class="test-hub-card" onclick="openTest('${key}')">
-        <div style="display: flex; align-items: center; justify-content: space-between; gap: 16px; width: 100%;">
-          <div class="glyph-circle">${GLYPHS[key]}</div>
-          <span class="test-card-tag">${t.meta}</span>
-        </div>
-        <h3 style="margin-top: 22px; font-size: 1.35rem; font-weight: 800; letter-spacing: -0.02em;">${t.title}</h3>
-        <p style="margin-top: 10px; font-size: 0.9375rem; line-height: 1.6;">${t.blurb}</p>
-        <span style="margin-top: auto; padding-top: 24px; display: inline-flex; align-items: center; gap: 8px; font-size: 0.9rem; font-weight: 700; color: var(--color-blue);">
-          Zacznij test
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13"></path><path d="M13 6l6 6-6 6"></path></svg>
-        </span>
-      </div>
-    `;
-  }).join('');
-}
-
-function openTest(key) {
-  if (window.location.hash !== '#' + key) {
-    window.location.hash = key;
-  } else {
-    startTest(key);
+function startTest(testKey) {
+  state.activeTest = testKey;
+  state.step = 0;
+  state.answers = {};
+  state.submitted = false;
+  if (window.location.hash !== `#${testKey}`) {
+    window.location.hash = testKey;
   }
-}
-
-function startTest(key) {
-  state = {
-    activeTest: key,
-    step: 0,
-    answers: {},
-    submitted: false
-  };
   updateView();
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 function goHub() {
-  state = {
-    activeTest: null,
-    step: 0,
-    answers: {},
-    submitted: false
-  };
+  state.activeTest = null;
+  state.step = 0;
+  state.answers = {};
+  state.submitted = false;
   if (window.location.hash) {
-    history.replaceState(null, '', window.location.pathname);
+    history.pushState('', document.title, window.location.pathname + window.location.search);
   }
   updateView();
   window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -549,7 +476,6 @@ function pickOption(slot, value, isLast, isLsas, otherSlot) {
   state.answers[slot] = value;
   
   if (isLsas && state.answers[otherSlot] === undefined) {
-    // Need both fear and avoidance answered
     updateView();
     return;
   }
@@ -592,6 +518,28 @@ function updateView() {
   }
 }
 
+function renderHubCards() {
+  const grid = document.getElementById('test-hub-grid');
+  if (!grid) return;
+  
+  grid.innerHTML = Object.entries(TESTS).map(([key, t]) => `
+    <article class="test-card" style="display: flex; flex-direction: column; justify-content: space-between; border-radius: 20px; padding: 26px; border: 1.5px solid var(--color-blue-border); background: var(--color-bg-card); transition: all 0.2s ease;">
+      <div>
+        <div style="display: flex; align-items: center; justify-content: space-between; gap: 8px;">
+          <span style="font-size: 0.78rem; font-weight: 700; color: var(--color-blue); text-transform: uppercase; letter-spacing: 0.08em;">${t.official}</span>
+          <span style="font-size: 0.75rem; font-weight: 600; color: var(--color-text-muted);">${t.meta}</span>
+        </div>
+        <h3 style="margin-top: 10px; font-size: 1.25rem; font-weight: 800; line-height: 1.3; color: var(--color-text-main);">${t.title}</h3>
+        <p style="margin-top: 8px; font-size: 0.88rem; line-height: 1.55; color: var(--color-text-muted);">${t.blurb}</p>
+      </div>
+      <button onclick="startTest('${key}')" class="btn-primary" style="margin-top: 20px; width: 100%; justify-content: center; padding: 11px 18px; font-size: 0.9rem;">
+        Rozpocznij test
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13"></path><path d="M13 6l6 6-6 6"></path></svg>
+      </button>
+    </article>
+  `).join('');
+}
+
 function renderQuizRunner() {
   const t = TESTS[state.activeTest];
   const total = t.items.length;
@@ -613,29 +561,25 @@ function renderQuizRunner() {
     const valA = state.answers[slotA];
     
     scalesHtml = `
-      <div style="margin-top: 26px;">
-        <span style="display: block; margin-bottom: 10px; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-blue);">Ile lęku w niej czujesz?</span>
-        <div style="display: flex; flex-direction: column; gap: 9px;">
+      <div style="margin-top: 24px;">
+        <span style="display: block; margin-bottom: 8px; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-blue);">Ile lęku w niej czujesz?</span>
+        <div style="display: flex; flex-direction: column; gap: 8px;">
           ${LSAS_FEAR.map((opt, i) => `
             <button class="quiz-option-btn ${valF === i ? 'selected' : ''}" onclick="pickOption('${slotF}', ${i}, ${isLast}, true, '${slotA}')">
-              <span class="quiz-option-mark">
-                ${valF === i ? '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 5 5 9-10"></path></svg>' : ''}
-              </span>
-              <span style="font-size: 1rem; font-weight: 600; color: var(--color-text-main); text-align: left;">${opt}</span>
+              <span class="quiz-option-mark">${valF === i ? '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="3.2"><path d="m5 12.5 5 5 9-10"></path></svg>' : ''}</span>
+              <span style="font-size: 0.95rem; font-weight: 600; color: var(--color-text-main);">${opt}</span>
             </button>
           `).join('')}
         </div>
       </div>
       
-      <div style="margin-top: 26px;">
-        <span style="display: block; margin-bottom: 10px; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-orange);">Jak często jej unikasz?</span>
-        <div style="display: flex; flex-direction: column; gap: 9px;">
+      <div style="margin-top: 24px;">
+        <span style="display: block; margin-bottom: 8px; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-orange);">Jak często jej unikasz?</span>
+        <div style="display: flex; flex-direction: column; gap: 8px;">
           ${LSAS_AVOID.map((opt, i) => `
             <button class="quiz-option-btn ${valA === i ? 'selected orange' : ''}" onclick="pickOption('${slotA}', ${i}, ${isLast}, true, '${slotF}')">
-              <span class="quiz-option-mark">
-                ${valA === i ? '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 5 5 9-10"></path></svg>' : ''}
-              </span>
-              <span style="font-size: 1rem; font-weight: 600; color: var(--color-text-main); text-align: left;">${opt}</span>
+              <span class="quiz-option-mark">${valA === i ? '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="3.2"><path d="m5 12.5 5 5 9-10"></path></svg>' : ''}</span>
+              <span style="font-size: 0.95rem; font-weight: 600; color: var(--color-text-main);">${opt}</span>
             </button>
           `).join('')}
         </div>
@@ -647,13 +591,11 @@ function renderQuizRunner() {
     const customOpts = t.items[state.step].options;
     
     scalesHtml = `
-      <div style="margin-top: 26px; display: flex; flex-direction: column; gap: 10px;">
+      <div style="margin-top: 24px; display: flex; flex-direction: column; gap: 8px;">
         ${customOpts.map((opt, i) => `
-          <button class="quiz-option-btn ${val === i ? 'selected' : ''}" onclick="pickOption('${slot}', ${i}, ${isLast}, false, '')" style="align-items: flex-start; padding: 14px 18px;">
-            <span class="quiz-option-mark" style="margin-top: 2px;">
-              ${val === i ? '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 5 5 9-10"></path></svg>' : ''}
-            </span>
-            <span style="font-size: 0.98rem; font-weight: 600; color: var(--color-text-main); text-align: left; line-height: 1.45;">${opt}</span>
+          <button class="quiz-option-btn ${val === i ? 'selected' : ''}" onclick="pickOption('${slot}', ${i}, ${isLast}, false, '')" style="align-items: flex-start; padding: 13px 16px;">
+            <span class="quiz-option-mark" style="margin-top: 2px;">${val === i ? '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="3.2"><path d="m5 12.5 5 5 9-10"></path></svg>' : ''}</span>
+            <span style="font-size: 0.95rem; font-weight: 600; color: var(--color-text-main); text-align: left; line-height: 1.4;">${opt}</span>
           </button>
         `).join('')}
       </div>
@@ -663,15 +605,13 @@ function renderQuizRunner() {
     const val = state.answers[slot];
     
     scalesHtml = `
-      <div style="margin-top: 26px; display: flex; flex-direction: column; gap: 9px;">
+      <div style="margin-top: 24px; display: flex; flex-direction: column; gap: 8px;">
         ${t.options.map((opt, i) => {
           const scoreVal = i + 1;
           return `
             <button class="quiz-option-btn ${val === scoreVal ? 'selected' : ''}" onclick="pickOption('${slot}', ${scoreVal}, ${isLast}, false, '')">
-              <span class="quiz-option-mark">
-                ${val === scoreVal ? '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 5 5 9-10"></path></svg>' : ''}
-              </span>
-              <span style="font-size: 1rem; font-weight: 600; color: var(--color-text-main); text-align: left;">${opt}</span>
+              <span class="quiz-option-mark">${val === scoreVal ? '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="3.2"><path d="m5 12.5 5 5 9-10"></path></svg>' : ''}</span>
+              <span style="font-size: 0.95rem; font-weight: 600; color: var(--color-text-main);">${opt}</span>
             </button>
           `;
         }).join('')}
@@ -682,13 +622,11 @@ function renderQuizRunner() {
     const val = state.answers[slot];
     
     scalesHtml = `
-      <div style="margin-top: 26px; display: flex; flex-direction: column; gap: 9px;">
+      <div style="margin-top: 24px; display: flex; flex-direction: column; gap: 8px;">
         ${t.options.map((opt, i) => `
           <button class="quiz-option-btn ${val === i ? 'selected' : ''}" onclick="pickOption('${slot}', ${i}, ${isLast}, false, '')">
-            <span class="quiz-option-mark">
-              ${val === i ? '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 5 5 9-10"></path></svg>' : ''}
-            </span>
-            <span style="font-size: 1rem; font-weight: 600; color: var(--color-text-main); text-align: left;">${opt}</span>
+            <span class="quiz-option-mark">${val === i ? '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="3.2"><path d="m5 12.5 5 5 9-10"></path></svg>' : ''}</span>
+            <span style="font-size: 0.95rem; font-weight: 600; color: var(--color-text-main);">${opt}</span>
           </button>
         `).join('')}
       </div>
@@ -696,25 +634,24 @@ function renderQuizRunner() {
   }
   
   runnerContainer.innerHTML = `
-    <div style="display: flex; align-items: center; gap: 16px;">
-      <button onclick="goBack()" aria-label="Wstecz" style="width: 40px; height: 40px; border-radius: 50%; flex-shrink: 0; cursor: pointer; display: flex; align-items: center; justify-content: center; border: 1.4px solid var(--color-blue-border); background: transparent; color: var(--color-blue); transition: background 0.14s ease;">
-        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H6"></path><path d="M11 6l-6 6 6 6"></path></svg>
+    <div style="display: flex; align-items: center; gap: 14px;">
+      <button onclick="goBack()" aria-label="Wstecz" style="width: 38px; height: 38px; border-radius: 50%; flex-shrink: 0; cursor: pointer; display: flex; align-items: center; justify-content: center; border: 1.4px solid var(--color-blue-border); background: transparent; color: var(--color-blue);">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H6"></path><path d="M11 6l-6 6 6 6"></path></svg>
       </button>
       <div class="quiz-progress-bar">
         <span class="quiz-progress-fill" style="width: ${progressPct}%;"></span>
       </div>
-      <span style="font-size: 0.875rem; font-weight: 700; color: var(--color-text-muted); white-space: nowrap;">${state.step + 1} / ${total}</span>
+      <span style="font-size: 0.85rem; font-weight: 700; color: var(--color-text-muted); white-space: nowrap;">${state.step + 1} / ${total}</span>
     </div>
     
-    <div class="animate-fade-in" style="margin-top: 34px;">
+    <div class="animate-fade-in" style="margin-top: 28px;">
       <span class="section-tag">${t.prompt}</span>
-      <h1 style="margin-top: 12px; font-size: 1.85rem; line-height: 1.28; font-weight: 800; letter-spacing: -0.025em; color: var(--color-text-main);">${currentItem}</h1>
-      
+      <h1 style="margin-top: 10px; font-size: 1.75rem; line-height: 1.3; font-weight: 800; letter-spacing: -0.02em; color: var(--color-text-main);">${currentItem}</h1>
       ${scalesHtml}
     </div>
     
-    <p style="margin-top: 28px; font-size: 0.8125rem; color: var(--color-text-muted); text-align: center;">
-      Odpowiedzi nie opuszczają Twojej przeglądarki. Możesz cofnąć się w każdej chwili.
+    <p style="margin-top: 22px; font-size: 0.78rem; color: var(--color-text-muted); text-align: center;">
+      Odpowiedzi są w 100% poufne i nie opuszczają Twojej przeglądarki.
     </p>
   `;
 }
@@ -727,107 +664,81 @@ function renderQuizResult() {
   const maxScore = isWho ? 100 : (state.activeTest === 'lsas' ? 144 : (state.activeTest === 'asrs' ? 90 : (state.activeTest === 'bdi' ? 63 : (state.activeTest === 'gad7' ? 21 : 27))));
   const band = BANDS[state.activeTest].find(b => displayScore <= b.max) || BANDS[state.activeTest][BANDS[state.activeTest].length - 1];
   
-  // Crisis condition for PHQ-9 (item 9 > 0 or score >= 20) and BDI (item 9 > 0 or score >= 26)
   const isCrisis = (state.activeTest === 'phq9' && (state.answers['8-v'] > 0 || displayScore >= 20)) ||
                    (state.activeTest === 'bdi' && (state.answers['8-v'] > 0 || displayScore >= 26));
-  
-  let extraMetricsHtml = '';
-  if (state.activeTest === 'asrs') {
-    extraMetricsHtml = `
-      <div style="margin-top: 20px; padding: 18px 22px; border-radius: 16px; background: rgba(28,134,238,0.06); border: 1.5px solid var(--color-blue-border);">
-        <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px;">
-          <span style="font-size: 0.82rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--color-blue);">Odnośnik diagnostyczny DIVA-5</span>
-          <span style="font-size: 0.85rem; font-weight: 800; color: ${displayScore >= 50 ? 'var(--color-orange)' : 'var(--color-blue)'};">
-            ${displayScore >= 50 ? '⚠️ Przekroczony próg (≥ 50/90 pkt)' : '✓ Poniżej progu klinicznego (próg: ≥ 50/90 pkt)'}
-          </span>
-        </div>
-        <p style="margin-top: 8px; font-size: 0.88rem; line-height: 1.55; color: var(--color-text-muted);">
-          Ocena opiera się na autorskiej punktacji 1–5 (wynik 18–90 pkt), skorelowanej z wywiadem diagnostycznym DIVA-5 (gdzie do stwierdzenia ADHD w dorosłości wymagana jest punktacja co najmniej 5/9, co odpowiada odnośnikowi 50/90). W razie wątpliwości dotyczących wyniku, możesz skontaktować się bezpośrednio ze mną.
-        </p>
-      </div>
-    `;
-  }
   
   const resultContainer = document.getElementById('quiz-result-content');
   if (!resultContainer) return;
   
   resultContainer.innerHTML = `
-    <button onclick="goHub()" class="btn-outline" style="padding: 8px 16px; font-size: 0.875rem;">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H6"></path><path d="M11 6l-6 6 6 6"></path></svg>
+    <button onclick="goHub()" class="btn-outline" style="padding: 7px 14px; font-size: 0.85rem;">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H6"></path><path d="M11 6l-6 6 6 6"></path></svg>
       Wszystkie testy
     </button>
     
-    <div style="margin-top: 22px; padding: 36px 32px 30px; border-radius: 22px; border: 1px solid var(--color-blue-border); background: var(--color-bg-card); backdrop-filter: blur(8px); box-shadow: var(--shadow-card);">
+    <div style="margin-top: 20px; padding: 30px 28px 24px; border-radius: 20px; border: 1.2px solid var(--color-blue-border); background: var(--color-bg-card); backdrop-filter: blur(8px); box-shadow: var(--shadow-card);">
       <span class="section-tag">${t.official} — Twój wynik</span>
       
-      <div style="margin-top: 22px; display: grid; grid-template-columns: auto 1fr; gap: 30px; align-items: center;" class="result-grid">
-        <div class="score-badge-circle" style="background-color: ${band.color}; box-shadow: 0 16px 36px ${band.color}40;">
-          <span style="font-size: 2.75rem; font-weight: 800; letter-spacing: -0.04em; line-height: 1;">${displayScore}</span>
-          <span style="margin-top: 4px; font-size: 0.8125rem; font-weight: 600; opacity: 0.9;">na ${isWho ? '100' : maxScore}</span>
+      <div style="margin-top: 18px; display: grid; grid-template-columns: auto 1fr; gap: 24px; align-items: center;" class="result-grid">
+        <div class="score-badge-circle" style="background-color: ${band.color}; box-shadow: 0 12px 28px ${band.color}35;">
+          <span style="font-size: 2.5rem; font-weight: 800; letter-spacing: -0.04em; line-height: 1;">${displayScore}</span>
+          <span style="margin-top: 3px; font-size: 0.78rem; font-weight: 600; opacity: 0.9;">na ${isWho ? '100' : maxScore}</span>
         </div>
         <div>
-          <h2 style="font-size: 1.75rem; line-height: 1.2; font-weight: 800; letter-spacing: -0.025em;">${band.title}</h2>
-          <p style="margin-top: 12px; font-size: 0.98rem; line-height: 1.68;">${band.text}</p>
+          <h2 style="font-size: 1.5rem; line-height: 1.25; font-weight: 800; letter-spacing: -0.02em;">${band.title}</h2>
+          <p style="margin-top: 8px; font-size: 0.95rem; line-height: 1.55; color: var(--color-text-muted);">${band.text}</p>
         </div>
-      </div>
-      
-      ${extraMetricsHtml}
-      
-      <div style="margin-top: 26px; padding-top: 24px; border-top: 1px solid rgba(28, 134, 238, 0.16);">
-        <h3 style="font-size: 0.98rem; font-weight: 700;">Co z tym zrobić</h3>
-        <p style="margin-top: 8px; font-size: 0.95rem; line-height: 1.68;">${band.advice}</p>
       </div>
 
       <!-- Action Buttons: Copy Result & Download PDF -->
-      <div style="margin-top: 24px; padding-top: 20px; border-top: 1px dashed rgba(28, 134, 238, 0.2); display: flex; flex-wrap: wrap; gap: 12px; align-items: center;">
+      <div style="margin-top: 22px; padding-top: 18px; border-top: 1px solid rgba(28, 134, 238, 0.14); display: flex; flex-wrap: wrap; gap: 10px; align-items: center;">
         <button id="btn-copy-result" onclick="copyTestResult()" class="btn-action-pill">
-          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
           <span>Skopiuj wynik na wizytę</span>
         </button>
         
         <button id="btn-download-pdf" onclick="downloadTestPdf()" class="btn-action-pill">
-          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
           <span>Pobierz raport (PDF)</span>
         </button>
       </div>
     </div>
     
     ${isCrisis ? `
-      <div class="crisis-box">
-        <h3 style="font-size: 1.15rem; font-weight: 800; letter-spacing: -0.02em; color: var(--color-orange-dark);">Jeśli myślisz o zrobieniu sobie krzywdy, zadzwoń teraz</h3>
-        <p style="margin-top: 10px; font-size: 0.9375rem; line-height: 1.65;">Nie musisz z tym czekać na wizytę u kogokolwiek. Te numery są bezpłatne i działają całą dobę.</p>
-        <div style="margin-top: 18px; display: flex; flex-wrap: wrap; gap: 12px;">
+      <div class="crisis-box" style="margin-top: 18px;">
+        <h3 style="font-size: 1.1rem; font-weight: 800; color: var(--color-orange-dark);">Bezpłatna pomoc psychologiczna (całodobowo)</h3>
+        <div style="margin-top: 14px; display: flex; flex-wrap: wrap; gap: 10px;">
           <a href="tel:116123" class="crisis-card-btn">
-            <span style="font-size: 1.25rem; font-weight: 800; letter-spacing: -0.02em; color: var(--color-text-main);">116 123</span>
-            <span style="font-size: 0.78rem; color: var(--color-text-muted);">Kryzysowy Telefon Zaufania</span>
+            <span style="font-size: 1.15rem; font-weight: 800; color: var(--color-text-main);">116 123</span>
+            <span style="font-size: 0.75rem; color: var(--color-text-muted);">Kryzysowy Telefon Zaufania</span>
           </a>
           <a href="tel:800702222" class="crisis-card-btn">
-            <span style="font-size: 1.25rem; font-weight: 800; letter-spacing: -0.02em; color: var(--color-text-main);">800 70 2222</span>
-            <span style="font-size: 0.78rem; color: var(--color-text-muted);">Centrum Wsparcia, całodobowo</span>
+            <span style="font-size: 1.15rem; font-weight: 800; color: var(--color-text-main);">800 70 2222</span>
+            <span style="font-size: 0.75rem; color: var(--color-text-muted);">Centrum Wsparcia</span>
           </a>
           <a href="tel:112" class="crisis-card-btn">
-            <span style="font-size: 1.25rem; font-weight: 800; letter-spacing: -0.02em; color: var(--color-text-main);">112</span>
-            <span style="font-size: 0.78rem; color: var(--color-text-muted);">Numer alarmowy</span>
+            <span style="font-size: 1.15rem; font-weight: 800; color: var(--color-text-main);">112</span>
+            <span style="font-size: 0.75rem; color: var(--color-text-muted);">Numer alarmowy</span>
           </a>
         </div>
       </div>
     ` : ''}
     
-    <div style="margin-top: 22px; padding: 28px; border-radius: 18px; border: 1px solid var(--color-blue-border); background: var(--color-bg-card);">
-      <h3 style="font-size: 1.15rem; font-weight: 800; letter-spacing: -0.02em;">Chcesz przegadać ten wynik?</h3>
-      <p style="margin-top: 10px; font-size: 0.9375rem; line-height: 1.65; max-width: 56ch;">Liczba to dopiero początek. Na bezpłatnych 15 minutach powiem Ci, co ona oznacza w Twojej sytuacji i co ma sens jako następny krok.</p>
-      <a href="https://calendly.com/kacperkulesza/15min" target="_blank" rel="noopener" class="btn-cta" style="margin-top: 18px; padding: 13px 22px; font-size: 0.95rem;">
-        Zarezerwuj bezpłatne 15 minut
-        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13"></path><path d="M13 6l6 6-6 6"></path></svg>
+    <div style="margin-top: 18px; padding: 22px 24px; border-radius: 16px; border: 1px solid var(--color-blue-border); background: var(--color-bg-card); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+      <div>
+        <h3 style="font-size: 1.05rem; font-weight: 800;">Chcesz skonsultować ten wynik?</h3>
+        <p style="margin-top: 4px; font-size: 0.88rem; color: var(--color-text-muted);">Omówimy go podczas bezpłatnej, 15-minutowej rozmowy online.</p>
+      </div>
+      <a href="https://calendly.com/kacperkulesza/15min" target="_blank" rel="noopener" class="btn-cta" style="padding: 11px 20px; font-size: 0.9rem;">
+        Umów 15 minut
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13"></path><path d="M13 6l6 6-6 6"></path></svg>
       </a>
     </div>
     
-    <div style="margin-top: 22px; display: flex; flex-wrap: wrap; gap: 12px;">
-      <button onclick="startTest('${state.activeTest}')" class="btn-outline">Wypełnij ponownie</button>
-      <button onclick="goHub()" class="btn-outline">Zrób inny test</button>
+    <div style="margin-top: 18px; display: flex; flex-wrap: wrap; gap: 10px;">
+      <button onclick="startTest('${state.activeTest}')" class="btn-outline" style="font-size: 0.85rem; padding: 8px 14px;">Wypełnij ponownie</button>
+      <button onclick="goHub()" class="btn-outline" style="font-size: 0.85rem; padding: 8px 14px;">Inny test</button>
     </div>
-    
-    <p style="margin-top: 26px; font-size: 0.78rem; line-height: 1.6; color: var(--color-text-muted);">${t.source}</p>
   `;
 }
 
@@ -838,40 +749,21 @@ function copyTestResult() {
   const displayScore = isWho ? raw * 4 : raw;
   const maxScore = isWho ? 100 : (state.activeTest === 'lsas' ? 144 : (state.activeTest === 'asrs' ? 90 : (state.activeTest === 'bdi' ? 63 : (state.activeTest === 'gad7' ? 21 : 27))));
   const band = BANDS[state.activeTest].find(b => displayScore <= b.max) || BANDS[state.activeTest][BANDS[state.activeTest].length - 1];
-  
   const dateStr = new Date().toLocaleDateString('pl-PL', { day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit' });
   
-  let text = `📋 WYNIK WSTĘPNEJ SAMOOCENY PSYCHOLOGICZNEJ\n`;
-  text += `━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n`;
-  text += `Test: ${t.official} (${t.title})\n`;
+  let text = `📋 WYNIK TESTU SAMOOCENY (${t.official})\n`;
   text += `Data: ${dateStr}\n`;
-  text += `Uzyskany wynik: ${displayScore} / ${maxScore} pkt\n`;
-  text += `Kategoria: ${band.title}\n`;
-  text += `━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n`;
-  text += `Opis stanu:\n${band.text}\n\n`;
-  text += `Wskazówki i rekomendacje:\n${band.advice}\n\n`;
-  
-  if (state.activeTest === 'asrs') {
-    text += `Odnośnik DIVA-5: ${displayScore >= 50 ? 'Przekroczony próg (≥ 50/90 pkt)' : 'Poniżej progu (próg: ≥ 50/90 pkt)'}\n`;
-    text += `Autorska skala 1-5 (zakres 18-90 pkt) odpowiada kryteriom wywiadu DIVA-5 (wymagane min. 5/9 objawów u dorosłych).\n\n`;
-  }
-  
-  text += `Badanie wykonane anonimowo na stronie: https://psychologkacper.pl/testy.html#${state.activeTest}\n`;
-  text += `Konsultacje psychologiczne: Kacper Kulesza – Psycholog (https://psychologkacper.pl)\n`;
+  text += `Wynik: ${displayScore} / ${maxScore} pkt — ${band.title}\n`;
+  text += `${band.text}\n\n`;
+  text += `Konsultacja: https://psychologkacper.pl`;
   
   if (navigator.clipboard && navigator.clipboard.writeText) {
     navigator.clipboard.writeText(text).then(() => {
       const btn = document.getElementById('btn-copy-result');
       if (btn) {
         const origHtml = btn.innerHTML;
-        btn.innerHTML = `<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg><span style="color: #059669; font-weight: 700;">Skopiowano do schowka!</span>`;
-        btn.style.borderColor = '#10B981';
-        btn.style.background = '#ECFDF5';
-        setTimeout(() => {
-          btn.innerHTML = origHtml;
-          btn.style.borderColor = '';
-          btn.style.background = '';
-        }, 2500);
+        btn.innerHTML = `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.6"><polyline points="20 6 9 17 4 12"></polyline></svg><span style="color: #059669; font-weight: 700;">Skopiowano!</span>`;
+        setTimeout(() => { btn.innerHTML = origHtml; }, 2000);
       }
     }).catch(() => fallbackCopy(text));
   } else {
@@ -885,24 +777,17 @@ function fallbackCopy(text) {
   ta.style.position = 'fixed';
   ta.style.opacity = '0';
   document.body.appendChild(ta);
-  ta.focus();
   ta.select();
   try {
     document.execCommand('copy');
     alert("Wynik został skopiowany do schowka!");
   } catch (err) {
-    alert("Zaznacz i skopiuj wynik ręcznie.");
+    alert("Zaznacz i skopiuj wynik.");
   }
   document.body.removeChild(ta);
 }
 
 function downloadTestPdf() {
-  const btn = document.getElementById('btn-download-pdf');
-  const origHtml = btn ? btn.innerHTML : '';
-  if (btn) {
-    btn.innerHTML = `<svg class="animate-spin" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1C86EE" stroke-width="2.6" style="animation: spin 0.8s linear infinite;"><circle cx="12" cy="12" r="10" stroke-dasharray="32" stroke-linecap="round"></circle></svg> <span>Pobieranie PDF...</span>`;
-  }
-  
   const t = TESTS[state.activeTest];
   const raw = Object.values(state.answers).reduce((a, b) => a + b, 0);
   const isWho = state.activeTest === 'who5';
@@ -920,132 +805,113 @@ function downloadTestPdf() {
     if (t.scaleType === 'lsas') {
       const fearVal = state.answers[`${idx}-f`] ?? '-';
       const avoidVal = state.answers[`${idx}-a`] ?? '-';
-      const fearText = LSAS_FEAR[fearVal] || '-';
-      const avoidText = LSAS_AVOID[avoidVal] || '-';
-      chosenAnsText = `Lęk: <strong>${fearText} (${fearVal} pkt)</strong> | Unikanie: <strong>${avoidText} (${avoidVal} pkt)</strong>`;
+      chosenAnsText = `Lęk: ${LSAS_FEAR[fearVal] || '-'} | Unikanie: ${LSAS_AVOID[avoidVal] || '-'}`;
     } else if (t.scaleType === 'custom') {
       const ansVal = state.answers[`${idx}-v`] ?? 0;
-      const ansLabel = item.options[ansVal] || '-';
-      chosenAnsText = `<strong>${ansLabel}</strong> (${ansVal} pkt)`;
+      chosenAnsText = `${item.options[ansVal] || '-'} (${ansVal} pkt)`;
     } else if (t.scaleType === 'asrs') {
       const ansVal = state.answers[`${idx}-v`] ?? 1;
-      const ansLabel = t.options[ansVal - 1] || '-';
-      chosenAnsText = `<strong>${ansLabel}</strong> (${ansVal} pkt)`;
+      chosenAnsText = `${t.options[ansVal - 1] || '-'} (${ansVal} pkt)`;
     } else {
       const ansVal = state.answers[`${idx}-v`] ?? 0;
-      const ansLabel = t.options[ansVal] || '-';
-      chosenAnsText = `<strong>${ansLabel}</strong> (${ansVal} pkt)`;
+      chosenAnsText = `${t.options[ansVal] || '-'} (${ansVal} pkt)`;
     }
     
     answersListHtml += `
-      <tr style="border-bottom: 1px solid #E5E7EB;">
-        <td style="padding: 7px 10px; font-size: 11px; color: #374151; vertical-align: top; width: 55%; font-weight: 500;">${idx + 1}. ${questionTitle}</td>
-        <td style="padding: 7px 10px; font-size: 11px; color: #111827; vertical-align: top; width: 45%;">${chosenAnsText}</td>
+      <tr style="border-bottom: 1px solid #E2E8F0;">
+        <td style="padding: 6px 8px; font-size: 11px; color: #334155; vertical-align: top; width: 55%; font-weight: 500;">${idx + 1}. ${questionTitle}</td>
+        <td style="padding: 6px 8px; font-size: 11px; color: #0F172A; vertical-align: top; width: 45%; font-weight: 600;">${chosenAnsText}</td>
       </tr>
     `;
   });
-  
-  const container = document.createElement('div');
-  container.id = 'pdf-render-target';
-  container.style.position = 'absolute';
-  container.style.left = '0';
-  container.style.top = '0';
-  container.style.zIndex = '-99999';
-  container.style.width = '750px';
-  container.style.padding = '24px 30px';
-  container.style.fontFamily = '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif';
-  container.style.color = '#16181C';
-  container.style.background = '#FFFFFF';
-  
-  container.innerHTML = `
-    <div style="display: flex; justify-content: space-between; align-items: flex-start; border-bottom: 2px solid #1C86EE; padding-bottom: 12px; margin-bottom: 16px;">
-      <div>
-        <div style="font-size: 18px; font-weight: 800; color: #16181C;">Kacper Kulesza <span style="color: #1C86EE;">·</span> Psycholog</div>
-        <div style="font-size: 11.5px; color: #64748B; margin-top: 2px;">Konsultacje psychologiczne online | psychologkacper.pl</div>
-      </div>
-      <div style="text-align: right; font-size: 11.5px; color: #64748B; line-height: 1.4;">
-        <div><strong>Data badania:</strong> ${dateStr}</div>
-        <div><strong>Kwestionariusz:</strong> ${t.official}</div>
-      </div>
-    </div>
-    
-    <div style="display: flex; align-items: center; gap: 16px; background: #F8FAFC; border: 1.2px solid #E2E8F0; border-radius: 12px; padding: 14px 18px; margin-bottom: 14px;">
-      <div style="width: 60px; height: 60px; border-radius: 50%; background: ${band.color}; color: #FFFFFF; display: flex; flex-direction: column; align-items: center; justify-content: center; font-weight: 800; font-size: 19px; line-height: 1; flex-shrink: 0;">
-        ${displayScore}
-        <span style="font-size: 9px; font-weight: 600; opacity: 0.9; margin-top: 2px;">na ${isWho ? '100' : maxScore}</span>
-      </div>
-      <div>
-        <h2 style="font-size: 15px; font-weight: 800; color: #111827; margin: 0 0 4px;">${band.title}</h2>
-        <p style="font-size: 11.5px; line-height: 1.45; color: #4B5563; margin: 0;">${band.text}</p>
-      </div>
-    </div>
-    
-    <div style="background: #EFF6FF; border-left: 3.5px solid #1C86EE; padding: 10px 14px; border-radius: 6px; margin-bottom: 16px; font-size: 11px; line-height: 1.5; color: #1E3A8A;">
-      <strong>Wskazówki i rekomendacja:</strong> ${band.advice}
-    </div>
-    
-    <h3 style="font-size: 12.5px; font-weight: 700; margin: 14px 0 8px; color: #111827;">Szczegółowy wykaz odpowiedzi:</h3>
-    <table style="width: 100%; border-collapse: collapse; margin-bottom: 18px;">
-      <thead>
-        <tr style="background: #F1F5F9; border-top: 1px solid #E2E8F0; border-bottom: 1px solid #CBD5E1;">
-          <th style="text-align: left; padding: 7px 10px; font-size: 10.5px; font-weight: 700; text-transform: uppercase; color: #475569;">Pytanie</th>
-          <th style="text-align: left; padding: 7px 10px; font-size: 10.5px; font-weight: 700; text-transform: uppercase; color: #475569;">Odpowiedź</th>
-        </tr>
-      </thead>
-      <tbody>
-        ${answersListHtml}
-      </tbody>
-    </table>
-    
-    <div style="border-top: 1px solid #E5E7EB; padding-top: 10px; font-size: 10px; color: #94A3B8; line-height: 1.4; text-align: center;">
-      Raport stanowi wynik wstępnej samooceny i nie zastępuje diagnozy lekarskiej. | Kacper Kulesza – Psycholog | psychologkacper.pl
-    </div>
-  `;
-  
-  document.body.appendChild(container);
-  
-  if (typeof html2pdf !== 'undefined') {
-    const opt = {
-      margin: [8, 8, 8, 8],
-      filename: `Raport_${state.activeTest.toUpperCase()}_PsychologKacper.pdf`,
-      image: { type: 'jpeg', quality: 0.98 },
-      html2canvas: { 
-        scale: 2, 
-        useCORS: true, 
-        logging: false,
-        scrollY: 0,
-        scrollX: 0
-      },
-      jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
-    };
-    
-    html2pdf().set(opt).from(container).save().then(() => {
-      if (document.body.contains(container)) document.body.removeChild(container);
-      if (btn) {
-        btn.innerHTML = `<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.6"><polyline points="20 6 9 17 4 12"></polyline></svg><span style="color: #059669; font-weight: 700;">Raport pobrany!</span>`;
-        btn.style.borderColor = '#10B981';
-        btn.style.background = '#ECFDF5';
-        setTimeout(() => {
-          btn.innerHTML = origHtml;
-          btn.style.borderColor = '';
-          btn.style.background = '';
-        }, 2500);
-      }
-    }).catch(() => {
-      if (document.body.contains(container)) document.body.removeChild(container);
-      fallbackPrint(container.innerHTML);
-    });
-  } else {
-    fallbackPrint(container.innerHTML);
-    if (document.body.contains(container)) document.body.removeChild(container);
-  }
-}
 
-function fallbackPrint(htmlContent) {
-  const printWin = window.open('', '_blank', 'width=880,height=920');
-  if (printWin) {
-    printWin.document.open();
-    printWin.document.write(`<!DOCTYPE html><html><head><meta charset="UTF-8"><title>Raport</title></head><body>${htmlContent}<script>window.onload=function(){window.print();};<\/script></body></html>`);
-    printWin.document.close();
-  }
+  const printHtml = `
+    <!DOCTYPE html>
+    <html lang="pl">
+    <head>
+      <meta charset="UTF-8">
+      <title>Raport_${state.activeTest.toUpperCase()}_PsychologKacper</title>
+      <style>
+        @page { size: A4; margin: 12mm 15mm; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; color: #0F172A; background: #FFF; margin: 0; padding: 12px; }
+        .header { display: flex; justify-content: space-between; align-items: flex-start; border-bottom: 2px solid #1C86EE; padding-bottom: 10px; margin-bottom: 14px; }
+        .logo { font-size: 17px; font-weight: 800; color: #0F172A; }
+        .logo span { color: #1C86EE; }
+        .sub { font-size: 10.5px; color: #64748B; margin-top: 2px; }
+        .meta { text-align: right; font-size: 10.5px; color: #64748B; line-height: 1.4; }
+        .score-card { display: flex; align-items: center; gap: 16px; background: #F8FAFC; border: 1.2px solid #E2E8F0; border-radius: 10px; padding: 12px 16px; margin-bottom: 14px; }
+        .score-badge { width: 52px; height: 52px; border-radius: 50%; background: ${band.color}; color: #FFF; display: flex; flex-direction: column; align-items: center; justify-content: center; font-weight: 800; font-size: 17px; line-height: 1; flex-shrink: 0; }
+        .score-sub { font-size: 8px; font-weight: 600; opacity: 0.9; margin-top: 2px; }
+        .score-title { font-size: 13.5px; font-weight: 800; color: #0F172A; margin: 0 0 3px; }
+        .score-desc { font-size: 11px; line-height: 1.4; color: #475569; margin: 0; }
+        .table-title { font-size: 11.5px; font-weight: 700; margin: 12px 0 6px; color: #0F172A; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 14px; }
+        th { text-align: left; padding: 6px 8px; font-size: 10px; font-weight: 700; text-transform: uppercase; color: #475569; background: #F1F5F9; border-top: 1px solid #E2E8F0; border-bottom: 1px solid #CBD5E1; }
+        .footer { border-top: 1px solid #E2E8F0; padding-top: 8px; font-size: 9.5px; color: #94A3B8; line-height: 1.4; text-align: center; }
+      </style>
+    </head>
+    <body>
+      <div class="header">
+        <div>
+          <div class="logo">Kacper Kulesza <span>·</span> Psycholog</div>
+          <div class="sub">Konsultacje psychologiczne online | psychologkacper.pl</div>
+        </div>
+        <div class="meta">
+          <div><strong>Data badania:</strong> ${dateStr}</div>
+          <div><strong>Kwestionariusz:</strong> ${t.official}</div>
+        </div>
+      </div>
+      
+      <div class="score-card">
+        <div class="score-badge">
+          ${displayScore}
+          <span class="score-sub">na ${isWho ? '100' : maxScore}</span>
+        </div>
+        <div>
+          <div class="score-title">${band.title}</div>
+          <p class="score-desc">${band.text}</p>
+        </div>
+      </div>
+      
+      <div class="table-title">Szczegółowy wykaz odpowiedzi:</div>
+      <table>
+        <thead>
+          <tr>
+            <th>Pytanie</th>
+            <th>Twoja odpowiedź</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${answersListHtml}
+        </tbody>
+      </table>
+      
+      <div class="footer">
+        Raport stanowi wynik wstępnej samooceny i nie zastępuje diagnozy lekarskiej. | Kacper Kulesza – Psycholog | psychologkacper.pl
+      </div>
+    </body>
+    </html>
+  `;
+
+  const printIframe = document.createElement('iframe');
+  printIframe.style.position = 'fixed';
+  printIframe.style.right = '0';
+  printIframe.style.bottom = '0';
+  printIframe.style.width = '0';
+  printIframe.style.height = '0';
+  printIframe.style.border = '0';
+  document.body.appendChild(printIframe);
+  
+  const iframeDoc = printIframe.contentWindow.document;
+  iframeDoc.open();
+  iframeDoc.write(printHtml);
+  iframeDoc.close();
+  
+  setTimeout(() => {
+    printIframe.contentWindow.focus();
+    printIframe.contentWindow.print();
+    setTimeout(() => {
+      if (document.body.contains(printIframe)) document.body.removeChild(printIframe);
+    }, 2500);
+  }, 250);
 }
