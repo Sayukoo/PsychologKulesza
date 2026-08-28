@@ -1,9 +1,0 @@
-node_modules/
-**/node_modules/
-landing-page/node_modules/
-.next/
-**/.next/
-out/
-build/
-dist/
-coverage/

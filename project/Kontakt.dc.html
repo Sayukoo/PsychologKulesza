@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: #FFFFFF; color: #16181C; font-family: Manrope, system-ui, sans-serif; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+  * { box-sizing: border-box; }
+  a { color: #1C86EE; text-decoration: none; }
+  a:hover { color: #0F6FCC; }
+  h1, h2, h3, h4, p { margin: 0; text-wrap: pretty; }
+  ::selection { background: rgba(28,134,238,.18); }
+  :focus-visible { outline: 2px solid #1C86EE; outline-offset: 3px; }
+  @keyframes ccShine { 0% { left: -45%; } 42% { left: 118%; } 100% { left: 118%; } }
+  @media (max-width: 980px) {
+    [data-m="nav-links"] { display: none !important; }
+    [data-m="nav-shell"] { padding: 10px 10px 10px 16px !important; gap: 12px !important; }
+    [data-m="brand-text"] { display: none !important; }
+    [data-m="header"] { padding: 0 16px !important; top: 10px !important; }
+    [data-m="sec"] { padding-left: 20px !important; padding-right: 20px !important; }
+    [data-m="h1"] { font-size: 34px !important; }
+    [data-m="contact-grid"] { grid-template-columns: 1fr !important; }
+    [data-m="form-card"] { padding: 22px 18px 20px !important; }
+    [data-m="form-row"] { grid-template-columns: 1fr !important; }
+    [data-m="foot"] { grid-template-columns: 1fr !important; gap: 22px !important; }
+    [data-m="foot-copy"] { text-align: left !important; }
+  }
+</style>
+</helmet>
+
+<div style="position:relative;width:100%;background:#FFFFFF;overflow:hidden;minHeight:100vh;display:flex;flexDirection:column">
+
+  <header data-m="header" style="position:sticky;top:18px;zIndex:60;padding:0 40px">
+    <div data-m="nav-shell" style="maxWidth:1180px;margin:0 auto;background:rgba(255,255,255,.92);backdropFilter:blur(14px);border:1px solid rgba(28,134,238,.38);borderRadius:18px;padding:11px 11px 11px 20px;display:flex;alignItems:center;gap:28px;boxShadow:0 10px 34px rgba(22,24,28,.07)">
+      <a href="Kacper Kulesza - strona.dc.html" style="display:flex;alignItems:center;gap:12px;minWidth:0;flexShrink:1;overflow:hidden">
+        <span style="fontSize:22px;fontWeight:800;letterSpacing:-1px;color:#1C86EE;flexShrink:0">KK</span>
+        <span data-m="brand-text" style="fontSize:13.5px;fontWeight:500;color:#16181C;whiteSpace:nowrap;overflow:hidden;textOverflow:ellipsis;minWidth:0">Kacper Kulesza <span style="color:#9AA1AB">·</span> psycholog</span>
+      </a>
+      <nav data-m="nav-links" style="display:flex;alignItems:center;gap:22px;marginLeft:auto;marginRight:4px;flexShrink:0;whiteSpace:nowrap">
+        <a href="Kacper Kulesza - strona.dc.html#o-mnie" style="fontSize:14px;fontWeight:500;color:#16181C" style-hover="color:#1C86EE">O mnie</a>
+        <a href="Kacper Kulesza - strona.dc.html#cennik" style="fontSize:14px;fontWeight:500;color:#16181C" style-hover="color:#1C86EE">Cennik</a>
+        <a href="Testy psychologiczne.dc.html" style="fontSize:14px;fontWeight:500;color:#16181C" style-hover="color:#1C86EE">Testy</a>
+        <a href="Kacper Kulesza - strona.dc.html#faq" style="fontSize:14px;fontWeight:500;color:#16181C" style-hover="color:#1C86EE">FAQ</a>
+        <a href="Kontakt.dc.html" style="fontSize:14px;fontWeight:700;color:#1C86EE">Kontakt</a>
+      </nav>
+      <a href="Kacper Kulesza - strona.dc.html#kontakt" style="position:relative;overflow:hidden;isolation:isolate;marginLeft:auto;display:inline-flex;alignItems:center;gap:9px;background:linear-gradient(97deg, #1C86EE 0%, #3E9BF2 24%, #FFC542 62%, #FF7A29 100%);color:#FFFFFF;fontSize:14px;fontWeight:700;padding:11px 18px;borderRadius:12px;flexShrink:0;boxShadow:0 8px 20px rgba(255,122,41,.26), inset 0 1.2px 0 rgba(255,255,255,.48);transition:transform .16s ease, box-shadow .16s ease" style-hover="color:#FFFFFF;transform:translateY(-1px);boxShadow:0 13px 28px rgba(255,122,41,.36), inset 0 1.2px 0 rgba(255,255,255,.6)" style-after="content:'';position:absolute;top:0;left:-45%;width:38%;height:100%;background:linear-gradient(100deg, rgba(255,255,255,0) 0%, rgba(255,255,255,.5) 50%, rgba(255,255,255,0) 100%);transform:skewX(-18deg);pointerEvents:none;animation:ccShine 4s ease-in-out infinite">Konsultacja 15 min
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13"></path><path d="M13 6l6 6-6 6"></path></svg>
+      </a>
+    </div>
+  </header>
+
+  <section data-m="sec" style="position:relative;flex:1;padding:70px 40px 80px">
+    <div style="position:absolute;top:-80px;left:-200px;width:820px;height:660px;background:radial-gradient(46% 48% at 46% 40%, rgba(28,134,238,.34) 0%, rgba(28,134,238,0) 72%), radial-gradient(40% 42% at 68% 64%, rgba(255,197,66,.28) 0%, rgba(255,197,66,0) 74%);filter:blur(120px);pointerEvents:none"></div>
+    <div style="position:absolute;top:120px;right:-220px;width:720px;height:580px;background:radial-gradient(44% 46% at 50% 50%, rgba(255,122,41,.22) 0%, rgba(255,122,41,0) 74%);filter:blur(125px);pointerEvents:none"></div>
+
+    <div style="position:relative;maxWidth:1000px;margin:0 auto;display:flex;flexDirection:column;alignItems:center">
+      <span style="fontSize:13px;fontWeight:700;letterSpacing:1.6px;textTransform:uppercase;color:#1C86EE">Porozmawiajmy</span>
+      <h1 data-m="h1" style="marginTop:12px;fontSize:44px;fontWeight:800;letterSpacing:-1.4px;color:#16181C;textAlign:center">Kontakt z Kacprem</h1>
+      <p style="marginTop:16px;fontSize:16px;lineHeight:1.65;color:#6B7280;maxWidth:56ch;textAlign:center">Najszybciej skontaktujesz się ze mną telefonicznie. Jeśli nie odbiorę, zostaw wiadomość lub napisz e-mail, a wrócę z terminem spotkania online.</p>
+
+      <div data-m="contact-grid" style="marginTop:40px;width:100%;maxWidth:820px;display:grid;gridTemplateColumns:1fr 1fr;gap:18px">
+        <a href="tel:+48572450606" style="display:flex;alignItems:center;gap:16px;padding:22px 24px;borderRadius:16px;border:1px solid rgba(28,134,238,.4);background:rgba(255,255,255,.7);backdropFilter:blur(6px);transition:border-color .16s ease, box-shadow .16s ease, transform .16s ease" style-hover="borderColor:#1C86EE;transform:translateY(-2px);boxShadow:0 12px 28px rgba(28,134,238,.16)">
+          <span style="width:46px;height:46px;borderRadius:12px;background:#1C86EE;display:flex;alignItems:center;justifyContent:center;flexShrink:0">
+            <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3.5h3l1.5 4-2 1.5a11 11 0 0 0 5.5 5.5l1.5-2 4 1.5v3c0 1.1-.9 2-2 2A15.5 15.5 0 0 1 4 5.5c0-1.1.9-2 2-2Z"></path></svg>
+          </span>
+          <span style="display:flex;flexDirection:column;gap:3px;minWidth:0">
+            <span style="fontSize:12.5px;fontWeight:600;color:#6B7280">Telefon</span>
+            <span style="fontSize:19px;fontWeight:700;letterSpacing:-.4px;color:#16181C">572 450 606</span>
+          </span>
+        </a>
+        <a href="mailto:kackul17@gmail.com" style="display:flex;alignItems:center;gap:16px;padding:22px 24px;borderRadius:16px;border:1px solid rgba(28,134,238,.4);background:rgba(255,255,255,.7);backdropFilter:blur(6px);transition:border-color .16s ease, box-shadow .16s ease, transform .16s ease" style-hover="borderColor:#1C86EE;transform:translateY(-2px);boxShadow:0 12px 28px rgba(28,134,238,.16)">
+          <span style="width:46px;height:46px;borderRadius:12px;background:#FF7A29;display:flex;alignItems:center;justifyContent:center;flexShrink:0">
+            <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5.5" width="18" height="13" rx="2.5"></rect><path d="m4 7 8 6 8-6"></path></svg>
+          </span>
+          <span style="display:flex;flexDirection:column;gap:3px;minWidth:0">
+            <span style="fontSize:12.5px;fontWeight:600;color:#6B7280">E-mail</span>
+            <span style="fontSize:19px;fontWeight:700;letterSpacing:-.4px;color:#16181C;overflow:hidden;textOverflow:ellipsis">kackul17@gmail.com</span>
+          </span>
+        </a>
+      </div>
+
+      <div style="marginTop:20px;display:flex;alignItems:center;gap:14px;flexWrap:wrap;justifyContent:center">
+        <div style="display:flex;alignItems:center;gap:8px">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#1C86EE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"></circle><path d="M12 7.5V12l3 2"></path></svg>
+          <span style="fontSize:13.5px;fontWeight:600;color:#16181C">Oddzwaniam lub odpisuję w 24h</span>
+        </div>
+        <span style="width:4px;height:4px;borderRadius:999px;background:#D5DAE1;flexShrink:0"></span>
+        <span style="fontSize:13.5px;fontWeight:500;color:#6B7280">W dni robocze</span>
+      </div>
+
+      <div data-m="form-card" style="marginTop:44px;width:100%;maxWidth:640px;border:1px solid rgba(28,134,238,.4);borderRadius:20px;background:rgba(255,255,255,.72);backdropFilter:blur(6px);padding:30px 30px 26px">
+        <span style="fontSize:12.5px;fontWeight:700;letterSpacing:1.4px;textTransform:uppercase;color:#1C86EE">Formularz kontaktowy</span>
+        <h2 style="marginTop:10px;fontSize:23px;fontWeight:800;letterSpacing:-.6px;color:#16181C">Napisz wiadomość</h2>
+        <div data-m="form-row" style="marginTop:24px;display:grid;gridTemplateColumns:1fr 1fr;gap:16px">
+          <label style="display:flex;flexDirection:column;gap:8px">
+            <span style="fontSize:13px;fontWeight:600;color:#16181C">Imię i nazwisko</span>
+            <input type="text" value="{{ formName }}" onChange="{{ setName }}" placeholder="Jan Kowalski" style="width:100%;padding:12px 14px;fontFamily:Manrope, sans-serif;fontSize:14.5px;color:#16181C;background:#FFFFFF;border:1.4px solid rgba(28,134,238,.34);borderRadius:10px;outline:none">
+          </label>
+          <label style="display:flex;flexDirection:column;gap:8px">
+            <span style="fontSize:13px;fontWeight:600;color:#16181C">Adres e-mail</span>
+            <input type="email" value="{{ formEmail }}" onChange="{{ setEmail }}" placeholder="jan@example.com" style="width:100%;padding:12px 14px;fontFamily:Manrope, sans-serif;fontSize:14.5px;color:#16181C;background:#FFFFFF;border:1.4px solid rgba(28,134,238,.34);borderRadius:10px;outline:none">
+          </label>
+        </div>
+        <label style="marginTop:16px;display:flex;flexDirection:column;gap:8px">
+          <span style="fontSize:13px;fontWeight:600;color:#16181C">Temat</span>
+          <input type="text" value="{{ formSubject }}" onChange="{{ setSubject }}" placeholder="Konsultacja 15 min" style="width:100%;padding:12px 14px;fontFamily:Manrope, sans-serif;fontSize:14.5px;color:#16181C;background:#FFFFFF;border:1.4px solid rgba(28,134,238,.34);borderRadius:10px;outline:none">
+        </label>
+        <label style="marginTop:16px;display:flex;flexDirection:column;gap:8px">
+          <span style="fontSize:13px;fontWeight:600;color:#16181C">Wiadomość</span>
+          <textarea rows="5" value="{{ formMessage }}" onChange="{{ setMessage }}" placeholder="W czym mogę pomóc?" style="width:100%;padding:12px 14px;fontFamily:Manrope, sans-serif;fontSize:14.5px;lineHeight:1.55;color:#16181C;background:#FFFFFF;border:1.4px solid rgba(28,134,238,.34);borderRadius:10px;outline:none;resize:vertical"></textarea>
+        </label>
+        <a href="{{ mailtoHref }}" style="marginTop:22px;position:relative;overflow:hidden;isolation:isolate;display:flex;alignItems:center;justifyContent:center;gap:10px;padding:15px 24px;borderRadius:12px;background:linear-gradient(97deg, #1C86EE 0%, #3E9BF2 24%, #FFC542 62%, #FF7A29 100%);color:#FFFFFF;fontSize:15.5px;fontWeight:700;boxShadow:0 10px 24px rgba(255,122,41,.26), inset 0 1.2px 0 rgba(255,255,255,.48);transition:transform .16s ease, box-shadow .16s ease" style-hover="color:#FFFFFF;transform:translateY(-2px);boxShadow:0 16px 34px rgba(255,122,41,.36), inset 0 1.2px 0 rgba(255,255,255,.6)" style-active="transform:translateY(0)" style-after="content:'';position:absolute;top:0;left:-45%;width:38%;height:100%;background:linear-gradient(100deg, rgba(255,255,255,0) 0%, rgba(255,255,255,.5) 50%, rgba(255,255,255,0) 100%);transform:skewX(-18deg);pointerEvents:none;animation:ccShine 4s ease-in-out infinite">Wyślij wiadomość
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13"></path><path d="M13 6l6 6-6 6"></path></svg>
+        </a>
+        <p style="marginTop:14px;fontSize:12.5px;lineHeight:1.55;color:#6B7280;textAlign:center">Przycisk otworzy domyślnego klienta poczty z uzupełnionym tematem i treścią wiadomości.</p>
+      </div>
+
+      <div style="marginTop:40px;display:flex;alignItems:center;gap:14px;flexWrap:wrap;justifyContent:center">
+        <span style="fontSize:14.5px;color:#6B7280">Wolisz od razu wybrać termin?</span>
+        <a href="Kacper Kulesza - strona.dc.html#kontakt" style="display:inline-flex;alignItems:center;gap:8px;fontSize:14.5px;fontWeight:700;color:#1C86EE" style-hover="color:#0F6FCC">Zarezerwuj bezpłatne 15 minut
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13"></path><path d="M13 6l6 6-6 6"></path></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer data-m="sec" style="position:relative;padding:40px 40px 56px">
+    <div data-m="foot" style="maxWidth:1180px;margin:0 auto;paddingTop:30px;borderTop:1px solid rgba(28,134,238,.16);display:grid;gridTemplateColumns:auto 1fr auto;gap:34px;alignItems:center">
+      <span style="fontSize:30px;fontWeight:800;letterSpacing:-1.4px;color:#1C86EE">KK</span>
+      <div style="display:flex;alignItems:center;gap:22px;flexWrap:wrap">
+        <a href="Kacper Kulesza - strona.dc.html" style="fontSize:13.5px;fontWeight:600;color:#1C86EE" style-hover="color:#0F6FCC">Strona główna</a>
+        <a href="Testy psychologiczne.dc.html" style="fontSize:13.5px;fontWeight:600;color:#1C86EE" style-hover="color:#0F6FCC">Testy psychologiczne</a>
+      </div>
+      <div data-m="foot-copy" style="textAlign:right;fontSize:13px;lineHeight:1.6;color:#6B7280">© 2026 Kacper Kulesza<br>Wszelkie prawa zastrzeżone.</div>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { name: "", email: "", subject: "", message: "" };
+
+  renderVals() {
+    const s = this.state;
+    const body = [
+      s.message, "", "---",
+      s.name ? "Imię i nazwisko: " + s.name : "",
+      s.email ? "E-mail: " + s.email : ""
+    ].filter(Boolean).join("\n");
+    return {
+      formName: s.name, formEmail: s.email, formSubject: s.subject, formMessage: s.message,
+      setName: e => this.setState({ name: e.target.value }),
+      setEmail: e => this.setState({ email: e.target.value }),
+      setSubject: e => this.setState({ subject: e.target.value }),
+      setMessage: e => this.setState({ message: e.target.value }),
+      mailtoHref: "mailto:kackul17@gmail.com?subject=" +
+        encodeURIComponent(s.subject || "Zapytanie ze strony") + "&body=" + encodeURIComponent(body)
+    };
+  }
+}
+</script>
+</body>
+</html>
