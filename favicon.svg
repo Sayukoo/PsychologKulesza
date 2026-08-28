@@ -1,0 +1,30 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <!-- Smooth Signature Brand Gradient -->
+    <linearGradient id="brandGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1C86EE"/>
+      <stop offset="35%" stop-color="#38BDF8"/>
+      <stop offset="70%" stop-color="#FFB326"/>
+      <stop offset="100%" stop-color="#FF7A29"/>
+    </linearGradient>
+
+    <!-- Ultra-subtle inner glow -->
+    <linearGradient id="innerStroke" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.15"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Clean Minimalist Squircle -->
+  <rect width="512" height="512" rx="136" fill="url(#brandGrad)"/>
+  <rect x="8" y="8" width="496" height="496" rx="128" fill="none" stroke="url(#innerStroke)" stroke-width="6"/>
+
+  <!-- Ultra-Minimalist Modern Psychology Mark (Ψ) -->
+  <g fill="none" stroke="#FFFFFF" stroke-width="46" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Harmonic Arc -->
+    <path d="M 132 170 C 132 320, 226 352, 256 352 C 286 352, 380 320, 380 170"/>
+    
+    <!-- Central Clarity Axis -->
+    <line x1="256" y1="116" x2="256" y2="396"/>
+  </g>
+</svg>
