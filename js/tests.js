@@ -108,7 +108,7 @@ const TESTS = {
     scaleType: "custom",
     items: [
       {
-        title: "1. Uczucie smutku i przygnębienia",
+        title: "Uczucie smutku i przygnębienia",
         options: [
           "Nie jestem smutny ani przygnębiony.",
           "Odczuwam często smutek, przygnębienie.",
@@ -117,7 +117,7 @@ const TESTS = {
         ]
       },
       {
-        title: "2. Spojrzenie w przyszłość",
+        title: "Spojrzenie w przyszłość",
         options: [
           "Nie przejmuję się zbytnio przyszłością.",
           "Często martwię się o przyszłość.",
@@ -126,7 +126,7 @@ const TESTS = {
         ]
       },
       {
-        title: "3. Poczucie popełniania błędów i zaniedbań",
+        title: "Poczucie popełniania błędów i zaniedbań",
         options: [
           "Sądzę, że nie popełniam większych zaniedbań.",
           "Sądzę, że czynię więcej zaniedbań niż inni.",
@@ -135,7 +135,7 @@ const TESTS = {
         ]
       },
       {
-        title: "4. Zadowolenie i odczuwanie przyjemności",
+        title: "Zadowolenie i odczuwanie przyjemności",
         options: [
           "To, co robię, sprawia mi przyjemność.",
           "Nie cieszy mnie to, co robię.",
@@ -144,7 +144,7 @@ const TESTS = {
         ]
       },
       {
-        title: "5. Poczucie winy",
+        title: "Poczucie winy",
         options: [
           "Nie czuję się winnym ani wobec siebie, ani wobec innych.",
           "Dość często miewam wyrzuty sumienia.",
@@ -153,7 +153,7 @@ const TESTS = {
         ]
       },
       {
-        title: "6. Poczucie zasługiwania na karę",
+        title: "Poczucie zasługiwania na karę",
         options: [
           "Sądzę, że nie zasługuję na karę.",
           "Sądzę, że zasługuję na karę.",
@@ -162,7 +162,7 @@ const TESTS = {
         ]
       },
       {
-        title: "7. Stosunek do samego siebie",
+        title: "Stosunek do samego siebie",
         options: [
           "Jestem z siebie zadowolony.",
           "Nie jestem z siebie zadowolony.",
@@ -171,7 +171,7 @@ const TESTS = {
         ]
       },
       {
-        title: "8. Samooskarżanie i poczucie gorszości",
+        title: "Samooskarżanie i poczucie gorszości",
         options: [
           "Nie czuję się gorszy od innych ludzi.",
           "Zarzucam sobie, że jestem nieudolny i popełniam błędy.",
@@ -180,7 +180,7 @@ const TESTS = {
         ]
       },
       {
-        title: "9. Myśli samobójcze i rezygnacyjne",
+        title: "Myśli samobójcze i rezygnacyjne",
         options: [
           "Nie myślę o odebraniu sobie życia.",
           "Myślę o samobójstwie — ale nie mógłbym tego dokonać.",
@@ -189,7 +189,7 @@ const TESTS = {
         ]
       },
       {
-        title: "10. Płaczliwość",
+        title: "Płaczliwość",
         options: [
           "Nie płaczę częściej niż zwykle.",
           "Płaczę częściej niż dawniej.",
@@ -198,7 +198,7 @@ const TESTS = {
         ]
       },
       {
-        title: "11. Podenerwowanie i drażliwość",
+        title: "Podenerwowanie i drażliwość",
         options: [
           "Nie jestem bardziej podenerwowany niż dawniej.",
           "Jestem bardziej nerwowy i przykry niż dawniej.",
@@ -207,7 +207,7 @@ const TESTS = {
         ]
       },
       {
-        title: "12. Zainteresowanie kontaktami z ludźmi",
+        title: "Zainteresowanie kontaktami z ludźmi",
         options: [
           "Ludzie interesują mnie jak dawniej.",
           "Interesuję się ludźmi mniej niż dawniej.",
@@ -216,7 +216,7 @@ const TESTS = {
         ]
       },
       {
-        title: "13. Podejmowanie decyzji",
+        title: "Podejmowanie decyzji",
         options: [
           "Decyzje podejmuję łatwo, tak jak dawniej.",
           "Częściej niż kiedyś odwlekam podjęcie decyzji.",
@@ -225,7 +225,7 @@ const TESTS = {
         ]
       },
       {
-        title: "14. Ocena własnego wyglądu",
+        title: "Ocena własnego wyglądu",
         options: [
           "Sądzę, że wyglądam nie gorzej niż dawniej.",
           "Martwię się tym, że wyglądam staro i nieatrakcyjnie.",
@@ -234,7 +234,7 @@ const TESTS = {
         ]
       },
       {
-        title: "15. Zdolność do pracy i działania",
+        title: "Zdolność do pracy i działania",
         options: [
           "Mogę pracować jak dawniej.",
           "Z trudem rozpoczynam każdą czynność.",
@@ -243,7 +243,7 @@ const TESTS = {
         ]
       },
       {
-        title: "16. Jakość snu",
+        title: "Jakość snu",
         options: [
           "Sypiam dobrze, jak zwykle.",
           "Sypiam gorzej niż dawniej.",
@@ -252,7 +252,7 @@ const TESTS = {
         ]
       },
       {
-        title: "17. Męczliwość i brak energii",
+        title: "Męczliwość i brak energii",
         options: [
           "Nie męczę się bardziej niż dawniej.",
           "Męczę się znacznie łatwiej niż poprzednio.",
@@ -261,7 +261,7 @@ const TESTS = {
         ]
       },
       {
-        title: "18. Apetyt",
+        title: "Apetyt",
         options: [
           "Mam apetyt nie gorszy niż dawniej.",
           "Mam trochę gorszy apetyt.",
@@ -270,7 +270,7 @@ const TESTS = {
         ]
       },
       {
-        title: "19. Spadek masy ciała",
+        title: "Spadek masy ciała",
         options: [
           "Nie tracę na wadze (w okresie ostatniego miesiąca).",
           "Straciłem na wadze więcej niż 2 kg.",
@@ -279,7 +279,7 @@ const TESTS = {
         ]
       },
       {
-        title: "20. Troska o zdrowie somatyczne",
+        title: "Troska o zdrowie somatyczne",
         options: [
           "Nie martwię się o swoje zdrowie bardziej niż zawsze.",
           "Martwię się swoimi dolegliwościami (żołądek, bóle, zaparcia).",
@@ -288,7 +288,7 @@ const TESTS = {
         ]
       },
       {
-        title: "21. Zainteresowania seksualne",
+        title: "Zainteresowania seksualne",
         options: [
           "Moje zainteresowania seksualne nie uległy zmianom.",
           "Jestem mniej zainteresowany sprawami płci (seksu).",
@@ -343,24 +343,24 @@ const TESTS = {
     scaleType: "freq",
     options: ASRS5,
     items: [
-      "1. Trudności z dopracowaniem szczegółów zadania, po tym jak zostało już prawie wykonane",
-      "2. Trudności w planowaniu i organizowaniu skomplikowanych zadań",
-      "3. Zapominanie o spotkaniach, terminach lub codziennych obowiązkach",
-      "4. Unikanie lub odkładanie na później zadań wymagających długotrwałego wysiłku umysłowego",
-      "5. Nerwowe ruchy rąk lub stóp (wiercenie się), gdy musisz siedzieć przez dłuższy czas",
-      "6. Uczucie nadmiernego pobudzenia — poczucie, że musisz coś robić, jakbyś „był nakręcony”",
-      "7. Błędy wynikające z nieuwagi podczas pracy nad nudnym lub trudnym projektem",
-      "8. Problem z utrzymaniem uwagi nad zadaniami, które są monotonne lub rutynowe",
-      "9. Trudność ze skupieniem się na tym, co mówią inni, nawet gdy mówią bezpośrednio do Ciebie",
-      "10. Gubienie lub odkładanie rzeczy w niewłaściwe miejsce (zarówno w pracy, jak i w domu)",
-      "11. Łatwe rozpraszanie się przez dźwięki, ruch lub inne aktywności wokół Ciebie",
-      "12. Wstawanie z miejsca w sytuacjach wymagających długiego siedzenia (w pracy, na spotkaniach)",
-      "13. Poczucie wewnętrznego niepokoju, napięcia lub trudności z usiedzeniem w bezruchu",
-      "14. Trudność ze zrelaksowaniem się i wyciszeniem, gdy masz wolny czas dla siebie",
-      "15. Mówienie zbyt dużo lub nadmierna gadatliwość w sytuacjach społecznych",
-      "16. Kończenie wypowiedzi za innych rozmówców, zanim sami zdążą dokończyć zdanie",
-      "17. Trudność z odczekaniem na swoją kolej podczas rozmowy lub dyskusji",
-      "18. Przeszkadzanie lub przerywanie innym, gdy są czymś zajęci"
+      "Trudności z dopracowaniem szczegółów zadania, po tym jak zostało już prawie wykonane",
+      "Trudności w planowaniu i organizowaniu skomplikowanych zadań",
+      "Zapominanie o spotkaniach, terminach lub codziennych obowiązkach",
+      "Unikanie lub odkładanie na później zadań wymagających długotrwałego wysiłku umysłowego",
+      "Nerwowe ruchy rąk lub stóp (wiercenie się), gdy musisz siedzieć przez dłuższy czas",
+      "Uczucie nadmiernego pobudzenia — poczucie, że musisz coś robić, jakbyś „był nakręcony”",
+      "Błędy wynikające z nieuwagi podczas pracy nad nudnym lub trudnym projektem",
+      "Problem z utrzymaniem uwagi nad zadaniami, które są monotonne lub rutynowe",
+      "Trudność ze skupieniem się na tym, co mówią inni, nawet gdy mówią bezpośrednio do Ciebie",
+      "Gubienie lub odkładanie rzeczy w niewłaściwe miejsce (zarówno w pracy, jak i w domu)",
+      "Łatwe rozpraszanie się przez dźwięki, ruch lub inne aktywności wokół Ciebie",
+      "Wstawanie z miejsca w sytuacjach wymagających długiego siedzenia (w pracy, na spotkaniach)",
+      "Poczucie wewnętrznego niepokoju, napięcia lub trudności z usiedzeniem w bezruchu",
+      "Trudność ze zrelaksowaniem się i wyciszeniem, gdy masz wolny czas dla siebie",
+      "Mówienie zbyt dużo lub nadmierna gadatliwość w sytuacjach społecznych",
+      "Kończenie wypowiedzi za innych rozmówców, zanim sami zdążą dokończyć zdanie",
+      "Trudność z odczekaniem na swoją kolej podczas rozmowy lub dyskusji",
+      "Przeszkadzanie lub przerywanie innym, gdy są czymś zajęci"
     ],
     source: "Adult ADHD Self-Report Scale (ASRS-v1.1). Światowa Organizacja Zdrowia (WHO) & Grupa Robocza ds. ADHD u Dorosłych (Adler, Kessler, Spencer, 2003). Tłumaczenie: Monika Teodorowicz (2023)."
   }
@@ -726,16 +726,16 @@ function renderQuizResult() {
     const partBScore = displayScore - partAScore;
     
     extraMetricsHtml = `
-      <div style="margin-top: 24px; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px;">
-        <div style="padding: 16px 20px; border-radius: 14px; background: rgba(28,134,238,0.06); border: 1px solid var(--color-blue-border);">
-          <span style="font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--color-blue);">Część A (Przesiewowa WHO)</span>
-          <div style="margin-top: 6px; font-size: 1.2rem; font-weight: 800; color: var(--color-text-main);">${partA_sig_count} z 6 cech w strefie kryterium</div>
-          <span style="font-size: 0.8125rem; color: var(--color-text-muted);">Próg przesiewowy WHO: ≥ 4 cechy (suma: ${partAScore}/24 pkt)</span>
+      <div style="margin-top: 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px;">
+        <div style="padding: 14px 18px; border-radius: 14px; background: rgba(28,134,238,0.06); border: 1px solid var(--color-blue-border);">
+          <span style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--color-blue);">Kluczowe objawy (Część A)</span>
+          <div style="margin-top: 4px; font-size: 1.15rem; font-weight: 800; color: var(--color-text-main);">${partA_sig_count} z 6 cech</div>
+          <span style="font-size: 0.8rem; color: var(--color-text-muted);">${partA_sig_count >= 4 ? 'Wskazanie do diagnozy ADHD (próg: ≥ 4)' : 'Poniżej progu (próg: ≥ 4)'}</span>
         </div>
-        <div style="padding: 16px 20px; border-radius: 14px; background: rgba(255,197,66,0.08); border: 1px solid rgba(255,197,66,0.3);">
-          <span style="font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--color-orange);">Część B (Objawy pogłębione)</span>
-          <div style="margin-top: 6px; font-size: 1.2rem; font-weight: 800; color: var(--color-text-main);">${partBScore} pkt (na 48 pkt)</div>
-          <span style="font-size: 0.8125rem; color: var(--color-text-muted);">Ocena natężenia trudności w codziennym życiu</span>
+        <div style="padding: 14px 18px; border-radius: 14px; background: rgba(255,197,66,0.08); border: 1px solid rgba(255,197,66,0.3);">
+          <span style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--color-orange);">Codzienne trudności (Część B)</span>
+          <div style="margin-top: 4px; font-size: 1.15rem; font-weight: 800; color: var(--color-text-main);">${partBScore} / 48 pkt</div>
+          <span style="font-size: 0.8rem; color: var(--color-text-muted);">Poziom wpływu na organizację dnia</span>
         </div>
       </div>
     `;
@@ -778,9 +778,9 @@ function renderQuizResult() {
           <span>Skopiuj wynik na wizytę</span>
         </button>
         
-        <button onclick="downloadTestPdf()" class="btn-action-pill">
+        <button id="btn-download-pdf" onclick="downloadTestPdf()" class="btn-action-pill">
           <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-          <span>Pobierz raport (PDF / Drukuj)</span>
+          <span>Pobierz raport (PDF)</span>
         </button>
       </div>
     </div>
@@ -894,6 +894,12 @@ function fallbackCopy(text) {
 }
 
 function downloadTestPdf() {
+  const btn = document.getElementById('btn-download-pdf');
+  const origHtml = btn ? btn.innerHTML : '';
+  if (btn) {
+    btn.innerHTML = `<svg class="animate-spin" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1C86EE" stroke-width="2.6" style="animation: spin 0.8s linear infinite;"><circle cx="12" cy="12" r="10" stroke-dasharray="32" stroke-linecap="round"></circle></svg> <span>Pobieranie PDF...</span>`;
+  }
+  
   const t = TESTS[state.activeTest];
   const raw = Object.values(state.answers).reduce((a, b) => a + b, 0);
   const isWho = state.activeTest === 'who5';
@@ -904,7 +910,8 @@ function downloadTestPdf() {
   
   let answersListHtml = '';
   t.items.forEach((item, idx) => {
-    let questionTitle = typeof item === 'object' ? item.title : item;
+    let rawTitle = typeof item === 'object' ? item.title : item;
+    let questionTitle = rawTitle.replace(/^\d+\.\s*/, '');
     let chosenAnsText = '';
     
     if (t.scaleType === 'lsas') {
@@ -925,100 +932,105 @@ function downloadTestPdf() {
     
     answersListHtml += `
       <tr style="border-bottom: 1px solid #E5E7EB;">
-        <td style="padding: 10px 12px; font-size: 13px; color: #374151; vertical-align: top; width: 55%; font-weight: 500;">${idx + 1}. ${questionTitle}</td>
-        <td style="padding: 10px 12px; font-size: 13px; color: #111827; vertical-align: top; width: 45%;">${chosenAnsText}</td>
+        <td style="padding: 9px 12px; font-size: 12px; color: #374151; vertical-align: top; width: 55%; font-weight: 500;">${idx + 1}. ${questionTitle}</td>
+        <td style="padding: 9px 12px; font-size: 12px; color: #111827; vertical-align: top; width: 45%;">${chosenAnsText}</td>
       </tr>
     `;
   });
   
-  const printContent = `
-    <!DOCTYPE html>
-    <html lang="pl">
-    <head>
-      <meta charset="UTF-8">
-      <title>Raport: ${t.official} – Kacper Kulesza Psycholog</title>
-      <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color: #16181C; margin: 0; padding: 36px 44px; line-height: 1.5; }
-        .header { display: flex; justify-content: space-between; align-items: flex-start; border-bottom: 2.5px solid #1C86EE; padding-bottom: 18px; margin-bottom: 24px; }
-        .brand { font-size: 22px; font-weight: 800; color: #16181C; letter-spacing: -0.02em; }
-        .brand span { color: #1C86EE; }
-        .date { font-size: 13px; color: #6B7280; line-height: 1.6; }
-        .badge-box { display: flex; align-items: center; gap: 24px; background: #F8FAFC; border: 1.5px solid #E2E8F0; border-radius: 16px; padding: 22px 26px; margin-bottom: 24px; }
-        .score-circle { width: 88px; height: 88px; border-radius: 50%; background: ${band.color}; color: #FFFFFF; display: flex; flex-direction: column; align-items: center; justify-content: center; font-weight: 800; font-size: 28px; line-height: 1; flex-shrink: 0; }
-        .score-circle small { font-size: 11px; font-weight: 600; opacity: 0.9; margin-top: 4px; }
-        .band-title { font-size: 20px; font-weight: 800; color: #111827; margin: 0 0 6px; }
-        .band-text { font-size: 14px; line-height: 1.55; color: #4B5563; margin: 0; }
-        .advice-box { background: #EFF6FF; border-left: 4px solid #1C86EE; padding: 14px 18px; border-radius: 8px; margin-bottom: 28px; font-size: 13.5px; line-height: 1.6; color: #1E3A8A; }
-        .table-title { font-size: 16px; font-weight: 700; margin: 26px 0 12px; color: #111827; }
-        table { width: 100%; border-collapse: collapse; margin-bottom: 30px; }
-        th { text-align: left; padding: 11px 12px; background: #F1F5F9; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #475569; border-top: 1px solid #E2E8F0; border-bottom: 1px solid #CBD5E1; }
-        .footer { border-top: 1px solid #E5E7EB; padding-top: 18px; font-size: 12px; color: #6B7280; line-height: 1.6; text-align: center; }
-        @media print {
-          body { padding: 16px 20px; }
-          @page { margin: 1.5cm; }
-        }
-      </style>
-    </head>
-    <body>
-      <div class="header">
-        <div>
-          <div class="brand">Kacper Kulesza <span>·</span> Psycholog</div>
-          <div style="font-size: 13.5px; color: #4B5563; margin-top: 3px;">Konsultacje psychologiczne online | psychologkacper.pl</div>
-        </div>
-        <div class="date" style="text-align: right;">
-          <div><strong>Data badania:</strong> ${dateStr}</div>
-          <div><strong>Kwestionariusz:</strong> ${t.official}</div>
-        </div>
+  const container = document.createElement('div');
+  container.style.width = '780px';
+  container.style.padding = '28px 36px';
+  container.style.fontFamily = '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif';
+  container.style.color = '#16181C';
+  container.style.background = '#FFFFFF';
+  container.style.position = 'fixed';
+  container.style.top = '-9999px';
+  container.style.left = '-9999px';
+  
+  container.innerHTML = `
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; border-bottom: 2.5px solid #1C86EE; padding-bottom: 14px; margin-bottom: 20px;">
+      <div>
+        <div style="font-size: 20px; font-weight: 800; color: #16181C;">Kacper Kulesza <span style="color: #1C86EE;">·</span> Psycholog</div>
+        <div style="font-size: 12.5px; color: #64748B; margin-top: 2px;">Konsultacje psychologiczne online | psychologkacper.pl</div>
       </div>
-      
-      <div class="badge-box">
-        <div class="score-circle">
-          ${displayScore}
-          <small>na ${isWho ? '100' : maxScore}</small>
-        </div>
-        <div>
-          <h2 class="band-title">${band.title}</h2>
-          <p class="band-text">${band.text}</p>
-        </div>
+      <div style="text-align: right; font-size: 12px; color: #64748B; line-height: 1.5;">
+        <div><strong>Data badania:</strong> ${dateStr}</div>
+        <div><strong>Kwestionariusz:</strong> ${t.official}</div>
       </div>
-      
-      <div class="advice-box">
-        <strong>Wskazówki i rekomendacja:</strong> ${band.advice}
+    </div>
+    
+    <div style="display: flex; align-items: center; gap: 20px; background: #F8FAFC; border: 1.5px solid #E2E8F0; border-radius: 14px; padding: 18px 22px; margin-bottom: 20px;">
+      <div style="width: 72px; height: 72px; border-radius: 50%; background: ${band.color}; color: #FFFFFF; display: flex; flex-direction: column; align-items: center; justify-content: center; font-weight: 800; font-size: 22px; line-height: 1; flex-shrink: 0;">
+        ${displayScore}
+        <span style="font-size: 10px; font-weight: 600; opacity: 0.9; margin-top: 3px;">na ${isWho ? '100' : maxScore}</span>
       </div>
-      
-      <h3 class="table-title">Szczegółowy wykaz udzielonych odpowiedzi:</h3>
-      <table>
-        <thead>
-          <tr>
-            <th>Pytanie / Sytuacja</th>
-            <th>Wybrana odpowiedź</th>
-          </tr>
-        </thead>
-        <tbody>
-          ${answersListHtml}
-        </tbody>
-      </table>
-      
-      <div class="footer">
-        <p><strong>Uwaga kliniczna:</strong> Niniejszy raport stanowi wynik wstępnego badania przesiewowego i nie zastępuje profesjonalnej diagnozy lekarskiej lub psychologicznej.</p>
-        <p>Kacper Kulesza – Psycholog | Kontakt: kackul17@gmail.com | Tel: 572 450 606 | Rezerwacja: https://psychologkacper.pl</p>
+      <div>
+        <h2 style="font-size: 18px; font-weight: 800; color: #111827; margin: 0 0 5px;">${band.title}</h2>
+        <p style="font-size: 13px; line-height: 1.5; color: #4B5563; margin: 0;">${band.text}</p>
       </div>
-      
-      <script>
-        window.onload = function() {
-          setTimeout(function() { window.print(); }, 250);
-        };
-      <\/script>
-    </body>
-    </html>
+    </div>
+    
+    <div style="background: #EFF6FF; border-left: 4px solid #1C86EE; padding: 12px 16px; border-radius: 8px; margin-bottom: 22px; font-size: 12.5px; line-height: 1.55; color: #1E3A8A;">
+      <strong>Wskazówki i rekomendacja:</strong> ${band.advice}
+    </div>
+    
+    <h3 style="font-size: 14px; font-weight: 700; margin: 20px 0 10px; color: #111827;">Szczegółowy wykaz odpowiedzi:</h3>
+    <table style="width: 100%; border-collapse: collapse; margin-bottom: 24px;">
+      <thead>
+        <tr style="background: #F1F5F9; border-top: 1px solid #E2E8F0; border-bottom: 1px solid #CBD5E1;">
+          <th style="text-align: left; padding: 9px 12px; font-size: 11.5px; font-weight: 700; text-transform: uppercase; color: #475569;">Pytanie</th>
+          <th style="text-align: left; padding: 9px 12px; font-size: 11.5px; font-weight: 700; text-transform: uppercase; color: #475569;">Odpowiedź</th>
+        </tr>
+      </thead>
+      <tbody>
+        ${answersListHtml}
+      </tbody>
+    </table>
+    
+    <div style="border-top: 1px solid #E5E7EB; padding-top: 14px; font-size: 11px; color: #94A3B8; line-height: 1.5; text-align: center;">
+      Raport stanowi wynik wstępnej samooceny i nie zastępuje diagnozy lekarskiej. | Kacper Kulesza – Psycholog | psychologkacper.pl
+    </div>
   `;
   
+  document.body.appendChild(container);
+  
+  if (typeof html2pdf !== 'undefined') {
+    const opt = {
+      margin: [10, 10, 10, 10],
+      filename: `Raport_${state.activeTest.toUpperCase()}_PsychologKacper.pdf`,
+      image: { type: 'jpeg', quality: 0.98 },
+      html2canvas: { scale: 2, useCORS: true, logging: false },
+      jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+    };
+    
+    html2pdf().set(opt).from(container).save().then(() => {
+      if (document.body.contains(container)) document.body.removeChild(container);
+      if (btn) {
+        btn.innerHTML = `<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.6"><polyline points="20 6 9 17 4 12"></polyline></svg><span style="color: #059669; font-weight: 700;">Raport pobrany!</span>`;
+        btn.style.borderColor = '#10B981';
+        btn.style.background = '#ECFDF5';
+        setTimeout(() => {
+          btn.innerHTML = origHtml;
+          btn.style.borderColor = '';
+          btn.style.background = '';
+        }, 2500);
+      }
+    }).catch(() => {
+      if (document.body.contains(container)) document.body.removeChild(container);
+      fallbackPrint(container.innerHTML);
+    });
+  } else {
+    fallbackPrint(container.innerHTML);
+    if (document.body.contains(container)) document.body.removeChild(container);
+  }
+}
+
+function fallbackPrint(htmlContent) {
   const printWin = window.open('', '_blank', 'width=880,height=920');
   if (printWin) {
     printWin.document.open();
-    printWin.document.write(printContent);
+    printWin.document.write(`<!DOCTYPE html><html><head><meta charset="UTF-8"><title>Raport</title></head><body>${htmlContent}<script>window.onload=function(){window.print();};<\/script></body></html>`);
     printWin.document.close();
-  } else {
-    alert("Zezwól przeglądarce na otwieranie wyskakujących okien, aby wygenerować raport PDF.");
   }
 }
