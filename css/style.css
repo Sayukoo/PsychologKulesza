@@ -188,7 +188,7 @@ p {
 .section {
   position: relative;
   padding: 110px 0 50px;
-  overflow: hidden;
+  overflow: visible;
 }
 
 /* Background Blobs */
@@ -197,6 +197,9 @@ p {
   border-radius: 50%;
   pointer-events: none;
   filter: blur(120px);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform: translate3d(0, 0, 0);
   z-index: 0;
 }
 
