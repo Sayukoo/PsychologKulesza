@@ -939,55 +939,57 @@ function downloadTestPdf() {
     
     answersListHtml += `
       <tr style="border-bottom: 1px solid #E5E7EB;">
-        <td style="padding: 9px 12px; font-size: 12px; color: #374151; vertical-align: top; width: 55%; font-weight: 500;">${idx + 1}. ${questionTitle}</td>
-        <td style="padding: 9px 12px; font-size: 12px; color: #111827; vertical-align: top; width: 45%;">${chosenAnsText}</td>
+        <td style="padding: 7px 10px; font-size: 11px; color: #374151; vertical-align: top; width: 55%; font-weight: 500;">${idx + 1}. ${questionTitle}</td>
+        <td style="padding: 7px 10px; font-size: 11px; color: #111827; vertical-align: top; width: 45%;">${chosenAnsText}</td>
       </tr>
     `;
   });
   
   const container = document.createElement('div');
-  container.style.width = '780px';
-  container.style.padding = '28px 36px';
+  container.id = 'pdf-render-target';
+  container.style.position = 'absolute';
+  container.style.left = '0';
+  container.style.top = '0';
+  container.style.zIndex = '-99999';
+  container.style.width = '750px';
+  container.style.padding = '24px 30px';
   container.style.fontFamily = '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif';
   container.style.color = '#16181C';
   container.style.background = '#FFFFFF';
-  container.style.position = 'fixed';
-  container.style.top = '-9999px';
-  container.style.left = '-9999px';
   
   container.innerHTML = `
-    <div style="display: flex; justify-content: space-between; align-items: flex-start; border-bottom: 2.5px solid #1C86EE; padding-bottom: 14px; margin-bottom: 20px;">
+    <div style="display: flex; justify-content: space-between; align-items: flex-start; border-bottom: 2px solid #1C86EE; padding-bottom: 12px; margin-bottom: 16px;">
       <div>
-        <div style="font-size: 20px; font-weight: 800; color: #16181C;">Kacper Kulesza <span style="color: #1C86EE;">·</span> Psycholog</div>
-        <div style="font-size: 12.5px; color: #64748B; margin-top: 2px;">Konsultacje psychologiczne online | psychologkacper.pl</div>
+        <div style="font-size: 18px; font-weight: 800; color: #16181C;">Kacper Kulesza <span style="color: #1C86EE;">·</span> Psycholog</div>
+        <div style="font-size: 11.5px; color: #64748B; margin-top: 2px;">Konsultacje psychologiczne online | psychologkacper.pl</div>
       </div>
-      <div style="text-align: right; font-size: 12px; color: #64748B; line-height: 1.5;">
+      <div style="text-align: right; font-size: 11.5px; color: #64748B; line-height: 1.4;">
         <div><strong>Data badania:</strong> ${dateStr}</div>
         <div><strong>Kwestionariusz:</strong> ${t.official}</div>
       </div>
     </div>
     
-    <div style="display: flex; align-items: center; gap: 20px; background: #F8FAFC; border: 1.5px solid #E2E8F0; border-radius: 14px; padding: 18px 22px; margin-bottom: 20px;">
-      <div style="width: 72px; height: 72px; border-radius: 50%; background: ${band.color}; color: #FFFFFF; display: flex; flex-direction: column; align-items: center; justify-content: center; font-weight: 800; font-size: 22px; line-height: 1; flex-shrink: 0;">
+    <div style="display: flex; align-items: center; gap: 16px; background: #F8FAFC; border: 1.2px solid #E2E8F0; border-radius: 12px; padding: 14px 18px; margin-bottom: 14px;">
+      <div style="width: 60px; height: 60px; border-radius: 50%; background: ${band.color}; color: #FFFFFF; display: flex; flex-direction: column; align-items: center; justify-content: center; font-weight: 800; font-size: 19px; line-height: 1; flex-shrink: 0;">
         ${displayScore}
-        <span style="font-size: 10px; font-weight: 600; opacity: 0.9; margin-top: 3px;">na ${isWho ? '100' : maxScore}</span>
+        <span style="font-size: 9px; font-weight: 600; opacity: 0.9; margin-top: 2px;">na ${isWho ? '100' : maxScore}</span>
       </div>
       <div>
-        <h2 style="font-size: 18px; font-weight: 800; color: #111827; margin: 0 0 5px;">${band.title}</h2>
-        <p style="font-size: 13px; line-height: 1.5; color: #4B5563; margin: 0;">${band.text}</p>
+        <h2 style="font-size: 15px; font-weight: 800; color: #111827; margin: 0 0 4px;">${band.title}</h2>
+        <p style="font-size: 11.5px; line-height: 1.45; color: #4B5563; margin: 0;">${band.text}</p>
       </div>
     </div>
     
-    <div style="background: #EFF6FF; border-left: 4px solid #1C86EE; padding: 12px 16px; border-radius: 8px; margin-bottom: 22px; font-size: 12.5px; line-height: 1.55; color: #1E3A8A;">
+    <div style="background: #EFF6FF; border-left: 3.5px solid #1C86EE; padding: 10px 14px; border-radius: 6px; margin-bottom: 16px; font-size: 11px; line-height: 1.5; color: #1E3A8A;">
       <strong>Wskazówki i rekomendacja:</strong> ${band.advice}
     </div>
     
-    <h3 style="font-size: 14px; font-weight: 700; margin: 20px 0 10px; color: #111827;">Szczegółowy wykaz odpowiedzi:</h3>
-    <table style="width: 100%; border-collapse: collapse; margin-bottom: 24px;">
+    <h3 style="font-size: 12.5px; font-weight: 700; margin: 14px 0 8px; color: #111827;">Szczegółowy wykaz odpowiedzi:</h3>
+    <table style="width: 100%; border-collapse: collapse; margin-bottom: 18px;">
       <thead>
         <tr style="background: #F1F5F9; border-top: 1px solid #E2E8F0; border-bottom: 1px solid #CBD5E1;">
-          <th style="text-align: left; padding: 9px 12px; font-size: 11.5px; font-weight: 700; text-transform: uppercase; color: #475569;">Pytanie</th>
-          <th style="text-align: left; padding: 9px 12px; font-size: 11.5px; font-weight: 700; text-transform: uppercase; color: #475569;">Odpowiedź</th>
+          <th style="text-align: left; padding: 7px 10px; font-size: 10.5px; font-weight: 700; text-transform: uppercase; color: #475569;">Pytanie</th>
+          <th style="text-align: left; padding: 7px 10px; font-size: 10.5px; font-weight: 700; text-transform: uppercase; color: #475569;">Odpowiedź</th>
         </tr>
       </thead>
       <tbody>
@@ -995,7 +997,7 @@ function downloadTestPdf() {
       </tbody>
     </table>
     
-    <div style="border-top: 1px solid #E5E7EB; padding-top: 14px; font-size: 11px; color: #94A3B8; line-height: 1.5; text-align: center;">
+    <div style="border-top: 1px solid #E5E7EB; padding-top: 10px; font-size: 10px; color: #94A3B8; line-height: 1.4; text-align: center;">
       Raport stanowi wynik wstępnej samooceny i nie zastępuje diagnozy lekarskiej. | Kacper Kulesza – Psycholog | psychologkacper.pl
     </div>
   `;
@@ -1004,10 +1006,16 @@ function downloadTestPdf() {
   
   if (typeof html2pdf !== 'undefined') {
     const opt = {
-      margin: [10, 10, 10, 10],
+      margin: [8, 8, 8, 8],
       filename: `Raport_${state.activeTest.toUpperCase()}_PsychologKacper.pdf`,
       image: { type: 'jpeg', quality: 0.98 },
-      html2canvas: { scale: 2, useCORS: true, logging: false },
+      html2canvas: { 
+        scale: 2, 
+        useCORS: true, 
+        logging: false,
+        scrollY: 0,
+        scrollX: 0
+      },
       jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
     };
     
