@@ -1,12 +1,11 @@
 /**
  * Kacper Kulesza - Psycholog | Psychological Tests Engine
+ * 4 Core Pillars: WHO-5 (Dobrostan), GAD-7 (Lęk), PHQ-9 (Depresja), ASRS (ADHD u dorosłych)
  */
 
 const FREQ4 = ["Wcale nie dokuczały", "Kilka dni", "Więcej niż połowę dni", "Niemal codziennie"];
 const WHO6 = ["Nigdy", "Od czasu do czasu", "Mniej niż połowę czasu", "Więcej niż połowę czasu", "Prawie cały czas", "Cały czas"];
 const ASRS5 = ["Nigdy", "Rzadko", "Czasami", "Często", "Bardzo często"];
-const LSAS_FEAR = ["Brak", "Łagodny", "Umiarkowany", "Silny"];
-const LSAS_AVOID = ["Nigdy", "Niekiedy", "Często", "Zawsze"];
 
 const GLYPHS = {
   who5: `<svg width="34" height="34" viewBox="0 0 40 40" fill="none" stroke="#1C86EE" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
@@ -21,324 +20,20 @@ const GLYPHS = {
     <path d="M6 12c4 0 5 4 8 8s5 8 9 8 7-3 11-3"></path>
     <circle cx="23" cy="28" r="2.6" fill="#FF7A29" stroke="none"></circle>
   </svg>`,
-  bdi: `<svg width="34" height="34" viewBox="0 0 40 40" fill="none" stroke="#1C86EE" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M8 28c4-6 8-10 12-10s8 4 12 10"></path>
-    <path d="M20 6v12"></path>
-    <circle cx="20" cy="6" r="2.6" fill="#FF7A29" stroke="none"></circle>
-  </svg>`,
   asrs: `<svg width="34" height="34" viewBox="0 0 40 40" fill="none" stroke="#1C86EE" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
     <circle cx="20" cy="20" r="14"></circle>
     <path d="M20 10v10l7 4"></path>
     <path d="M12 28l4-4" stroke="#FF7A29"></path>
     <circle cx="12" cy="28" r="2" fill="#FF7A29" stroke="none"></circle>
-  </svg>`,
-  lsas: `<svg width="34" height="34" viewBox="0 0 40 40" fill="none" stroke="#1C86EE" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
-    <circle cx="24" cy="15" r="4.2"></circle>
-    <circle cx="31" cy="24" r="4.2"></circle>
-    <circle cx="23" cy="29" r="4.2"></circle>
-    <circle cx="9" cy="20" r="4.6" stroke="#FF7A29"></circle>
-    <path d="M15 20h2.5" stroke="#FF7A29" stroke-dasharray="1 3.4"></path>
   </svg>`
 };
 
 const TESTS = {
-  who5: {
-    official: "WHO-5",
-    title: "Jak naprawdę się masz?",
-    meta: "5 pytań · 1 min",
-    blurb: "Pięć zdań o ostatnich dwóch tygodniach. Najkrótszy sposób, żeby sprawdzić, czy Twoje samopoczucie trzyma poziom.",
-    prompt: "Jak często w ostatnich dwóch tygodniach?",
-    scaleType: "who",
-    options: WHO6,
-    items: [
-      "Czułem się wesoły i w dobrym nastroju",
-      "Czułem się spokojny i odprężony",
-      "Czułem się aktywny i energiczny",
-      "Budziłem się z uczuciem świeżości i wypoczęty",
-      "Moje życie codzienne było wypełnione interesującymi mnie sprawami"
-    ],
-    source: "Wskaźniki Dobrego Samopoczucia WHO-5. © Psychiatric Research Unit, WHO Collaborating Centre in Mental Health, Frederiksborg General Hospital, Hillerød."
-  },
-  gad7: {
-    official: "GAD-7",
-    title: "Czy Twoja głowa kiedykolwiek się wyłącza?",
-    meta: "7 pytań · 2 min",
-    blurb: "Siedem pytań o niepokój, napięcie i myśli, których nie da się zatrzymać.",
-    prompt: "Jak często w ostatnich dwóch tygodniach dokuczało Ci to?",
-    scaleType: "freq",
-    options: FREQ4,
-    items: [
-      "Czułeś się podenerwowany, niespokojny, mocno spięty",
-      "Nie mogłeś przestać się martwić albo zapanować nad tym",
-      "Za bardzo martwiłeś się różnymi rzeczami",
-      "Miałeś trudności z relaksowaniem się",
-      "Byłeś tak niespokojny, że nie mogłeś usiedzieć na miejscu",
-      "Łatwo stawałeś się rozdrażniony lub poirytowany",
-      "Obawiałeś się, tak jakby miało się stać coś strasznego"
-    ],
-    source: "Kwestionariusz GAD-7. Opracowanie: dr Robert L. Spitzer, dr Janet B.W. Williams, dr Kurt Kroenke i współpracownicy, z wykorzystaniem grantu oświatowego firmy Pfizer Inc."
-  },
-  phq9: {
-    official: "PHQ-9",
-    title: "To zwykłe zmęczenie czy coś więcej?",
-    meta: "9 pytań · 2 min",
-    blurb: "Dziewięć pytań o nastrój, sen, energię i apetyt. Najczęściej używany na świecie test przesiewowy w kierunku depresji.",
-    prompt: "Jak często w ostatnich dwóch tygodniach dokuczało Ci to?",
-    scaleType: "freq",
-    options: FREQ4,
-    items: [
-      "Niewielkie zainteresowanie lub odczuwanie przyjemności z wykonywania czynności",
-      "Uczucie smutku, przygnębienia lub beznadziejności",
-      "Kłopoty z zaśnięciem lub przerywany sen, albo zbyt długi sen",
-      "Uczucie zmęczenia lub brak energii",
-      "Brak apetytu lub przejadanie się",
-      "Poczucie niezadowolenia z siebie, uczucie, że jest się do niczego, albo że zawiodło się siebie lub rodzinę",
-      "Problemy ze skupieniem się, na przykład przy czytaniu gazety lub oglądaniu telewizji",
-      "Poruszanie się lub mówienie tak wolno, że inni mogliby to zauważyć. Albo przeciwnie: niemożność usiedzenia w miejscu i ruchliwość większa niż zwykle",
-      "Myśli, że lepiej byłoby umrzeć, albo chęć zrobienia sobie jakiejś krzywdy"
-    ],
-    source: "Kwestionariusz Zdrowia Pacjenta PHQ-9. Opracowanie: dr Robert L. Spitzer, dr Janet B.W. Williams, dr Kurt Kroenke i współpracownicy, z wykorzystaniem grantu oświatowego firmy Pfizer Inc."
-  },
-  bdi: {
-    official: "BDI (Skala Becka)",
-    title: "Skala Depresji Becka",
-    meta: "21 pytań · 4 min",
-    blurb: "Klasyczny, 21-pytaniowy kwestionariusz służący do samodzielnej oceny samopoczucia i nasilenia objawów depresyjnych w ostatnich 7 dniach.",
-    prompt: "Wybierz odpowiedź najlepiej opisującą Twoje uczucia podczas ostatnich 7 dni:",
-    scaleType: "custom",
-    items: [
-      {
-        title: "Uczucie smutku i przygnębienia",
-        options: [
-          "Nie jestem smutny ani przygnębiony.",
-          "Odczuwam często smutek, przygnębienie.",
-          "Przeżywam stale smutek, przygnębienie i nie mogę uwolnić się od tych przeżyć.",
-          "Jestem stale tak smutny i nieszczęśliwy, że jest to nie do wytrzymania."
-        ]
-      },
-      {
-        title: "Spojrzenie w przyszłość",
-        options: [
-          "Nie przejmuję się zbytnio przyszłością.",
-          "Często martwię się o przyszłość.",
-          "Obawiam się, że w przyszłości nic dobrego mnie nie czeka.",
-          "Czuję, że przyszłość jest beznadziejna i nic tego nie zmieni."
-        ]
-      },
-      {
-        title: "Poczucie popełniania błędów i zaniedbań",
-        options: [
-          "Sądzę, że nie popełniam większych zaniedbań.",
-          "Sądzę, że czynię więcej zaniedbań niż inni.",
-          "Kiedy spoglądam na to, co robiłem, widzę mnóstwo błędów i zaniedbań.",
-          "Jestem zupełnie niewydolny i wszystko robię źle."
-        ]
-      },
-      {
-        title: "Zadowolenie i odczuwanie przyjemności",
-        options: [
-          "To, co robię, sprawia mi przyjemność.",
-          "Nie cieszy mnie to, co robię.",
-          "Nic mi teraz nie daje prawdziwego zadowolenia.",
-          "Nie potrafię przeżywać zadowolenia i przyjemności; wszystko mnie nuży."
-        ]
-      },
-      {
-        title: "Poczucie winy",
-        options: [
-          "Nie czuję się winnym ani wobec siebie, ani wobec innych.",
-          "Dość często miewam wyrzuty sumienia.",
-          "Często czuję, że zawiniłem.",
-          "Stale czuję się winny."
-        ]
-      },
-      {
-        title: "Poczucie zasługiwania na karę",
-        options: [
-          "Sądzę, że nie zasługuję na karę.",
-          "Sądzę, że zasługuję na karę.",
-          "Spodziewam się ukarania.",
-          "Wiem, że jestem karany (lub ukarany)."
-        ]
-      },
-      {
-        title: "Stosunek do samego siebie",
-        options: [
-          "Jestem z siebie zadowolony.",
-          "Nie jestem z siebie zadowolony.",
-          "Czuję do siebie niechęć.",
-          "Nienawidzę siebie."
-        ]
-      },
-      {
-        title: "Samooskarżanie i poczucie gorszości",
-        options: [
-          "Nie czuję się gorszy od innych ludzi.",
-          "Zarzucam sobie, że jestem nieudolny i popełniam błędy.",
-          "Stale potępiam siebie za popełnione błędy.",
-          "Winię siebie za wszelkie zło, które istnieje."
-        ]
-      },
-      {
-        title: "Myśli samobójcze i rezygnacyjne",
-        options: [
-          "Nie myślę o odebraniu sobie życia.",
-          "Myślę o samobójstwie — ale nie mógłbym tego dokonać.",
-          "Pragnę odebrać sobie życie.",
-          "Popełnię samobójstwo, jak będzie odpowiednia sposobność."
-        ]
-      },
-      {
-        title: "Płaczliwość",
-        options: [
-          "Nie płaczę częściej niż zwykle.",
-          "Płaczę częściej niż dawniej.",
-          "Ciągle chce mi się płakać.",
-          "Chciałbym płakać, lecz nie jestem w stanie."
-        ]
-      },
-      {
-        title: "Podenerwowanie i drażliwość",
-        options: [
-          "Nie jestem bardziej podenerwowany niż dawniej.",
-          "Jestem bardziej nerwowy i przykry niż dawniej.",
-          "Jestem stale zdenerwowany lub rozdrażniony.",
-          "Wszystko, co dawniej mnie drażniło, stało się obojętne."
-        ]
-      },
-      {
-        title: "Zainteresowanie kontaktami z ludźmi",
-        options: [
-          "Ludzie interesują mnie jak dawniej.",
-          "Interesuję się ludźmi mniej niż dawniej.",
-          "Utraciłem większość zainteresowań innymi ludźmi.",
-          "Utraciłem wszelkie zainteresowanie innymi ludźmi."
-        ]
-      },
-      {
-        title: "Podejmowanie decyzji",
-        options: [
-          "Decyzje podejmuję łatwo, tak jak dawniej.",
-          "Częściej niż kiedyś odwlekam podjęcie decyzji.",
-          "Mam dużo trudności z podjęciem decyzji.",
-          "Nie jestem w stanie podjąć żadnej decyzji."
-        ]
-      },
-      {
-        title: "Ocena własnego wyglądu",
-        options: [
-          "Sądzę, że wyglądam nie gorzej niż dawniej.",
-          "Martwię się tym, że wyglądam staro i nieatrakcyjnie.",
-          "Czuję, że wyglądam coraz gorzej.",
-          "Jestem przekonany, że wyglądam okropnie i odpychająco."
-        ]
-      },
-      {
-        title: "Zdolność do pracy i działania",
-        options: [
-          "Mogę pracować jak dawniej.",
-          "Z trudem rozpoczynam każdą czynność.",
-          "Z wielkim wysiłkiem zmuszam się do zrobienia czegokolwiek.",
-          "Nie jestem w stanie nic zrobić."
-        ]
-      },
-      {
-        title: "Jakość snu",
-        options: [
-          "Sypiam dobrze, jak zwykle.",
-          "Sypiam gorzej niż dawniej.",
-          "Rano budzę się 1–2 godziny za wcześnie i trudno jest mi ponownie usnąć.",
-          "Budzę się kilka godzin za wcześnie i nie mogę usnąć."
-        ]
-      },
-      {
-        title: "Męczliwość i brak energii",
-        options: [
-          "Nie męczę się bardziej niż dawniej.",
-          "Męczę się znacznie łatwiej niż poprzednio.",
-          "Męczę się wszystkim, co robię.",
-          "Jestem zbyt zmęczony, aby cokolwiek robić."
-        ]
-      },
-      {
-        title: "Apetyt",
-        options: [
-          "Mam apetyt nie gorszy niż dawniej.",
-          "Mam trochę gorszy apetyt.",
-          "Apetyt mam wyraźnie gorszy.",
-          "Nie mam w ogóle apetytu."
-        ]
-      },
-      {
-        title: "Spadek masy ciała",
-        options: [
-          "Nie tracę na wadze (w okresie ostatniego miesiąca).",
-          "Straciłem na wadze więcej niż 2 kg.",
-          "Straciłem na wadze więcej niż 4 kg.",
-          "Straciłem na wadze więcej niż 6 kg."
-        ]
-      },
-      {
-        title: "Troska o zdrowie somatyczne",
-        options: [
-          "Nie martwię się o swoje zdrowie bardziej niż zawsze.",
-          "Martwię się swoimi dolegliwościami (żołądek, bóle, zaparcia).",
-          "Stan mojego zdrowia bardzo mnie martwi, często o tym myślę.",
-          "Tak bardzo martwię się o swoje zdrowie, że nie mogę o niczym innym myśleć."
-        ]
-      },
-      {
-        title: "Zainteresowania seksualne",
-        options: [
-          "Moje zainteresowania seksualne nie uległy zmianom.",
-          "Jestem mniej zainteresowany sprawami płci (seksu).",
-          "Problemy płciowe wyraźnie mniej mnie interesują.",
-          "Utraciłem wszelkie zainteresowanie sprawami seksu."
-        ]
-      }
-    ],
-    source: "Skala Depresji Becka (BDI). Beck AT, Ward CH, Mendelson M, Mock J, Erbaugh J (1961). An inventory for measuring depression. Arch Gen Psychiatry 4:561-571."
-  },
-  lsas: {
-    official: "LSAS",
-    title: "Ludzie Cię męczą czy przerażają?",
-    meta: "24 sytuacje · 6 min",
-    blurb: "Dwadzieścia cztery codzienne sytuacje. Przy każdej oceniasz dwie rzeczy: ile lęku czujesz i jak bardzo jej unikasz.",
-    prompt: "Ta sytuacja:",
-    scaleType: "lsas",
-    items: [
-      "Rozmawianie przez telefon przy innych",
-      "Bycie w małej grupie osób",
-      "Jedzenie w miejscu publicznym",
-      "Picie z innymi w miejscu publicznym",
-      "Rozmawianie ze zwierzchnikiem, kimś ważnym",
-      "Wygłaszanie mowy, bycie aktywnym przed dowolną publicznością",
-      "Wyjście na imprezę, spotkanie towarzyskie",
-      "Praca, gdy jesteś obserwowany",
-      "Pisanie, gdy jesteś obserwowany",
-      "Dzwonienie do osoby, której nie znasz dobrze",
-      "Rozmawianie z ludźmi, których nie znasz dobrze",
-      "Spotykanie nieznajomych osób",
-      "Korzystanie z publicznej toalety",
-      "Wchodzenie do pomieszczenia, gdzie inni już siedzą",
-      "Bycie w centrum zainteresowania",
-      "Przemawianie na spotkaniu",
-      "Wykonywanie testu wiedzy lub umiejętności",
-      "Spieranie się z osobą, której nie znasz dobrze",
-      "Patrzenie w oczy ludziom, których nie znasz",
-      "Wygłaszanie przygotowanego wykładu lub raportu przed grupą osób",
-      "Podrywanie kogoś",
-      "Reklamowanie towaru w sklepie",
-      "Urządzanie przyjęcia",
-      "Opieranie się natrętnemu sprzedawcy"
-    ],
-    source: "Skala Lęku Społecznego Liebowitza (LSAS). Opracowano na podstawie: Liebowitz MR, Social Phobia, Mod Probl Pharmacopsychiatry 1987;22:141-173."
-  },
   asrs: {
     official: "ASRS-v1.1 (ADHD)",
     title: "Czy to może być ADHD u dorosłych?",
     meta: "18 pytań · 3 min",
-    blurb: "Kwestionariusz samooceny ADHD u dorosłych. Autorska skala 1–5 (wynik 18–90 pkt) powiązana z kryteriami wywiadu diagnostycznego DIVA-5 (próg 50/90).",
+    blurb: "Kwestionariusz samooceny ADHD u dorosłych. Autorska punktacja 1–5 (wynik 18–90 pkt) powiązana z kryteriami wywiadu diagnostycznego DIVA-5.",
     prompt: "Jak często w ciągu ostatnich 6 miesięcy dotyczyło Cię to zachowanie?",
     scaleType: "asrs",
     options: ASRS5,
@@ -363,19 +58,74 @@ const TESTS = {
       "Przeszkadzanie lub przerywanie innym, gdy są czymś zajęci"
     ],
     source: "Adult ADHD Self-Report Scale (ASRS-v1.1) z autorską interpretacją skorelowaną z wywiadem diagnostycznym DIVA-5 (odnośnik 50/90 pkt)."
+  },
+  gad7: {
+    official: "GAD-7 (Lęk)",
+    title: "Czy Twoja głowa kiedykolwiek się wyłącza?",
+    meta: "7 pytań · 2 min",
+    blurb: "Siedem pytań o niepokój, napięcie, zamartwianie się i myśli, których trudno się pozbyć.",
+    prompt: "Jak często w ostatnich dwóch tygodniach dokuczało Ci to?",
+    scaleType: "freq",
+    options: FREQ4,
+    items: [
+      "Czułeś się podenerwowany, niespokojny, mocno spięty",
+      "Nie mogłeś przestać się martwić albo zapanować nad tym",
+      "Za bardzo martwiłeś się różnymi rzeczami",
+      "Miałeś trudności z relaksowaniem się",
+      "Byłeś tak niespokojny, że nie mogłeś usiedzieć na miejscu",
+      "Łatwo stawałeś się rozdrażniony lub poirytowany",
+      "Obawiałeś się, tak jakby miało się stać coś strasznego"
+    ],
+    source: "Kwestionariusz GAD-7. Opracowanie: dr Robert L. Spitzer, dr Janet B.W. Williams, dr Kurt Kroenke i współpracownicy."
+  },
+  phq9: {
+    official: "PHQ-9 (Depresja)",
+    title: "To zwykłe zmęczenie czy coś więcej?",
+    meta: "9 pytań · 2 min",
+    blurb: "Dziewięć pytań o nastrój, sen, energię i motywację. Światowy standard przesiewowy w kierunku depresji.",
+    prompt: "Jak często w ostatnich dwóch tygodniach dokuczało Ci to?",
+    scaleType: "freq",
+    options: FREQ4,
+    items: [
+      "Niewielkie zainteresowanie lub odczuwanie przyjemności z wykonywania czynności",
+      "Uczucie smutku, przygnębienia lub beznadziejności",
+      "Kłopoty z zaśnięciem lub przerywany sen, albo zbyt długi sen",
+      "Uczucie zmęczenia lub brak energii",
+      "Brak apetytu lub przejadanie się",
+      "Poczucie niezadowolenia z siebie, poczucie winy lub zawiedzenia bliskich",
+      "Problemy ze skupieniem się (np. przy czytaniu, pracy lub oglądaniu)",
+      "Spowolnienie ruchowe/mowy lub przeciwnie — wyraźne pobudzenie i niepokój",
+      "Myśli, że lepiej byłoby umrzeć, albo chęć zrobienia sobie jakiejś krzywdy"
+    ],
+    source: "Kwestionariusz PHQ-9. Opracowanie: dr Robert L. Spitzer, dr Janet B.W. Williams, dr Kurt Kroenke i współpracownicy."
+  },
+  who5: {
+    official: "WHO-5 (Dobrostan)",
+    title: "Jak naprawdę się masz?",
+    meta: "5 pytań · 1 min",
+    blurb: "Pięć zdań o ostatnich dwóch tygodniach. Najszybszy sposób na ocenę ogólnego samopoczucia i energii życiowej.",
+    prompt: "Jak często w ostatnich dwóch tygodniach?",
+    scaleType: "who",
+    options: WHO6,
+    items: [
+      "Czułem się wesoły i w dobrym nastroju",
+      "Czułem się spokojny i odprężony",
+      "Czułem się aktywny i energiczny",
+      "Budziłem się z uczuciem świeżości i wypoczęty",
+      "Moje życie codzienne było wypełnione interesującymi mnie sprawami"
+    ],
+    source: "Wskaźniki Dobrego Samopoczucia WHO-5. © Psychiatric Research Unit, WHO Collaborating Centre in Mental Health."
   }
 };
 
 const BANDS = {
-  who5: [
-    { max: 7, color: "#FF7A29", title: "Samopoczucie mocno obniżone",
-      text: "Twój wynik (0–7 pkt) wskazuje na znaczny spadek dobrostanu psychicznego. Warto skonsultować się ze specjalistą." },
-    { max: 12, color: "#FFC542", title: "Samopoczucie poniżej normy",
-      text: "Twój wynik (8–12 pkt) wskazuje na obniżony nastrój i energię. Warto zadbać o regenerację i sen." },
-    { max: 19, color: "#1C86EE", title: "Samopoczucie w normie",
-      text: "Twój wynik (13–19 pkt) mieści się w typowym, zdrowym zakresie dobrostanu psychicznego." },
-    { max: 25, color: "#1C86EE", title: "Wysoki dobrostan",
-      text: "Twój wynik (20–25 pkt) wskazuje na wysoki poziom spokoju, motywacji i życiowej energii." }
+  asrs: [
+    { max: 35, color: "#1C86EE", title: "Brak wskazań do ADHD",
+      text: "Twój wynik (18–35 pkt) mieści się poniżej progu DIVA-5 (wymagane ≥ 50/90 pkt). Trudności ze skupieniem mieszczą się w normie." },
+    { max: 49, color: "#FFC542", title: "Umiarkowane trudności (poniżej progu)",
+      text: "Twój wynik (36–49 pkt) jest poniżej progu DIVA-5 (≥ 50/90 pkt), wskazując na okresowe rozproszenie lub prokrastynację." },
+    { max: 90, color: "#FF7A29", title: "Wskazanie do diagnostyki ADHD (Próg DIVA-5)",
+      text: "Twój wynik (50–90 pkt) przekracza próg odniesienia DIVA-5 (≥ 50/90 pkt), sugerując wysokie nasilenie cech ADHD." }
   ],
   gad7: [
     { max: 4, color: "#1C86EE", title: "Brak istotnych objawów lęku",
@@ -399,35 +149,15 @@ const BANDS = {
     { max: 27, color: "#FF7A29", title: "Ciężkie objawy depresyjne",
       text: "Bardzo wysoki wynik (20–27 pkt). Wskazana pilna konsultacja z psychiatrą lub psychologiem." }
   ],
-  lsas: [
-    { max: 54, color: "#1C86EE", title: "Brak fobii społecznej",
-      text: "Twój wynik (0–54 pkt) mieści się w normie. Swoboda funkcjonowania w sytuacjach społecznych." },
-    { max: 65, color: "#FFC542", title: "Łagodna fobia społeczna",
-      text: "Twój wynik (55–65 pkt) wskazuje na lekkie napięcie w wybranych sytuacjach społecznych lub zawodowych." },
-    { max: 80, color: "#FF9445", title: "Umiarkowana fobia społeczna",
-      text: "Twój wynik (66–80 pkt) wskazuje na zauważalny lęk i unikanie wyzwań. Skuteczna jest terapia CBT." },
-    { max: 95, color: "#FF7A29", title: "Nasilona fobia społeczna",
-      text: "Wysoki wynik (81–95 pkt) utrudniający relacje i pracę. Zalecana konsultacja ze specjalistą." },
-    { max: 144, color: "#FF7A29", title: "Bardzo nasilona fobia społeczna",
-      text: "Bardzo wysoki wynik (96–144 pkt). Wskazana psychoterapia ukierunkowana na lęk społeczny." }
-  ],
-  bdi: [
-    { max: 11, color: "#1C86EE", title: "Brak objawów depresji",
-      text: "Twój wynik (0–11 pkt) mieści się w normie. Nastrój znajduje się w typowym, zdrowym zakresie." },
-    { max: 19, color: "#FFC542", title: "Łagodne obniżenie nastroju",
-      text: "Twój wynik (12–19 pkt) wskazuje na łagodne trudności nastrojowe. Warto skonsultować się z psychologiem." },
-    { max: 25, color: "#FF9445", title: "Umiarkowana depresja",
-      text: "Twój wynik (20–25 pkt) wskazuje na umiarkowane nasilenie depresji. Zalecana konsultacja i psychoterapia." },
-    { max: 63, color: "#FF7A29", title: "Ciężka depresja",
-      text: "Wysoki wynik (26–63 pkt). Wskazana pilna pomoc psychologiczna lub psychiatryczna." }
-  ],
-  asrs: [
-    { max: 35, color: "#1C86EE", title: "Brak wskazań do ADHD",
-      text: "Twój wynik (18–35 pkt) mieści się poniżej progu DIVA-5 (wymagane ≥ 50/90 pkt). Trudności mieszczą się w normie." },
-    { max: 49, color: "#FFC542", title: "Umiarkowane trudności (poniżej progu)",
-      text: "Twój wynik (36–49 pkt) jest poniżej progu DIVA-5 (≥ 50/90 pkt), wskazując na okresowe rozproszenie lub prokrastynację." },
-    { max: 90, color: "#FF7A29", title: "Wskazanie do diagnostyki ADHD (Próg DIVA-5)",
-      text: "Twój wynik (50–90 pkt) przekracza próg odniesienia DIVA-5 (≥ 50/90 pkt), sugerując wysokie nasilenie cech ADHD." }
+  who5: [
+    { max: 7, color: "#FF7A29", title: "Samopoczucie mocno obniżone",
+      text: "Twój wynik (0–7 pkt) wskazuje na znaczny spadek dobrostanu psychicznego. Warto skonsultować się ze specjalistą." },
+    { max: 12, color: "#FFC542", title: "Samopoczucie poniżej normy",
+      text: "Twój wynik (8–12 pkt) wskazuje na obniżony nastrój i energię. Warto zadbać o regenerację i sen." },
+    { max: 19, color: "#1C86EE", title: "Samopoczucie w normie",
+      text: "Twój wynik (13–19 pkt) mieści się w typowym, zdrowym zakresie dobrostanu psychicznego." },
+    { max: 25, color: "#1C86EE", title: "Wysoki dobrostan",
+      text: "Twój wynik (20–25 pkt) wskazuje na wysoki poziom spokoju, motywacji i życiowej energii." }
   ]
 };
 
@@ -488,13 +218,8 @@ function goBack() {
   }
 }
 
-function pickOption(slot, value, isLast, isLsas, otherSlot) {
+function pickOption(slot, value, isLast) {
   state.answers[slot] = value;
-  
-  if (isLsas && state.answers[otherSlot] === undefined) {
-    updateView();
-    return;
-  }
   
   if (isLast) {
     state.submitted = true;
@@ -564,73 +289,24 @@ function openTest(key) {
 function renderQuizRunner() {
   const t = TESTS[state.activeTest];
   const total = t.items.length;
-  const isLsas = t.scaleType === 'lsas';
-  const isCustom = t.scaleType === 'custom';
   const isLast = state.step === total - 1;
-  const currentItem = isCustom ? t.items[state.step].title : t.items[state.step];
+  const currentItem = t.items[state.step];
   
   const runnerContainer = document.getElementById('quiz-runner-content');
   if (!runnerContainer) return;
   
   const progressPct = Math.round((state.step / total) * 100);
+  const slot = `${state.step}-v`;
+  const val = state.answers[slot];
   
   let scalesHtml = '';
-  if (isLsas) {
-    const slotF = `${state.step}-f`;
-    const slotA = `${state.step}-a`;
-    const valF = state.answers[slotF];
-    const valA = state.answers[slotA];
-    
-    scalesHtml = `
-      <div style="margin-top: 24px;">
-        <span style="display: block; margin-bottom: 8px; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-blue);">Ile lęku w niej czujesz?</span>
-        <div style="display: flex; flex-direction: column; gap: 8px;">
-          ${LSAS_FEAR.map((opt, i) => `
-            <button class="quiz-option-btn ${valF === i ? 'selected' : ''}" onclick="pickOption('${slotF}', ${i}, ${isLast}, true, '${slotA}')">
-              <span class="quiz-option-mark">${valF === i ? '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="3.2"><path d="m5 12.5 5 5 9-10"></path></svg>' : ''}</span>
-              <span style="font-size: 0.95rem; font-weight: 600; color: var(--color-text-main);">${opt}</span>
-            </button>
-          `).join('')}
-        </div>
-      </div>
-      
-      <div style="margin-top: 24px;">
-        <span style="display: block; margin-bottom: 8px; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-orange);">Jak często jej unikasz?</span>
-        <div style="display: flex; flex-direction: column; gap: 8px;">
-          ${LSAS_AVOID.map((opt, i) => `
-            <button class="quiz-option-btn ${valA === i ? 'selected orange' : ''}" onclick="pickOption('${slotA}', ${i}, ${isLast}, true, '${slotF}')">
-              <span class="quiz-option-mark">${valA === i ? '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="3.2"><path d="m5 12.5 5 5 9-10"></path></svg>' : ''}</span>
-              <span style="font-size: 0.95rem; font-weight: 600; color: var(--color-text-main);">${opt}</span>
-            </button>
-          `).join('')}
-        </div>
-      </div>
-    `;
-  } else if (isCustom) {
-    const slot = `${state.step}-v`;
-    const val = state.answers[slot];
-    const customOpts = t.items[state.step].options;
-    
-    scalesHtml = `
-      <div style="margin-top: 24px; display: flex; flex-direction: column; gap: 8px;">
-        ${customOpts.map((opt, i) => `
-          <button class="quiz-option-btn ${val === i ? 'selected' : ''}" onclick="pickOption('${slot}', ${i}, ${isLast}, false, '')" style="align-items: flex-start; padding: 13px 16px;">
-            <span class="quiz-option-mark" style="margin-top: 2px;">${val === i ? '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="3.2"><path d="m5 12.5 5 5 9-10"></path></svg>' : ''}</span>
-            <span style="font-size: 0.95rem; font-weight: 600; color: var(--color-text-main); text-align: left; line-height: 1.4;">${opt}</span>
-          </button>
-        `).join('')}
-      </div>
-    `;
-  } else if (t.scaleType === 'asrs') {
-    const slot = `${state.step}-v`;
-    const val = state.answers[slot];
-    
+  if (t.scaleType === 'asrs') {
     scalesHtml = `
       <div style="margin-top: 24px; display: flex; flex-direction: column; gap: 8px;">
         ${t.options.map((opt, i) => {
           const scoreVal = i + 1;
           return `
-            <button class="quiz-option-btn ${val === scoreVal ? 'selected' : ''}" onclick="pickOption('${slot}', ${scoreVal}, ${isLast}, false, '')">
+            <button class="quiz-option-btn ${val === scoreVal ? 'selected' : ''}" onclick="pickOption('${slot}', ${scoreVal}, ${isLast})">
               <span class="quiz-option-mark">${val === scoreVal ? '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="3.2"><path d="m5 12.5 5 5 9-10"></path></svg>' : ''}</span>
               <span style="font-size: 0.95rem; font-weight: 600; color: var(--color-text-main);">${opt}</span>
             </button>
@@ -639,13 +315,10 @@ function renderQuizRunner() {
       </div>
     `;
   } else {
-    const slot = `${state.step}-v`;
-    const val = state.answers[slot];
-    
     scalesHtml = `
       <div style="margin-top: 24px; display: flex; flex-direction: column; gap: 8px;">
         ${t.options.map((opt, i) => `
-          <button class="quiz-option-btn ${val === i ? 'selected' : ''}" onclick="pickOption('${slot}', ${i}, ${isLast}, false, '')">
+          <button class="quiz-option-btn ${val === i ? 'selected' : ''}" onclick="pickOption('${slot}', ${i}, ${isLast})">
             <span class="quiz-option-mark">${val === i ? '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="3.2"><path d="m5 12.5 5 5 9-10"></path></svg>' : ''}</span>
             <span style="font-size: 0.95rem; font-weight: 600; color: var(--color-text-main);">${opt}</span>
           </button>
@@ -680,11 +353,10 @@ function renderQuizRunner() {
 function renderQuizResult() {
   const t = TESTS[state.activeTest];
   const displayScore = Object.values(state.answers).reduce((a, b) => a + b, 0);
-  const maxScore = state.activeTest === 'who5' ? 25 : (state.activeTest === 'lsas' ? 144 : (state.activeTest === 'asrs' ? 90 : (state.activeTest === 'bdi' ? 63 : (state.activeTest === 'gad7' ? 21 : 27))));
+  const maxScore = state.activeTest === 'who5' ? 25 : (state.activeTest === 'asrs' ? 90 : (state.activeTest === 'gad7' ? 21 : 27));
   const band = BANDS[state.activeTest].find(b => displayScore <= b.max) || BANDS[state.activeTest][BANDS[state.activeTest].length - 1];
   
-  const isCrisis = (state.activeTest === 'phq9' && (state.answers['8-v'] > 0 || displayScore >= 20)) ||
-                   (state.activeTest === 'bdi' && (state.answers['8-v'] > 0 || displayScore >= 26));
+  const isCrisis = state.activeTest === 'phq9' && (state.answers['8-v'] > 0 || displayScore >= 20);
   
   const resultContainer = document.getElementById('quiz-result-content');
   if (!resultContainer) return;
@@ -710,7 +382,7 @@ function renderQuizResult() {
       </div>
 
       <!-- Action Buttons: Copy Result & Download PDF -->
-      <div style="margin-top: 22px; padding-top: 18px; border-top: 1px solid rgba(28, 134, 238, 0.14); display: flex; flex-wrap: wrap; gap: 10px; align-items: center;">
+      <div style="margin-top: 22px; padding-top: 18px; border-top: 1px solid rgba(28, 134, 238, 0.14); display: flex; flex-wrap: gap; gap: 10px; align-items: center;">
         <button id="btn-copy-result" onclick="copyTestResult()" class="btn-action-pill">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
           <span>Skopiuj wynik na wizytę</span>
@@ -764,7 +436,7 @@ function renderQuizResult() {
 function copyTestResult() {
   const t = TESTS[state.activeTest];
   const displayScore = Object.values(state.answers).reduce((a, b) => a + b, 0);
-  const maxScore = state.activeTest === 'who5' ? 25 : (state.activeTest === 'lsas' ? 144 : (state.activeTest === 'asrs' ? 90 : (state.activeTest === 'bdi' ? 63 : (state.activeTest === 'gad7' ? 21 : 27))));
+  const maxScore = state.activeTest === 'who5' ? 25 : (state.activeTest === 'asrs' ? 90 : (state.activeTest === 'gad7' ? 21 : 27));
   const band = BANDS[state.activeTest].find(b => displayScore <= b.max) || BANDS[state.activeTest][BANDS[state.activeTest].length - 1];
   const dateStr = new Date().toLocaleDateString('pl-PL', { day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit' });
   
@@ -807,24 +479,16 @@ function fallbackCopy(text) {
 function downloadTestPdf() {
   const t = TESTS[state.activeTest];
   const displayScore = Object.values(state.answers).reduce((a, b) => a + b, 0);
-  const maxScore = state.activeTest === 'who5' ? 25 : (state.activeTest === 'lsas' ? 144 : (state.activeTest === 'asrs' ? 90 : (state.activeTest === 'bdi' ? 63 : (state.activeTest === 'gad7' ? 21 : 27))));
+  const maxScore = state.activeTest === 'who5' ? 25 : (state.activeTest === 'asrs' ? 90 : (state.activeTest === 'gad7' ? 21 : 27));
   const band = BANDS[state.activeTest].find(b => displayScore <= b.max) || BANDS[state.activeTest][BANDS[state.activeTest].length - 1];
   const dateStr = new Date().toLocaleDateString('pl-PL', { day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit' });
   
   let answersListHtml = '';
   t.items.forEach((item, idx) => {
-    let rawTitle = typeof item === 'object' ? item.title : item;
-    let questionTitle = rawTitle.replace(/^\d+\.\s*/, '');
+    let questionTitle = item.replace(/^\d+\.\s*/, '');
     let chosenAnsText = '';
     
-    if (t.scaleType === 'lsas') {
-      const fearVal = state.answers[`${idx}-f`] ?? '-';
-      const avoidVal = state.answers[`${idx}-a`] ?? '-';
-      chosenAnsText = `Lęk: ${LSAS_FEAR[fearVal] || '-'} | Unikanie: ${LSAS_AVOID[avoidVal] || '-'}`;
-    } else if (t.scaleType === 'custom') {
-      const ansVal = state.answers[`${idx}-v`] ?? 0;
-      chosenAnsText = `${item.options[ansVal] || '-'} (${ansVal} pkt)`;
-    } else if (t.scaleType === 'asrs') {
+    if (t.scaleType === 'asrs') {
       const ansVal = state.answers[`${idx}-v`] ?? 1;
       chosenAnsText = `${t.options[ansVal - 1] || '-'} (${ansVal} pkt)`;
     } else {
