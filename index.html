@@ -160,9 +160,13 @@
   <!-- Fonts & Styles -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+
+  <a href="#top" class="skip-link">Przejdź do treści</a>
+  <div class="scroll-progress" aria-hidden="true"><div class="scroll-progress__bar"></div></div>
 
   <!-- Sticky Header -->
   <header class="site-header">
@@ -258,7 +262,7 @@
     <div class="container">
       <div class="hero-grid">
         <div class="hero-copy">
-          <h1 class="hero-h1">Mielisz w kółko te same myśli? W 60 minut ułożymy chaos w głowie.</h1>
+          <h1 class="hero-h1">Mielisz w kółko te same myśli? W 60 minut <span class="text-gradient">ułożymy chaos</span> w głowie.</h1>
           <p class="hero-sub">Ty przynosisz chaos, ja daję strukturę. Konkretny plan oparty na badaniach, nie na ogólnikach.</p>
           
           <a href="#kontakt" class="btn-cta btn-cta-lg hero-cta" style="margin-top: 34px;">
@@ -291,7 +295,12 @@
           <div class="hero-ring hero-ring-2"></div>
           <div class="hero-ring hero-glow"></div>
           <div class="hero-ring hero-table-shadow"></div>
-          <img src="uploads/pasted-1787924565646-0.png" alt="Kacper Kulesza - Psycholog" class="hero-portrait-img">
+          <img src="images/kacper-760.webp"
+               srcset="images/kacper-760.webp 760w, images/kacper-1140.webp 1140w"
+               sizes="(max-width: 980px) 70vw, 480px"
+               width="760" height="832"
+               alt="Kacper Kulesza – psycholog, portret" class="hero-portrait-img"
+               fetchpriority="high" decoding="async">
         </div>
       </div>
     </div>
@@ -522,7 +531,9 @@
             </span>
           </button>
           <div class="faq-answer">
-            <p>Nie. To konsultacja psychologiczna — spotkanie nastawione na jeden konkretny problem i na to, żeby wyjść z niego z planem. Terapia to proces rozłożony na miesiące, prowadzony przez psychoterapeutę po całościowym szkoleniu. Jeśli w rozmowie okaże się, że tego właśnie potrzebujesz, powiem to wprost i pomogę się zorientować, czego szukać.</p>
+            <div class="faq-answer-inner">
+              <p>Nie. To konsultacja psychologiczna — spotkanie nastawione na jeden konkretny problem i na to, żeby wyjść z niego z planem. Terapia to proces rozłożony na miesiące, prowadzony przez psychoterapeutę po całościowym szkoleniu. Jeśli w rozmowie okaże się, że tego właśnie potrzebujesz, powiem to wprost i pomogę się zorientować, czego szukać.</p>
+            </div>
           </div>
         </div>
 
@@ -534,7 +545,9 @@
             </span>
           </button>
           <div class="faq-answer">
-            <p>Dlatego pierwsze 15 minut jest bezpłatne i do niczego nie zobowiązuje. Sprawdzamy, czy rozumiem Twój problem i czy sposób, w jaki pracuję, do Ciebie pasuje. Jeśli po tej rozmowie uznasz, że nie — nic nie tracisz i nie musisz się tłumaczyć.</p>
+            <div class="faq-answer-inner">
+              <p>Dlatego pierwsze 15 minut jest bezpłatne i do niczego nie zobowiązuje. Sprawdzamy, czy rozumiem Twój problem i czy sposób, w jaki pracuję, do Ciebie pasuje. Jeśli po tej rozmowie uznasz, że nie — nic nie tracisz i nie musisz się tłumaczyć.</p>
+            </div>
           </div>
         </div>
 
@@ -546,7 +559,9 @@
             </span>
           </button>
           <div class="faq-answer">
-            <p>Dostajesz link do wideorozmowy — nie musisz nic instalować ani zakładać konta. Potrzebujesz miejsca, w którym możesz swobodnie mówić, i słuchawek. Sesja trwa pełną godzinę. Notatki robię tylko dla siebie i nigdzie ich nie wysyłam.</p>
+            <div class="faq-answer-inner">
+              <p>Dostajesz link do wideorozmowy — nie musisz nic instalować ani zakładać konta. Potrzebujesz miejsca, w którym możesz swobodnie mówić, i słuchawek. Sesja trwa pełną godzinę. Notatki robię tylko dla siebie i nigdzie ich nie wysyłam.</p>
+            </div>
           </div>
         </div>
 
@@ -558,7 +573,9 @@
             </span>
           </button>
           <div class="faq-answer">
-            <p>Nie wiążę Cię długoterminowymi pakietami ani umowami. Korzystam z metod, które pozwalają już z pojedynczej sesji wyciągnąć konkretny plan i zarys działania. Często jedno spotkanie wystarcza, by ruszyć z miejsca. Jeśli sprawa okaże się bardziej złożona — sam decydujesz, czy i kiedy chcesz umówić kolejną rozmowę.</p>
+            <div class="faq-answer-inner">
+              <p>Nie wiążę Cię długoterminowymi pakietami ani umowami. Korzystam z metod, które pozwalają już z pojedynczej sesji wyciągnąć konkretny plan i zarys działania. Często jedno spotkanie wystarcza, by ruszyć z miejsca. Jeśli sprawa okaże się bardziej złożona — sam decydujesz, czy i kiedy chcesz umówić kolejną rozmowę.</p>
+            </div>
           </div>
         </div>
 
@@ -570,7 +587,9 @@
             </span>
           </button>
           <div class="faq-answer">
-            <p>Tak, na życzenie. Prowadzę działalność gospodarczą, więc wystarczy, że przy rezerwacji lub przed spotkaniem podasz dane do faktury.</p>
+            <div class="faq-answer-inner">
+              <p>Tak, na życzenie. Prowadzę działalność gospodarczą, więc wystarczy, że przy rezerwacji lub przed spotkaniem podasz dane do faktury.</p>
+            </div>
           </div>
         </div>
 
@@ -582,7 +601,9 @@
             </span>
           </button>
           <div class="faq-answer">
-            <p>Tak. Obowiązuje mnie bezwzględna tajemnica zawodowa psychologa — nikt nie dowie się o czym rozmawiamy. Jeśli w materiałach edukacyjnych dzielę się wnioskami lub przykładami z praktyki, robię to wyłącznie w formie w pełni zanonimizowanej (zmienione realia, brak jakichkolwiek danych identyfikujących) — Twoja tożsamość jest zawsze w 100% bezpieczna.</p>
+            <div class="faq-answer-inner">
+              <p>Tak. Obowiązuje mnie bezwzględna tajemnica zawodowa psychologa — nikt nie dowie się o czym rozmawiamy. Jeśli w materiałach edukacyjnych dzielę się wnioskami lub przykładami z praktyki, robię to wyłącznie w formie w pełni zanonimizowanej (zmienione realia, brak jakichkolwiek danych identyfikujących) — Twoja tożsamość jest zawsze w 100% bezpieczna.</p>
+            </div>
           </div>
         </div>
 
@@ -594,7 +615,9 @@
             </span>
           </button>
           <div class="faq-answer">
-            <p>Najczęściej: decyzja, której nie umiesz podjąć, natłok myśli, który nie pozwala zasnąć, wypalenie, konflikt w pracy lub w relacji, poczucie utknięcia. Jeśli nie wiesz, czy Twoja sprawa się nadaje — zapytaj na bezpłatnych 15 minutach.</p>
+            <div class="faq-answer-inner">
+              <p>Najczęściej: decyzja, której nie umiesz podjąć, natłok myśli, który nie pozwala zasnąć, wypalenie, konflikt w pracy lub w relacji, poczucie utknięcia. Jeśli nie wiesz, czy Twoja sprawa się nadaje — zapytaj na bezpłatnych 15 minutach.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -719,6 +742,11 @@
       <button id="cookie-accept-btn" class="btn-cookie-accept">Rozumiem</button>
     </div>
   </div>
+
+  <!-- Back to top -->
+  <button class="back-to-top" type="button" aria-label="Wróć na górę strony">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5"></path><path d="M5 12l7-7 7 7"></path></svg>
+  </button>
 
   <script src="js/main.js"></script>
 </body>

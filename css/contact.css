@@ -121,3 +121,69 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* --------------------------------------------------------------------------
+   Motion & polish (added)
+   -------------------------------------------------------------------------- */
+.contact-quick-card { transition: border-color 0.28s ease, box-shadow 0.28s ease, transform 0.28s var(--ease-out-expo); }
+
+.contact-quick-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-card-hover);
+}
+
+.contact-icon-box {
+  transition: transform 0.35s var(--ease-out-back), box-shadow 0.3s ease;
+}
+
+.contact-quick-card:hover .contact-icon-box { transform: scale(1.1) rotate(-8deg); }
+.contact-quick-card:hover .contact-icon-box.blue { box-shadow: 0 12px 26px rgba(28, 134, 238, 0.42); }
+.contact-quick-card:hover .contact-icon-box.orange { box-shadow: 0 12px 26px rgba(255, 122, 41, 0.42); }
+
+.contact-form-card { transition: border-color 0.3s ease, box-shadow 0.3s ease; }
+.contact-form-card:focus-within { border-color: var(--color-blue); box-shadow: var(--shadow-card-hover); }
+
+.form-grid-2 > .form-group { margin-bottom: 0; }
+
+.form-input, .form-textarea {
+  transition: border-color var(--dur-fast) ease, box-shadow var(--dur-fast) ease, transform var(--dur-fast) ease, background var(--dur-fast) ease;
+}
+
+.form-input:hover, .form-textarea:hover { border-color: rgba(28, 134, 238, 0.6); }
+
+.form-input:focus, .form-textarea:focus {
+  border-color: var(--color-blue);
+  box-shadow: 0 0 0 4px rgba(28, 134, 238, 0.16);
+}
+
+.form-input::placeholder, .form-textarea::placeholder { color: var(--color-text-subtle); }
+
+.form-input.is-invalid, .form-textarea.is-invalid {
+  border-color: #EF4444;
+  box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.14);
+  animation: fieldShake 0.4s ease;
+}
+
+@keyframes fieldShake {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-6px); }
+  40% { transform: translateX(6px); }
+  60% { transform: translateX(-4px); }
+  80% { transform: translateX(4px); }
+}
+
+.form-error {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #DC2626;
+  min-height: 0;
+}
+
+.form-success {
+  padding: 36px 24px;
+  text-align: center;
+  border-radius: 18px;
+  background: rgba(16, 185, 129, 0.08);
+  border: 1.5px solid #10B981;
+  animation: popIn 0.55s var(--ease-out-back) both;
+}

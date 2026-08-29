@@ -10,6 +10,7 @@
   align-items: center;
   gap: 9px;
   background: var(--gradient-cta);
+  background-size: 180% 100%;
   color: #FFFFFF !important;
   font-size: 0.875rem;
   font-weight: 700;
@@ -20,30 +21,39 @@
   border: none;
   cursor: pointer;
   box-shadow: var(--shadow-cta);
-  transition: transform 0.18s ease, box-shadow 0.18s ease;
+  transition: transform 0.24s var(--ease-out-back), box-shadow 0.24s ease, background-position 0.5s ease;
 }
 
+.btn-cta > * { position: relative; z-index: 1; }
+
 .btn-cta::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: -55%;
   width: 40%;
   height: 100%;
   background: linear-gradient(100deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.55) 50%, rgba(255, 255, 255, 0) 100%);
-  transform: skewX(-18deg);
+  transform: translateX(0) skewX(-18deg);
   pointer-events: none;
   animation: ccShine 4.5s ease-in-out infinite;
 }
 
 .btn-cta:hover {
-  transform: translateY(-2px);
+  transform: translateY(-3px);
   box-shadow: var(--shadow-cta-hover);
+  background-position: 100% 50%;
 }
 
 .btn-cta:active {
-  transform: translateY(0);
+  transform: translateY(0) scale(0.98);
   box-shadow: var(--shadow-cta);
+}
+
+.btn-cta:disabled {
+  opacity: 0.7;
+  cursor: progress;
+  transform: none;
 }
 
 .btn-cta-lg {
@@ -62,14 +72,14 @@
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  transition: transform 0.2s ease;
+  transition: transform 0.28s var(--ease-out-back);
 }
 
-.btn-cta-lg:hover .btn-cta-icon {
-  transform: translateX(2px);
-}
+.btn-cta-lg:hover .btn-cta-icon { transform: translateX(5px) rotate(8deg); }
 
 .btn-outline {
+  position: relative;
+  overflow: hidden;
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -81,14 +91,23 @@
   font-weight: 700;
   font-size: 0.9375rem;
   cursor: pointer;
-  transition: all 0.16s ease;
+  transition: border-color var(--dur-fast) ease, color var(--dur-fast) ease,
+              background var(--dur-fast) ease, transform var(--dur-fast) var(--ease-out-back),
+              box-shadow var(--dur-fast) ease;
 }
+
+.btn-outline svg { transition: transform 0.24s var(--ease-out-back); }
 
 .btn-outline:hover {
   border-color: var(--color-blue);
   background: var(--color-blue-subtle);
   color: var(--color-blue-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(28, 134, 238, 0.14);
 }
+
+.btn-outline:hover svg { transform: translateX(4px); }
+.btn-outline:active { transform: translateY(0) scale(0.98); }
 
 .tag-pill {
   display: inline-flex;
@@ -109,6 +128,9 @@
   border-color: var(--color-orange-border);
 }
 
+/* --------------------------------------------------------------------------
+   Cookie bar
+   -------------------------------------------------------------------------- */
 .cookie-bar-container {
   position: fixed;
   bottom: 0;
@@ -116,6 +138,7 @@
   right: 0;
   z-index: 9999;
   pointer-events: none;
+  display: none;
 }
 
 .cookie-bar {
@@ -137,6 +160,21 @@
   justify-content: space-between;
   gap: 16px;
   pointer-events: auto;
+  animation: cookieIn 0.6s var(--ease-out-expo) 0.6s both;
+}
+
+.cookie-bar-container.is-leaving .cookie-bar {
+  animation: cookieOut 0.35s var(--ease-in-out-soft) both;
+}
+
+@keyframes cookieIn {
+  from { opacity: 0; transform: translateY(120%); }
+  to   { opacity: 1; transform: none; }
+}
+
+@keyframes cookieOut {
+  from { opacity: 1; transform: none; }
+  to   { opacity: 0; transform: translateY(120%); }
 }
 
 .cookie-bar p {
@@ -156,47 +194,80 @@
   border: none;
   cursor: pointer;
   white-space: nowrap;
-  transition: all 0.16s ease;
+  transition: background var(--dur-fast) ease, transform var(--dur-fast) var(--ease-out-back), box-shadow var(--dur-fast) ease;
 }
 
 .btn-cookie-accept:hover {
   background: var(--color-blue-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(28, 134, 238, 0.3);
 }
 
-/* Glassmorphism Spotlight Cursor Follower Effect */
+.btn-cookie-accept:active { transform: translateY(0) scale(0.97); }
+
+/* --------------------------------------------------------------------------
+   Glassmorphism spotlight cursor follower on interactive cards
+   -------------------------------------------------------------------------- */
+.spotlight-card,
 .test-preview-card,
 .test-hub-card,
 .price-box-featured,
 .price-box-plain,
 .contact-quick-card,
-.contact-form-card {
+.contact-form-card,
+.material-card,
+.materials-hub-card {
   position: relative;
   overflow: hidden;
 }
 
+.spotlight-card::before,
 .test-preview-card::before,
 .test-hub-card::before,
 .price-box-featured::before,
 .price-box-plain::before,
 .contact-quick-card::before,
-.contact-form-card::before {
-  content: '';
+.contact-form-card::before,
+.material-card::before,
+.materials-hub-card::before {
+  content: "";
   position: absolute;
   inset: 0;
   border-radius: inherit;
-  background: radial-gradient(420px circle at var(--mouse-x, -999px) var(--mouse-y, -999px), rgba(28, 134, 238, 0.14), transparent 75%);
+  background: radial-gradient(420px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(28, 134, 238, 0.16), transparent 72%);
   pointer-events: none;
   opacity: 0;
-  transition: opacity 0.3s ease;
-  z-index: 1;
+  transition: opacity 0.35s ease;
+  z-index: 0;
 }
 
+.spotlight-card:hover::before,
 .test-preview-card:hover::before,
 .test-hub-card:hover::before,
 .price-box-featured:hover::before,
 .price-box-plain:hover::before,
 .contact-quick-card:hover::before,
-.contact-form-card:hover::before {
+.contact-form-card:hover::before,
+.material-card:hover::before,
+.materials-hub-card:hover::before {
   opacity: 1;
 }
 
+/* The spotlight is a background layer — content must always sit above it. */
+.spotlight-card > *,
+.test-preview-card > *,
+.test-hub-card > *,
+.price-box-featured > *,
+.price-box-plain > *,
+.contact-quick-card > *,
+.contact-form-card > *,
+.material-card > *,
+.materials-hub-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Orange-tinted spotlight for the featured price card */
+.price-box-featured::before {
+  background: radial-gradient(420px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255, 122, 41, 0.18), transparent 72%);
+}

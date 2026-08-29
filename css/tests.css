@@ -15,7 +15,7 @@
   align-items: flex-start;
   text-align: left;
   padding: 28px 26px 24px;
-  border-radius: 20px;
+  border-radius: var(--radius-2xl);
   cursor: pointer;
   height: 100%;
   border: 1px solid var(--color-blue-border);
@@ -23,14 +23,27 @@
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   box-shadow: var(--shadow-card);
-  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.32s var(--ease-out-expo), border-color 0.28s ease, box-shadow 0.28s ease;
+  animation: slideUpIn 0.6s var(--ease-out-expo) both;
 }
+
+.tests-hub-grid .test-hub-card:nth-child(1) { animation-delay: 0.05s; }
+.tests-hub-grid .test-hub-card:nth-child(2) { animation-delay: 0.13s; }
+.tests-hub-grid .test-hub-card:nth-child(3) { animation-delay: 0.21s; }
+.tests-hub-grid .test-hub-card:nth-child(4) { animation-delay: 0.29s; }
 
 .test-hub-card:hover {
   border-color: var(--color-blue);
-  transform: translateY(-3px);
+  transform: translateY(-6px);
   box-shadow: var(--shadow-card-hover);
 }
+
+.test-hub-card:focus-visible {
+  border-color: var(--color-blue);
+  transform: translateY(-4px);
+}
+
+.test-hub-card:active { transform: translateY(-2px) scale(0.995); }
 
 .glyph-circle {
   width: 62px;
@@ -41,7 +54,16 @@
   align-items: center;
   justify-content: center;
   background: rgba(28, 134, 238, 0.09);
+  transition: transform 0.4s var(--ease-out-back), background 0.3s ease;
 }
+
+.test-hub-card:hover .glyph-circle {
+  transform: scale(1.1) rotate(-8deg);
+  background: rgba(28, 134, 238, 0.16);
+}
+
+.test-hub-card svg { transition: transform 0.3s var(--ease-out-back); }
+.test-hub-card:hover > span:last-child svg { transform: translateX(6px); }
 
 .test-card-tag {
   font-size: 0.78125rem;
@@ -49,13 +71,21 @@
   color: var(--color-text-muted);
 }
 
-/* Quiz Runner */
+/* --------------------------------------------------------------------------
+   Quiz Runner
+   -------------------------------------------------------------------------- */
 .quiz-runner-container {
   width: 100%;
   max-width: 680px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
+  animation: quizStepIn 0.42s var(--ease-out-expo) both;
+}
+
+@keyframes quizStepIn {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: none; }
 }
 
 .quiz-progress-bar {
@@ -69,9 +99,11 @@
 .quiz-progress-fill {
   display: block;
   height: 100%;
-  background: var(--color-blue);
+  background: var(--gradient-cta);
+  background-size: 200% 100%;
   border-radius: 999px;
-  transition: width 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: width 0.45s var(--ease-out-expo);
+  animation: gradientPan 4s ease-in-out infinite alternate;
 }
 
 .quiz-option-btn {
@@ -80,19 +112,23 @@
   align-items: center;
   gap: 14px;
   padding: 15px 18px;
-  border-radius: 14px;
+  border-radius: var(--radius-md);
   border: 1.5px solid var(--color-blue-border);
   background: #FFFFFF;
   cursor: pointer;
   text-align: left;
-  transition: all 0.15s ease;
+  transition: border-color var(--dur-fast) ease, background var(--dur-fast) ease,
+              transform var(--dur-fast) var(--ease-out-back), box-shadow var(--dur-fast) ease;
 }
 
 .quiz-option-btn:hover {
   border-color: var(--color-blue);
   background: var(--color-blue-subtle);
-  transform: translateY(-1px);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(28, 134, 238, 0.14);
 }
+
+.quiz-option-btn:active { transform: translateY(0) scale(0.99); }
 
 .quiz-option-btn.selected {
   border-color: var(--color-blue);
@@ -110,7 +146,10 @@
   justify-content: center;
   flex-shrink: 0;
   background: #FFFFFF;
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.24s var(--ease-out-back);
 }
+
+.quiz-option-btn:hover .quiz-option-mark { transform: scale(1.12); border-color: var(--color-blue); }
 
 .quiz-option-btn.selected .quiz-option-mark {
   background: var(--color-blue);
@@ -127,6 +166,7 @@
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  animation: popIn 0.65s var(--ease-out-back) both;
 }
 
 .btn-action-pill {
@@ -134,25 +174,29 @@
   align-items: center;
   gap: 8px;
   padding: 9px 16px;
-  border-radius: 10px;
+  border-radius: var(--radius-sm);
   font-size: 0.875rem;
   font-weight: 700;
   border: 1.5px solid var(--color-blue-border);
   background: #FFFFFF;
   color: var(--color-text-main);
   cursor: pointer;
-  transition: all 0.16s ease;
+  transition: border-color var(--dur-fast) ease, color var(--dur-fast) ease,
+              background var(--dur-fast) ease, transform var(--dur-fast) var(--ease-out-back);
 }
 
 .btn-action-pill:hover {
   border-color: var(--color-blue);
   color: var(--color-blue);
   background: var(--color-blue-subtle);
+  transform: translateY(-2px);
 }
+
+.btn-action-pill:active { transform: translateY(0) scale(0.97); }
 
 .crisis-box {
   padding: 20px 24px;
-  border-radius: 16px;
+  border-radius: var(--radius-lg);
   background: rgba(255, 122, 41, 0.08);
   border: 1.5px solid var(--color-orange-border);
 }
@@ -161,14 +205,33 @@
   display: flex;
   flex-direction: column;
   padding: 10px 16px;
-  border-radius: 10px;
+  border-radius: var(--radius-sm);
   background: #FFFFFF;
   border: 1px solid var(--color-orange-border);
   text-decoration: none;
+  transition: transform var(--dur-fast) var(--ease-out-back), box-shadow var(--dur-fast) ease, border-color var(--dur-fast) ease;
+}
+
+.crisis-card-btn:hover {
+  transform: translateY(-2px);
+  border-color: var(--color-orange);
+  box-shadow: 0 8px 18px rgba(255, 122, 41, 0.2);
 }
 
 @media (max-width: 980px) {
   .tests-hub-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+/* Fade-in used by the quiz runner markup */
+.animate-fade-in { animation: ccQIn 0.42s var(--ease-out-expo) both; }
+
+@media (max-width: 640px) {
+  .result-grid {
+    grid-template-columns: 1fr !important;
+    justify-items: center;
+    text-align: center;
+    gap: 18px !important;
   }
 }

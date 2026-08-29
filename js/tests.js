@@ -108,7 +108,9 @@ function renderHubCards() {
   hubContainer.innerHTML = Object.keys(TESTS).map(key => {
     const t = TESTS[key];
     return `
-      <div class="test-hub-card" onclick="openTest('${key}')">
+      <div class="test-hub-card" role="button" tabindex="0" aria-label="Rozpocznij test: ${t.title}"
+           onclick="openTest('${key}')"
+           onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openTest('${key}');}">
         <div style="display: flex; align-items: center; justify-content: space-between; gap: 16px; width: 100%;">
           <div class="glyph-circle">${(typeof GLYPHS !== 'undefined' && GLYPHS[key]) || ''}</div>
           <span class="test-card-tag">${t.meta}</span>

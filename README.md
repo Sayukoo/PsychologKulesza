@@ -17,7 +17,7 @@ Strona została zbudowana w nowoczesnej, modułowej architekturze opartej na czy
 ### 🎨 Style CSS (`/css/`)
 Plik główny [`css/style.css`](css/style.css) importuje dedykowane, lekkie moduły:
 - [`css/variables.css`](css/variables.css) – Zmienne CSS, paleta barw (Brand Blue, Orange, Yellow), cienie, gradienty.
-- [`css/base.css`](css/base.css) – Reset, typografia bazowa, kontenery, sekcje, aury tła (`.bg-blob`).
+- [`css/base.css`](css/base.css) – Reset, typografia bazowa, kontenery, sekcje, aury tła (`.bg-blob`), system animacji (keyframes, `.reveal-on-scroll`, pasek postępu, przycisk „na górę”, `prefers-reduced-motion`).
 - [`css/navigation.css`](css/navigation.css) – Pasek nawigacji, sticky header, menu mobilne (fullscreen drawer).
 - [`css/components.css`](css/components.css) – Przyciski CTA (`.btn-cta`), pigułki, pasek cookie (`.cookie-bar`).
 - [`css/sections.css`](css/sections.css) – Sekcje strony głównej (Hero, O mnie, Cennik, FAQ) i reguły RWD.
@@ -25,8 +25,12 @@ Plik główny [`css/style.css`](css/style.css) importuje dedykowane, lekkie modu
 - [`css/contact.css`](css/contact.css) – Kafelki kontaktowe, formularz i pola tekstowe.
 - [`css/footer.css`](css/footer.css) – Stopka strony i globalne media queries.
 
+### 🖼️ Grafiki (`/images/`)
+- `kacper-760.webp`, `kacper-1140.webp` – zoptymalizowany portret w hero (`srcset`), 79 KB zamiast 1,8 MB oryginału PNG.
+- `og-image.png` – grafika do podglądu w mediach społecznościowych.
+
 ### ⚙️ Skrypty JavaScript (`/js/`)
-- [`js/main.js`](js/main.js) – Obsługa menu mobilnego, akordeonu FAQ, rozwijanej polityki prywatności, paska cookie, efektu spotlight i animacji wejścia (IntersectionObserver).
+- [`js/main.js`](js/main.js) – Menu mobilne, akordeon FAQ, rozwijana polityka prywatności, pasek cookie, efekt spotlight, pasek postępu przewijania, podświetlanie aktywnej sekcji w nawigacji, przycisk „na górę” oraz silnik animacji wejścia (IntersectionObserver + zabezpieczenia).
 - [`js/tests-data.js`](js/tests-data.js) – Słownik pytań, skale punktacji i przedziały interpretacyjne testów (ASRS, GAD-7, PHQ-9, WHO-5).
 - [`js/tests.js`](js/tests.js) – Silnik quizu (przejścia pytań, obliczanie punktów, generowanie raportu PDF do druku).
 - [`js/contact.js`](js/contact.js) – Walidacja formularza kontaktowego i obsługa wysyłki wiadomości.
@@ -36,3 +40,15 @@ Plik główny [`css/style.css`](css/style.css) importuje dedykowane, lekkie modu
 ## 🚀 Wdrożenie (GitHub Pages)
 
 Każdy `git push origin main` automatycznie buduje i publikuje najnowszą wersję strony na GitHub Pages z podpiętą domeną `psychologkacper.pl` (zgodnie z plikiem `CNAME`).
+
+---
+
+## 🎬 Warstwa animacji
+
+Cała motoryka strony żyje w CSS; JavaScript wyłącznie przełącza klasy.
+
+- **Wejście sekcji** – `IntersectionObserver` nadaje `.is-revealed` z kaskadowym opóźnieniem (`--reveal-delay`). Silnik ma trzy niezależne zabezpieczenia (obserwator, przemiatanie przy przewijaniu/zmianie rozmiaru oraz twardy limit czasu), żeby szybkie przewinięcie albo wejście z kotwicą `#faq` nigdy nie zostawiło pustej strony.
+- **Hero** – sekwencyjne wejście nagłówka, obracający się pierścień, oddychająca poświata i unoszący się portret.
+- **Nawigacja** – pasek zagęszcza się po przewinięciu, podkreślenia linków wjeżdżają z boku, aktywna sekcja podświetla się automatycznie.
+- **Reakcja na kursor** – „spotlight” na kafelkach, płynne uniesienia i połysk na przyciskach CTA.
+- **`prefers-reduced-motion`** – jeden blok w `base.css` wyłącza cały ruch dla osób, które sobie tego życzą.

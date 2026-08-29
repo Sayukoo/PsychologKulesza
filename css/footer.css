@@ -45,3 +45,50 @@
     gap: 20px;
   }
 }
+
+/* --------------------------------------------------------------------------
+   Motion & polish (added)
+   -------------------------------------------------------------------------- */
+.site-footer {
+  position: relative;
+  overflow: hidden;
+}
+
+.site-footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--gradient-cta);
+  background-size: 200% 100%;
+  animation: gradientPan 8s ease-in-out infinite alternate;
+  opacity: 0.55;
+}
+
+.foot-grid > * { position: relative; z-index: 1; }
+
+.foot-contact-item svg { transition: transform 0.26s var(--ease-out-back); }
+.foot-contact-item:hover svg { transform: scale(1.16) rotate(-8deg); }
+
+.site-footer a { position: relative; }
+
+.site-footer a:not(.btn-cta):not(.btn-outline)::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -3px;
+  height: 1.5px;
+  border-radius: 2px;
+  background: var(--gradient-line);
+  transform: scaleX(0);
+  transform-origin: right center;
+  transition: transform 0.34s var(--ease-out-expo);
+}
+
+.site-footer a:not(.btn-cta):not(.btn-outline):hover::after {
+  transform: scaleX(1);
+  transform-origin: left center;
+}

@@ -2,38 +2,58 @@
    Design Tokens & Variables - Kacper Kulesza (Psycholog)
    ========================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap');
-
 :root {
   --font-main: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  
+
   /* Colors */
   --color-blue: #1C86EE;
   --color-blue-light: #3E9BF2;
   --color-blue-dark: #0F6FCC;
   --color-blue-subtle: rgba(28, 134, 238, 0.08);
   --color-blue-border: rgba(28, 134, 238, 0.32);
-  
+
   --color-yellow: #FFC542;
   --color-orange: #FF7A29;
   --color-orange-dark: #E66315;
   --color-orange-subtle: rgba(255, 122, 41, 0.08);
   --color-orange-border: rgba(255, 122, 41, 0.4);
-  
+
   --color-text-main: #16181C;
   --color-text-muted: #64748B;
   --color-text-subtle: #94A3B8;
   --color-bg-white: #FFFFFF;
+  --color-bg-soft: #F8FAFC;
   --color-bg-card: rgba(255, 255, 255, 0.78);
-  
+
   /* Gradients */
   --gradient-cta: linear-gradient(97deg, #1C86EE 0%, #3E9BF2 24%, #FFC542 62%, #FF7A29 100%);
   --gradient-cta-hover: linear-gradient(97deg, #1877D5 0%, #358CE0 24%, #F5BA36 62%, #F06D1D 100%);
-  
+  --gradient-text: linear-gradient(96deg, #1C86EE 0%, #3E9BF2 26%, #FFC542 62%, #FF7A29 100%);
+  --gradient-line: linear-gradient(90deg, rgba(28,134,238,0) 0%, var(--color-blue) 35%, var(--color-orange) 100%);
+
   /* Shadows */
   --shadow-nav: 0 10px 34px rgba(22, 24, 28, 0.07);
+  --shadow-nav-scrolled: 0 14px 44px rgba(22, 24, 28, 0.13);
   --shadow-card: 0 10px 30px rgba(28, 134, 238, 0.06);
-  --shadow-card-hover: 0 16px 36px rgba(28, 134, 238, 0.14);
+  --shadow-card-hover: 0 22px 48px rgba(28, 134, 238, 0.17);
   --shadow-cta: 0 10px 24px rgba(255, 122, 41, 0.28), inset 0 1.2px 0 rgba(255, 255, 255, 0.5), inset 0 -2px 5px rgba(160, 60, 0, 0.16);
-  --shadow-cta-hover: 0 16px 36px rgba(255, 122, 41, 0.38), inset 0 1.2px 0 rgba(255, 255, 255, 0.65), inset 0 -2px 5px rgba(160, 60, 0, 0.14);
+  --shadow-cta-hover: 0 18px 40px rgba(255, 122, 41, 0.42), inset 0 1.2px 0 rgba(255, 255, 255, 0.65), inset 0 -2px 5px rgba(160, 60, 0, 0.14);
+
+  /* Radii */
+  --radius-sm: 10px;
+  --radius-md: 14px;
+  --radius-lg: 18px;
+  --radius-xl: 22px;
+  --radius-2xl: 26px;
+
+  /* Motion */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out-back: cubic-bezier(0.34, 1.4, 0.64, 1);
+  --ease-in-out-soft: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-fast: 0.18s;
+  --dur-base: 0.32s;
+  --dur-slow: 0.7s;
+
+  /* Layout */
+  --header-offset: 108px;
 }

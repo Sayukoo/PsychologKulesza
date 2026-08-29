@@ -20,9 +20,13 @@
   <!-- Fonts & Styles -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body style="min-height: 100vh; display: flex; flex-direction: column;">
+
+  <a href="#main-content" class="skip-link">Przejdź do treści</a>
+  <div class="scroll-progress" aria-hidden="true"><div class="scroll-progress__bar"></div></div>
 
   <!-- Sticky Header -->
   <header class="site-header">
@@ -104,7 +108,7 @@
   </div>
 
   <!-- Main Materials Content -->
-  <main class="section" style="flex: 1; padding: 44px 0 80px;">
+  <main id="main-content" class="section" style="flex: 1; padding: 44px 0 80px;">
     <div class="bg-blob" style="top: -60px; right: -200px; width: 800px; height: 640px; background: radial-gradient(46% 48% at 50% 44%, rgba(28,134,238,.24) 0%, rgba(28,134,238,0) 74%), radial-gradient(40% 42% at 30% 66%, rgba(255,197,66,.2) 0%, rgba(255,197,66,0) 74%);"></div>
     <div class="bg-blob" style="bottom: 40px; left: -220px; width: 720px; height: 580px; background: radial-gradient(50% 50% at 50% 50%, rgba(255,122,41,.18) 0%, rgba(255,122,41,0) 74%);"></div>
 
@@ -180,6 +184,11 @@
       </div>
     </div>
   </footer>
+
+  <!-- Back to top -->
+  <button class="back-to-top" type="button" aria-label="Wróć na górę strony">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5"></path><path d="M5 12l7-7 7 7"></path></svg>
+  </button>
 
   <script src="js/main.js"></script>
 </body>
