@@ -8,7 +8,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initFaqAccordion();
   initPrivacyToggle();
   initCookieBar();
-  initCalendly();
   initSpotlight();
   initScrollReveal();
 });
@@ -153,35 +152,6 @@ function initCookieBar() {
   });
 }
 
-/**
- * Calendly Inline Widget Initializer
- */
-function initCalendly() {
-  const el = document.querySelector('.calendly-inline-widget');
-  if (!el || el.dataset.kkMounted === '1') return;
-  
-  const mount = () => {
-    if (window.Calendly && window.Calendly.initInlineWidget) {
-      el.dataset.kkMounted = '1';
-      window.Calendly.initInlineWidget({
-        url: el.getAttribute('data-url'),
-        parentElement: el
-      });
-      return true;
-    }
-    return false;
-  };
-  
-  if (!mount()) {
-    const calInterval = setInterval(() => {
-      if (mount()) {
-        clearInterval(calInterval);
-      }
-    }, 300);
-    // Timeout after 10 seconds to stop polling
-    setTimeout(() => clearInterval(calInterval), 10000);
-  }
-}
 
 /**
  * Spotlight Cursor Follower on Interactive Cards (Linear / Apple style)

@@ -550,6 +550,25 @@
   animation: ccQIn 0.25s ease both;
 }
 
+/* Section: Calendly Booking Container */
+.cal-wrapper {
+  margin-top: 40px;
+  width: 100%;
+  max-width: 960px;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(28, 134, 238, 0.38);
+  border-radius: 24px;
+  padding: 24px 20px;
+  box-shadow: 0 14px 40px rgba(28, 134, 238, 0.08);
+  overflow: hidden;
+}
+
+.calendly-inline-widget {
+  min-width: 320px;
+  height: 700px;
+  width: 100%;
+}
+
 /* Privacy & RODO Policy */
 .privacy-section {
   padding: 40px 0 60px;
