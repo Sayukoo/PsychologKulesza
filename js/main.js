@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initPrivacyToggle();
   initCookieBar();
   initCalendly();
+  initSpotlight();
 });
 
 /**
@@ -178,4 +179,23 @@ function initCalendly() {
     // Timeout after 10 seconds to stop polling
     setTimeout(() => clearInterval(calInterval), 10000);
   }
+}
+
+/**
+ * Spotlight Cursor Follower on Interactive Cards (Linear / Apple style)
+ */
+function initSpotlight() {
+  const selector = '.test-preview-card, .test-hub-card, .price-box-featured, .contact-quick-card';
+  
+  document.addEventListener('mousemove', (e) => {
+    const card = e.target.closest(selector);
+    if (!card) return;
+    
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    
+    card.style.setProperty('--mouse-x', `${x}px`);
+    card.style.setProperty('--mouse-y', `${y}px`);
+  }, { passive: true });
 }
