@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initCookieBar();
   initCalendly();
   initSpotlight();
+  initScrollReveal();
 });
 
 /**
@@ -198,4 +199,47 @@ function initSpotlight() {
     card.style.setProperty('--mouse-x', `${x}px`);
     card.style.setProperty('--mouse-y', `${y}px`);
   }, { passive: true });
+}
+
+/**
+ * Staggered Scroll Reveal with IntersectionObserver
+ */
+function initScrollReveal() {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  
+  const selectors = [
+    '.section-tag',
+    '.section h2',
+    '.two-col-grid > div',
+    '.quote-highlight',
+    '.competence-pill',
+    '.step-card',
+    '.test-preview-card',
+    '.price-box-featured',
+    '.price-box-plain',
+    '.faq-item',
+    '.contact-quick-card',
+    '.contact-form-card'
+  ].join(', ');
+  
+  const elements = document.querySelectorAll(selectors);
+  if (!elements.length) return;
+  
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-revealed');
+        obs.unobserve(entry.target);
+      }
+    });
+  }, {
+    root: null,
+    rootMargin: '0px 0px -40px 0px',
+    threshold: 0.12
+  });
+  
+  elements.forEach(el => {
+    el.classList.add('reveal-on-scroll');
+    observer.observe(el);
+  });
 }
