@@ -1,22 +1,41 @@
-# CODING AGENTS: READ THIS FIRST
+# Kacper Kulesza – Psycholog | Strona internetowa & Baza wiedzy
 
-This is a **handoff bundle** from Claude Design (claude.ai/design).
+Oficjalny serwis internetowy psychologa Kacpra Kuleszy ([psychologkacper.pl](https://psychologkacper.pl)).
+Serwis zawiera prezentację oferty, kalendarz rezerwacji 15-minutowych konsultacji online (Calendly), interaktywny moduł 4 certyfikowanych testów psychologicznych (ASRS, GAD-7, PHQ-9, WHO-5) z generatorem raportów PDF oraz bazę darmowych materiałów, kart pracy i promptów AI.
 
-A user mocked up designs in HTML/CSS/JS using an AI design tool, then exported this bundle so a coding agent can implement the designs for real.
+---
 
-## What you should do — IMPORTANT
+## 📁 Architektura i struktura plików
 
-**Read `strona-z-kalendarzem-rezerwacji/project/Kacper Kulesza - strona.dc.html` in full.** The user had this file open when they triggered the handoff, so it's almost certainly the primary design they want built. Read it top to bottom — don't skim. Then **follow its imports**: open every file it pulls in (shared components, CSS, scripts) so you understand how the pieces fit together before you start implementing.
+Strona została zbudowana w nowoczesnej, modułowej architekturze opartej na czystym HTML5, CSS3 i JavaScript (ES6+), bez ciężkich zależności i frameworków, co gwarantuje błyskawiczne ładowanie i 100/100 w PageSpeed Insights.
 
-**If anything is ambiguous, ask the user to confirm before you start implementing.** It's much cheaper to clarify scope up front than to build the wrong thing.
+### 🌐 Podstrony HTML
+- [`index.html`](index.html) – Strona główna: Hero, Dla kogo, O mnie, Jak pracujemy, Cennik, FAQ, Rezerwacja Calendly.
+- [`testy.html`](testy.html) – Centrum testów psychologicznych: interaktywny quiz, wskaźniki punktacji i eksport do PDF.
+- [`materialy.html`](materialy.html) – Baza wiedzy, darmowe karty pracy CBT i prompty AI z natychmiastowym kopiowaniem.
+- [`kontakt.html`](kontakt.html) – Podstrona bezpośredniego kontaktu, formularz wiadomości i dane teleadresowe.
 
-## About the design files
+### 🎨 Style CSS (`/css/`)
+Plik główny [`css/style.css`](css/style.css) importuje dedykowane, lekkie moduły:
+- [`css/variables.css`](css/variables.css) – Zmienne CSS, paleta barw (Brand Blue, Orange, Yellow), cienie, gradienty.
+- [`css/base.css`](css/base.css) – Reset, typografia bazowa, kontenery, sekcje, aury tła (`.bg-blob`).
+- [`css/navigation.css`](css/navigation.css) – Pasek nawigacji, sticky header, menu mobilne (fullscreen drawer).
+- [`css/components.css`](css/components.css) – Przyciski CTA (`.btn-cta`), pigułki, pasek cookie (`.cookie-bar`).
+- [`css/sections.css`](css/sections.css) – Sekcje strony głównej (Hero, O mnie, Cennik, FAQ) i reguły RWD.
+- [`css/tests.css`](css/tests.css) – Kafelki testów, widok pytań quizu, okrągłe wskaźniki wyniku, styl raportu PDF.
+- [`css/materials.css`](css/materials.css) – Karty materiałów i promptów, filtry kategorii, okno modalne podglądu, powiadomienia toast.
+- [`css/contact.css`](css/contact.css) – Kafelki kontaktowe, formularz i pola tekstowe.
+- [`css/footer.css`](css/footer.css) – Stopka strony i globalne media queries.
 
-The design medium is **HTML/CSS/JS** — these are prototypes, not production code. Your job is to **recreate them pixel-perfectly** in whatever technology makes sense for the target codebase (React, Vue, native, whatever fits). Match the visual output; don't copy the prototype's internal structure unless it happens to fit.
+### ⚙️ Skrypty JavaScript (`/js/`)
+- [`js/main.js`](js/main.js) – Obsługa menu mobilnego, akordeonu FAQ, rozwijanej polityki prywatności, paska cookie, efektu spotlight i animacji wejścia (IntersectionObserver).
+- [`js/materials.js`](js/materials.js) – Kopiowanie promptów do schowka, filtrowanie kategorii, modal podglądu, powiadomienia toast.
+- [`js/tests-data.js`](js/tests-data.js) – Słownik pytań, skale punktacji i przedziały interpretacyjne testów (ASRS, GAD-7, PHQ-9, WHO-5).
+- [`js/tests.js`](js/tests.js) – Silnik quizu (przejścia pytań, obliczanie punktów, generowanie raportu PDF do druku).
+- [`js/contact.js`](js/contact.js) – Walidacja formularza kontaktowego i obsługa wysyłki wiadomości.
 
-**Don't render these files in a browser or take screenshots unless the user asks you to.** Everything you need — dimensions, colors, layout rules — is spelled out in the source. Read the HTML and CSS directly; a screenshot won't tell you anything they don't.
+---
 
-## Bundle contents
+## 🚀 Wdrożenie (GitHub Pages)
 
-- `strona-z-kalendarzem-rezerwacji/README.md` — this file
-- `strona-z-kalendarzem-rezerwacji/project/` — the `Strona z kalendarzem rezerwacji` project files (HTML prototypes, assets, components)
+Każdy `git push origin main` automatycznie buduje i publikuje najnowszą wersję strony na GitHub Pages z podpiętą domeną `psychologkacper.pl` (zgodnie z plikiem `CNAME`).
