@@ -1,7 +1,7 @@
-# Kacper Kulesza – Psycholog | Strona internetowa & Baza wiedzy
+# Kacper Kulesza – Psycholog | Strona internetowa
 
 Oficjalny serwis internetowy psychologa Kacpra Kuleszy ([psychologkacper.pl](https://psychologkacper.pl)).
-Serwis zawiera prezentację oferty, kalendarz rezerwacji 15-minutowych konsultacji online (Calendly), interaktywny moduł 4 certyfikowanych testów psychologicznych (ASRS, GAD-7, PHQ-9, WHO-5) z generatorem raportów PDF oraz bazę darmowych materiałów, kart pracy i promptów AI.
+Serwis zawiera prezentację oferty, kalendarz rezerwacji 15-minutowych konsultacji online (Calendly) oraz interaktywny moduł 4 certyfikowanych testów psychologicznych (ASRS, GAD-7, PHQ-9, WHO-5) z generatorem raportów PDF.
 
 ---
 
@@ -12,7 +12,6 @@ Strona została zbudowana w nowoczesnej, modułowej architekturze opartej na czy
 ### 🌐 Podstrony HTML
 - [`index.html`](index.html) – Strona główna: Hero, Dla kogo, O mnie, Jak pracujemy, Cennik, FAQ, Rezerwacja Calendly.
 - [`testy.html`](testy.html) – Centrum testów psychologicznych: interaktywny quiz, wskaźniki punktacji i eksport do PDF.
-- [`materialy.html`](materialy.html) – Baza wiedzy, darmowe karty pracy CBT i prompty AI z natychmiastowym kopiowaniem.
 - [`kontakt.html`](kontakt.html) – Podstrona bezpośredniego kontaktu, formularz wiadomości i dane teleadresowe.
 
 ### 🎨 Style CSS (`/css/`)
@@ -23,13 +22,11 @@ Plik główny [`css/style.css`](css/style.css) importuje dedykowane, lekkie modu
 - [`css/components.css`](css/components.css) – Przyciski CTA (`.btn-cta`), pigułki, pasek cookie (`.cookie-bar`).
 - [`css/sections.css`](css/sections.css) – Sekcje strony głównej (Hero, O mnie, Cennik, FAQ) i reguły RWD.
 - [`css/tests.css`](css/tests.css) – Kafelki testów, widok pytań quizu, okrągłe wskaźniki wyniku, styl raportu PDF.
-- [`css/materials.css`](css/materials.css) – Karty materiałów i promptów, filtry kategorii, okno modalne podglądu, powiadomienia toast.
 - [`css/contact.css`](css/contact.css) – Kafelki kontaktowe, formularz i pola tekstowe.
 - [`css/footer.css`](css/footer.css) – Stopka strony i globalne media queries.
 
 ### ⚙️ Skrypty JavaScript (`/js/`)
 - [`js/main.js`](js/main.js) – Obsługa menu mobilnego, akordeonu FAQ, rozwijanej polityki prywatności, paska cookie, efektu spotlight i animacji wejścia (IntersectionObserver).
-- [`js/materials.js`](js/materials.js) – Kopiowanie promptów do schowka, filtrowanie kategorii, modal podglądu, powiadomienia toast.
 - [`js/tests-data.js`](js/tests-data.js) – Słownik pytań, skale punktacji i przedziały interpretacyjne testów (ASRS, GAD-7, PHQ-9, WHO-5).
 - [`js/tests.js`](js/tests.js) – Silnik quizu (przejścia pytań, obliczanie punktów, generowanie raportu PDF do druku).
 - [`js/contact.js`](js/contact.js) – Walidacja formularza kontaktowego i obsługa wysyłki wiadomości.
