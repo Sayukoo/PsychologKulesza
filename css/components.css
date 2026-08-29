@@ -162,3 +162,41 @@
 .btn-cookie-accept:hover {
   background: var(--color-blue-dark);
 }
+
+/* Glassmorphism Spotlight Cursor Follower Effect */
+.test-preview-card,
+.test-hub-card,
+.price-box-featured,
+.price-box-plain,
+.contact-quick-card,
+.contact-form-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.test-preview-card::before,
+.test-hub-card::before,
+.price-box-featured::before,
+.price-box-plain::before,
+.contact-quick-card::before,
+.contact-form-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(420px circle at var(--mouse-x, -999px) var(--mouse-y, -999px), rgba(28, 134, 238, 0.14), transparent 75%);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+.test-preview-card:hover::before,
+.test-hub-card:hover::before,
+.price-box-featured:hover::before,
+.price-box-plain:hover::before,
+.contact-quick-card:hover::before,
+.contact-form-card:hover::before {
+  opacity: 1;
+}
+
