@@ -251,7 +251,7 @@ function initScrollReveal() {
  */
 function initMaterials() {
   // 1. Copy to Clipboard Buttons
-  document.querySelectorAll('.btn-copy-action').forEach(btn => {
+  document.querySelectorAll('.btn-copy-prompt, .btn-copy-action').forEach(btn => {
     btn.addEventListener('click', async (e) => {
       e.preventDefault();
       const targetId = btn.getAttribute('data-clipboard-target');
@@ -283,7 +283,7 @@ function initMaterials() {
       btn.classList.add('copied');
       btn.innerHTML = `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg> Skopiowano!`;
       
-      showToast('Skopiowano do schowka!');
+      showToast('Skopiowano treść do schowka!');
       
       setTimeout(() => {
         btn.classList.remove('copied');
@@ -293,7 +293,7 @@ function initMaterials() {
   });
 
   // 2. Share / Direct Anchor Link Copy Buttons
-  document.querySelectorAll('.btn-share-link').forEach(btn => {
+  document.querySelectorAll('.btn-share-anchor, .btn-share-link').forEach(btn => {
     btn.addEventListener('click', async (e) => {
       e.preventDefault();
       const anchor = btn.getAttribute('data-anchor') || '';
@@ -342,7 +342,7 @@ function initMaterials() {
   const modalCopyBtn = document.getElementById('modal-copy-btn');
   const modalCloseBtns = document.querySelectorAll('.material-modal-close, #material-modal');
 
-  document.querySelectorAll('.btn-view-material').forEach(btn => {
+  document.querySelectorAll('.btn-view-instruction, .btn-view-material').forEach(btn => {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
       const targetId = btn.getAttribute('data-modal-target');

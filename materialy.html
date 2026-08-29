@@ -173,10 +173,10 @@
       
       <!-- Section Header -->
       <div style="text-align: center; max-width: 68ch; margin: 0 auto;">
-        <span class="section-tag">Do pobrania i skopiowania</span>
+        <span class="section-tag">Baza wiedzy i narzędzi</span>
         <h1 style="font-size: 2.85rem; line-height: 1.1; letter-spacing: -0.035em;">Darmowe materiały i prompty AI</h1>
         <p style="margin-top: 16px; font-size: 1.1rem;">
-          Praktyczne narzędzia, schematy decyzyjne i gotowe prompty do ChatGPT / Claude, o których mówię w moich materiałach wideo. Kopiuj jednym kliknięciem bez zapisywania się.
+          Praktyczne narzędzia psychologiczne, schematy decyzyjne i gotowe prompty do ChatGPT / Claude, o których mówię w moich filmach. Kopiuj jednym kliknięciem bez zapisywania się.
         </p>
       </div>
 
@@ -184,30 +184,51 @@
       <div class="material-filter-bar">
         <button class="material-filter-btn active" data-filter="all">Wszystkie materiały</button>
         <button class="material-filter-btn" data-filter="prompt">⚡ Prompty AI</button>
-        <button class="material-filter-btn" data-filter="sheet">📄 Karty pracy & PDF</button>
-        <button class="material-filter-btn" data-filter="guide">📋 Poradniki & Testy</button>
+        <button class="material-filter-btn" data-filter="sheet">📄 Karty pracy CBT</button>
+        <button class="material-filter-btn" data-filter="guide">📋 Checklisty i poradniki</button>
       </div>
 
       <!-- Materials Grid -->
       <div class="materials-grid">
         
-        <!-- Item 1: Thesis Defense AI Simulator -->
+        <!-- Item 1: Master Thesis Defense AI Simulator -->
         <article id="obrona-magisterki" class="material-card" data-category="prompt">
           <div>
-            <div class="material-header-tags">
-              <span class="material-badge material-badge-ai">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"></path></svg>
-                Prompt AI
-              </span>
-              <span class="material-badge-topic">Studia · Obrona pracy dyplomowej</span>
+            <div class="material-card-top">
+              <div class="material-icon-box">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                  <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+                </svg>
+              </div>
+              <div class="material-badges-group">
+                <span class="material-badge material-badge-ai">⚡ Prompt AI</span>
+                <span class="material-badge-sub">Obrona dyplomowa & Studia</span>
+              </div>
             </div>
             
-            <h2 class="material-title">Symulator obrony pracy magisterskiej i licencjackiej</h2>
+            <h2 class="material-title">Symulator obrony pracy magisterskiej / licencjackiej</h2>
             <p class="material-desc">
-              AI wciela się w dociekliwego członka komisji. Zadaje 3 podchwytliwe pytania (metodologia, wnioski, teoria), a po Twojej odpowiedzi podaje wzorcową, 3-zdaniową wypowiedź.
+              AI wciela się w dociekliwego profesora komisji. Zadaje 3 podchwytliwe pytania z metodologii i wniosków, a po Twojej odpowiedzi podaje wzorcową, 3-zdaniową odpowiedź rozładowującą stres.
             </p>
 
-            <div class="material-code-snippet" id="code-obrona">Jesteś doświadczonym profesorem uniwersyteckim i życzliwym, ale dociekliwym członkiem komisji egzaminacyjnej podczas obrony pracy magisterskiej/licencjackiej. Twoim celem jest przygotowanie mnie do bezstresowej, pewnej i merytorycznej obrony.
+            <div class="material-features-list">
+              <div class="material-feature-item">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>3 podchwytliwe pytania komisji (metodologia, ograniczenia, teoria)</span>
+              </div>
+              <div class="material-feature-item">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Ocena odpowiedzi w skali 1–5 i wzorcowa formuła 3 zdań</span>
+              </div>
+              <div class="material-feature-item">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Gotowy do wklejenia w ChatGPT, Claude lub Gemini</span>
+              </div>
+            </div>
+
+            <!-- Hidden raw text for 1-click clipboard copy -->
+            <div id="code-obrona" style="display: none;">Jesteś doświadczonym profesorem uniwersyteckim i życzliwym, ale dociekliwym członkiem komisji egzaminacyjnej podczas obrony pracy magisterskiej/licencjackiej. Twoim celem jest przygotowanie mnie do bezstresowej, pewnej i merytorycznej obrony.
 
 Oto temat mojej pracy: [Wpisz temat pracy]
 Kierunek / dziedzina: [Wpisz kierunek studiów]
@@ -223,17 +244,17 @@ Zadaj mi 3 najbardziej prawdopodobne i podchwytliwe pytania, jakie może zadać 
 Po moich odpowiedziach oceń każdą z nich w skali 1-5, wskaż ewentualne luki i podaj wzorcową, zwięzłą odpowiedź (maksymalnie 3 zdania), która zrobi świetne wrażenie na komisji i rozładuje stres.</div>
           </div>
 
-          <div class="material-actions">
-            <button class="btn-copy-action" data-clipboard-target="code-obrona">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <div class="material-actions-bar">
+            <button class="btn-copy-prompt" data-clipboard-target="code-obrona">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
               Kopiuj prompt
             </button>
-            <button class="btn-material-secondary btn-view-material" data-modal-target="code-obrona" data-modal-title="Prompt: Symulator obrony pracy magisterskiej / dyplomowej">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
-              Podgląd
+            <button class="btn-view-instruction" data-modal-target="code-obrona" data-modal-title="Prompt AI: Symulator obrony pracy magisterskiej / licencjackiej">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+              Instrukcja
             </button>
-            <button class="btn-share-link" data-anchor="#obrona-magisterki" aria-label="Kopiuj link do tego materiału" title="Kopiuj link do wklejenia pod wideo">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+            <button class="btn-share-anchor" data-anchor="#obrona-magisterki" aria-label="Kopiuj link do materiału" title="Kopiuj link do wklejenia w bio lub komentarzu">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
             </button>
           </div>
         </article>
@@ -241,20 +262,40 @@ Po moich odpowiedziach oceń każdą z nich w skali 1-5, wskaż ewentualne luki 
         <!-- Item 2: Procrastination Breaker AI Prompt -->
         <article id="prokrastynacja" class="material-card" data-category="prompt">
           <div>
-            <div class="material-header-tags">
-              <span class="material-badge material-badge-ai">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"></path></svg>
-                Prompt AI
-              </span>
-              <span class="material-badge-topic">Produktywność · Paraliż zadaniowy</span>
+            <div class="material-card-top">
+              <div class="material-icon-box">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                </svg>
+              </div>
+              <div class="material-badges-group">
+                <span class="material-badge material-badge-ai">⚡ Prompt AI</span>
+                <span class="material-badge-sub">ADHD & Produktywność</span>
+              </div>
             </div>
             
             <h2 class="material-title">Asystent rozbijania prokrastynacji (Metoda 5 minut)</h2>
             <p class="material-desc">
-              Gdy zadanie Cię przytłacza i nie możesz zacząć. Prompt rozbija je na 3 mikrokroki o zerowym oporze wejścia i neutralizuje lęk poznawczy.
+              Gdy zadanie Cię przytłacza i nie wiesz, jak ruszyć z miejsca. Prompt rozbija opór na 3 mikrokroki i natychmiast koryguje perfekcjonizm poznawczy.
             </p>
 
-            <div class="material-code-snippet" id="code-prokrastynacja">Działasz jako psychologiczny asystent produktywności oparty na technikach CBT i redukcji paraliżu zadaniowego.
+            <div class="material-features-list">
+              <div class="material-feature-item">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Rozbicie zadania na 3 mikrokroki trwające poniżej 5 minut</span>
+              </div>
+              <div class="material-feature-item">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Start w 120 sekund bez zbędnego wysiłku decyzyjnego</span>
+              </div>
+              <div class="material-feature-item">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Neutralizacja lęku przed porażką techniką CBT</span>
+              </div>
+            </div>
+
+            <!-- Hidden raw text for 1-click clipboard copy -->
+            <div id="code-prokrastynacja" style="display: none;">Działasz jako psychologiczny asystent produktywności oparty na technikach CBT i redukcji paraliżu zadaniowego.
 
 Moje zadanie, które odkładam: [Wpisz zadanie, np. dokończenie rozdziału pracy / trudny mail / rozliczenie dokumentów]
 Główne źródło mojego oporu: [Wpisz np. za dużo tego / boję się, że zrobię źle / nie wiem od czego zacząć]
@@ -265,17 +306,17 @@ Wykonaj dla mnie 3 rzeczy w maksymalnie zwięzłej formie:
 3. Podaj jedno zwięzłe zdanie korygujące moje myślenie katastroficzne lub perfekcjonizm.</div>
           </div>
 
-          <div class="material-actions">
-            <button class="btn-copy-action" data-clipboard-target="code-prokrastynacja">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <div class="material-actions-bar">
+            <button class="btn-copy-prompt" data-clipboard-target="code-prokrastynacja">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
               Kopiuj prompt
             </button>
-            <button class="btn-material-secondary btn-view-material" data-modal-target="code-prokrastynacja" data-modal-title="Prompt: Asystent rozbijania prokrastynacji">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
-              Podgląd
+            <button class="btn-view-instruction" data-modal-target="code-prokrastynacja" data-modal-title="Prompt AI: Asystent rozbijania prokrastynacji">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+              Instrukcja
             </button>
-            <button class="btn-share-link" data-anchor="#prokrastynacja" aria-label="Kopiuj link do tego materiału" title="Kopiuj link do wklejenia pod wideo">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+            <button class="btn-share-anchor" data-anchor="#prokrastynacja" aria-label="Kopiuj link do materiału" title="Kopiuj link do wklejenia w bio lub komentarzu">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
             </button>
           </div>
         </article>
@@ -283,20 +324,43 @@ Wykonaj dla mnie 3 rzeczy w maksymalnie zwięzłej formie:
         <!-- Item 3: Decision Paralysis 5 Questions Worksheet -->
         <article id="paraliz-decyzyjny" class="material-card" data-category="sheet">
           <div>
-            <div class="material-header-tags">
-              <span class="material-badge material-badge-sheet">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-                Karta pracy
-              </span>
-              <span class="material-badge-topic">Podejmowanie decyzji · Overthinking</span>
+            <div class="material-card-top">
+              <div class="material-icon-box" style="color: var(--color-orange); background: rgba(255, 122, 41, 0.09); border-color: rgba(255, 122, 41, 0.2);">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 3v18"></path>
+                  <rect x="3" y="6" width="6" height="5" rx="1"></rect>
+                  <rect x="15" y="13" width="6" height="5" rx="1"></rect>
+                  <path d="M3 6l9-3 9 3"></path>
+                </svg>
+              </div>
+              <div class="material-badges-group">
+                <span class="material-badge material-badge-sheet">📄 Karta pracy CBT</span>
+                <span class="material-badge-sub">Podejmowanie decyzji</span>
+              </div>
             </div>
             
             <h2 class="material-title">5 pytań rozbrajających paraliż decyzyjny</h2>
             <p class="material-desc">
-              Prosty, 1-stronicowy schemat pytań odcinający gonitwę myśli. Sprawdza odwracalność decyzji, bilans realnego ryzyka i regułę 10/10/10.
+              1-stronicowy schemat pytań odcinający gonitwę myśli. Sprawdza odwracalność wyboru (drzwi 1- i 2-kierunkowe), realny najgorszy scenariusz i regułę 10/10/10.
             </p>
 
-            <div class="material-code-snippet" id="code-decyzje">ARKUSZ: 5 PYTAŃ ROZBRAJAJĄCYCH PARALIŻ DECYZYJNY
+            <div class="material-features-list">
+              <div class="material-feature-item">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Test odwracalności wyboru (drzwi 1- i 2-kierunkowe)</span>
+              </div>
+              <div class="material-feature-item">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Plan ratunkowy na najgorszy scenariusz w 24 godziny</span>
+              </div>
+              <div class="material-feature-item">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Reguła perspektywy czasu 10 dni / 10 miesięcy / 10 lat</span>
+              </div>
+            </div>
+
+            <!-- Hidden raw text for 1-click clipboard copy -->
+            <div id="code-decyzje" style="display: none;">ARKUSZ: 5 PYTAŃ ROZBRAJAJĄCYCH PARALIŻ DECYZYJNY
 
 Dylemat, przed którym stoisz: [Zapisz w 1 zdaniu]
 
@@ -307,17 +371,17 @@ Dylemat, przed którym stoisz: [Zapisz w 1 zdaniu]
 5. ROZMOWA Z PRZYJACIELEM: Co doradził(a)bym w tej sytuacji zaufanemu przyjacielowi, patrząc z zewnątrz bez emocjonalnego uwikłania?</div>
           </div>
 
-          <div class="material-actions">
-            <button class="btn-copy-action" data-clipboard-target="code-decyzje">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-              Kopiuj schemat
+          <div class="material-actions-bar">
+            <button class="btn-copy-prompt" data-clipboard-target="code-decyzje">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+              Kopiuj arkusz
             </button>
-            <button class="btn-material-secondary btn-view-material" data-modal-target="code-decyzje" data-modal-title="Karta pracy: 5 pytań rozbrajających paraliż decyzyjny">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+            <button class="btn-view-instruction" data-modal-target="code-decyzje" data-modal-title="Karta pracy: 5 pytań rozbrajających paraliż decyzyjny">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
               Podgląd
             </button>
-            <button class="btn-share-link" data-anchor="#paraliz-decyzyjny" aria-label="Kopiuj link do tego materiału" title="Kopiuj link do wklejenia pod wideo">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+            <button class="btn-share-anchor" data-anchor="#paraliz-decyzyjny" aria-label="Kopiuj link do materiału" title="Kopiuj link do wklejenia w bio lub komentarzu">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
             </button>
           </div>
         </article>
@@ -325,20 +389,42 @@ Dylemat, przed którym stoisz: [Zapisz w 1 zdaniu]
         <!-- Item 4: Consultation Prep Guide -->
         <article id="przygotowanie-konsultacja" class="material-card" data-category="guide">
           <div>
-            <div class="material-header-tags">
-              <span class="material-badge material-badge-guide">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"></path><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
-                Poradnik
-              </span>
-              <span class="material-badge-topic">Konsultacje psychologiczne</span>
+            <div class="material-card-top">
+              <div class="material-icon-box" style="color: #047857; background: rgba(16, 185, 129, 0.09); border-color: rgba(16, 185, 129, 0.2);">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
+                  <rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect>
+                  <path d="M9 14l2 2 4-4"></path>
+                </svg>
+              </div>
+              <div class="material-badges-group">
+                <span class="material-badge material-badge-guide">📋 Checklista</span>
+                <span class="material-badge-sub">Konsultacje psychologiczne</span>
+              </div>
             </div>
             
             <h2 class="material-title">Jak przygotować się do pierwszej konsultacji</h2>
             <p class="material-desc">
-              4 konkretne punkty, które warto przemyśleć przed spotkaniem, aby już w 60 minut ułożyć plan działania i wyciągnąć 100% z sesji.
+              4 kluczowe punkty, które warto przemyśleć przed spotkaniem, aby już w 60 minut precyzyjnie nazwać problem i ułożyć konkretny plan działania.
             </p>
 
-            <div class="material-code-snippet" id="code-konsultacja">CHECKLISTA PRZED KONSULTACJĄ PSYCHOLOGICZNĄ (60 MIN):
+            <div class="material-features-list">
+              <div class="material-feature-item">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Wyodrębnienie jednego głównego punktu ciężkości</span>
+              </div>
+              <div class="material-feature-item">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Analiza dotychczasowych prób i barier</span>
+              </div>
+              <div class="material-feature-item">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>100% wykorzystania 60 minut bez straty czasu</span>
+              </div>
+            </div>
+
+            <!-- Hidden raw text for 1-click clipboard copy -->
+            <div id="code-konsultacja" style="display: none;">CHECKLISTA PRZED KONSULTACJĄ PSYCHOLOGICZNĄ (60 MIN):
 
 1. GŁÓWNY PUNKT CIĘŻKOŚCI: Jaki jest jeden konkretny problem lub sytuacja, którą chcesz rozpracować w pierwszej kolejności?
 2. DOTYCHCZASOWE PRÓBY: Co już próbowałeś/aś zrobić w tej sprawie i dlaczego dotychczasowe rozwiązania nie zadziałały?
@@ -346,17 +432,17 @@ Dylemat, przed którym stoisz: [Zapisz w 1 zdaniu]
 4. PYTANIA KLUCZOWE: Jakie są 2-3 najważniejsze pytania, na które chcesz uzyskać psychologiczną lub analityczną odpowiedź?</div>
           </div>
 
-          <div class="material-actions">
-            <button class="btn-copy-action" data-clipboard-target="code-konsultacja">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <div class="material-actions-bar">
+            <button class="btn-copy-prompt" data-clipboard-target="code-konsultacja">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
               Kopiuj checklistę
             </button>
-            <button class="btn-material-secondary btn-view-material" data-modal-target="code-konsultacja" data-modal-title="Checklista: Przygotowanie do konsultacji psychologicznej">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+            <button class="btn-view-instruction" data-modal-target="code-konsultacja" data-modal-title="Checklista: Przygotowanie do konsultacji psychologicznej">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
               Podgląd
             </button>
-            <button class="btn-share-link" data-anchor="#przygotowanie-konsultacja" aria-label="Kopiuj link do tego materiału" title="Kopiuj link do wklejenia pod wideo">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+            <button class="btn-share-anchor" data-anchor="#przygotowanie-konsultacja" aria-label="Kopiuj link do materiału" title="Kopiuj link do wklejenia w bio lub komentarzu">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
             </button>
           </div>
         </article>
@@ -364,13 +450,13 @@ Dylemat, przed którym stoisz: [Zapisz w 1 zdaniu]
       </div>
 
       <!-- Bottom banner: Certified Psychological Tests -->
-      <div style="margin-top: 50px; padding: 28px 30px; border-radius: 20px; border: 1px solid var(--color-blue-border); background: var(--color-bg-card); backdrop-filter: blur(8px); display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap;">
+      <div style="margin-top: 50px; padding: 30px 32px; border-radius: 22px; border: 1px solid var(--color-blue-border); background: var(--color-bg-card); backdrop-filter: blur(10px); display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; box-shadow: var(--shadow-card);">
         <div style="max-width: 58ch;">
           <span class="section-tag" style="margin-bottom: 4px;">Samoocena online</span>
-          <h2 style="font-size: 1.4rem; letter-spacing: -0.02em;">Szukasz certyfikowanych testów psychologicznych?</h2>
-          <p style="font-size: 0.95rem; margin-top: 6px;">Sprawdź testy samooceny ADHD u dorosłych (ASRS-v1.1), lęku (GAD-7), nastroju (PHQ-9) oraz dobrostanu (WHO-5). Wynik natychmiast na ekranie.</p>
+          <h2 style="font-size: 1.45rem; letter-spacing: -0.02em;">Szukasz certyfikowanych testów psychologicznych?</h2>
+          <p style="font-size: 0.95rem; margin-top: 6px;">Sprawdź bezpłatne kwestionariusze samooceny: ADHD u dorosłych (ASRS-v1.1), lęk (GAD-7), nastrój (PHQ-9) oraz dobrostan (WHO-5). Wynik natychmiast na ekranie.</p>
         </div>
-        <a href="testy.html" class="btn-outline" style="padding: 12px 22px;">
+        <a href="testy.html" class="btn-outline" style="padding: 12px 24px;">
           Przejdź do testów
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13"></path><path d="M13 6l6 6-6 6"></path></svg>
         </a>
@@ -393,8 +479,8 @@ Dylemat, przed którym stoisz: [Zapisz w 1 zdaniu]
         <div id="modal-material-code" class="material-full-code"></div>
       </div>
       <div class="material-modal-footer">
-        <button class="btn-material-secondary material-modal-close">Zamknij</button>
-        <button id="modal-copy-btn" class="btn-copy-action">
+        <button class="btn-material-secondary material-modal-close" style="padding: 10px 18px;">Zamknij</button>
+        <button id="modal-copy-btn" class="btn-copy-prompt" style="flex: 0 0 auto; padding: 10px 22px;">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
           Kopiuj treść
         </button>
