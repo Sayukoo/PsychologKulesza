@@ -22,6 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initBackToTop();
   initScrollSpy();
   initStepsLine();
+  initCopyButtons();
 });
 
 /* ==========================================================================
@@ -470,3 +471,72 @@ function initStepsLine() {
   observer.observe(line.parentElement || line);
   window.setTimeout(() => line.classList.add('is-drawn'), 4000);
 }
+
+/* ==========================================================================
+   Copy to clipboard utility (materials, prompts, snippets)
+   ========================================================================== */
+
+function initCopyButtons() {
+  const copyButtons = document.querySelectorAll('[data-copy-target]');
+  if (!copyButtons.length) return;
+
+  copyButtons.forEach(btn => {
+    btn.addEventListener('click', async () => {
+      const targetSelector = btn.getAttribute('data-copy-target');
+      const targetEl = document.querySelector(targetSelector);
+      if (!targetEl) return;
+
+      const textToCopy = targetEl.value !== undefined ? targetEl.value : (targetEl.innerText || targetEl.textContent);
+
+      let success = false;
+      try {
+        if (navigator.clipboard && window.isSecureContext) {
+          await navigator.clipboard.writeText(textToCopy.trim());
+          success = true;
+        } else {
+          throw new Error('Clipboard API unvailable or insecure context');
+        }
+      } catch (err) {
+        // Fallback for older browsers or file:// protocol
+        try {
+          const textarea = document.createElement('textarea');
+          textarea.value = textToCopy.trim();
+          textarea.setAttribute('readonly', '');
+          textarea.style.position = 'fixed';
+          textarea.style.left = '-9999px';
+          textarea.style.top = '-9999px';
+          document.body.appendChild(textarea);
+          textarea.focus();
+          textarea.select();
+          success = document.execCommand('copy');
+          document.body.removeChild(textarea);
+        } catch (fallbackErr) {
+          console.error('Kopiowanie nie powiodło się:', fallbackErr);
+        }
+      }
+
+      if (success) {
+        const relatedBtns = document.querySelectorAll(`[data-copy-target="${targetSelector}"]`);
+        relatedBtns.forEach(b => {
+          if (!b.hasAttribute('data-original-html')) {
+            b.setAttribute('data-original-html', b.innerHTML);
+          }
+          b.classList.add('is-copied');
+          b.innerHTML = `
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            <span>Skopiowano!</span>
+          `;
+
+          if (b._copyTimer) clearTimeout(b._copyTimer);
+          b._copyTimer = setTimeout(() => {
+            b.classList.remove('is-copied');
+            b.innerHTML = b.getAttribute('data-original-html');
+          }, 2400);
+        });
+      }
+    });
+  });
+}
+
