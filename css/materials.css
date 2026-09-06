@@ -3,7 +3,7 @@
    ========================================================================== */
 
 .materials-hub-container {
-  max-width: 860px;
+  max-width: 960px;
   margin: 0 auto;
   text-align: center;
   position: relative;
@@ -11,234 +11,273 @@
 }
 
 /* --------------------------------------------------------------------------
-   Material Card (Main featured resource)
+   Materials Grid & Cards
    -------------------------------------------------------------------------- */
+.materials-grid {
+  margin-top: 44px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+  text-align: left;
+}
+
 .material-card {
-  margin-top: 36px;
-  padding: 36px 36px 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  padding: 28px 26px 24px;
   border-radius: var(--radius-2xl);
+  cursor: pointer;
+  height: 100%;
   border: 1.5px solid var(--color-blue-border);
   background: var(--color-bg-card);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   box-shadow: var(--shadow-card);
-  text-align: left;
+  transition: transform 0.32s var(--ease-out-expo), border-color 0.28s ease, box-shadow 0.28s ease;
   position: relative;
   overflow: hidden;
-  transition: transform 0.32s var(--ease-out-expo), border-color 0.28s ease, box-shadow 0.28s ease;
-  animation: slideUpIn 0.65s var(--ease-out-expo) 0.05s both;
+  animation: slideUpIn 0.6s var(--ease-out-expo) both;
 }
 
 .material-card:hover {
-  transform: translateY(-3px);
   border-color: var(--color-blue);
+  transform: translateY(-5px);
   box-shadow: var(--shadow-card-hover);
+}
+
+.material-card:focus-visible {
+  outline: 2px solid var(--color-blue);
+  outline-offset: 3px;
 }
 
 .material-card-top {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-bottom: 18px;
+  gap: 14px;
+  width: 100%;
 }
 
-.material-tags {
+.material-card-tags {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
   gap: 8px;
 }
 
-.material-card h2 {
-  font-size: 1.7rem;
-  letter-spacing: -0.025em;
+.material-card h3 {
+  margin-top: 20px;
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
   color: var(--color-text-main);
-  line-height: 1.25;
-  margin: 0 0 10px;
+  line-height: 1.3;
 }
 
-.material-card-desc {
-  font-size: 1rem;
+.material-card p {
+  margin-top: 10px;
+  font-size: 0.9375rem;
   line-height: 1.6;
   color: var(--color-text-muted);
-  margin: 0 0 24px;
+}
+
+.material-card-footer {
+  margin-top: auto;
+  padding-top: 24px;
+  width: 100%;
+}
+
+.material-cta-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--color-blue);
+  transition: gap 0.22s ease, color 0.22s ease;
+}
+
+.material-cta-link svg {
+  transition: transform 0.22s var(--ease-out-back);
+}
+
+.material-card:hover .material-cta-link {
+  color: var(--color-blue-dark);
+}
+
+.material-card:hover .material-cta-link svg {
+  transform: translateX(5px);
+}
+
+.material-card:hover .glyph-circle {
+  transform: scale(1.08) rotate(-8deg);
+  background: rgba(28, 134, 238, 0.16);
+}
+
+/* Upcoming (disabled/placeholder) card */
+.material-card-upcoming {
+  cursor: default;
+  border-style: dashed;
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.material-card-upcoming:hover {
+  transform: none;
+  box-shadow: var(--shadow-card);
+  border-color: var(--color-blue-border);
+}
+
+.material-card-upcoming .glyph-circle {
+  background: rgba(255, 122, 41, 0.09);
+  color: var(--color-orange);
 }
 
 /* --------------------------------------------------------------------------
-   Quick Steps (How to use)
+   Modal Dialog
    -------------------------------------------------------------------------- */
-.material-steps {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
-  margin-bottom: 24px;
-}
-
-.material-step {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  padding: 12px 14px;
-  background: rgba(28, 134, 238, 0.04);
-  border: 1px solid rgba(28, 134, 238, 0.16);
-  border-radius: var(--radius-md);
-  transition: background 0.2s ease, border-color 0.2s ease;
-}
-
-.material-step:hover {
-  background: rgba(28, 134, 238, 0.07);
-  border-color: rgba(28, 134, 238, 0.3);
-}
-
-.material-step-num {
-  width: 22px;
-  height: 22px;
-  border-radius: 50%;
-  background: var(--color-blue);
-  color: #FFFFFF;
-  font-size: 0.75rem;
-  font-weight: 800;
+.material-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background: rgba(15, 23, 42, 0.58);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-shrink: 0;
-  margin-top: 1px;
+  padding: 20px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.26s ease, visibility 0.26s ease;
 }
 
-.material-step-text {
-  font-size: 0.8125rem;
-  font-weight: 600;
-  line-height: 1.4;
-  color: var(--color-text-main);
+.material-modal-backdrop.is-open {
+  opacity: 1;
+  visibility: visible;
 }
 
-/* --------------------------------------------------------------------------
-   Prompt Box & Interactive Code Viewer
-   -------------------------------------------------------------------------- */
-.prompt-box {
-  border: 1px solid var(--color-blue-border);
-  border-radius: var(--radius-lg);
-  background: rgba(255, 255, 255, 0.92);
+.material-modal-box {
+  width: 100%;
+  max-width: 740px;
+  max-height: 88vh;
+  display: flex;
+  flex-direction: column;
+  background: #FFFFFF;
+  border-radius: var(--radius-2xl);
+  border: 1.5px solid var(--color-blue-border);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.24);
   overflow: hidden;
-  box-shadow: 0 4px 20px rgba(28, 134, 238, 0.05);
+  transform: scale(0.95) translateY(14px);
+  transition: transform 0.26s var(--ease-out-back);
 }
 
-.prompt-box-header {
+.material-modal-backdrop.is-open .material-modal-box {
+  transform: scale(1) translateY(0);
+}
+
+.material-modal-header {
+  padding: 22px 26px;
+  border-bottom: 1px solid rgba(28, 134, 238, 0.14);
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  background: #FAFCFE;
+}
+
+.material-modal-close {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid var(--color-blue-border);
+  background: #FFFFFF;
+  font-size: 1.15rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-muted);
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.material-modal-close:hover {
+  background: var(--color-blue);
+  color: #FFFFFF;
+  border-color: var(--color-blue);
+  transform: scale(1.08) rotate(90deg);
+}
+
+.material-modal-body {
+  padding: 22px 26px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.modal-instructions {
+  background: rgba(28, 134, 238, 0.04);
+  border: 1px solid rgba(28, 134, 238, 0.16);
+  border-radius: 14px;
+  padding: 14px 18px;
+  font-size: 0.875rem;
+  color: var(--color-text-main);
+  margin-bottom: 18px;
+}
+
+.modal-instructions strong {
+  color: var(--color-blue-dark);
+  display: block;
+  margin-bottom: 6px;
+}
+
+.modal-instructions ol {
+  margin: 0;
+  padding-left: 18px;
+  line-height: 1.55;
+}
+
+.modal-instructions li {
+  margin-bottom: 4px;
+}
+
+.modal-instructions code {
+  background: rgba(255, 122, 41, 0.12);
+  color: var(--color-orange-dark);
+  padding: 1px 6px;
+  border-radius: 4px;
+  font-size: 0.8125rem;
+  font-weight: 700;
+}
+
+.modal-prompt-wrapper {
+  border: 1px solid var(--color-blue-border);
+  border-radius: 14px;
+  background: #F8FAFC;
+  overflow: hidden;
+}
+
+.modal-prompt-topbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 11px 18px;
+  padding: 10px 16px;
   background: rgba(28, 134, 238, 0.06);
   border-bottom: 1px solid var(--color-blue-border);
 }
 
-.prompt-box-title {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 0.8125rem;
-  font-weight: 700;
-  color: var(--color-blue-dark);
-}
-
-.prompt-box-title svg {
-  color: var(--color-blue);
-  flex-shrink: 0;
-}
-
-.prompt-code-view {
-  padding: 22px 24px;
-  max-height: 380px;
-  overflow-y: auto;
-  font-size: 0.875rem;
-  line-height: 1.68;
-  color: var(--color-text-main);
-  background: #FCFDFF;
-  position: relative;
-}
-
-.prompt-code-view::-webkit-scrollbar {
-  width: 6px;
-}
-.prompt-code-view::-webkit-scrollbar-track {
-  background: rgba(28, 134, 238, 0.04);
-}
-.prompt-code-view::-webkit-scrollbar-thumb {
-  background: rgba(28, 134, 238, 0.24);
-  border-radius: 999px;
-}
-.prompt-code-view::-webkit-scrollbar-thumb:hover {
-  background: var(--color-blue);
-}
-
-.prompt-p {
-  margin: 0 0 12px;
-}
-
-.prompt-heading {
-  margin: 16px 0 6px;
-  color: var(--color-blue-dark);
-  font-size: 0.9rem;
-}
-
-.prompt-list {
-  margin: 0 0 14px;
-  padding-left: 20px;
-}
-
-.prompt-list li {
-  margin-bottom: 6px;
-}
-
-.prompt-divider {
-  height: 1px;
-  background: var(--color-blue-border);
-  margin: 18px 0 14px;
-}
-
-.prompt-var {
-  display: inline-block;
-  padding: 1px 7px;
-  border-radius: 6px;
-  background: rgba(255, 122, 41, 0.12);
-  color: var(--color-orange-dark);
-  border: 1px solid rgba(255, 122, 41, 0.3);
-  font-weight: 700;
-  font-size: 0.8125rem;
-  white-space: nowrap;
-}
-
-/* Prompt Box Footer */
-.prompt-box-footer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 14px;
-  padding: 14px 18px;
-  background: rgba(28, 134, 238, 0.03);
-  border-top: 1px solid rgba(28, 134, 238, 0.12);
-}
-
-.prompt-compat {
+.modal-prompt-label {
   display: flex;
   align-items: center;
   gap: 7px;
   font-size: 0.8125rem;
-  color: var(--color-text-muted);
+  font-weight: 700;
+  color: var(--color-blue-dark);
 }
 
-.prompt-compat svg {
-  color: #10B981;
-  flex-shrink: 0;
-}
-
-/* --------------------------------------------------------------------------
-   Copy Buttons & Feedback State
-   -------------------------------------------------------------------------- */
-.btn-copy-sm {
+.btn-copy-modal {
   display: inline-flex;
   align-items: center;
   gap: 6px;
@@ -250,114 +289,62 @@
   color: #FFFFFF;
   border: none;
   cursor: pointer;
-  transition: background var(--dur-fast) ease, transform var(--dur-fast) var(--ease-out-back), box-shadow var(--dur-fast) ease;
+  transition: all 0.2s ease;
 }
 
-.btn-copy-sm:hover {
+.btn-copy-modal:hover {
   background: var(--color-blue-dark);
   transform: translateY(-1px);
-  box-shadow: 0 6px 16px rgba(28, 134, 238, 0.22);
 }
 
-.btn-copy-sm:active,
-.btn-cta:active {
-  transform: translateY(0) scale(0.98);
-}
-
-.btn-copy-sm.is-copied,
+.btn-copy-modal.is-copied,
 .btn-cta.is-copied {
   background: #10B981 !important;
   color: #FFFFFF !important;
-  box-shadow: 0 6px 18px rgba(16, 185, 129, 0.35) !important;
+  box-shadow: 0 4px 14px rgba(16, 185, 129, 0.35) !important;
 }
 
-/* --------------------------------------------------------------------------
-   Upcoming Materials Card
-   -------------------------------------------------------------------------- */
-.materials-upcoming-card {
-  margin-top: 32px;
-  padding: 24px 28px;
-  border-radius: var(--radius-xl);
-  border: 1.5px dashed var(--color-blue-border);
-  background: rgba(255, 255, 255, 0.65);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 18px;
-  text-align: left;
-  transition: border-color 0.28s ease, transform 0.28s ease;
-}
-
-.materials-upcoming-card:hover {
-  border-color: var(--color-blue);
-  transform: translateY(-2px);
-}
-
-.materials-upcoming-info {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  max-width: 480px;
-}
-
-.materials-upcoming-icon {
-  width: 44px;
-  height: 44px;
-  border-radius: 12px;
-  background: rgba(28, 134, 238, 0.08);
-  border: 1px solid var(--color-blue-border);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--color-blue);
-  flex-shrink: 0;
-}
-
-.materials-upcoming-info h3 {
-  font-size: 1.05rem;
-  font-weight: 700;
+.modal-prompt-pre {
+  padding: 18px;
+  max-height: 280px;
+  overflow-y: auto;
+  font-family: var(--font-main);
+  font-size: 0.8125rem;
+  line-height: 1.62;
   color: var(--color-text-main);
-  margin: 0 0 4px;
-}
-
-.materials-upcoming-info p {
-  font-size: 0.875rem;
-  line-height: 1.5;
-  color: var(--color-text-muted);
+  white-space: pre-wrap;
+  word-break: break-word;
   margin: 0;
+  background: #FCFDFF;
 }
 
-.materials-upcoming-pills {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
+.modal-prompt-pre::-webkit-scrollbar {
+  width: 6px;
 }
-
-.materials-pill-sm {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 6px 12px;
+.modal-prompt-pre::-webkit-scrollbar-track {
+  background: rgba(28, 134, 238, 0.03);
+}
+.modal-prompt-pre::-webkit-scrollbar-thumb {
+  background: rgba(28, 134, 238, 0.22);
   border-radius: 999px;
-  font-size: 0.78125rem;
-  font-weight: 600;
-  border: 1px solid var(--color-blue-border);
-  background: rgba(255, 255, 255, 0.85);
-  color: var(--color-text-main);
-  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+.modal-prompt-pre::-webkit-scrollbar-thumb:hover {
+  background: var(--color-blue);
 }
 
-.materials-pill-sm:hover {
-  transform: translateY(-2px);
-  border-color: var(--color-blue);
+.material-modal-footer {
+  padding: 16px 26px;
+  border-top: 1px solid rgba(28, 134, 238, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  background: #FAFCFE;
 }
 
 .materials-actions {
-  margin-top: 36px;
-  padding-top: 24px;
+  margin-top: 40px;
+  padding-top: 26px;
   border-top: 1px solid rgba(28, 134, 238, 0.14);
   width: 100%;
   display: flex;
@@ -371,39 +358,43 @@
    Responsive
    -------------------------------------------------------------------------- */
 @media (max-width: 768px) {
-  .material-card {
-    padding: 24px 18px 22px;
-    border-radius: var(--radius-xl);
-  }
-
-  .material-card h2 {
-    font-size: 1.35rem;
-  }
-
-  .material-steps {
+  .materials-grid {
     grid-template-columns: 1fr;
-    gap: 8px;
+    gap: 16px;
+    margin-top: 32px;
   }
 
-  .prompt-code-view {
-    padding: 16px 14px;
-    max-height: 300px;
-    font-size: 0.8125rem;
+  .material-card {
+    padding: 22px 20px;
   }
 
-  .prompt-box-footer {
-    flex-direction: column;
-    align-items: stretch;
+  .material-card h3 {
+    font-size: 1.2rem;
   }
 
-  .prompt-box-footer .btn-cta {
+  .material-modal-box {
+    max-height: 94vh;
+  }
+
+  .material-modal-header {
+    padding: 18px 20px;
+  }
+
+  .material-modal-body {
+    padding: 18px 20px;
+  }
+
+  .modal-prompt-pre {
+    max-height: 220px;
+  }
+
+  .material-modal-footer {
+    padding: 14px 20px;
+    flex-direction: column-reverse;
+  }
+
+  .material-modal-footer button {
     width: 100%;
     justify-content: center;
-  }
-
-  .materials-upcoming-card {
-    padding: 20px 18px;
-    flex-direction: column;
-    align-items: flex-start;
   }
 }

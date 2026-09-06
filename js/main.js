@@ -23,6 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollSpy();
   initStepsLine();
   initCopyButtons();
+  initMaterialModal();
 });
 
 /* ==========================================================================
@@ -539,4 +540,62 @@ function initCopyButtons() {
     });
   });
 }
+
+/* ==========================================================================
+   Materials Modal Dialog (Open, Close, Keyboard Navigation)
+   ========================================================================== */
+
+function initMaterialModal() {
+  const openBtns = document.querySelectorAll('[data-open-modal]');
+  const closeBtns = document.querySelectorAll('[data-close-modal]');
+
+  if (!openBtns.length) return;
+
+  const openModal = (targetId) => {
+    const modal = document.querySelector(targetId);
+    if (!modal) return;
+    modal.classList.add('is-open');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  };
+
+  const closeModal = (modal) => {
+    if (!modal) return;
+    modal.classList.remove('is-open');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  };
+
+  openBtns.forEach(btn => {
+    const target = btn.getAttribute('data-open-modal');
+    btn.addEventListener('click', () => openModal(target));
+    btn.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        openModal(target);
+      }
+    });
+  });
+
+  closeBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const modal = btn.closest('.material-modal-backdrop');
+      closeModal(modal);
+    });
+  });
+
+  document.querySelectorAll('.material-modal-backdrop').forEach(backdrop => {
+    backdrop.addEventListener('click', (e) => {
+      if (e.target === backdrop) closeModal(backdrop);
+    });
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      const openModalEl = document.querySelector('.material-modal-backdrop.is-open');
+      if (openModalEl) closeModal(openModalEl);
+    }
+  });
+}
+
 

@@ -21,7 +21,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css?v=2.2">
+  <link rel="stylesheet" href="css/materials.css?v=2.2">
 </head>
 <body style="min-height: 100vh; display: flex; flex-direction: column;">
 
@@ -119,163 +120,59 @@
         Praktyczne narzędzia edukacyjne, prompty AI oraz karty pracy wspierające skuteczną naukę i przygotowanie do egzaminów.
       </p>
 
-      <!-- Material Card: Prompt AI pod obronę pracy -->
-      <article class="material-card">
-        <div class="material-card-top">
-          <div class="material-tags">
-            <span class="tag-pill">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
-              Egzamin dyplomowy &amp; Obrona
-            </span>
-            <span class="tag-pill tag-pill-orange">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
-              Prompt AI
-            </span>
-          </div>
-
-          <button type="button" class="btn-copy-sm" data-copy-target="#defense-prompt-raw" aria-label="Skopiuj prompt do schowka">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-            <span>Kopiuj prompt</span>
-          </button>
-        </div>
-
-        <h2>Prompt AI: Audiobook do obrony pracy licencjackiej i magisterskiej</h2>
-        <p class="material-card-desc">
-          Zmienia sztuczną inteligencję w akademicki duet edukacyjny. Wklej do Claude lub ChatGPT ze swoimi materiałami, aby stworzyć angażujący dialog tłumaczący Twoje pytania egzaminacyjne krok po kroku.
-        </p>
-
-        <!-- 3 Quick steps -->
-        <div class="material-steps">
-          <div class="material-step">
-            <span class="material-step-num">1</span>
-            <span class="material-step-text">Skopiuj poniższy prompt jednym kliknięciem.</span>
-          </div>
-          <div class="material-step">
-            <span class="material-step-num">2</span>
-            <span class="material-step-text">Wklej do Claude lub ChatGPT razem z plikiem notatek.</span>
-          </div>
-          <div class="material-step">
-            <span class="material-step-num">3</span>
-            <span class="material-step-text">Uzupełnij na dole swoje imię, kierunek i treść pytania.</span>
-          </div>
-        </div>
-
-        <!-- Prompt Viewer Box -->
-        <div class="prompt-box">
-          <div class="prompt-box-header">
-            <div class="prompt-box-title">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5"></polyline><line x1="12" y1="19" x2="20" y2="19"></line></svg>
-              <span>Treść promptu akademickiego</span>
+      <!-- Materials Grid (Compact Tiles) -->
+      <div class="materials-grid">
+        
+        <!-- Tile 1: Prompt AI pod obronę (Clickable -> Opens Modal) -->
+        <div class="material-card" role="button" tabindex="0" data-open-modal="#defense-prompt-modal" aria-haspopup="dialog" aria-label="Otwórz prompt AI: Audiobook do obrony dyplomowej">
+          <div class="material-card-top">
+            <div class="glyph-circle">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#1C86EE" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 18v-6a9 9 0 0 1 18 0v6"></path>
+                <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path>
+              </svg>
             </div>
-            <button type="button" class="btn-copy-sm" data-copy-target="#defense-prompt-raw" aria-label="Skopiuj treść promptu">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-              <span>Kopiuj prompt</span>
-            </button>
-          </div>
-
-          <div class="prompt-code-view">
-            <p class="prompt-p">Działasz jako duet doświadczonych twórców edukacyjnych i ekspertów akademickich:</p>
-            <ul class="prompt-list">
-              <li><strong>Postać A (Dociekliwa prowadząca):</strong> Zadaje celne, proste pytania w imieniu studenta/studentki (<span class="prompt-var">[IMIĘ]</span>), wyłapuje trudne momenty, szuka życiowych intuicji i pilnuje maksymalnej przejrzystości przekazu pod kątem odsłuchu (audiobook).</li>
-              <li><strong>Postać B (Doświadczony mentor/recenzent):</strong> Tłumaczy mechanizmy w sposób intuicyjny i obrazowy, a następnie natychmiast przekłada je na elegancki, formalny język akademicki akceptowany przez komisję.</li>
-            </ul>
-
-            <p class="prompt-heading"><strong>Cel:</strong></p>
-            <p class="prompt-p">Przygotowanie pełnego, angażującego skryptu audiobooka / podcastu edukacyjnego, który przygotowuje do odpowiedzi ustnej na konkretne pytanie egzaminacyjne.</p>
-
-            <p class="prompt-heading"><strong>Główne założenia i źródło wiedzy:</strong></p>
-            <ul class="prompt-list">
-              <li><strong>Ścisłe trzymanie się materiałów:</strong> Opieraj się w 100% wyłącznie na treściach i plikach, które Ci załączam. Nie dopisuj zewnętrznych teorii ani faktów spoza dostarczonego materiału.</li>
-              <li>Brak odniesień do badań własnych czy pracy dyplomowej – skup się wyłącznie na merytorycznym wyjaśnieniu samego pytania na bazie załączonych materiałów.</li>
-              <li>Dynamiczny, żywy dialog: naturalna wymiana zdań, wtrącenia, zero monotonnego monologu czy suchego czytania definicji.</li>
-              <li>Regularne powracanie do sedna pytania w trakcie rozmowy, aby słuchacz stale czuł kontekst całości.</li>
-            </ul>
-
-            <p class="prompt-heading"><strong>Zasady narracji:</strong></p>
-            <ol class="prompt-list">
-              <li><strong>Zasada „Intuicja / Obraz -&gt; Termin naukowy”:</strong> Każde zjawisko najpierw tłumaczone jest prostym językiem i analogią, a dopiero potem Postać B ubiera je w precyzyjną terminologię akademicką z materiałów.</li>
-              <li><strong>Gotowe frazy egzaminacyjne:</strong> Wyraźne wplecenie w dialog zdań-kluczy, które można dosłownie zacytować przed komisją (np. <em>„Wystarczy, że powiesz: Istotą tego zjawiska jest...”</em>).</li>
-            </ol>
-
-            <p class="prompt-heading"><strong>Struktura skryptu:</strong></p>
-            <ol class="prompt-list">
-              <li><strong>Rozbrojenie tematu:</strong> O co tak naprawdę pyta komisja? Sprowadzenie zagadnienia do prostej, fundamentalnej logiki.</li>
-              <li><strong>Anatomia zagadnienia:</strong> Rozłożenie tematu na 2–3 kluczowe filary za pomocą intuicyjnych metafor i natychmiastowego przekładu na aparat pojęciowy z przesłanych materiałów.</li>
-              <li><strong>Pułapki myślowe i dopytania:</strong> Postać A pyta o typowe pomyłki lub podchwytliwe pytania komisji, a Postać B pokazuje, jak z nich wybrnąć.</li>
-              <li><strong>Gotowy szkielet odpowiedzi:</strong> Zwięzłe, modelowe podsumowanie na około 2 minuty płynnej wypowiedzi ustnej, zbierające esencję tematu.</li>
-            </ol>
-
-            <div class="prompt-divider"></div>
-
-            <p class="prompt-heading"><strong>DANE WEJŚCIOWE DO OPRACOWANIA:</strong></p>
-            <ul class="prompt-list" style="margin-bottom: 0;">
-              <li><strong>Imię:</strong> <span class="prompt-var">[Wpisz imię, np. Kacper]</span></li>
-              <li><strong>Kierunek:</strong> <span class="prompt-var">[Wpisz kierunek, np. Psychologia]</span></li>
-              <li><strong>Temat / Pytanie egzaminacyjne:</strong> <span class="prompt-var">[Wklej treść pytania, np. 27. Zaburzenia osobowości - istota i kryteria rozpoznawania oraz wybrane przykłady]</span></li>
-            </ul>
-          </div>
-
-          <!-- Hidden raw text for 1-to-1 exact clipboard copying -->
-          <textarea id="defense-prompt-raw" readonly style="position: absolute; left: -9999px; top: -9999px; opacity: 0; pointer-events: none;" aria-hidden="true">Działasz jako duet doświadczonych twórców edukacyjnych i ekspertów akademickich:
-- **Postać A (Dociekliwa prowadząca):** Zadaje celne, proste pytania w imieniu studenta/studentki ([IMIĘ]), wyłapuje trudne momenty, szuka życiowych intuicji i pilnuje maksymalnej przejrzystości przekazu pod kątem odsłuchu (audiobook).
-- **Postać B (Doświadczony mentor/recenzent):** Tłumaczy mechanizmy w sposób intuicyjny i obrazowy, a następnie natychmiast przekłada je na elegancki, formalny język akademicki akceptowany przez komisję.
-
-**Cel:**
-Przygotowanie pełnego, angażującego skryptu audiobooka / podcastu edukacyjnego, który przygotowuje do odpowiedzi ustnej na konkretne pytanie egzaminacyjne.
-
-**Główne założenia i źródło wiedzy:**
-- **Ścisłe trzymanie się materiałów:** Opieraj się w 100% wyłącznie na treściach i plikach, które Ci załączam. Nie dopisuj zewnętrznych teorii ani faktów spoza dostarczonego materiału.
-- Brak odniesień do badań własnych czy pracy dyplomowej – skup się wyłącznie na merytorycznym wyjaśnieniu samego pytania na bazie załączonych materiałów.
-- Dynamiczny, żywy dialog: naturalna wymiana zdań, wtrącenia, zero monotonnego monologu czy suchego czytania definicji.
-- Regularne powracanie do sedna pytania w trakcie rozmowy, aby słuchacz stale czuł kontekst całości.
-
-**Zasady narracji:**
-1. **Zasada „Intuicja / Obraz -> Termin naukowy”:** Każde zjawisko najpierw tłumaczone jest prostym językiem i analogią, a dopiero potem Postać B ubiera je w precyzyjną terminologię akademicką z materiałów.
-2. **Gotowe frazy egzaminacyjne:** Wyraźne wplecenie w dialog zdań-kluczy, które można dosłownie zacytować przed komisją (np. *„Wystarczy, że powiesz: Istotą tego zjawiska jest...”*).
-
-**Struktura skryptu:**
-1. **Rozbrojenie tematu:** O co tak naprawdę pyta komisja? Sprowadzenie zagadnienia do prostej, fundamentalnej logiki.
-2. **Anatomia zagadnienia:** Rozłożenie tematu na 2–3 kluczowe filary za pomocą intuicyjnych metafor i natychmiastowego przekładu na aparat pojęciowy z przesłanych materiałów.
-3. **Pułapki myślowe i dopytania:** Postać A pyta o typowe pomyłki lub podchwytliwe pytania komisji, a Postać B pokazuje, jak z nich wybrnąć.
-4. **Gotowy szkielet odpowiedzi:** Zwięzłe, modelowe podsumowanie na około 2 minuty płynnej wypowiedzi ustnej, zbierające esencję tematu.
-
----
-### DANE WEJŚCIOWE DO OPRACOWANIA:
-- **Imię:** [Wpisz imię, np. Kacper]
-- **Kierunek:** [Wpisz kierunek, np. Psychologia]
-- **Temat / Pytanie egzaminacyjne:** [Wklej treść pytania, np. 27. Zaburzenia osobowości - istota i kryteria rozpoznawania oraz wybrane przykłady]</textarea>
-
-          <div class="prompt-box-footer">
-            <button type="button" class="btn-cta" data-copy-target="#defense-prompt-raw">
-              <span>Skopiuj cały prompt do schowka</span>
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-            </button>
-            <div class="prompt-compat">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-              <span>Działa bezpłatnie w ChatGPT, Claude i Gemini</span>
+            <div class="material-card-tags">
+              <span class="tag-pill">Egzamin dyplomowy</span>
+              <span class="tag-pill tag-pill-orange">Prompt AI</span>
             </div>
           </div>
-        </div>
-      </article>
 
-      <!-- Upcoming Materials Card -->
-      <div class="materials-upcoming-card">
-        <div class="materials-upcoming-info">
-          <div class="materials-upcoming-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
-            </svg>
-          </div>
-          <div>
-            <h3>Kolejne materiały w przygotowaniu</h3>
-            <p>Sukcesywnie publikuję karty pracy, schematy decyzyjne i narzędzia omawiane w moich materiałach wideo.</p>
+          <h3>Audiobook do obrony (licencjat &amp; magisterka)</h3>
+          <p>Gotowy prompt AI tworzący dynamiczny podcast edukacyjny, który rozkłada Twoje pytania egzaminacyjne na intuicyjne metafory i gotowe frazy przed komisję.</p>
+
+          <div class="material-card-footer">
+            <span class="material-cta-link">
+              <span>Zobacz i skopiuj prompt</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="M12 5l7 7-7 7"></path></svg>
+            </span>
           </div>
         </div>
-        <div class="materials-upcoming-pills">
-          <span class="materials-pill-sm">Karty pracy i ćwiczenia</span>
-          <span class="materials-pill-sm">Techniki na stres</span>
-          <span class="materials-pill-sm">Antyprokrastynacja</span>
+
+        <!-- Tile 2: Upcoming materials -->
+        <div class="material-card material-card-upcoming" aria-label="Kolejne materiały w przygotowaniu">
+          <div class="material-card-top">
+            <div class="glyph-circle">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
+              </svg>
+            </div>
+            <div class="material-card-tags">
+              <span class="tag-pill">W przygotowaniu</span>
+            </div>
+          </div>
+
+          <h3>Karty pracy &amp; techniki poznawcze</h3>
+          <p>Sukcesywnie publikuję ćwiczenia radzenia sobie ze stresem, szablony decyzji i techniki antyprokrastynacyjne omawiane w materiałach wideo.</p>
+
+          <div class="material-card-footer">
+            <span class="material-cta-link" style="color: var(--color-text-muted);">
+              <span>Wkrótce dostępne</span>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            </span>
+          </div>
         </div>
+
       </div>
 
       <!-- Actions -->
@@ -320,6 +217,116 @@ Przygotowanie pełnego, angażującego skryptu audiobooka / podcastu edukacyjneg
   <button class="back-to-top" type="button" aria-label="Wróć na górę strony">
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5"></path><path d="M5 12l7-7 7 7"></path></svg>
   </button>
+
+  <!-- Modal Dialog: Defense Prompt -->
+  <div id="defense-prompt-modal" class="material-modal-backdrop" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="defense-modal-title">
+    <div class="material-modal-box">
+      <!-- Header -->
+      <div class="material-modal-header">
+        <div>
+          <div class="material-card-tags" style="margin-bottom: 8px;">
+            <span class="tag-pill">Egzamin dyplomowy</span>
+            <span class="tag-pill tag-pill-orange">Prompt AI</span>
+          </div>
+          <h2 id="defense-modal-title" style="margin: 0; font-size: 1.35rem; letter-spacing: -0.02em; color: var(--color-text-main);">Prompt AI: Audiobook do obrony</h2>
+        </div>
+        <button type="button" class="material-modal-close" data-close-modal aria-label="Zamknij okno">✕</button>
+      </div>
+
+      <!-- Body -->
+      <div class="material-modal-body">
+        <div class="modal-instructions">
+          <strong>Instrukcja użycia (3 kroki):</strong>
+          <ol>
+            <li>Kliknij <strong>„Kopiuj prompt”</strong>, aby pobrać pełną instrukcję do schowka.</li>
+            <li>Wklej treść do <strong>Claude</strong>, <strong>ChatGPT</strong> lub <strong>Gemini</strong> i załącz swoje notatki / sylabus.</li>
+            <li>Na dole uzupełnij pola: <code>[IMIĘ]</code>, <code>[Kierunek]</code> oraz treść pytania egzaminacyjnego.</li>
+          </ol>
+        </div>
+
+        <div class="modal-prompt-wrapper">
+          <div class="modal-prompt-topbar">
+            <span class="modal-prompt-label">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="4 17 10 11 4 5"></polyline><line x1="12" y1="19" x2="20" y2="19"></line></svg>
+              Treść promptu
+            </span>
+            <button type="button" class="btn-copy-modal" data-copy-target="#defense-prompt-raw">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+              <span>Kopiuj prompt</span>
+            </button>
+          </div>
+
+          <pre class="modal-prompt-pre">Działasz jako duet doświadczonych twórców edukacyjnych i ekspertów akademickich:
+- **Postać A (Dociekliwa prowadząca):** Zadaje celne, proste pytania w imieniu studenta/studentki ([IMIĘ]), wyłapuje trudne momenty, szuka życiowych intuicji i pilnuje maksymalnej przejrzystości przekazu pod kątem odsłuchu (audiobook).
+- **Postać B (Doświadczony mentor/recenzent):** Tłumaczy mechanizmy w sposób intuicyjny i obrazowy, a następnie natychmiast przekłada je na elegancki, formalny język akademicki akceptowany przez komisję.
+
+**Cel:**
+Przygotowanie pełnego, angażującego skryptu audiobooka / podcastu edukacyjnego, który przygotowuje do odpowiedzi ustnej na konkretne pytanie egzaminacyjne.
+
+**Główne założenia i źródło wiedzy:**
+- **Ścisłe trzymanie się materiałów:** Opieraj się w 100% wyłącznie na treściach i plikach, które Ci załączam. Nie dopisuj zewnętrznych teorii ani faktów spoza dostarczonego materiału.
+- Brak odniesień do badań własnych czy pracy dyplomowej – skup się wyłącznie na merytorycznym wyjaśnieniu samego pytania na bazie załączonych materiałów.
+- Dynamiczny, żywy dialog: naturalna wymiana zdań, wtrącenia, zero monotonnego monologu czy suchego czytania definicji.
+- Regularne powracanie do sedna pytania w trakcie rozmowy, aby słuchacz stale czuł kontekst całości.
+
+**Zasady narracji:**
+1. **Zasada „Intuicja / Obraz -> Termin naukowy”:** Każde zjawisko najpierw tłumaczone jest prostym językiem i analogią, a dopiero potem Postać B ubiera je w precyzyjną terminologię akademicką z materiałów.
+2. **Gotowe frazy egzaminacyjne:** Wyraźne wplecenie w dialog zdań-kluczy, które można dosłownie zacytować przed komisją (np. *„Wystarczy, że powiesz: Istotą tego zjawiska jest...”*).
+
+**Struktura skryptu:**
+1. **Rozbrojenie tematu:** O co tak naprawdę pyta komisja? Sprowadzenie zagadnienia do prostej, fundamentalnej logiki.
+2. **Anatomia zagadnienia:** Rozłożenie tematu na 2–3 kluczowe filary za pomocą intuicyjnych metafor i natychmiastowego przekładu na aparat pojęciowy z przesłanych materiałów.
+3. **Pułapki myślowe i dopytania:** Postać A pyta o typowe pomyłki lub podchwytliwe pytania komisji, a Postać B pokazuje, jak z nich wybrnąć.
+4. **Gotowy szkielet odpowiedzi:** Zwięzłe, modelowe podsumowanie na około 2 minuty płynnej wypowiedzi ustnej, zbierające esencję tematu.
+
+---
+### DANE WEJŚCIOWE DO OPRACOWANIA:
+- **Imię:** [Wpisz imię, np. Kacper]
+- **Kierunek:** [Wpisz kierunek, np. Psychologia]
+- **Temat / Pytanie egzaminacyjne:** [Wklej treść pytania, np. 27. Zaburzenia osobowości - istota i kryteria rozpoznawania oraz wybrane przykłady]</pre>
+        </div>
+
+        <!-- Hidden textarea for clean copy -->
+        <textarea id="defense-prompt-raw" readonly style="position: absolute; left: -9999px; top: -9999px; opacity: 0; pointer-events: none;" aria-hidden="true">Działasz jako duet doświadczonych twórców edukacyjnych i ekspertów akademickich:
+- **Postać A (Dociekliwa prowadząca):** Zadaje celne, proste pytania w imieniu studenta/studentki ([IMIĘ]), wyłapuje trudne momenty, szuka życiowych intuicji i pilnuje maksymalnej przejrzystości przekazu pod kątem odsłuchu (audiobook).
+- **Postać B (Doświadczony mentor/recenzent):** Tłumaczy mechanizmy w sposób intuicyjny i obrazowy, a następnie natychmiast przekłada je na elegancki, formalny język akademicki akceptowany przez komisję.
+
+**Cel:**
+Przygotowanie pełnego, angażującego skryptu audiobooka / podcastu edukacyjnego, który przygotowuje do odpowiedzi ustnej na konkretne pytanie egzaminacyjne.
+
+**Główne założenia i źródło wiedzy:**
+- **Ścisłe trzymanie się materiałów:** Opieraj się w 100% wyłącznie na treściach i plikach, które Ci załączam. Nie dopisuj zewnętrznych teorii ani faktów spoza dostarczonego materiału.
+- Brak odniesień do badań własnych czy pracy dyplomowej – skup się wyłącznie na merytorycznym wyjaśnieniu samego pytania na bazie załączonych materiałów.
+- Dynamiczny, żywy dialog: naturalna wymiana zdań, wtrącenia, zero monotonnego monologu czy suchego czytania definicji.
+- Regularne powracanie do sedna pytania w trakcie rozmowy, aby słuchacz stale czuł kontekst całości.
+
+**Zasady narracji:**
+1. **Zasada „Intuicja / Obraz -> Termin naukowy”:** Każde zjawisko najpierw tłumaczone jest prostym językiem i analogią, a dopiero potem Postać B ubiera je w precyzyjną terminologię akademicką z materiałów.
+2. **Gotowe frazy egzaminacyjne:** Wyraźne wplecenie w dialog zdań-kluczy, które można dosłownie zacytować przed komisją (np. *„Wystarczy, że powiesz: Istotą tego zjawiska jest...”*).
+
+**Struktura skryptu:**
+1. **Rozbrojenie tematu:** O co tak naprawdę pyta komisja? Sprowadzenie zagadnienia do prostej, fundamentalnej logiki.
+2. **Anatomia zagadnienia:** Rozłożenie tematu na 2–3 kluczowe filary za pomocą intuicyjnych metafor i natychmiastowego przekładu na aparat pojęciowy z przesłanych materiałów.
+3. **Pułapki myślowe i dopytania:** Postać A pyta o typowe pomyłki lub podchwytliwe pytania komisji, a Postać B pokazuje, jak z nich wybrnąć.
+4. **Gotowy szkielet odpowiedzi:** Zwięzłe, modelowe podsumowanie na około 2 minuty płynnej wypowiedzi ustnej, zbierające esencję tematu.
+
+---
+### DANE WEJŚCIOWE DO OPRACOWANIA:
+- **Imię:** [Wpisz imię, np. Kacper]
+- **Kierunek:** [Wpisz kierunek, np. Psychologia]
+- **Temat / Pytanie egzaminacyjne:** [Wklej treść pytania, np. 27. Zaburzenia osobowości - istota i kryteria rozpoznawania oraz wybrane przykłady]</textarea>
+      </div>
+
+      <!-- Footer -->
+      <div class="material-modal-footer">
+        <button type="button" class="btn-outline" data-close-modal>Zamknij</button>
+        <button type="button" class="btn-cta" data-copy-target="#defense-prompt-raw">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.4"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+          <span>Skopiuj cały prompt</span>
+        </button>
+      </div>
+    </div>
+  </div>
 
   <script src="js/main.js"></script>
 </body>
