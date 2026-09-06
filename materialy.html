@@ -21,8 +21,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap">
-  <link rel="stylesheet" href="css/style.css?v=2.2">
-  <link rel="stylesheet" href="css/materials.css?v=2.2">
+  <link rel="stylesheet" href="css/style.css?v=2.3">
+  <link rel="stylesheet" href="css/materials.css?v=2.3">
 </head>
 <body style="min-height: 100vh; display: flex; flex-direction: column;">
 
@@ -124,7 +124,7 @@
       <div class="materials-grid">
         
         <!-- Tile 1: Prompt AI pod obronę (Clickable -> Opens Modal) -->
-        <div class="material-card" role="button" tabindex="0" data-open-modal="#defense-prompt-modal" aria-haspopup="dialog" aria-label="Otwórz prompt AI: Audiobook do obrony dyplomowej">
+        <div class="material-card" role="button" tabindex="0" data-open-modal="#defense-prompt-modal" aria-haspopup="dialog" aria-label="Otwórz prompt AI: Audiobook do obrony w Gemini Notebook">
           <div class="material-card-top">
             <div class="glyph-circle">
               <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#1C86EE" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
@@ -134,12 +134,12 @@
             </div>
             <div class="material-card-tags">
               <span class="tag-pill">Egzamin dyplomowy</span>
-              <span class="tag-pill tag-pill-orange">Prompt AI</span>
+              <span class="tag-pill tag-pill-orange">Gemini Notebook</span>
             </div>
           </div>
 
-          <h3>Audiobook do obrony (licencjat &amp; magisterka)</h3>
-          <p>Gotowy prompt AI tworzący dynamiczny podcast edukacyjny, który rozkłada Twoje pytania egzaminacyjne na intuicyjne metafory i gotowe frazy przed komisję.</p>
+          <h3>Audiobook do obrony (Gemini Notebook)</h3>
+          <p>Gotowy prompt pod Google Gemini Notebook. Tworzy dynamiczny podcast edukacyjny, który rozkłada Twoje pytania egzaminacyjne na intuicyjne metafory i gotowe frazy przed komisję.</p>
 
           <div class="material-card-footer">
             <span class="material-cta-link">
@@ -226,9 +226,9 @@
         <div>
           <div class="material-card-tags" style="margin-bottom: 8px;">
             <span class="tag-pill">Egzamin dyplomowy</span>
-            <span class="tag-pill tag-pill-orange">Prompt AI</span>
+            <span class="tag-pill tag-pill-orange">Gemini Notebook</span>
           </div>
-          <h2 id="defense-modal-title" style="margin: 0; font-size: 1.35rem; letter-spacing: -0.02em; color: var(--color-text-main);">Prompt AI: Audiobook do obrony</h2>
+          <h2 id="defense-modal-title" style="margin: 0; font-size: 1.35rem; letter-spacing: -0.02em; color: var(--color-text-main);">Prompt: Audiobook do obrony w Gemini Notebook</h2>
         </div>
         <button type="button" class="material-modal-close" data-close-modal aria-label="Zamknij okno">✕</button>
       </div>
@@ -236,11 +236,11 @@
       <!-- Body -->
       <div class="material-modal-body">
         <div class="modal-instructions">
-          <strong>Instrukcja użycia (3 kroki):</strong>
+          <span class="modal-instructions-title">Instrukcja użycia w Gemini Notebook (3 kroki):</span>
           <ol>
-            <li>Kliknij <strong>„Kopiuj prompt”</strong>, aby pobrać pełną instrukcję do schowka.</li>
-            <li>Wklej treść do <strong>Claude</strong>, <strong>ChatGPT</strong> lub <strong>Gemini</strong> i załącz swoje notatki / sylabus.</li>
-            <li>Na dole uzupełnij pola: <code>[IMIĘ]</code>, <code>[Kierunek]</code> oraz treść pytania egzaminacyjnego.</li>
+            <li>Kliknij przycisk <strong>„Kopiuj prompt”</strong> poniżej.</li>
+            <li>Otwórz <a href="https://notebook.google.com/" target="_blank" rel="noopener"><strong>Google Gemini Notebook (notebook.google.com) ↗</strong></a> i dodaj swoje materiały (notatki, pytania, sylabus).</li>
+            <li>Kliknij <strong>„Podsumowanie”</strong>, wklej skopiowany prompt i uzupełnij na samym dole: <code>[IMIĘ]</code>, <code>[Kierunek]</code> oraz treść pytania.</li>
           </ol>
         </div>
 
@@ -320,6 +320,10 @@ Przygotowanie pełnego, angażującego skryptu audiobooka / podcastu edukacyjneg
       <!-- Footer -->
       <div class="material-modal-footer">
         <button type="button" class="btn-outline" data-close-modal>Zamknij</button>
+        <a href="https://notebook.google.com/" target="_blank" rel="noopener" class="btn-outline" style="display: inline-flex; align-items: center; gap: 7px; text-decoration: none;">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+          <span>Otwórz Gemini Notebook</span>
+        </a>
         <button type="button" class="btn-cta" data-copy-target="#defense-prompt-raw">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.4"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
           <span>Skopiuj cały prompt</span>
