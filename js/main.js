@@ -24,6 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initStepsLine();
   initCopyButtons();
   initMaterialModal();
+  initPromptToggle();
 });
 
 /* ==========================================================================
@@ -564,6 +565,17 @@ function initMaterialModal() {
     modal.classList.remove('is-open');
     modal.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
+
+    // Reset prompt collapse state when modal closes
+    const collapseEl = modal.querySelector('#prompt-preview-collapse');
+    const toggleBtn = modal.querySelector('#toggle-prompt-btn');
+    if (collapseEl && toggleBtn) {
+      collapseEl.style.display = 'none';
+      toggleBtn.setAttribute('aria-expanded', 'false');
+      toggleBtn.classList.remove('is-expanded');
+      const textSpan = toggleBtn.querySelector('.toggle-text');
+      if (textSpan) textSpan.textContent = 'Pokaż treść promptu (opcjonalnie)';
+    }
   };
 
   openBtns.forEach(btn => {
@@ -597,5 +609,33 @@ function initMaterialModal() {
     }
   });
 }
+
+/* ==========================================================================
+   Prompt Preview Accordion Toggle
+   ========================================================================== */
+
+function initPromptToggle() {
+  const toggleBtn = document.getElementById('toggle-prompt-btn');
+  const collapseEl = document.getElementById('prompt-preview-collapse');
+  if (!toggleBtn || !collapseEl) return;
+
+  toggleBtn.addEventListener('click', () => {
+    const isExpanded = toggleBtn.getAttribute('aria-expanded') === 'true';
+    if (isExpanded) {
+      collapseEl.style.display = 'none';
+      toggleBtn.setAttribute('aria-expanded', 'false');
+      toggleBtn.classList.remove('is-expanded');
+      const textSpan = toggleBtn.querySelector('.toggle-text');
+      if (textSpan) textSpan.textContent = 'Pokaż treść promptu (opcjonalnie)';
+    } else {
+      collapseEl.style.display = 'block';
+      toggleBtn.setAttribute('aria-expanded', 'true');
+      toggleBtn.classList.add('is-expanded');
+      const textSpan = toggleBtn.querySelector('.toggle-text');
+      if (textSpan) textSpan.textContent = 'Ukryj treść promptu';
+    }
+  });
+}
+
 
 

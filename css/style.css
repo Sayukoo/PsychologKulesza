@@ -10,5 +10,5 @@
 @import url('sections.css');
 @import url('tests.css');
 @import url('contact.css');
-@import url('materials.css');
+@import url('materials.css?v=3.0');
 @import url('footer.css');

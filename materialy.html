@@ -21,8 +21,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap">
-  <link rel="stylesheet" href="css/style.css?v=2.4">
-  <link rel="stylesheet" href="css/materials.css?v=2.4">
+  <link rel="stylesheet" href="css/style.css?v=3.0">
+  <link rel="stylesheet" href="css/materials.css?v=3.0">
 </head>
 <body style="min-height: 100vh; display: flex; flex-direction: column;">
 
@@ -115,19 +115,16 @@
 
     <div class="container materials-hub-container">
       <span class="section-tag">Baza wiedzy i materiałów</span>
-      <h1 style="font-size: 2.85rem; line-height: 1.1; letter-spacing: -0.035em;">Darmowe materiały i narzędzia</h1>
-      <p style="margin-top: 14px; max-width: 56ch; margin-left: auto; margin-right: auto; color: var(--color-text-muted);">
-        Praktyczne narzędzia edukacyjne, prompty AI oraz karty pracy wspierające skuteczną naukę i przygotowanie do egzaminów.
-      </p>
+      <h1 style="font-size: 2.85rem; line-height: 1.1; letter-spacing: -0.035em; margin-bottom: 32px;">Darmowe materiały i narzędzia</h1>
 
       <!-- Materials Grid (Compact Tiles) -->
       <div class="materials-grid">
         
         <!-- Tile 1: Prompt AI pod obronę (Clickable -> Opens Modal) -->
-        <div class="material-card" role="button" tabindex="0" data-open-modal="#defense-prompt-modal" aria-haspopup="dialog" aria-label="Otwórz prompt AI: Audiobook do obrony w Gemini Notebook">
+        <div class="material-card" role="button" tabindex="0" data-open-modal="#defense-prompt-modal" aria-haspopup="dialog" aria-label="Audiobook do obrony (licencjat / magisterka)">
           <div class="material-card-top">
             <div class="glyph-circle">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#1C86EE" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1C86EE" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M3 18v-6a9 9 0 0 1 18 0v6"></path>
                 <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path>
               </svg>
@@ -139,18 +136,18 @@
           </div>
 
           <h3>Audiobook do obrony (licencjat / magisterka)</h3>
-          <p>Gotowy prompt pod Google Gemini Notebook. Tworzy dynamiczny podcast edukacyjny, który rozkłada Twoje pytania egzaminacyjne na intuicyjne metafory i gotowe frazy przed komisję.</p>
+          <p>Prompt do Google Gemini Notebook zamieniający pytania egzaminacyjne w dynamiczny podcast edukacyjny.</p>
 
           <div class="material-card-footer">
             <span class="material-cta-link">
-              <span>Zobacz i skopiuj prompt</span>
+              <span>Otwórz prompt</span>
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="M12 5l7 7-7 7"></path></svg>
             </span>
           </div>
         </div>
 
         <!-- Tile 2: Upcoming materials -->
-        <div class="material-card material-card-upcoming" aria-label="Kolejne materiały w przygotowaniu">
+        <div class="material-card material-card-upcoming" aria-label="Techniki poznawcze w przygotowaniu">
           <div class="material-card-top">
             <div class="glyph-circle">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
@@ -167,8 +164,8 @@
             </div>
           </div>
 
-          <h3>Techniki poznawcze &amp; koło emocji</h3>
-          <p>Wkrótce: interaktywne koło emocji, schemat stawiania granic, proste aplikacje ułatwiające działanie oraz karty pracy do radzenia sobie ze stresem.</p>
+          <h3>Koło emocji &amp; schemat granic</h3>
+          <p>Interaktywne koło emocji, schemat stawiania granic, asystent decyzji oraz karty pracy na stres.</p>
 
           <div class="material-card-footer">
             <span class="material-cta-link" style="color: var(--color-text-muted);">
@@ -229,39 +226,91 @@
       <!-- Header -->
       <div class="material-modal-header">
         <div>
-          <div class="material-card-tags" style="margin-bottom: 8px;">
+          <div class="material-card-tags" style="margin-bottom: 6px;">
             <span class="tag-pill">Egzamin dyplomowy</span>
             <span class="tag-pill tag-pill-orange">Gemini Notebook</span>
           </div>
-          <h2 id="defense-modal-title" style="margin: 0; font-size: 1.35rem; letter-spacing: -0.02em; color: var(--color-text-main);">Prompt: Audiobook do obrony (licencjat / magisterka)</h2>
+          <h2 id="defense-modal-title" style="margin: 0; font-size: 1.25rem; letter-spacing: -0.02em; color: var(--color-text-main);">Audiobook do obrony (licencjat / magisterka)</h2>
         </div>
         <button type="button" class="material-modal-close" data-close-modal aria-label="Zamknij okno">✕</button>
       </div>
 
       <!-- Body -->
       <div class="material-modal-body">
-        <div class="modal-instructions">
-          <span class="modal-instructions-title">Instrukcja użycia w Gemini Notebook (3 kroki):</span>
-          <ol>
-            <li>Kliknij przycisk <strong>„Kopiuj prompt”</strong> poniżej.</li>
-            <li>Otwórz <a href="https://notebook.google.com/" target="_blank" rel="noopener"><strong>Google Gemini Notebook (notebook.google.com) ↗</strong></a> i dodaj swoje materiały (notatki, pytania, sylabus).</li>
-            <li>Kliknij <strong>„Podsumowanie”</strong>, wklej skopiowany prompt i uzupełnij na samym dole: <code>[IMIĘ]</code>, <code>[Kierunek]</code> oraz treść pytania.</li>
-          </ol>
-        </div>
-
-        <div class="modal-prompt-wrapper">
-          <div class="modal-prompt-topbar">
-            <span class="modal-prompt-label">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="4 17 10 11 4 5"></polyline><line x1="12" y1="19" x2="20" y2="19"></line></svg>
-              Treść promptu
-            </span>
-            <button type="button" class="btn-copy-modal" data-copy-target="#defense-prompt-raw">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-              <span>Kopiuj prompt</span>
-            </button>
+        <!-- 3 Quick Steps Grid -->
+        <div class="modal-steps-mini">
+          <div class="modal-step-card">
+            <div class="modal-step-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+              </svg>
+            </div>
+            <div class="modal-step-content">
+              <div class="modal-step-title">1. Skopiuj prompt</div>
+              <div class="modal-step-desc">Użyj przycisku poniżej</div>
+            </div>
           </div>
 
-          <pre class="modal-prompt-pre">Działasz jako duet doświadczonych twórców edukacyjnych i ekspertów akademickich:
+          <div class="modal-step-card">
+            <div class="modal-step-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="2" y1="12" x2="22" y2="12"></line>
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+              </svg>
+            </div>
+            <div class="modal-step-content">
+              <div class="modal-step-title">2. Wejdź w Notebook</div>
+              <div class="modal-step-desc"><a href="https://notebook.google.com/" target="_blank" rel="noopener">notebook.google.com ↗</a> &rarr; <strong>Podsumowanie</strong></div>
+            </div>
+          </div>
+
+          <div class="modal-step-card">
+            <div class="modal-step-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+              </svg>
+            </div>
+            <div class="modal-step-content">
+              <div class="modal-step-title">3. Wklej i uzupełnij</div>
+              <div class="modal-step-desc">Wklej prompt, wpisz imię i pytanie</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Action buttons row -->
+        <div class="modal-main-actions">
+          <button type="button" class="btn-cta" data-copy-target="#defense-prompt-raw" style="flex: 1; justify-content: center;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.4"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+            <span>Skopiuj prompt do schowka</span>
+          </button>
+          <a href="https://notebook.google.com/" target="_blank" rel="noopener" class="btn-outline" style="display: inline-flex; align-items: center; justify-content: center; gap: 8px; text-decoration: none;">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+            <span>Otwórz Gemini Notebook</span>
+          </a>
+        </div>
+
+        <!-- Optional prompt preview collapse -->
+        <button type="button" class="btn-toggle-prompt" id="toggle-prompt-btn" aria-expanded="false" aria-controls="prompt-preview-collapse">
+          <svg class="chevron-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
+          <span class="toggle-text">Pokaż treść promptu (opcjonalnie)</span>
+        </button>
+
+        <div id="prompt-preview-collapse" class="prompt-preview-collapse" style="display: none;">
+          <div class="modal-prompt-wrapper">
+            <div class="modal-prompt-topbar">
+              <span class="modal-prompt-label">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="4 17 10 11 4 5"></polyline><line x1="12" y1="19" x2="20" y2="19"></line></svg>
+                Pełny prompt AI
+              </span>
+              <button type="button" class="btn-copy-modal" data-copy-target="#defense-prompt-raw">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                <span>Kopiuj</span>
+              </button>
+            </div>
+            <pre class="modal-prompt-pre">Działasz jako duet doświadczonych twórców edukacyjnych i ekspertów akademickich:
 - **Postać A (Dociekliwa prowadząca):** Zadaje celne, proste pytania w imieniu studenta/studentki ([IMIĘ]), wyłapuje trudne momenty, szuka życiowych intuicji i pilnuje maksymalnej przejrzystości przekazu pod kątem odsłuchu (audiobook).
 - **Postać B (Doświadczony mentor/recenzent):** Tłumaczy mechanizmy w sposób intuicyjny i obrazowy, a następnie natychmiast przekłada je na elegancki, formalny język akademicki akceptowany przez komisję.
 
@@ -289,6 +338,7 @@ Przygotowanie pełnego, angażującego skryptu audiobooka / podcastu edukacyjneg
 - **Imię:** [Wpisz imię, np. Kacper]
 - **Kierunek:** [Wpisz kierunek, np. Psychologia]
 - **Temat / Pytanie egzaminacyjne:** [Wklej treść pytania, np. 27. Zaburzenia osobowości - istota i kryteria rozpoznawania oraz wybrane przykłady]</pre>
+          </div>
         </div>
 
         <!-- Hidden textarea for clean copy -->
@@ -325,18 +375,10 @@ Przygotowanie pełnego, angażującego skryptu audiobooka / podcastu edukacyjneg
       <!-- Footer -->
       <div class="material-modal-footer">
         <button type="button" class="btn-outline" data-close-modal>Zamknij</button>
-        <a href="https://notebook.google.com/" target="_blank" rel="noopener" class="btn-outline" style="display: inline-flex; align-items: center; gap: 7px; text-decoration: none;">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-          <span>Otwórz Gemini Notebook</span>
-        </a>
-        <button type="button" class="btn-cta" data-copy-target="#defense-prompt-raw">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.4"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          <span>Skopiuj cały prompt</span>
-        </button>
       </div>
     </div>
   </div>
 
-  <script src="js/main.js"></script>
+  <script src="js/main.js?v=3.0"></script>
 </body>
 </html>

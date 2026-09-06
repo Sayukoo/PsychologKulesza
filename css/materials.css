@@ -160,8 +160,8 @@
 
 .material-modal-box {
   width: 100%;
-  max-width: 740px;
-  max-height: 88vh;
+  max-width: 680px;
+  max-height: 90vh;
   display: flex;
   flex-direction: column;
   background: #FFFFFF;
@@ -217,62 +217,118 @@
   flex: 1;
 }
 
-.modal-instructions {
+/* 3 Mini-Steps */
+.modal-steps-mini {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.modal-step-card {
   background: rgba(28, 134, 238, 0.04);
-  border: 1px solid rgba(28, 134, 238, 0.16);
-  border-radius: 14px;
-  padding: 16px 20px;
-  font-size: 0.9rem;
-  color: var(--color-text-main);
-  margin-bottom: 18px;
+  border: 1px solid rgba(28, 134, 238, 0.14);
+  border-radius: var(--radius-xl);
+  padding: 14px 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  transition: border-color 0.2s ease, background 0.2s ease;
 }
 
-.modal-instructions-title {
-  color: var(--color-blue-dark);
-  display: block;
+.modal-step-card:hover {
+  border-color: rgba(28, 134, 238, 0.35);
+  background: rgba(28, 134, 238, 0.07);
+}
+
+.modal-step-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 9px;
+  background: #FFFFFF;
+  border: 1px solid rgba(28, 134, 238, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-blue);
+  flex-shrink: 0;
+  box-shadow: 0 2px 5px rgba(28, 134, 238, 0.08);
+}
+
+.modal-step-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.modal-step-title {
+  font-size: 0.875rem;
   font-weight: 800;
-  font-size: 0.95rem;
-  margin-bottom: 8px;
-}
-
-.modal-instructions ol {
-  margin: 0;
-  padding-left: 20px;
-  line-height: 1.6;
-}
-
-.modal-instructions li {
-  margin-bottom: 6px;
   color: var(--color-text-main);
+  letter-spacing: -0.01em;
 }
 
-.modal-instructions strong {
-  display: inline !important;
-  font-weight: 700;
-  color: var(--color-text-main);
+.modal-step-desc {
+  font-size: 0.78125rem;
+  line-height: 1.45;
+  color: var(--color-text-muted);
 }
 
-.modal-instructions a {
-  display: inline;
+.modal-step-desc a {
   color: var(--color-blue);
   font-weight: 700;
   text-decoration: underline;
   text-underline-offset: 2px;
-  transition: color 0.18s ease;
 }
 
-.modal-instructions a:hover {
+.modal-step-desc a:hover {
   color: var(--color-blue-dark);
 }
 
-.modal-instructions code {
-  display: inline-block;
-  background: rgba(255, 122, 41, 0.12);
-  color: var(--color-orange-dark);
-  padding: 1px 6px;
-  border-radius: 4px;
+/* Modal Main Actions Row */
+.modal-main-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+/* Toggle Prompt Preview */
+.btn-toggle-prompt {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 10px 14px;
+  background: transparent;
+  border: 1px dashed var(--color-blue-border);
+  border-radius: 12px;
   font-size: 0.8125rem;
   font-weight: 700;
+  color: var(--color-blue-dark);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.btn-toggle-prompt:hover {
+  background: rgba(28, 134, 238, 0.05);
+  border-color: var(--color-blue);
+}
+
+.btn-toggle-prompt .chevron-icon {
+  transition: transform 0.25s ease;
+}
+
+.btn-toggle-prompt.is-expanded .chevron-icon {
+  transform: rotate(180deg);
+}
+
+.prompt-preview-collapse {
+  margin-top: 14px;
+  animation: fadeIn 0.22s ease-out;
 }
 
 .modal-prompt-wrapper {
@@ -384,7 +440,7 @@
   .materials-grid {
     grid-template-columns: 1fr;
     gap: 16px;
-    margin-top: 32px;
+    margin-top: 28px;
   }
 
   .material-card {
@@ -400,11 +456,34 @@
   }
 
   .material-modal-header {
-    padding: 18px 20px;
+    padding: 16px 18px;
   }
 
   .material-modal-body {
-    padding: 18px 20px;
+    padding: 16px 18px;
+  }
+
+  .modal-steps-mini {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+
+  .modal-step-card {
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 14px;
+  }
+
+  .modal-main-actions {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .modal-main-actions .btn-cta,
+  .modal-main-actions .btn-outline {
+    width: 100%;
   }
 
   .modal-prompt-pre {
@@ -412,8 +491,7 @@
   }
 
   .material-modal-footer {
-    padding: 14px 20px;
-    flex-direction: column-reverse;
+    padding: 12px 18px;
   }
 
   .material-modal-footer button {
