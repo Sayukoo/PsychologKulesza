@@ -21,8 +21,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap">
-  <link rel="stylesheet" href="css/style.css?v=3.0">
-  <link rel="stylesheet" href="css/materials.css?v=3.0">
+  <link rel="stylesheet" href="css/style.css?v=3.1">
+  <link rel="stylesheet" href="css/materials.css?v=3.1">
 </head>
 <body style="min-height: 100vh; display: flex; flex-direction: column;">
 
@@ -117,58 +117,111 @@
       <span class="section-tag">Baza wiedzy i materiałów</span>
       <h1 style="font-size: 2.85rem; line-height: 1.1; letter-spacing: -0.035em; margin-bottom: 32px;">Darmowe materiały i narzędzia</h1>
 
-      <!-- Materials Grid (Compact Tiles) -->
+      <!-- Materials Grid (Xiaomi-Style Minimalist Cards) -->
       <div class="materials-grid">
         
-        <!-- Tile 1: Prompt AI pod obronę (Clickable -> Opens Modal) -->
+        <!-- Tile 1: Prompt AI pod obronę (Xiaomi Minimalist Style) -->
         <div class="material-card" role="button" tabindex="0" data-open-modal="#defense-prompt-modal" aria-haspopup="dialog" aria-label="Audiobook do obrony (licencjat / magisterka)">
-          <div class="material-card-top">
-            <div class="glyph-circle">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1C86EE" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M3 18v-6a9 9 0 0 1 18 0v6"></path>
-                <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path>
-              </svg>
+          <div class="material-card-top-clean">
+            <span class="tag-pill tag-pill-orange">Licencjat / Magisterka</span>
+            <span class="tag-pill">AI Prompt</span>
+          </div>
+
+          <h3 class="material-card-title-clean">Audiobook do obrony</h3>
+
+          <!-- Xiaomi-Style 3 Feature Circles -->
+          <div class="xiaomi-card-features">
+            <div class="xiaomi-feature-col">
+              <div class="xiaomi-circle-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                  <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+                </svg>
+              </div>
+              <span class="xiaomi-feature-label">Obrona ustna</span>
+              <span class="xiaomi-feature-sub">Pytania komisji</span>
             </div>
-            <div class="material-card-tags">
-              <span class="tag-pill">Egzamin dyplomowy</span>
-              <span class="tag-pill tag-pill-orange">Gemini Notebook</span>
+
+            <div class="xiaomi-feature-col">
+              <div class="xiaomi-circle-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="2" y1="12" x2="22" y2="12"></line>
+                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                </svg>
+              </div>
+              <span class="xiaomi-feature-label">Gemini AI</span>
+              <span class="xiaomi-feature-sub">Notebook LM</span>
+            </div>
+
+            <div class="xiaomi-feature-col">
+              <div class="xiaomi-circle-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M3 18v-6a9 9 0 0 1 18 0v6"></path>
+                  <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path>
+                </svg>
+              </div>
+              <span class="xiaomi-feature-label">Audiobook</span>
+              <span class="xiaomi-feature-sub">Podcast ze skryptu</span>
             </div>
           </div>
 
-          <h3>Audiobook do obrony (licencjat / magisterka)</h3>
-          <p>Prompt do Google Gemini Notebook zamieniający pytania egzaminacyjne w dynamiczny podcast edukacyjny.</p>
-
-          <div class="material-card-footer">
-            <span class="material-cta-link">
+          <div class="material-card-footer-clean">
+            <span class="xiaomi-card-btn">
               <span>Otwórz prompt</span>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="M12 5l7 7-7 7"></path></svg>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="M12 5l7 7-7 7"></path></svg>
             </span>
           </div>
         </div>
 
-        <!-- Tile 2: Upcoming materials -->
+        <!-- Tile 2: Upcoming materials (Xiaomi Minimalist Style) -->
         <div class="material-card material-card-upcoming" aria-label="Techniki poznawcze w przygotowaniu">
-          <div class="material-card-top">
-            <div class="glyph-circle">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="10"></circle>
-                <path d="M12 2a10 10 0 0 1 10 10"></path>
-                <path d="M12 12 2 12"></path>
-                <path d="m12 12 7-7"></path>
-                <path d="m12 12 7 7"></path>
-              </svg>
+          <div class="material-card-top-clean">
+            <span class="tag-pill">W przygotowaniu</span>
+            <span class="tag-pill tag-pill-orange">Narzędzia</span>
+          </div>
+
+          <h3 class="material-card-title-clean">Techniki poznawcze</h3>
+
+          <!-- Xiaomi-Style 3 Feature Circles -->
+          <div class="xiaomi-card-features">
+            <div class="xiaomi-feature-col">
+              <div class="xiaomi-circle-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
+                </svg>
+              </div>
+              <span class="xiaomi-feature-label">Koło emocji</span>
+              <span class="xiaomi-feature-sub">Interaktywne</span>
             </div>
-            <div class="material-card-tags">
-              <span class="tag-pill">W przygotowaniu</span>
-              <span class="tag-pill tag-pill-orange">Techniki poznawcze</span>
+
+            <div class="xiaomi-feature-col">
+              <div class="xiaomi-circle-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                </svg>
+              </div>
+              <span class="xiaomi-feature-label">Granice</span>
+              <span class="xiaomi-feature-sub">Schemat asertywny</span>
+            </div>
+
+            <div class="xiaomi-feature-col">
+              <div class="xiaomi-circle-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                  <polyline points="14 2 14 8 20 8"></polyline>
+                  <line x1="16" y1="13" x2="8" y2="13"></line>
+                  <line x1="16" y1="17" x2="8" y2="17"></line>
+                </svg>
+              </div>
+              <span class="xiaomi-feature-label">Karty pracy</span>
+              <span class="xiaomi-feature-sub">Stres i emocje</span>
             </div>
           </div>
 
-          <h3>Koło emocji &amp; schemat granic</h3>
-          <p>Interaktywne koło emocji, schemat stawiania granic, asystent decyzji oraz karty pracy na stres.</p>
-
-          <div class="material-card-footer">
-            <span class="material-cta-link" style="color: var(--color-text-muted);">
+          <div class="material-card-footer-clean">
+            <span class="xiaomi-card-btn is-disabled">
               <span>Wkrótce dostępne</span>
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
             </span>
@@ -379,6 +432,6 @@ Przygotowanie pełnego, angażującego skryptu audiobooka / podcastu edukacyjneg
     </div>
   </div>
 
-  <script src="js/main.js?v=3.0"></script>
+  <script src="js/main.js?v=3.1"></script>
 </body>
 </html>

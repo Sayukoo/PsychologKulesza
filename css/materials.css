@@ -52,68 +52,130 @@
   outline-offset: 3px;
 }
 
-.material-card-top {
+/* --------------------------------------------------------------------------
+   Xiaomi Minimalist Feature Grid in Cards
+   -------------------------------------------------------------------------- */
+.material-card-top-clean {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 14px;
-  width: 100%;
-}
-
-.material-card-tags {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
   gap: 8px;
-}
-
-.material-card h3 {
-  margin-top: 20px;
-  font-size: 1.35rem;
-  font-weight: 800;
-  letter-spacing: -0.02em;
-  color: var(--color-text-main);
-  line-height: 1.3;
-}
-
-.material-card p {
-  margin-top: 10px;
-  font-size: 0.9375rem;
-  line-height: 1.6;
-  color: var(--color-text-muted);
-}
-
-.material-card-footer {
-  margin-top: auto;
-  padding-top: 24px;
   width: 100%;
 }
 
-.material-cta-link {
+.material-card-title-clean {
+  margin-top: 14px;
+  font-size: 1.45rem;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  color: var(--color-text-main);
+  line-height: 1.22;
+}
+
+.xiaomi-card-features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  width: 100%;
+  margin: 18px 0 22px;
+  padding: 16px 8px;
+  background: rgba(28, 134, 238, 0.03);
+  border: 1px solid rgba(28, 134, 238, 0.1);
+  border-radius: var(--radius-xl);
+}
+
+.xiaomi-feature-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 7px;
+}
+
+.xiaomi-circle-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  border: 1.5px solid rgba(28, 134, 238, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-blue);
+  box-shadow: 0 4px 12px rgba(28, 134, 238, 0.08);
+  transition: transform 0.25s var(--ease-out-back), border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.material-card:hover .xiaomi-circle-icon {
+  transform: translateY(-2px) scale(1.06);
+  border-color: var(--color-blue);
+  box-shadow: 0 6px 16px rgba(28, 134, 238, 0.16);
+}
+
+.material-card-upcoming .xiaomi-card-features {
+  background: rgba(255, 122, 41, 0.03);
+  border-color: rgba(255, 122, 41, 0.12);
+}
+
+.material-card-upcoming .xiaomi-circle-icon {
+  border-color: rgba(255, 122, 41, 0.25);
+  color: var(--color-orange);
+  box-shadow: 0 4px 12px rgba(255, 122, 41, 0.08);
+}
+
+.material-card-upcoming:hover .xiaomi-circle-icon {
+  transform: none;
+  border-color: rgba(255, 122, 41, 0.35);
+}
+
+.xiaomi-feature-label {
+  font-size: 0.8125rem;
+  font-weight: 800;
+  color: var(--color-text-main);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+.xiaomi-feature-sub {
+  font-size: 0.71875rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  line-height: 1.2;
+}
+
+.material-card-footer-clean {
+  margin-top: auto;
+  width: 100%;
+}
+
+.xiaomi-card-btn {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
-  font-size: 0.9rem;
+  width: 100%;
+  padding: 12px 18px;
+  border-radius: 999px;
+  font-size: 0.875rem;
   font-weight: 700;
-  color: var(--color-blue);
-  transition: gap 0.22s ease, color 0.22s ease;
+  background: var(--color-blue);
+  color: #FFFFFF;
+  border: none;
+  cursor: pointer;
+  transition: all 0.22s ease;
+  box-shadow: 0 4px 14px rgba(28, 134, 238, 0.22);
 }
 
-.material-cta-link svg {
-  transition: transform 0.22s var(--ease-out-back);
+.material-card:hover .xiaomi-card-btn {
+  background: var(--color-blue-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(28, 134, 238, 0.32);
 }
 
-.material-card:hover .material-cta-link {
-  color: var(--color-blue-dark);
-}
-
-.material-card:hover .material-cta-link svg {
-  transform: translateX(5px);
-}
-
-.material-card:hover .glyph-circle {
-  transform: scale(1.08) rotate(-8deg);
-  background: rgba(28, 134, 238, 0.16);
+.xiaomi-card-btn.is-disabled {
+  background: rgba(148, 163, 184, 0.12);
+  color: var(--color-text-muted);
+  box-shadow: none;
+  cursor: default;
 }
 
 /* Upcoming (disabled/placeholder) card */
@@ -127,11 +189,6 @@
   transform: none;
   box-shadow: var(--shadow-card);
   border-color: var(--color-blue-border);
-}
-
-.material-card-upcoming .glyph-circle {
-  background: rgba(255, 122, 41, 0.09);
-  color: var(--color-orange);
 }
 
 /* --------------------------------------------------------------------------
@@ -449,6 +506,30 @@
 
   .material-card h3 {
     font-size: 1.2rem;
+  }
+
+  .xiaomi-card-features {
+    padding: 12px 6px;
+    gap: 6px;
+    margin: 14px 0 18px;
+  }
+
+  .xiaomi-circle-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .xiaomi-circle-icon svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .xiaomi-feature-label {
+    font-size: 0.75rem;
+  }
+
+  .xiaomi-feature-sub {
+    font-size: 0.6875rem;
   }
 
   .material-modal-box {
